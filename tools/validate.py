@@ -84,6 +84,18 @@ for n, c in enumerate(cases):
     for i, h in enumerate(hints): bilingual(h, f"{w} hints[{i}]")
     if not isinstance(c.get("facts"), str) or len(c.get("facts", "")) < 80:
         err(f"{w} facts: missing or too short")
+    # Korean judging notes for the host screen. Optional: the English is shown when they are missing.
+    for en_key, ko_key in (("facts", "factsKo"), ("notStated", "notStatedKo")):
+        if en_key not in c:
+            continue
+        if ko_key not in c:
+            warn(f"{w} {ko_key}: missing, so the host screen shows the English {en_key}")
+            continue
+        ko, en = c[ko_key], c.get(en_key)
+        if not isinstance(ko, str) or not ko.strip():
+            err(f"{w} {ko_key}: empty")
+        elif isinstance(en, str) and ko.count("\n") != en.count("\n"):
+            warn(f"{w} {ko_key}: {ko.count(chr(10)) + 1} lines but {en_key} has {en.count(chr(10)) + 1}; check that they match")
     pics = c.get("pictures", {})
     for slot in ("cover", "hint1", "hint2", "truth"):
         p = pics.get(slot, {})

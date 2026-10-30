@@ -6,4 +6,5 @@ A bilingual (Korean/English) yes-or-no deduction game for a church youth group (
 - Run `python3 tools/validate.py` before committing; it must print OK.
 - Commit to `main`. The "Make pictures" workflow then creates any missing pictures in `images/` through the Cloudflare relay (repository secrets `RELAY_URL`, `RELAY_PASS`).
 - `index.html` and `make-pictures.html` read `cases.json` at runtime; don't paste cases into them.
+- Each case also carries `factsKo` (and `notStatedKo` for Bible cases): the same lines as `facts`/`notStated` in Korean, shown on the host screen (`index.html?host`). When you change `facts` or `notStated`, change the Korean lines to match.
 - The game's owner is a youth pastor who writes in Korean. Talk with him in Korean.

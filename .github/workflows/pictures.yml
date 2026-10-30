@@ -25,6 +25,9 @@ jobs:
     timeout-minutes: 40
     steps:
       - uses: actions/checkout@v5
+        with:
+          # The newest main, not the commit that started the run, so pictures made by an earlier run aren't made twice.
+          ref: main
 
       - uses: actions/setup-python@v6
         with:

@@ -554,6 +554,84 @@ a.btn { text-decoration: none; }
 .cp-series { color: var(--ink-2); font-size: 0.92rem; }
 .cp-series .eyebrow { margin-right: 0.4rem; }
 
+/* Rooms: joining and creating */
+.room-setup { display: grid; gap: 1rem 1.6rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr)); }
+.room-setup > .notice { grid-column: 1 / -1; }
+.rs-col { display: grid; gap: 0.55rem; align-content: start; }
+.rs-row { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.rs-row input {
+  flex: 1 1 8rem; min-width: 0; padding: 0.6rem 0.75rem; border: 1px solid var(--line-strong); border-radius: 8px;
+  background: var(--field); font-size: 1.05rem;
+}
+#join-code { flex: 0 1 7.5rem; text-transform: uppercase; font-family: var(--font-mono); letter-spacing: 0.2em; }
+
+/* Rooms: code, QR code and players */
+.room-bar {
+  display: grid; gap: 1rem 1.6rem; grid-template-columns: minmax(0, 1fr); margin-block: 1rem 1.2rem;
+  background: var(--panel); border: 1px solid var(--line-strong); border-radius: 14px; padding: 1rem 1.2rem;
+}
+@media (min-width: 760px) { .room-bar { grid-template-columns: auto minmax(0, 1fr); align-items: start; } }
+.rb-main { display: grid; grid-template-columns: auto auto; justify-content: start; gap: 0.5rem 1.2rem; align-items: center; }
+.rb-code b { display: block; font-family: var(--font-mono); font-size: 2.6rem; font-weight: 500; letter-spacing: 0.16em; line-height: 1.05; color: var(--accent); }
+.room-bar.big .rb-code b { font-size: clamp(3rem, 8vw, 5rem); }
+.rb-qr { width: 6.5rem; height: 6.5rem; padding: 0.3rem; background: #fff; border-radius: 8px; box-sizing: border-box; }
+.room-bar.big .rb-qr { width: 10rem; height: 10rem; }
+.rb-qr svg { display: block; width: 100%; height: 100%; }
+.rb-how { grid-column: 1 / -1; max-width: 30rem; color: var(--ink-2); font-size: 0.9rem; }
+/* On the case screen the room bar stays slim so the case and the answer keep the space. */
+.room-bar:not(.big) { padding: 0.6rem 1rem; gap: 0.6rem 1.4rem; align-items: center; }
+.room-bar:not(.big) .rb-how { display: none; }
+.room-bar:not(.big) .rb-code b { font-size: 1.7rem; }
+.room-bar:not(.big) .rb-qr { width: 4.2rem; height: 4.2rem; padding: 0.2rem; }
+.room-bar:not(.big) .rb-side { gap: 0.4rem; }
+.rb-side { display: grid; gap: 0.6rem; align-content: start; }
+.rb-players { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.rb-players li {
+  display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.25rem 0.65rem; border-radius: 999px;
+  border: 1px solid var(--line-strong); font-size: 0.92rem;
+}
+.rb-players li i { width: 0.5rem; height: 0.5rem; border-radius: 50%; background: var(--yes); flex: none; }
+.rb-players li.off { opacity: 0.45; }
+.rb-players li.off i { background: var(--ink-3); }
+.rb-players li.turn { border-color: var(--accent); background: color-mix(in srgb, var(--accent) 14%, transparent); font-weight: 700; }
+.rb-players li.me { box-shadow: inset 0 0 0 1px var(--ink-3); }
+.rb-players li b { font-size: 0.72rem; color: var(--accent); }
+.rb-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem 0.8rem; }
+.rb-confirm { font-weight: 600; color: var(--no); }
+.room-pick { margin-bottom: 0.4rem; }
+.pending {
+  display: grid; gap: 0.4rem; padding: 0.7rem 0.85rem; border-radius: 10px;
+  border: 1px solid color-mix(in srgb, var(--accent) 50%, transparent); background: color-mix(in srgb, var(--accent) 8%, transparent);
+}
+.pending.hidden { border-style: dashed; background: none; color: var(--ink-2); }
+.pending-q { font-size: 1.15rem; font-weight: 600; overflow-wrap: anywhere; }
+.room-last { font-size: 0.92rem; color: var(--no); }
+.cp-wait { text-align: center; color: var(--ink-2); padding-block: 0.6rem; }
+
+/* A player's phone */
+.pv { display: grid; gap: 1rem; max-width: 40rem; margin: 0 auto; padding-block: 1rem 2rem; }
+.pv-head { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem 1rem; }
+.pv-room { display: flex; align-items: baseline; gap: 0.5rem; }
+.pv-code { font-family: var(--font-mono); font-size: 1.25rem; font-weight: 500; letter-spacing: 0.15em; color: var(--accent); }
+.pv-me { flex: 1 1 auto; color: var(--ink-2); }
+.pv-wait { text-align: center; color: var(--ink-2); padding-block: 2rem; }
+.pv-title { font-family: var(--font-display); font-size: 1.5rem; line-height: 1.25; }
+.pv .setup { font-size: 1.1rem; }
+.pv-turn { display: grid; gap: 0.6rem; padding: 1rem 1.1rem; border-radius: 14px; background: var(--panel); border: 1px solid var(--line); }
+.pv-turn b { font-size: 1.4rem; }
+.pv-turn.mine { border-color: var(--accent); box-shadow: inset 0 0 0 1px var(--accent); }
+.pv-turn.wait { border-style: dashed; color: var(--ink-2); }
+.pv-turn-title { font-family: var(--font-display); font-size: 1.6rem; font-weight: 700; color: var(--accent); }
+.pv-mine { font-weight: 600; color: var(--ink); overflow-wrap: anywhere; }
+.pv-ask { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 0.5rem; }
+.pv-ask input, .pv-solve textarea {
+  min-width: 0; width: 100%; box-sizing: border-box; padding: 0.75rem 0.9rem; border: 1px solid var(--line-strong);
+  border-radius: 10px; background: var(--field); font-size: 1.05rem;
+}
+.pv-solve { display: grid; gap: 0.5rem; }
+.pv-solve textarea { min-height: 7rem; resize: vertical; line-height: 1.55; }
+.pv-players { display: grid; gap: 0.5rem; }
+
 @media (prefers-reduced-motion: reduce) {
   .verdict.fresh, .cp-head.fresh, .thinking::after, .mode-chip[data-s="connecting"] i, .clue-card { animation: none; }
   .case-card, .media img, .vbtn, .btn, .hm-bar i { transition: none; }
@@ -629,6 +707,71 @@ a.btn { text-decoration: none; }
       teamColPen: "Penalty",
       teamColTotal: "Total",
       winnerTag: "Winner",
+      playRoom: "Multiplayer",
+      playRoomNote: "Everyone joins on a phone and takes turns asking.",
+      roomJoinTitle: "Join a room",
+      roomCodePh: "Code",
+      roomNamePh: "Nickname",
+      roomCodeLabel: "Room code",
+      roomNameLabel: "Your nickname",
+      roomJoinBtn: "Join",
+      roomViewBtn: "Open as the big screen",
+      roomCreateTitle: "Create a room",
+      roomJudge: "Who judges",
+      roomJudgeHost: "Host",
+      roomJudgeAi: "AI",
+      roomAiNeedsRelay: "AI judging needs AI connected on this device (Connect AI at the top).",
+      roomCreateBtn: "Create room",
+      roomBusy: "One moment…",
+      roomCode: "Room code",
+      roomHow: host => `On a phone, open ${host}, choose Multiplayer, and enter this code. Or scan the QR code.`,
+      roomNoPlayers: "No one has joined yet.",
+      roomPlayers: n => `Players here · ${n}`,
+      roomTurnTag: "turn",
+      roomJudgeIs: j => j === "ai" ? "AI judges" : "Host judges",
+      roomConnOpen: "Connected",
+      roomConnWait: "Connecting…",
+      roomClose: "Close room",
+      roomCloseConfirm: "Close the room for everyone?",
+      roomLeave: "Leave",
+      roomPickCase: "Choose a case below. It opens for everyone in the room.",
+      roomWaitCase: "Waiting for the host to choose a case…",
+      roomWaitNext: "When the host chooses the next case, it opens here.",
+      roomOwnerOff: "The main screen is offline. Wait a moment.",
+      roomTurnNow: "Now asking",
+      roomNoTurn: "Waiting for players",
+      roomYourTurn: "Your turn!",
+      roomPass: "Pass",
+      roomPassHost: "Skip turn",
+      roomAskPh: "Ask a yes-or-no question",
+      roomAskBtn: "Ask",
+      roomSolveOpen: "Give the answer",
+      roomSolvePh: "What really happened? Tell the whole story.",
+      roomSolveSend: "Send answer",
+      roomWaitJudge: "Waiting for the judge…",
+      roomOtherAsked: name => `${name} asked a question. Judging…`,
+      roomOtherSolve: name => `${name} gave an answer. Checking…`,
+      roomPendingAsk: name => `${name}'s question`,
+      roomPendingSolve: name => `${name}'s answer`,
+      roomStampHint: "Stamp the answer below.",
+      roomBounce: "Have them ask again",
+      roomBounced: "The host asked you to ask that another way.",
+      roomSolveOk: "Correct · case solved",
+      roomSolveNo: "Not yet",
+      roomLastNo: (name, a, b) => `${name}'s answer isn't it yet${b ? ` (${a} of ${b} key points)` : ""}.`,
+      roomMe: name => `Me: ${name}`,
+      roomAiFail: "The AI couldn't judge that. Ask again.",
+      roomHintConfirm: "An emergency hint adds 10 for everyone. Open it?",
+      roomErrors: {
+        create_failed: "Couldn't create a room. Check the internet connection and try again.",
+        no_room: "There's no room with that code. Check the code.",
+        bad_code: "Enter the 4-letter code.",
+        need_name: "Enter a nickname.",
+        offline: "Can't reach the room server. Check the internet connection.",
+        owner_offline: "The main screen is offline. Try again in a moment.",
+        closed: "The room was closed.",
+        gone: "The room was closed or has ended."
+      },
       cpTruthLabel: "The whole story",
       cpLogTitle: n => `Question record · ${n}`,
       cpNew: "Investigate another case",
@@ -812,6 +955,71 @@ a.btn { text-decoration: none; }
       teamColPen: "벌점",
       teamColTotal: "합계",
       winnerTag: "승리",
+      playRoom: "멀티플레이",
+      playRoomNote: "각자 휴대폰으로 들어와 차례대로 질문합니다.",
+      roomJoinTitle: "방에 참가",
+      roomCodePh: "코드",
+      roomNamePh: "닉네임",
+      roomCodeLabel: "방 코드",
+      roomNameLabel: "내 닉네임",
+      roomJoinBtn: "참가",
+      roomViewBtn: "큰 화면으로 보기",
+      roomCreateTitle: "방 만들기",
+      roomJudge: "판정",
+      roomJudgeHost: "진행자",
+      roomJudgeAi: "AI",
+      roomAiNeedsRelay: "AI 판정은 이 기기에 AI가 연결되어 있어야 합니다(위쪽 'AI 연결').",
+      roomCreateBtn: "방 만들기",
+      roomBusy: "잠시만요…",
+      roomCode: "방 코드",
+      roomHow: host => `휴대폰으로 ${host}에 들어가 '멀티플레이'를 누르고 이 코드를 입력하세요. QR 코드를 찍어도 됩니다.`,
+      roomNoPlayers: "아직 들어온 사람이 없습니다.",
+      roomPlayers: n => `참가자 ${n}명`,
+      roomTurnTag: "차례",
+      roomJudgeIs: j => j === "ai" ? "AI 판정" : "진행자 판정",
+      roomConnOpen: "연결됨",
+      roomConnWait: "연결 중…",
+      roomClose: "방 닫기",
+      roomCloseConfirm: "모두의 방을 닫을까요?",
+      roomLeave: "나가기",
+      roomPickCase: "아래에서 사건을 고르세요. 방에 있는 모두에게 같은 사건이 열립니다.",
+      roomWaitCase: "진행자가 사건을 고르고 있습니다…",
+      roomWaitNext: "진행자가 다음 사건을 고르면 여기에 열립니다.",
+      roomOwnerOff: "진행자 화면 연결이 끊겼습니다. 잠시 기다려 주세요.",
+      roomTurnNow: "지금 차례",
+      roomNoTurn: "참가자를 기다리는 중",
+      roomYourTurn: "내 차례입니다!",
+      roomPass: "넘기기",
+      roomPassHost: "차례 넘기기",
+      roomAskPh: "예/아니오로 답할 수 있는 질문",
+      roomAskBtn: "질문하기",
+      roomSolveOpen: "정답 말하기",
+      roomSolvePh: "무슨 일이 있었는지 처음부터 끝까지 써 보세요.",
+      roomSolveSend: "추리 보내기",
+      roomWaitJudge: "판정을 기다리는 중…",
+      roomOtherAsked: name => `${name}의 질문을 판정하는 중…`,
+      roomOtherSolve: name => `${name}의 추리를 확인하는 중…`,
+      roomPendingAsk: name => `${name}의 질문`,
+      roomPendingSolve: name => `${name}의 추리`,
+      roomStampHint: "아래 판정 도장을 누르세요.",
+      roomBounce: "다시 묻게 하기",
+      roomBounced: "진행자가 질문을 다시 해 달라고 했습니다.",
+      roomSolveOk: "맞았습니다 · 사건 해결",
+      roomSolveNo: "아직 아닙니다",
+      roomLastNo: (name, a, b) => `${name}의 추리는 아직 정답이 아닙니다${b ? ` (핵심 ${b}개 중 ${a}개)` : ""}.`,
+      roomMe: name => `나: ${name}`,
+      roomAiFail: "AI가 판정하지 못했습니다. 다시 질문해 주세요.",
+      roomHintConfirm: "긴급 힌트를 열면 모두의 기록에 10문이 더해집니다. 열까요?",
+      roomErrors: {
+        create_failed: "방을 만들지 못했습니다. 인터넷 연결을 확인하고 다시 해 보세요.",
+        no_room: "그 코드의 방이 없습니다. 코드를 다시 확인하세요.",
+        bad_code: "코드 4자리를 입력하세요.",
+        need_name: "닉네임을 입력하세요.",
+        offline: "방 서버에 연결할 수 없습니다. 인터넷 연결을 확인하세요.",
+        owner_offline: "진행자 화면 연결이 끊겼습니다. 잠시 뒤 다시 해 보세요.",
+        closed: "방이 닫혔습니다.",
+        gone: "방이 닫혔거나 끝났습니다."
+      },
       cpTruthLabel: "전체 진상 공개",
       cpLogTitle: n => `수사 기록 · 질문 ${n}개`,
       cpNew: "새로운 사건 수사하기",
@@ -956,11 +1164,13 @@ a.btn { text-decoration: none; }
   // Host screen: the same page opened with ?host. On the same computer it stays in step with the players' screen.
   const HOST_VIEW = !hasClaude && /[?&]host(=|&|$)/.test(location.search);
   const CAN_PRESENT = !hasClaude && typeof BroadcastChannel === "function";
+  // Rooms (play together on phones) need the rooms server, so only the GitHub version offers them.
+  const CAN_ROOMS = !hasClaude && typeof WebSocket === "function" && typeof fetch === "function";
   const RELAY_URL_KEY = "caseRoomRelayUrl";
   const RELAY_PASS_KEY = "caseRoomRelayPass";
   const relay = { url: recall(RELAY_URL_KEY), pass: recall(RELAY_PASS_KEY) };
   const relayReady = !hasClaude && !!(relay.url && relay.pass);
-  const state = { lang: initialLang(), mode: initialMode(), view: "home", caseId: null, games: {}, play: initialPlay(), teams: initialTeams() };
+  const state = { lang: initialLang(), mode: initialMode(), view: "home", caseId: null, games: {}, play: initialPlay(), teams: initialTeams(), room: null };
   // source: "claude" (inside Claude), "relay" (Cloudflare Workers AI through the relay server), "" (host only)
   const ai = {
     status: hasClaude ? "connecting" : relayReady ? "ready" : "off",
@@ -1003,7 +1213,11 @@ a.btn { text-decoration: none; }
   }
   // Solo play or a team battle on one screen; team names and count are kept on this device.
   function initialPlay() {
-    try { if (localStorage.getItem("caseRoomPlay") === "team") return "team"; } catch (e) { /* storage unavailable */ }
+    if (CAN_ROOMS && /[?&]join=/.test(location.search)) return "room";
+    try {
+      const saved = localStorage.getItem("caseRoomPlay");
+      if (saved === "team" || (saved === "room" && CAN_ROOMS)) return saved;
+    } catch (e) { /* storage unavailable */ }
     return "solo";
   }
   function initialTeams() {
@@ -1030,6 +1244,15 @@ a.btn { text-decoration: none; }
   let teamSetupOpen = false; // home: team names and count
   let soundOn = (() => { try { return localStorage.getItem("caseRoomSound") !== "off"; } catch (e) { return true; } })();
   const TEAM_COLORS = ["#f0b44c", "#5aa9ff", "#ff7ab6", "#a3d65c"];
+  // This device's place in a room: "owner" runs the game, "player" asks from a phone, "viewer" is a big screen.
+  const net = { role: "", code: "", token: "", ws: null, status: "off", retry: 0, fails: 0, timer: 0, ping: 0, error: "", last: "", ownerOn: true, presence: [], fresh: false, busy: false, sent: "" };
+  const me = {
+    pid: (() => { try { let id = localStorage.getItem("caseRoomPid"); if (!id) { id = Math.random().toString(36).slice(2, 12); localStorage.setItem("caseRoomPid", id); } return id; } catch (e) { return Math.random().toString(36).slice(2, 12); } })(),
+    name: (() => { try { return (localStorage.getItem("caseRoomName") || "").slice(0, 12); } catch (e) { return ""; } })()
+  };
+  let roomJudge = "host";     // choice when creating a room
+  let pSolveOpen = false;     // player's answer box
+  const joinPrefill = (() => { try { return (new URLSearchParams(location.search).get("join") || "").toUpperCase().replace(/[^A-Z0-9]/g, "").slice(0, 4); } catch (e) { return ""; } })();
   const L = obj => (obj && (obj[state.lang] ?? obj.en)) || "";
   const esc = s => String(s).replace(/[&<>"']/g, ch => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[ch]);
   const cur = () => CASES.find(c => c.id === state.caseId);
@@ -1038,7 +1261,7 @@ a.btn { text-decoration: none; }
   function game(id) {
     if (!state.games[id]) {
       const g = { log: [], hints: 0, hintSrc: [], attempts: 0, status: "open", lastCheck: null };
-      if (state.play === "team") { g.team = state.teams.n; g.turn = 0; g.hintBy = []; }
+      if (state.play === "team" && !state.room) { g.team = state.teams.n; g.turn = 0; g.hintBy = []; }
       state.games[id] = g;
     }
     return state.games[id];
@@ -1264,7 +1487,9 @@ a.btn { text-decoration: none; }
   function header() {
     const t = u();
     let mode;
-    if (HOST_VIEW) {
+    if (remoteRole()) {
+      mode = `<span class="mode-chip" data-s="${net.status === "open" ? "linked" : "connecting"}"><i></i>${esc(t.roomCode)} ${esc(net.code)}</span>`;
+    } else if (HOST_VIEW) {
       mode = `<span class="mode-chip" data-s="${sync.peer ? "linked" : "alone"}"><i></i>${esc(sync.peer ? t.hostLinkedDisplay : t.hostAlone)}</span>`;
     } else if (ai.status === "ready") {
       mode = `<div class="seg" role="group" aria-label="${esc(t.modeLabel)}">
@@ -1275,10 +1500,10 @@ a.btn { text-decoration: none; }
       const connecting = ai.status === "connecting" && state.mode === "ai";
       mode = `<span class="mode-chip" data-s="${connecting ? "connecting" : "host"}"><i></i>${esc(connecting ? t.aiConnecting : t.modeHost)}</span>`;
     }
-    const connect = hasClaude || HOST_VIEW ? "" :
+    const connect = hasClaude || HOST_VIEW || remoteRole() ? "" :
       `<button type="button" class="btn btn-small" data-act="settings" aria-expanded="${showSettings}">${esc(t.connectBtn)}</button>`;
     // The players' screen offers to open the host screen while the host judges.
-    const present = !CAN_PRESENT || HOST_VIEW || effMode() !== "host" ? ""
+    const present = !CAN_PRESENT || HOST_VIEW || remoteRole() || effMode() !== "host" ? ""
       : sync.peer ? `<span class="mode-chip" data-s="linked"><i></i>${esc(t.hostLinked)}</span>`
       : `<a class="btn btn-small" href="?host" target="caseRoomHost" data-act="host-open">${esc(t.hostOpen)}</a>`;
     return `${HOST_VIEW ? `<p class="host-banner" role="note">${esc(t.hostBanner)}</p>` : ""}<header class="top">
@@ -1354,9 +1579,13 @@ a.btn { text-decoration: none; }
         </div>
         ${CAN_IMAGES ? media("hero", t.heroAlt, { cls: "hero-media" }) : ""}
       </section>`;
+    if (net.role === "viewer") {
+      return `<main>${roomBar(t, true)}<section class="panel pv-wait"><p>${esc(t.roomWaitCase)}</p></section></main>`;
+    }
+    const inRoom = !!state.room;
     return `<main>
-      ${intro}
-      ${casesStatus === "ready" ? playDock(t) : ""}
+      ${inRoom ? `${roomBar(t, true)}<p class="note room-pick">${esc(t.roomPickCase)}</p>` : intro}
+      ${casesStatus === "ready" && !inRoom ? playDock(t) : ""}
       ${casesStatus === "ready"
         ? `${shelf("mystery", t.mysteries, t.mysteriesNote, ["YES", "NO", "IRRELEVANT"])}
       ${shelf("bible", t.bible, t.bibleNote, ["YES", "NO", "NOT_STATED"])}`
@@ -1367,8 +1596,40 @@ a.btn { text-decoration: none; }
   }
 
   // Solo or team battle, chosen before opening a case. Stays at the bottom of the screen.
+  // Joining or creating a room, shown above the play bar when Multiplayer is chosen.
+  function roomSetup(t) {
+    const aiOk = ai.status === "ready";
+    const judge = roomJudge === "ai" && aiOk ? "ai" : "host";
+    const err = net.error && t.roomErrors[net.error] ? `<p class="notice" role="status">${esc(t.roomErrors[net.error])}</p>` : "";
+    return `<div class="panel room-setup">
+        <form class="rs-col" data-form="room-join" autocomplete="off">
+          <h3 class="eyebrow">${esc(t.roomJoinTitle)}</h3>
+          <div class="rs-row">
+            <input id="join-code" type="text" inputmode="text" autocapitalize="characters" spellcheck="false" maxlength="4" value="${esc(joinPrefill)}" placeholder="${esc(t.roomCodePh)}" aria-label="${esc(t.roomCodeLabel)}">
+            <input id="join-name" type="text" maxlength="12" value="${esc(me.name)}" placeholder="${esc(t.roomNamePh)}" aria-label="${esc(t.roomNameLabel)}">
+          </div>
+          <div class="actions">
+            <button type="submit" class="btn btn-primary" ${net.busy ? "disabled" : ""}>${esc(net.busy ? t.roomBusy : t.roomJoinBtn)}</button>
+            <button type="button" class="btn" data-act="room-view" ${net.busy ? "disabled" : ""}>${esc(t.roomViewBtn)}</button>
+          </div>
+        </form>
+        <div class="rs-col">
+          <h3 class="eyebrow">${esc(t.roomCreateTitle)}</h3>
+          <div class="ts-row"><span class="fineprint">${esc(t.roomJudge)}</span>
+            <div class="seg" role="group" aria-label="${esc(t.roomJudge)}">
+              <button type="button" data-act="room-judge" data-j="host" aria-pressed="${judge === "host"}">${esc(t.roomJudgeHost)}</button>
+              <button type="button" data-act="room-judge" data-j="ai" aria-pressed="${judge === "ai"}" ${aiOk ? "" : "disabled"}>${esc(t.roomJudgeAi)}</button>
+            </div></div>
+          ${aiOk ? "" : `<p class="fineprint">${esc(t.roomAiNeedsRelay)}</p>`}
+          <div class="actions"><button type="button" class="btn" data-act="room-create" ${net.busy ? "disabled" : ""}>${esc(t.roomCreateBtn)}</button></div>
+        </div>
+        ${err}
+      </div>`;
+  }
+
   function playDock(t) {
     const team = state.play === "team";
+    const multi = state.play === "room" && CAN_ROOMS;
     const n = state.teams.n;
     const range = Array.from({ length: n }, (_, i) => i);
     const chips = range.map(i => `<span class="tchip" style="--tc:${teamColor(i)}"><i></i>${esc(teamName(i))}<b>${esc(t.teamWinsShort(state.teams.wins[i] || 0))}</b></span>`).join("");
@@ -1380,16 +1641,156 @@ a.btn { text-decoration: none; }
       </div>` : "";
     return `<div class="play-dock">
       ${setup}
+      ${multi ? roomSetup(t) : ""}
       <div class="play-bar">
         <div class="seg" role="group" aria-label="${esc(t.playLabel)}">
-          <button type="button" data-act="play" data-play="solo" aria-pressed="${!team}">${esc(t.playSolo)}</button>
+          <button type="button" data-act="play" data-play="solo" aria-pressed="${!team && !multi}">${esc(t.playSolo)}</button>
           <button type="button" data-act="play" data-play="team" aria-pressed="${team}">${esc(t.playTeam)}</button>
+          ${CAN_ROOMS ? `<button type="button" data-act="play" data-play="room" aria-pressed="${multi}">${esc(t.playRoom)}</button>` : ""}
         </div>
         ${team
           ? `<div class="tchips">${chips}</div><button type="button" class="btn btn-small" data-act="team-setup" aria-expanded="${teamSetupOpen}" aria-controls="team-setup">${esc(t.teamSetup)}</button>`
-          : `<p class="fineprint">${esc(t.playSoloNote)}</p>`}
+          : `<p class="fineprint">${esc(multi ? t.playRoomNote : t.playSoloNote)}</p>`}
       </div>
     </div>`;
+  }
+
+  // A player's phone: the case, whose turn it is, and (on their turn) the question box.
+  function playerView() {
+    const t = u();
+    const r = state.room;
+    const c = state.view === "case" ? cur() : null;
+    const status = net.status !== "open" ? t.roomConnWait : !net.ownerOn ? t.roomOwnerOff : "";
+    const err = net.error && t.roomErrors[net.error] && net.error !== "owner_offline" ? t.roomErrors[net.error] : "";
+    const head = `<section class="pv-head">
+        <div class="pv-room"><span class="eyebrow">${esc(t.roomCode)}</span><b class="pv-code">${esc(net.code)}</b></div>
+        <span class="pv-me">${esc(t.roomMe(me.name))}</span>
+        <button type="button" class="btn btn-small" data-act="room-leave">${esc(t.roomLeave)}</button>
+      </section>
+      ${status ? `<p class="notice" role="status">${esc(status)}</p>` : ""}
+      ${err ? `<p class="notice" role="status">${esc(err)}</p>` : ""}`;
+    const roster = r && r.players.length ? `<section class="pv-players">
+        <p class="eyebrow">${esc(t.roomPlayers(r.players.filter(p => p.on).length))}</p>
+        <ul class="rb-players">${r.players.map((p, i) => {
+          const turn = i === r.turn && p.on;
+          return `<li class="${p.on ? "on" : "off"}${turn ? " turn" : ""}${p.pid === me.pid ? " me" : ""}"><i></i>${esc(p.name)}${turn ? `<b>${esc(t.roomTurnTag)}</b>` : ""}</li>`;
+        }).join("")}</ul>
+      </section>` : "";
+    if (!c || !r) {
+      return `<main class="pv">${head}<section class="panel pv-wait"><p>${esc(t.roomWaitCase)}</p></section>${roster}</main>`;
+    }
+    const g = game(c.id);
+    if (g.status !== "open") return `<main class="pv">${head}${closingView(c, g, t)}${roster}</main>`;
+
+    const tp = turnPlayer();
+    const mine = !!(tp && tp.on && tp.pid === me.pid);
+    const p = r.pending;
+    const bounced = r.bounce && r.bounce.pid === me.pid && r.bounce.n === g.log.length;
+    const aiFail = r.notice && r.notice.pid === me.pid && r.notice.code === "ai_fail";
+    const ready = net.status === "open" && net.ownerOn;
+    let turn;
+    if (p) {
+      turn = `<div class="pv-turn wait" aria-live="polite">
+          <p>${esc(p.pid === me.pid ? t.roomWaitJudge : p.kind === "solve" ? t.roomOtherSolve(p.name) : t.roomOtherAsked(p.name))}</p>
+          ${p.pid === me.pid ? `<p class="pv-mine">${p.kind === "ask" ? `“${esc(p.text)}”` : esc(p.text)}</p>` : ""}
+        </div>`;
+    } else if (mine) {
+      const box = pSolveOpen
+        ? `<form class="pv-solve" data-form="p-solve" autocomplete="off">
+            <textarea id="p-sol" maxlength="1500" placeholder="${esc(t.roomSolvePh)}" aria-label="${esc(t.roomSolveOpen)}"></textarea>
+            <div class="actions"><button type="submit" class="btn btn-primary" ${ready ? "" : "disabled"}>${esc(t.roomSolveSend)}</button>
+              <button type="button" class="btn" data-act="p-solve-close">${esc(t.cancel)}</button></div>
+          </form>`
+        : `<form class="pv-ask" data-form="p-ask" autocomplete="off">
+            <input id="p-q" type="text" maxlength="200" placeholder="${esc(t.roomAskPh)}" aria-label="${esc(t.roomAskPh)}">
+            <button type="submit" class="btn btn-primary" ${ready ? "" : "disabled"}>${esc(t.roomAskBtn)}</button>
+          </form>`;
+      const more = confirmAct === "p-hint"
+        ? `<div class="panel warn hint-confirm" role="group"><p class="confirm-q">${esc(t.roomHintConfirm)}</p>
+            <div class="actions"><button type="button" class="btn btn-primary" data-act="p-hint-yes">${esc(t.emergencyYes)}</button>
+            <button type="button" class="btn" data-act="confirm-no">${esc(t.keepGoing)}</button></div></div>`
+        : `<div class="actions">
+            ${pSolveOpen ? "" : `<button type="button" class="btn btn-small" data-act="p-solve-open">${esc(t.roomSolveOpen)}</button>`}
+            ${g.hints < c.hints.length ? `<button type="button" class="btn btn-small btn-emergency" data-act="p-hint" ${ready ? "" : "disabled"}>${esc(t.emergencyBtn)}</button>` : ""}
+            <button type="button" class="btn btn-small" data-act="p-pass" ${ready ? "" : "disabled"}>${esc(t.roomPass)}</button>
+          </div>`;
+      turn = `<div class="pv-turn mine">
+          <p class="pv-turn-title">${esc(t.roomYourTurn)}</p>
+          ${bounced ? `<p class="notice" role="status">${esc(t.roomBounced)}</p>` : ""}
+          ${aiFail ? `<p class="notice" role="status">${esc(t.roomAiFail)}</p>` : ""}
+          ${box}
+          ${more}
+        </div>`;
+    } else {
+      turn = `<div class="pv-turn"><span class="eyebrow">${esc(t.roomTurnNow)}</span><b>${esc(tp && tp.on ? tp.name : t.roomNoTurn)}</b></div>`;
+    }
+    const lastNo = r.last && !r.last.ok && r.last.n === g.log.length
+      ? `<p class="room-last">${esc(t.roomLastNo(r.last.name, r.last.found || 0, r.last.total || 0))}</p>` : "";
+    const hints = c.hints.slice(0, g.hints).map((h, i) => `<button type="button" class="hint-card" data-act="clue" data-i="${i}">
+        <span class="hint-top"><span class="eyebrow">${esc(t.hintBtn(i + 1))}</span><span class="hint-tag">${esc((g.hintSrc || [])[i] === "auto" ? t.hintAutoTag(HINT_EVERY * (i + 1)) : t.hintManualTag)}</span></span>
+        <span class="htext">${esc(L(h))}</span>
+      </button>`).join("");
+    const pen = penaltyOf(g), q = counted(g);
+    return `<main class="pv">
+      ${head}
+      <article class="scene">
+        ${media(`${c.id}-cover`, L(c.title), { zoom: true, big: bigFor(c) })}
+        <div class="scene-body">
+          <div class="fileline"><span class="fileno">${esc(tagFor(c))}</span>${dots(c)}</div>
+          <h2 class="pv-title">${esc(L(c.title))}</h2>
+          <p class="setup">${esc(L(c.setup))}</p>
+        </div>
+      </article>
+      ${turn}
+      ${lastNo}
+      <section class="desk">
+        <div class="desk-head">
+          <div class="count-big"><b>${q + pen}</b><span>${esc(t.totalLabel)}</span>${pen ? `<em>${esc(t.totalBreak(q, pen))}</em>` : ""}</div>
+          <div class="count-small"><span>${esc(t.hints)} <b>${g.hints}</b> / ${c.hints.length}</span></div>
+        </div>
+        ${hintMeter(c, g, t, "")}
+        ${stageHtml(g, t)}
+      </section>
+      ${hints ? `<section class="tools">${hints}</section>` : ""}
+      <section class="log" aria-labelledby="log-h"><div class="log-head"><h3 id="log-h" class="eyebrow">${esc(t.transcript)}</h3></div>${transcriptList(g, t)}</section>
+      ${roster}
+    </main>`;
+  }
+
+  // Room code, QR code and players, on the main screen, the host's screen and the big screen.
+  function roomBar(t, big) {
+    const r = state.room;
+    if (!r) return "";
+    const owner = net.role === "owner";
+    const here = r.players.filter(p => p.on).length;
+    const players = r.players.length
+      ? `<ul class="rb-players">${r.players.map((p, i) => {
+          const turn = i === r.turn && p.on;
+          return `<li class="${p.on ? "on" : "off"}${turn ? " turn" : ""}"><i></i>${esc(p.name)}${turn ? `<b>${esc(t.roomTurnTag)}</b>` : ""}</li>`;
+        }).join("")}</ul>`
+      : `<p class="fineprint">${esc(t.roomNoPlayers)}</p>`;
+    const conn = net.role ? `<span class="mode-chip" data-s="${net.status === "open" ? "linked" : "connecting"}"><i></i>${esc(net.status === "open" ? t.roomConnOpen : t.roomConnWait)}</span>` : "";
+    let ctl = "";
+    if (owner) {
+      ctl = confirmAct === "room-close"
+        ? `<span class="rb-confirm">${esc(t.roomCloseConfirm)}</span><button type="button" class="btn btn-small btn-danger" data-act="room-close-yes">${esc(t.roomClose)}</button><button type="button" class="btn btn-small" data-act="confirm-no">${esc(t.keepGoing)}</button>`
+        : `<button type="button" class="btn btn-small" data-act="room-close">${esc(t.roomClose)}</button>`;
+    } else if (net.role === "viewer") {
+      ctl = `<button type="button" class="btn btn-small" data-act="room-leave">${esc(t.roomLeave)}</button>`;
+    }
+    const qr = HOST_VIEW ? "" : qrSvg(joinUrl(r.code));
+    return `<section class="room-bar${big ? " big" : ""}" aria-label="${esc(t.roomCode)}">
+        <div class="rb-main">
+          <div class="rb-code"><span class="eyebrow">${esc(t.roomCode)}</span><b>${esc(r.code)}</b></div>
+          ${qr ? `<div class="rb-qr">${qr}</div>` : ""}
+          <p class="rb-how">${esc(t.roomHow(joinHost()))}</p>
+        </div>
+        <div class="rb-side">
+          <p class="eyebrow">${esc(t.roomPlayers(here))} · ${esc(t.roomJudgeIs(roomJudgeOf()))}</p>
+          ${players}
+          <div class="rb-meta">${conn}${ctl}</div>
+        </div>
+      </section>`;
   }
 
   // Question record, shared by the case screen and the closing screen.
@@ -1398,7 +1799,8 @@ a.btn { text-decoration: none; }
     const rows = g.log.map(x => ({ x, num: x.v === "INVALID" ? "–" : String(++n).padStart(2, "0") })).reverse();
     return rows.length ? `<ul class="transcript">${rows.map(({ x, num }) => {
       const V = VERDICTS[x.v];
-      const who = typeof x.t === "number" ? `<span class="tteam" style="--tc:${teamColor(x.t)}">${esc(teamName(x.t))}</span>` : "";
+      const who = typeof x.t === "number" ? `<span class="tteam" style="--tc:${teamColor(x.t)}">${esc(teamName(x.t))}</span>`
+        : x.n ? `<span class="tteam" style="--tc:var(--ink-2)">${esc(x.n)}</span>` : "";
       return `<li><span class="tn">Q${esc(num)}</span>${x.q ? `<span class="tq">${who}${esc(x.q)}</span>` : `<span class="tq muted">${who}${esc(t.noRecord)}</span>`}<span class="vchip ${V.cls}">${esc(V[state.lang])}</span>${x.note ? `<span class="tnote">${esc(x.note)}</span>` : ""}</li>`;
     }).join("")}</ul>` : `<p class="empty">${esc(t.noQuestions)}</p>`;
   }
@@ -1481,8 +1883,9 @@ a.btn { text-decoration: none; }
     const team = isTeam(g);
     const winner = team && solved && typeof g.winner === "number" ? g.winner : -1;
     const story = paragraphs(L(c.truth)).map(p => `<p>${esc(p)}</p>`).join("");
+    const remote = remoteRole();
     return `<main class="closing-page">
-      <button type="button" class="back" data-act="home">← ${esc(t.allCases)}</button>
+      ${remote ? "" : `<button type="button" class="back" data-act="home">← ${esc(t.allCases)}</button>`}
       <header class="cp-head${freshStamp ? " fresh" : ""}">
         <p class="cp-kicker">${solved ? "CASE CLOSED" : "FILE OPENED"}</p>
         <h2 class="cp-title"${winner >= 0 ? ` style="--tc:${teamColor(winner)}"` : ""}>${esc(winner >= 0 ? t.teamWins(teamName(winner)) : solved ? t.closedSolved : t.closedRevealed)}</h2>
@@ -1506,10 +1909,10 @@ a.btn { text-decoration: none; }
         <button type="button" class="arch-toggle" data-act="cp-log" aria-expanded="${cpLogOpen}">${esc(t.cpLogTitle(counted(g)))} ${cpLogOpen ? "▴" : "▾"}</button>
         ${cpLogOpen ? transcriptList(g, t) : ""}
       </section>
-      <div class="cp-actions">
+      ${remote ? `<p class="cp-wait">${esc(t.roomWaitNext)}</p>` : `<div class="cp-actions">
         <button type="button" class="btn btn-primary btn-big" data-act="home">${esc(t.cpNew)}</button>
         <button type="button" class="btn" data-act="again">${esc(t.playAgain)}</button>
-      </div>
+      </div>`}
     </main>`;
   }
 
@@ -1549,11 +1952,76 @@ a.btn { text-decoration: none; }
       </div>`;
   }
 
+  // The latest question and its answer, large.
+  function stageHtml(g, t) {
+    const last = g.log[g.log.length - 1];
+    if (busy === "ask") {
+      return `<div class="stage" aria-live="polite"><p class="stage-q">“${esc(pendingQ)}”</p><span class="thinking">${esc(t.thinking)}</span></div>`;
+    }
+    if (!last) return `<div class="stage"><p class="stage-empty">${esc(t.stageEmpty)}</p></div>`;
+    const V = VERDICTS[last.v];
+    return `<div class="stage" aria-live="polite">
+        ${typeof last.t === "number" ? `<span class="stage-team" style="--tc:${teamColor(last.t)}">${esc(teamName(last.t))}</span>`
+          : last.n ? `<span class="stage-team" style="--tc:var(--accent)">${esc(last.n)}</span>` : ""}
+        ${last.q ? `<p class="stage-q">“${esc(last.q)}”</p>` : ""}
+        <span class="verdict ${V.cls}${V.long ? " long" : ""}${freshStamp ? " fresh" : ""}">${esc(V[state.lang])}</span>
+        ${last.note ? `<p class="stage-note">${esc(last.note)}</p>` : ""}
+      </div>`;
+  }
+
+  // How far it is to the next automatic hint, with the emergency hint button.
+  function hintMeter(c, g, t, act) {
+    const q = counted(g);
+    const allOpen = g.hints >= c.hints.length;
+    // The meter runs from the question where the last hint opened to the question where the next one opens.
+    const end = HINT_EVERY * (g.hints + 1);
+    const lastAt = g.hints && Array.isArray(g.hintAt) && typeof g.hintAt[g.hints - 1] === "number" ? g.hintAt[g.hints - 1] : HINT_EVERY * g.hints;
+    const start = Math.min(lastAt, HINT_EVERY * g.hints);
+    const span = Math.max(1, end - start);
+    const done = allOpen ? span : Math.max(0, Math.min(span, q - start));
+    return `<div class="hint-meter">
+        <div class="hm-top"><span class="next-hint">${esc(allOpen ? t.allHintsOpen : t.nextHintIn(Math.max(0, end - q)))}</span>
+          ${!act || allOpen ? "" : `<button type="button" class="btn btn-small btn-emergency" data-act="${act}">${esc(t.emergencyBtn)}</button>`}</div>
+        <div class="hm-bar" role="progressbar" aria-label="${esc(t.hintMeterLabel)}" aria-valuemin="0" aria-valuemax="${span}" aria-valuenow="${done}"><i style="width:${Math.round((done / span) * 100)}%"></i></div>
+      </div>`;
+  }
+
+  // In a room: whose turn it is and the question waiting to be judged.
+  function roomStrip(c, g, t, viewOnly) {
+    const r = state.room;
+    const tp = turnPlayer();
+    const p = r.pending;
+    // Only the host sees a waiting question before it is judged; everyone sees it with its answer.
+    const hostEyes = !viewOnly && (HOST_VIEW || (net.role === "owner" && !sync.peer)) && roomJudgeOf() === "host";
+    let pend = "";
+    if (p && hostEyes) {
+      pend = p.kind === "ask"
+        ? `<div class="pending"><span class="eyebrow">${esc(t.roomPendingAsk(p.name))}</span><p class="pending-q">“${esc(p.text)}”</p>
+            <p class="fineprint">${esc(t.roomStampHint)}</p>
+            <div class="actions"><button type="button" class="btn btn-small" data-act="room-bounce">${esc(t.roomBounce)}</button></div></div>`
+        : `<div class="pending"><span class="eyebrow">${esc(t.roomPendingSolve(p.name))}</span><p class="pending-q">${esc(p.text)}</p>
+            <div class="actions"><button type="button" class="btn btn-small btn-primary" data-act="room-solve-ok">${esc(t.roomSolveOk)}</button>
+            <button type="button" class="btn btn-small" data-act="room-solve-no">${esc(t.roomSolveNo)}</button></div></div>`;
+    } else if (p) {
+      pend = `<div class="pending hidden"><p>${esc(p.kind === "solve" ? t.roomOtherSolve(p.name) : t.roomOtherAsked(p.name))}</p></div>`;
+    }
+    const lastNo = r.last && !r.last.ok && r.last.n === g.log.length
+      ? `<p class="room-last">${esc(t.roomLastNo(r.last.name, r.last.found || 0, r.last.total || 0))}</p>` : "";
+    const someone = r.players.some(x => x.on);
+    return `<div class="team-strip room-strip">
+        <div class="turn-now" style="--tc:var(--accent)"><span>${esc(t.roomTurnNow)}</span><b>${esc(tp && tp.on ? tp.name : t.roomNoTurn)}</b>
+          ${viewOnly || !someone ? "" : `<button type="button" class="btn btn-small" data-act="room-pass">${esc(t.roomPassHost)}</button>`}</div>
+        ${pend}
+        ${lastNo}
+      </div>`;
+  }
+
   function caseView() {
     const t = u();
     const c = cur();
     const g = game(c.id);
     if (g.status !== "open") return closingView(c, g, t);
+    const viewOnly = net.role === "viewer";
     const bible = c.kind === "bible";
     const q = counted(g);
     const mode = effMode();
@@ -1645,32 +2113,12 @@ a.btn { text-decoration: none; }
       : `<button type="button" class="btn" data-act="solved">${esc(t.solvedBtn)}</button>${notesBtn}`;
     const actions = confirmAct === "solved" || confirmAct === "reveal" ? ""
       : `<div class="actions">${modeBtns}<button type="button" class="btn" data-act="reveal">${esc(t.reveal)}</button></div>`;
-    const tools = `<section class="tools b-tools">${actions}${panel}${hints}${HOST_VIEW ? hostNotes(c, g, t) : ""}</section>`;
+    const tools = viewOnly ? `<section class="tools b-tools">${hints}</section>`
+      : `<section class="tools b-tools">${actions}${panel}${hints}${HOST_VIEW ? hostNotes(c, g, t) : ""}</section>`;
 
-    const last = g.log[g.log.length - 1];
-    let stage;
-    if (busy === "ask") {
-      stage = `<div class="stage" aria-live="polite"><p class="stage-q">“${esc(pendingQ)}”</p><span class="thinking">${esc(t.thinking)}</span></div>`;
-    } else if (last) {
-      const V = VERDICTS[last.v];
-      stage = `<div class="stage" aria-live="polite">
-          ${typeof last.t === "number" ? `<span class="stage-team" style="--tc:${teamColor(last.t)}">${esc(teamName(last.t))}</span>` : ""}
-          ${last.q ? `<p class="stage-q">“${esc(last.q)}”</p>` : ""}
-          <span class="verdict ${V.cls}${V.long ? " long" : ""}${freshStamp ? " fresh" : ""}">${esc(V[state.lang])}</span>
-          ${last.note ? `<p class="stage-note">${esc(last.note)}</p>` : ""}
-        </div>`;
-    } else {
-      stage = `<div class="stage"><p class="stage-empty">${esc(t.stageEmpty)}</p></div>`;
-    }
+    const stage = stageHtml(g, t);
     const notice = ai.noticeKey ? `<p class="notice" role="status">${esc(errText(t, ai.noticeKey))}</p>` : "";
     const pen = penaltyOf(g);
-    const allOpen = g.hints >= c.hints.length;
-    // The meter runs from the question where the last hint opened to the question where the next one opens.
-    const end = HINT_EVERY * (g.hints + 1);
-    const lastAt = g.hints && Array.isArray(g.hintAt) && typeof g.hintAt[g.hints - 1] === "number" ? g.hintAt[g.hints - 1] : HINT_EVERY * g.hints;
-    const start = Math.min(lastAt, HINT_EVERY * g.hints);
-    const span = Math.max(1, end - start);
-    const done = allOpen ? span : Math.max(0, Math.min(span, q - start));
     const hintConfirm = confirmAct === "hint" ? `<div class="panel warn hint-confirm" role="group">
           <p class="confirm-q">${esc(team ? t.emergencyConfirmTeam(teamName(g.turn)) : t.emergencyConfirm)}</p>
           <div class="actions">
@@ -1687,15 +2135,13 @@ a.btn { text-decoration: none; }
           <div class="count-big"><b>${q + pen}</b><span>${esc(t.totalLabel)}</span>${pen ? `<em>${esc(t.totalBreak(q, pen))}</em>` : ""}</div>
           <div class="count-small"><span>${esc(t.hints)} <b>${g.hints}</b> / ${c.hints.length}</span></div>
         </div>
-        <div class="hint-meter">
-          <div class="hm-top"><span class="next-hint">${esc(allOpen ? t.allHintsOpen : t.nextHintIn(Math.max(0, HINT_EVERY * (g.hints + 1) - q)))}</span>
-            ${allOpen || confirmAct === "hint" ? "" : `<button type="button" class="btn btn-small btn-emergency" data-act="hint">${esc(t.emergencyBtn)}</button>`}</div>
-          <div class="hm-bar" role="progressbar" aria-label="${esc(t.hintMeterLabel)}" aria-valuemin="0" aria-valuemax="${span}" aria-valuenow="${done}"><i style="width:${Math.round((done / span) * 100)}%"></i></div>
-        </div>
+        ${hintMeter(c, g, t, viewOnly || confirmAct === "hint" ? "" : "hint")}
         ${hintConfirm}
-        ${teamStrip}`;
+        ${state.room ? roomStrip(c, g, t, viewOnly) : teamStrip}`;
     let ask;
-    if (mode === "ai") {
+    if (viewOnly) {
+      ask = `<section class="desk b-ask">${deskHead}${stage}</section>`;
+    } else if (mode === "ai") {
       ask = `<section class="desk b-ask">
           ${deskHead}
           <form class="ask" data-form="ask" autocomplete="off">
@@ -1732,10 +2178,11 @@ a.btn { text-decoration: none; }
 
     return `<main>
       <div class="case-head">
-        <button type="button" class="back" data-act="home">← ${esc(t.allCases)}</button>
+        ${viewOnly ? "" : `<button type="button" class="back" data-act="home">← ${esc(t.allCases)}</button>`}
         <div class="fileline"><span class="fileno">${esc(tagFor(c))}</span>${dots(c)}</div>
         <h2 class="case-title">${esc(L(c.title))}</h2>
       </div>
+      ${state.room ? roomBar(t, false) : ""}
       <div class="case-grid${HOST_VIEW ? " host-grid" : ""}">
         <div class="col-left">${scene}${tools}</div>
         <div class="col-right">${ask}${log}</div>
@@ -1894,13 +2341,15 @@ a.btn { text-decoration: none; }
     if (target) target.focus({ preventScroll: true });
   });
 
-  const KEEP = ["q", "sol", "memo", "relay-url", "relay-pass"];
+  const KEEP = ["q", "sol", "memo", "relay-url", "relay-pass", "join-code", "join-name", "p-q", "p-sol"];
   function render() {
     const active = document.activeElement ? document.activeElement.id : "";
     const kept = {};
     for (const id of KEEP) { const el = document.getElementById(id); if (el) kept[id] = el.value; }
     document.documentElement.lang = state.lang;
-    app.innerHTML = header() + (showSettings ? settingsPanel() : "") + (state.view === "case" && cur() ? caseView() : homeView());
+    if (net.role === "owner" && state.room) state.room.judge = effMode();
+    app.innerHTML = header() + (showSettings ? settingsPanel() : "")
+      + (net.role === "player" ? playerView() : state.view === "case" && cur() ? caseView() : homeView());
     for (const id of KEEP) { const el = document.getElementById(id); if (el && kept[id] !== undefined) el.value = kept[id]; }
     if (active) {
       const el = document.getElementById(active);
@@ -1908,10 +2357,11 @@ a.btn { text-decoration: none; }
     }
     freshStamp = false;
     syncShare();
+    roomPush();
   }
 
   function clearInputs() {
-    for (const id of ["q", "sol", "memo"]) { const el = document.getElementById(id); if (el) el.value = ""; }
+    for (const id of ["q", "sol", "memo", "p-q", "p-sol"]) { const el = document.getElementById(id); if (el) el.value = ""; }
   }
   function clearSettingsInputs() {
     for (const id of ["relay-url", "relay-pass"]) { const el = document.getElementById(id); if (el) el.value = ""; }
@@ -1927,7 +2377,11 @@ a.btn { text-decoration: none; }
   }
 
   /* ---------- Actions ---------- */
+  function roomFresh() {
+    if (state.room) Object.assign(state.room, { pending: null, last: null, bounce: null, notice: null });
+  }
   function openCase(id) {
+    roomFresh();
     closeClue(true);
     clearInputs();
     state.view = "case";
@@ -1938,6 +2392,7 @@ a.btn { text-decoration: none; }
     window.scrollTo(0, 0);
   }
   function goHome() {
+    roomFresh();
     closeClue(true);
     if (busy === "check" && checkCtl) checkCtl.abort();
     clearInputs();
@@ -2023,7 +2478,7 @@ a.btn { text-decoration: none; }
     render();
   }
 
-  async function ask(text) {
+  async function ask(text, from) {
     if (busy || ai.status !== "ready" || effMode() !== "ai") return;
     const c = cur();
     if (!c) return;
@@ -2042,22 +2497,26 @@ a.btn { text-decoration: none; }
       const note = v === "INVALID" && res && typeof res.note === "string" ? res.note.trim().slice(0, 160) : "";
       const entry = { q: text, v, note };
       if (isTeam(g)) entry.t = g.turn;
+      if (from) { entry.p = from.pid; entry.n = from.name; }
       g.log.push(entry);
-      if (v !== "INVALID") nextTurn(g);
+      if (v !== "INVALID") { nextTurn(g); if (from) roomAdvance(true); }
       const qEl = document.getElementById("q");
-      if (qEl && qEl.value.trim() === text) qEl.value = "";
+      if (!from && qEl && qEl.value.trim() === text) qEl.value = "";
       freshStamp = true;
       autoHint(c, g);
     } catch (e) {
       handleError(e);
+      if (from && state.room) state.room.notice = { pid: from.pid, code: "ai_fail" };
     } finally {
+      if (from && state.room) state.room.pending = null;
       busy = null;
       pendingQ = "";
       render();
+      roomJudgeNext();
     }
   }
 
-  async function check(text) {
+  async function check(text, from) {
     if (busy || ai.status !== "ready") return;
     const c = cur();
     if (!c) return;
@@ -2084,14 +2543,21 @@ a.btn { text-decoration: none; }
         if (isTeam(g)) { g.winner = g.turn; state.teams.wins[g.turn] = (state.teams.wins[g.turn] || 0) + 1; }
       } else if (isTeam(g)) {
         nextTurn(g);
+      } else if (from && state.room) {
+        // Everyone sees that the answer wasn't it yet, and the turn moves on.
+        state.room.last = { name: from.name, ok: false, n: g.log.length, found: c.keys.filter(k => hits[k.id]).length, total: c.keys.length };
+        roomAdvance(true);
       }
     } catch (e) {
       handleError(e);
+      if (from && state.room) state.room.notice = { pid: from.pid, code: "ai_fail" };
     } finally {
+      if (from && state.room) state.room.pending = null;
       busy = null;
       checkCtl = null;
       render();
       if (cur() && game(cur().id).status === "solved") scrollToClosing();
+      roomJudgeNext();
     }
   }
 
@@ -2110,6 +2576,7 @@ a.btn { text-decoration: none; }
           if (busy === "check" && checkCtl) checkCtl.abort();
           state.mode = b.dataset.mode; remember("caseRoomMode", state.mode);
           resetPanels(); ai.noticeKey = ""; render();
+          roomJudgeNext();
         }
         break;
       case "settings":
@@ -2133,8 +2600,8 @@ a.btn { text-decoration: none; }
         if (im) openLightbox(im.getAttribute("src"), im.getAttribute("alt"));
         break;
       }
-      case "open": openCase(b.dataset.id); break;
-      case "home": goHome(); break;
+      case "open": if (!remoteRole()) openCase(b.dataset.id); break;
+      case "home": if (!remoteRole()) goHome(); break;
       case "reload-cases": loadCases(); break;
       case "host-open": {
         const w = window.open(b.getAttribute("href"), "caseRoomHost", "popup,width=640,height=900");
@@ -2167,7 +2634,8 @@ a.btn { text-decoration: none; }
         }
         break;
       case "play":
-        if (b.dataset.play !== state.play && (b.dataset.play === "solo" || b.dataset.play === "team")) {
+        if (b.dataset.play !== state.play && (b.dataset.play === "solo" || b.dataset.play === "team" || (b.dataset.play === "room" && CAN_ROOMS))) {
+          net.error = "";
           state.play = b.dataset.play; remember("caseRoomPlay", state.play);
           teamSetupOpen = state.play === "team";
           render();
@@ -2178,6 +2646,49 @@ a.btn { text-decoration: none; }
         if ([2, 3, 4].includes(Number(b.dataset.n))) { state.teams.n = Number(b.dataset.n); saveTeams(); render(); }
         break;
       case "team-reset": state.teams.wins = [0, 0, 0, 0]; render(); break;
+      case "room-judge": roomJudge = b.dataset.j === "ai" ? "ai" : "host"; render(); break;
+      case "room-create": roomCreate(); break;
+      case "room-view": roomJoin(true); break;
+      case "room-leave": roomLeave("left"); break;
+      case "room-close": confirmAct = "room-close"; render(); break;
+      case "room-close-yes":
+        if (net.role === "owner") roomSend({ type: "close" });
+        roomLeave("left");
+        break;
+      case "room-pass":
+        if (state.room && g && g.status === "open") { state.room.pending = null; roomAdvance(true); render(); }
+        break;
+      case "room-bounce":
+        if (state.room && state.room.pending && g) {
+          state.room.bounce = { pid: state.room.pending.pid, n: g.log.length };
+          state.room.pending = null;
+          render();
+        }
+        break;
+      case "room-solve-ok":
+        if (state.room && state.room.pending && state.room.pending.kind === "solve" && g && g.status === "open") {
+          state.room.last = { name: state.room.pending.name, ok: true, n: g.log.length };
+          state.room.pending = null;
+          g.status = "solved";
+          resetPanels(); freshStamp = true; render(); scrollToClosing();
+        }
+        break;
+      case "room-solve-no":
+        if (state.room && state.room.pending && state.room.pending.kind === "solve" && g) {
+          state.room.last = { name: state.room.pending.name, ok: false, n: g.log.length };
+          state.room.pending = null;
+          roomAdvance(true);
+          render();
+        }
+        break;
+      case "p-solve-open":
+        pSolveOpen = true; confirmAct = null; render();
+        requestAnimationFrame(() => { const el = document.getElementById("p-sol"); if (el) el.focus(); });
+        break;
+      case "p-solve-close": pSolveOpen = false; render(); break;
+      case "p-hint": confirmAct = "p-hint"; render(); break;
+      case "p-hint-yes": confirmAct = null; roomSend({ type: "intent", intent: { type: "hint" } }); render(); break;
+      case "p-pass": roomSend({ type: "intent", intent: { type: "pass" } }); break;
       case "sound":
         soundOn = !soundOn; remember("caseRoomSound", soundOn ? "on" : "off");
         render();
@@ -2189,13 +2700,17 @@ a.btn { text-decoration: none; }
       case "stamp":
         if (g && g.status === "open" && VERDICTS[b.dataset.v]) {
           const memo = document.getElementById("memo");
-          const text = memo ? memo.value.trim().slice(0, 200) : "";
+          const r = state.room;
+          const pend = r && r.pending && r.pending.kind === "ask" ? r.pending : null;
+          const text = (memo ? memo.value.trim().slice(0, 200) : "") || (pend ? pend.text : "");
           const entry = { q: text, v: b.dataset.v, note: "" };
           if (isTeam(g)) entry.t = g.turn;
+          if (pend) { entry.p = pend.pid; entry.n = pend.name; r.pending = null; r.bounce = null; }
           g.log.push(entry);
           if (memo) memo.value = "";
           freshStamp = true;
           nextTurn(g);
+          if (pend) roomAdvance(true);
           autoHint(c, g);
           render();
         }
@@ -2204,6 +2719,7 @@ a.btn { text-decoration: none; }
         if (g && g.log.length) {
           const gone = g.log.pop();
           if (isTeam(g) && typeof gone.t === "number") g.turn = gone.t;
+          if (state.room && gone.p) { const i = state.room.players.findIndex(x => x.pid === gone.p); if (i >= 0) state.room.turn = i; }
           render();
         }
         break;
@@ -2225,7 +2741,7 @@ a.btn { text-decoration: none; }
         }
         break;
       case "again":
-        if (c) { closeClue(true); delete state.games[c.id]; resetPanels(); ai.noticeKey = ""; clearInputs(); render(); window.scrollTo(0, 0); }
+        if (c && !remoteRole()) { roomFresh(); closeClue(true); delete state.games[c.id]; resetPanels(); ai.noticeKey = ""; clearInputs(); render(); window.scrollTo(0, 0); }
         break;
     }
   });
@@ -2249,8 +2765,333 @@ a.btn { text-decoration: none; }
       if (v.trim()) check(v.trim());
     } else if (f.dataset.form === "settings") {
       saveRelay();
+    } else if (f.dataset.form === "room-join") {
+      roomJoin(false);
+    } else if (f.dataset.form === "p-ask") {
+      const el = document.getElementById("p-q");
+      const v = el ? el.value.replace(/\s+/g, " ").trim().slice(0, 200) : "";
+      if (v && roomSend({ type: "intent", intent: { type: "ask", text: v } })) { net.sent = v; el.value = ""; }
+    } else if (f.dataset.form === "p-solve") {
+      const el = document.getElementById("p-sol");
+      const v = el ? el.value.trim().slice(0, 1500) : "";
+      if (v && roomSend({ type: "intent", intent: { type: "solve", text: v } })) { el.value = ""; pSolveOpen = false; render(); }
     }
   });
+
+  /* ---------- Rooms: play together on phones, taking turns ---------- */
+  // The device that creates a room owns it: it keeps the game and sends it to the rooms server,
+  // which passes it on to the players' phones and the big screen. Players send what they want to do;
+  // the owner checks whose turn it is and updates the game.
+  const ROOM_SERVER = (() => {
+    try {
+      const s = new URLSearchParams(location.search).get("server");
+      if (s && /^http:\/\/(127\.0\.0\.1|localhost)(:\d+)?$/.test(s)) return s;   // local testing only
+    } catch (e) { /* no query */ }
+    return "https://case-room-rooms.youth-bf0.workers.dev";
+  })();
+  const newRoom = code => ({ code, judge: "host", players: [], turn: 0, pending: null, last: null, bounce: null, notice: null });
+  const turnPlayer = () => (state.room && state.room.players[state.room.turn]) || null;
+  const roomJudgeOf = () => (state.room && state.room.judge === "ai" ? "ai" : "host");
+  const remoteRole = () => net.role === "player" || net.role === "viewer";
+  const joinHost = () => (location.host + location.pathname.replace(/index\.html$/, "")).replace(/\/$/, "");
+  const joinUrl = code => `${location.origin}${location.pathname}?join=${code}`;
+
+  function roomSave() {
+    try {
+      if (net.role) sessionStorage.setItem("caseRoomSession", JSON.stringify({ role: net.role, code: net.code, token: net.token, host: HOST_VIEW }));
+      else sessionStorage.removeItem("caseRoomSession");
+    } catch (e) { /* storage unavailable */ }
+  }
+  // After a reload, go back into the room this tab was in.
+  function roomResume() {
+    if (!CAN_ROOMS) return;
+    let s = null;
+    try { s = JSON.parse(sessionStorage.getItem("caseRoomSession") || "null"); } catch (e) { s = null; }
+    if (!s || !/^[A-Z0-9]{4}$/.test(s.code || "") || !["owner", "player", "viewer"].includes(s.role)) return;
+    if (!!s.host !== HOST_VIEW) return;   // a copy that came with a newly opened window
+    if (s.role === "player" && !me.name) return;
+    state.play = "room";
+    if (s.role === "owner") { state.room = newRoom(s.code); net.fresh = true; }
+    roomConnect(s.role, s.code, s.token || "");
+  }
+
+  async function roomCreate() {
+    if (net.busy) return;
+    net.busy = true; net.error = ""; render();
+    try {
+      const res = await fetch(`${ROOM_SERVER}/rooms`, { method: "POST" });
+      if (!res.ok) throw new Error("HTTP " + res.status);
+      const data = await res.json();
+      if (!data || !/^[A-Z0-9]{4}$/.test(data.code || "") || !data.token) throw new Error("bad reply");
+      state.mode = roomJudge === "ai" && ai.status === "ready" ? "ai" : "host";
+      remember("caseRoomMode", state.mode);
+      state.room = newRoom(data.code);
+      state.view = "home";
+      net.busy = false;
+      roomConnect("owner", data.code, data.token);
+    } catch (e) {
+      net.busy = false; net.error = "create_failed"; render();
+    }
+  }
+
+  async function roomJoin(asViewer) {
+    const codeEl = document.getElementById("join-code"), nameEl = document.getElementById("join-name");
+    const code = String(codeEl ? codeEl.value : "").toUpperCase().replace(/[^A-Z0-9]/g, "");
+    const name = String(nameEl ? nameEl.value : "").replace(/\s+/g, " ").trim().slice(0, 12);
+    if (code.length !== 4) { net.error = "bad_code"; render(); return; }
+    if (!asViewer && !name) { net.error = "need_name"; render(); return; }
+    if (net.busy) return;
+    net.busy = true; net.error = ""; render();
+    try {
+      const res = await fetch(`${ROOM_SERVER}/rooms/${code}/info`);
+      net.busy = false;
+      if (res.status === 404) { net.error = "no_room"; render(); return; }
+      if (!res.ok) throw new Error("HTTP " + res.status);
+    } catch (e) {
+      net.busy = false; net.error = "offline"; render(); return;
+    }
+    if (!asViewer) { me.name = name; remember("caseRoomName", name); }
+    state.room = null; state.view = "home"; state.games = {};
+    roomConnect(asViewer ? "viewer" : "player", code, "");
+  }
+
+  function roomConnect(role, code, token) {
+    roomDrop();
+    Object.assign(net, { role, code, token, status: "connecting", retry: 0, fails: 0, error: "", last: "", ownerOn: true });
+    roomSave();
+    roomOpen();
+    render();
+  }
+
+  function roomOpen() {
+    if (!net.role) return;
+    const q = new URLSearchParams({ role: net.role });
+    if (net.role === "owner") q.set("token", net.token);
+    if (net.role === "player") { q.set("pid", me.pid); q.set("name", me.name); }
+    let ws;
+    try { ws = new WebSocket(`${ROOM_SERVER.replace(/^http/, "ws")}/rooms/${net.code}/ws?${q}`); }
+    catch (e) { roomRetry(); return; }
+    net.ws = ws;
+    ws.onopen = () => {
+      if (net.ws !== ws) return;
+      net.status = "open"; net.retry = 0; net.fails = 0; net.last = "";
+      clearInterval(net.ping);
+      net.ping = setInterval(() => { try { if (ws.readyState === 1) ws.send("ping"); } catch (e) { /* closed */ } }, 25000);
+      render();
+      roomPush(true);
+    };
+    ws.onmessage = e => { if (net.ws === ws) roomMessage(e.data); };
+    ws.onclose = () => {
+      if (net.ws !== ws) return;
+      net.ws = null;
+      clearInterval(net.ping);
+      if (!net.role) return;
+      net.status = "connecting";
+      render();
+      roomRetry();
+    };
+  }
+
+  function roomRetry() {
+    clearTimeout(net.timer);
+    net.fails += 1;
+    const wait = [1000, 2000, 4000, 8000, 15000][Math.min(net.retry++, 4)];
+    net.timer = setTimeout(async () => {
+      if (!net.role) return;
+      if (net.fails >= 3) {
+        // Before trying again, check that the room still exists.
+        try {
+          const res = await fetch(`${ROOM_SERVER}/rooms/${net.code}/info`);
+          if (res.status === 404) { roomLeave("gone"); return; }
+        } catch (e) { /* offline: keep trying */ }
+      }
+      roomOpen();
+    }, wait);
+  }
+
+  function roomDrop() {
+    clearTimeout(net.timer);
+    clearInterval(net.ping);
+    const ws = net.ws;
+    net.ws = null;
+    if (ws) { try { ws.close(1000, "bye"); } catch (e) { /* closed */ } }
+  }
+
+  // Leave the room on this device. reason: "left" | "closed" | "gone"
+  function roomLeave(reason) {
+    const remote = remoteRole();
+    Object.assign(net, { role: "", code: "", token: "", status: "off", fresh: false, presence: [], last: "", sent: "" });
+    roomDrop();
+    roomSave();
+    state.room = null;
+    if (remote) { state.games = {}; state.view = "home"; }
+    net.error = reason === "left" ? "" : reason;
+    pSolveOpen = false;
+    resetPanels();
+    closeClue(true);
+    render();
+    window.scrollTo(0, 0);
+  }
+
+  function roomSend(obj) {
+    if (!net.ws || net.ws.readyState !== 1) return false;
+    try { net.ws.send(JSON.stringify(obj)); return true; } catch (e) { return false; }
+  }
+
+  // What everyone else sees: the open case, its game, and the room (players, turn, waiting question).
+  function roomSnapshot() {
+    const g = state.view === "case" && state.caseId ? state.games[state.caseId] || null : null;
+    return { view: g ? "case" : "home", caseId: g ? state.caseId : null, game: g, room: state.room };
+  }
+  function roomPush(force) {
+    if (net.role !== "owner" || net.fresh || !state.room || !net.ws || net.ws.readyState !== 1) return;
+    const text = JSON.stringify({ type: "state", state: roomSnapshot() });
+    if (!force && text === net.last) return;
+    net.last = text;
+    try { net.ws.send(text); } catch (e) { /* closed */ }
+  }
+
+  function roomMessage(raw) {
+    if (raw === "pong") return;
+    let m;
+    try { m = JSON.parse(raw); } catch (e) { return; }
+    if (!m || typeof m !== "object") return;
+    if (m.type === "state" && remoteRole()) roomApply(m.state);
+    else if (m.type === "restore" && net.role === "owner") roomRestore(m.state);
+    else if (m.type === "presence" && net.role === "owner") {
+      net.presence = Array.isArray(m.players) ? m.players : [];
+      net.fresh = false;
+      mergePresence();
+      render();
+    }
+    else if (m.type === "intent" && net.role === "owner") roomIntent(m.from, m.intent);
+    else if (m.type === "owner") { net.ownerOn = !!m.on; render(); }
+    else if (m.type === "closed") roomLeave("closed");
+    else if (m.type === "error" && typeof m.code === "string") { net.error = m.code; render(); }
+  }
+
+  // A reloaded owner takes back the game it had before the reload.
+  function roomRestore(st) {
+    if (!net.fresh || !st || typeof st !== "object") return;
+    if (st.room && st.room.code === net.code) {
+      state.room = st.room;
+      if (st.room.judge === "ai" || st.room.judge === "host") state.mode = st.room.judge;
+    }
+    if (st.view === "case" && st.game && typeof st.game === "object" && CASES.some(c => c.id === st.caseId)) {
+      state.view = "case"; state.caseId = st.caseId; state.games[st.caseId] = st.game;
+    }
+  }
+
+  // Mark who is here, add newcomers at the end of the turn order, and keep the turn on someone who is here.
+  function mergePresence() {
+    const r = state.room;
+    if (!r) return;
+    const here = new Map();
+    for (const p of net.presence) if (p && p.pid) here.set(String(p.pid), String(p.name || "").slice(0, 12));
+    for (const [pid, name] of here) {
+      const p = r.players.find(x => x.pid === pid);
+      if (p) { p.on = true; if (name) p.name = name; }
+      else r.players.push({ pid, name: name || "?", on: true });
+    }
+    for (const p of r.players) if (!here.has(p.pid)) p.on = false;
+    const tp = r.players[r.turn];
+    if (!tp || !tp.on) roomAdvance(false);
+  }
+
+  // Move the turn to the next player who is here (step=false keeps the current player if they are here).
+  function roomAdvance(step) {
+    const r = state.room;
+    if (!r) return;
+    const n = r.players.length;
+    if (!n) { r.turn = 0; return; }
+    if (!(r.turn >= 0 && r.turn < n)) r.turn = 0;
+    for (let k = step ? 1 : 0; k <= n; k++) {
+      const i = (r.turn + k) % n;
+      if (r.players[i].on) { r.turn = i; return; }
+    }
+  }
+
+  // What a player asked to do. Only the player whose turn it is can act.
+  function roomIntent(from, intent) {
+    const r = state.room;
+    if (!r || !from || !intent || typeof intent !== "object") return;
+    const c = cur();
+    const g = c && state.view === "case" ? game(c.id) : null;
+    if (!g || g.status !== "open") return;
+    const tp = turnPlayer();
+    if (!tp || tp.pid !== from.pid) return;
+    if (intent.type === "pass") {
+      if (r.pending) return;
+      roomAdvance(true); render(); return;
+    }
+    if (intent.type === "hint") {
+      if (g.hints < c.hints.length) { openHint(c, g, "manual"); render(); }
+      return;
+    }
+    if (r.pending) return;
+    const text = String(intent.text || "").replace(/\s+/g, " ").trim();
+    if (!text) return;
+    if (intent.type === "ask") r.pending = { pid: from.pid, name: from.name, kind: "ask", text: text.slice(0, 200) };
+    else if (intent.type === "solve") r.pending = { pid: from.pid, name: from.name, kind: "solve", text: text.slice(0, 1500) };
+    else return;
+    r.bounce = null; r.notice = null;
+    render();
+    roomJudgeNext();
+  }
+
+  // With AI judging, the owner's device judges the waiting question or answer.
+  function roomJudgeNext() {
+    const r = state.room;
+    if (net.role !== "owner" || !r || !r.pending || busy || effMode() !== "ai" || ai.status !== "ready") return;
+    const p = r.pending;
+    if (p.kind === "ask") ask(p.text, p); else check(p.text, p);
+  }
+
+  // Players and the big screen show what the owner sent.
+  function roomApply(st) {
+    if (!st || typeof st !== "object") return;
+    const prev = remoteBefore();
+    state.room = st.room && typeof st.room === "object" ? st.room : null;
+    const caseOk = st.view === "case" && st.game && typeof st.game === "object" && CASES.some(c => c.id === st.caseId);
+    state.view = caseOk ? "case" : "home";
+    if (caseOk) { state.caseId = st.caseId; state.games = { [st.caseId]: st.game }; }
+    else state.games = {};
+    // A question the host sent back goes back into the player's box.
+    const r = state.room;
+    const refill = net.role === "player" && r && r.bounce && r.bounce.pid === me.pid ? net.sent : "";
+    if (refill) net.sent = "";
+    remoteAfter(prev);
+    if (refill) {
+      const box = document.getElementById("p-q");
+      if (box && !box.value) box.value = refill;
+    }
+  }
+
+  // QR code for joining, drawn by qrcode.js (loaded only when a room is open).
+  const qrCache = {};
+  let qrState = "idle";
+  function qrSvg(text) {
+    if (qrCache[text]) return qrCache[text];
+    if (typeof window.qrcode === "function") {
+      try {
+        const q = window.qrcode(0, "M");
+        q.addData(text);
+        q.make();
+        qrCache[text] = q.createSvgTag({ cellSize: 4, margin: 2, scalable: true });
+        return qrCache[text];
+      } catch (e) { return ""; }
+    }
+    if (qrState === "idle") {
+      qrState = "loading";
+      const el = document.createElement("script");
+      el.src = "qrcode.js";
+      el.async = true;
+      el.onload = () => { qrState = "ready"; render(); };
+      el.onerror = () => { qrState = "failed"; };
+      document.head.appendChild(el);
+    }
+    return "";
+  }
 
   /* ---------- Host screen link (same computer, same browser) ---------- */
   // The host screen (?host) and the players' screen send each other the game state, so a question,
@@ -2259,42 +3100,52 @@ a.btn { text-decoration: none; }
     if (!sync.ch) return;
     try { sync.ch.postMessage(Object.assign({ from: sync.id, host: HOST_VIEW }, msg)); } catch (e) { /* channel closed */ }
   }
-  const syncSnapshot = () => ({ view: state.view, caseId: state.caseId, games: state.games, play: state.play, teams: state.teams });
+  const syncSnapshot = () => ({ view: state.view, caseId: state.caseId, games: state.games, play: state.play, teams: state.teams, room: state.room });
   function syncShare(force) {
-    if (!sync.ch || sync.applying) return;
+    if (!sync.ch || sync.applying || remoteRole()) return;
     const snap = JSON.stringify(syncSnapshot());
     if (!force && snap === sync.last) return;
     sync.last = snap;
     syncPost({ type: "state", state: JSON.parse(snap) });
   }
-  function syncApply(st) {
-    if (!st || typeof st !== "object") return;
-    const prevView = state.view, prevCase = state.caseId;
-    const pg = prevCase && state.games[prevCase];
-    const prevHints = pg ? pg.hints : 0, prevLog = pg ? pg.log.length : 0, prevStatus = pg ? pg.status : "open";
-    state.games = st.games && typeof st.games === "object" ? st.games : {};
-    if (st.play === "solo" || st.play === "team") state.play = st.play;
-    if (st.teams && [2, 3, 4].includes(st.teams.n) && Array.isArray(st.teams.names) && Array.isArray(st.teams.wins)) state.teams = st.teams;
-    const caseOk = st.view === "case" && CASES.some(c => c.id === st.caseId);
-    state.view = caseOk ? "case" : "home";
-    if (caseOk) state.caseId = st.caseId;
-    const moved = state.view !== prevView || state.caseId !== prevCase;
-    if (moved) { resetPanels(); closeClue(true); clearInputs(); }
+  function remoteBefore() {
+    const pg = state.caseId && state.games[state.caseId];
+    return { view: state.view, caseId: state.caseId, hints: pg ? pg.hints : 0, log: pg ? pg.log.length : 0, status: pg ? pg.status : "open" };
+  }
+  function remoteAfter(prev) {
+    const moved = state.view !== prev.view || state.caseId !== prev.caseId;
+    if (moved) { resetPanels(); closeClue(true); clearInputs(); pSolveOpen = false; }
     const g = state.view === "case" ? state.games[state.caseId] : null;
     const status = g ? g.status : "open";
-    freshStamp = !moved && !!g && (g.log.length > prevLog || (status !== "open" && prevStatus === "open"));
+    freshStamp = !moved && !!g && (g.log.length > prev.log || (status !== "open" && prev.status === "open"));
     sync.last = JSON.stringify(syncSnapshot());
     sync.applying = true;
     try { render(); renderClue(); } finally { sync.applying = false; }
-    if (moved || status !== prevStatus) window.scrollTo(0, 0);
+    if (moved || status !== prev.status) window.scrollTo(0, 0);
     if (!HOST_VIEW && !moved && g) {
-      if (status === "open" && g.hints > prevHints) showClue(g.hints - 1, true);
-      else if (clue && (g.log.length !== prevLog || status !== prevStatus)) closeClue(true);
+      if (status === "open" && g.hints > prev.hints) showClue(g.hints - 1, true);
+      else if (clue && (g.log.length !== prev.log || status !== prev.status)) closeClue(true);
     }
+  }
+  function syncApply(st) {
+    if (!st || typeof st !== "object") return;
+    const prev = remoteBefore();
+    state.games = st.games && typeof st.games === "object" ? st.games : {};
+    if (st.play === "solo" || st.play === "team") state.play = st.play;
+    if (st.teams && [2, 3, 4].includes(st.teams.n) && Array.isArray(st.teams.names) && Array.isArray(st.teams.wins)) state.teams = st.teams;
+    if ("room" in st) {
+      const room = st.room && typeof st.room === "object" ? st.room : null;
+      if (net.role !== "owner") state.room = room;
+      else if (room && room.code === net.code) { state.room = room; mergePresence(); }   // the owner keeps its own list of who is here
+    }
+    const caseOk = st.view === "case" && CASES.some(c => c.id === st.caseId);
+    state.view = caseOk ? "case" : "home";
+    if (caseOk) state.caseId = st.caseId;
+    remoteAfter(prev);
   }
   function syncMessage(m) {
     // Pair a host screen with a players' screen; ignore windows of the same kind.
-    if (!m || m.from === sync.id || m.host === HOST_VIEW) return;
+    if (!m || m.from === sync.id || m.host === HOST_VIEW || remoteRole()) return;
     if (m.type === "bye") { if (sync.peer) { sync.peer = false; render(); } return; }
     const wasPeer = sync.peer;
     sync.peer = true;
@@ -2353,11 +3204,11 @@ a.btn { text-decoration: none; }
       casesStatus = "error";
     }
     render();
-    if (casesStatus === "ready") syncStart();
+    if (casesStatus === "ready") { syncStart(); roomResume(); }
   }
 
   render();
-  if (casesStatus !== "ready") loadCases(); else syncStart();
+  if (casesStatus !== "ready") loadCases(); else { syncStart(); roomResume(); }
   initAI();
   try {
     const hot = window.claude && window.claude.hot;

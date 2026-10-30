@@ -1,0 +1,773 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#0a0e15">
+<title>그림 한꺼번에 만들기</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=Noto+Serif+KR:wght@600;700&display=swap">
+<style>
+:root {
+  /* Layout: a work table for making the game's pictures. Connection and controls on top, then one card per picture grouped like the game. Same dark look as the game. */
+  color-scheme: dark;
+  --bg: #0a0e15;
+  --panel: #10151f;
+  --panel-2: #161d2a;
+  --field: #0c1119;
+  --line: #1f2836;
+  --line-strong: #2e3a4e;
+  --ink: #e8ecf3;
+  --ink-2: #aab3c3;
+  --ink-3: #7a869b;
+  --accent: #d9b25f;
+  --accent-ink: #171207;
+  --ok: #5fd09a;
+  --warn: #ff8a7d;
+  --info: #7cc0ea;
+  --font-ui: "IBM Plex Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --font-display: "Noto Serif KR", "AppleMyungjo", "Batang", Georgia, serif;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+html { font-size: clamp(15px, 0.35vw + 12px, 18px); -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--font-ui); line-height: 1.55; word-break: keep-all; overflow-wrap: break-word; }
+[hidden] { display: none !important; }
+p, h1, h2, h3, ol { margin: 0; }
+button, input { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.wrap {
+  max-width: 1200px; margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 2rem 4rem;
+}
+.eyebrow { font-family: var(--font-mono); font-size: 0.74rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-3); }
+h1 { font-family: var(--font-display); font-size: clamp(1.8rem, 3.6vw, 2.4rem); line-height: 1.2; margin-top: 0.4rem; }
+.lede { color: var(--ink-2); margin-top: 0.7rem; max-width: 66ch; }
+.panel { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 1.1rem 1.2rem 1.2rem; }
+.top-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 1rem; margin-top: 1.6rem; }
+@media (min-width: 900px) { .top-grid { grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); } }
+.panel h2 { font-family: var(--font-display); font-size: 1.15rem; margin-bottom: 0.7rem; }
+.steps { padding: 0; list-style: none; display: grid; gap: 0.45rem; counter-reset: s; }
+.steps li { display: grid; grid-template-columns: 1.8rem minmax(0, 1fr); counter-increment: s; color: var(--ink-2); font-size: 0.95rem; }
+.steps li::before { content: counter(s, decimal-leading-zero); font-family: var(--font-mono); font-size: 0.78rem; color: var(--accent); padding-top: 0.15rem; }
+.steps b { color: var(--ink); font-weight: 600; }
+.note { color: var(--ink-3); font-size: 0.86rem; margin-top: 0.8rem; }
+.conn { display: grid; gap: 0.45rem; }
+.conn label { font-weight: 600; font-size: 0.88rem; }
+.conn input {
+  min-width: 0; padding: 0.55rem 0.7rem; border: 1px solid var(--line-strong); border-radius: 8px;
+  background: var(--field); font-family: var(--font-mono); font-size: 0.92rem;
+}
+.bar {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; margin-top: 1rem;
+  display: grid; gap: 0.7rem; background: var(--panel); box-shadow: 0 12px 30px -18px #000; border: 1px solid var(--line-strong); border-radius: 14px; padding: 0.9rem 1.1rem;
+}
+.bar-row { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.6rem 1rem; }
+.counts { display: flex; flex-wrap: wrap; gap: 0.4rem 1rem; font-size: 0.9rem; color: var(--ink-2); font-variant-numeric: tabular-nums; }
+.counts b { color: var(--ink); }
+.actions { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.meter { height: 6px; border-radius: 99px; background: var(--field); border: 1px solid var(--line); overflow: hidden; }
+.meter i { display: block; height: 100%; width: 0; background: var(--accent); transition: width 0.3s ease; }
+.msg { font-size: 0.92rem; padding: 0.55rem 0.8rem; border-radius: 8px; border: 1px solid color-mix(in srgb, var(--info) 45%, transparent); background: color-mix(in srgb, var(--info) 8%, transparent); }
+.msg.bad { border-color: color-mix(in srgb, var(--warn) 50%, transparent); background: color-mix(in srgb, var(--warn) 8%, transparent); }
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.35rem; border: 1px solid var(--line-strong);
+  background: var(--panel-2); color: var(--ink); border-radius: 8px; padding: 0.5rem 0.95rem; font-size: 0.9rem; font-weight: 600;
+  cursor: pointer; text-decoration: none; white-space: nowrap;
+}
+.btn:hover { border-color: var(--ink-3); }
+.btn.primary { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+.btn.small { padding: 0.25rem 0.6rem; font-size: 0.8rem; }
+.btn:disabled { opacity: 0.45; cursor: not-allowed; }
+.group-title { font-family: var(--font-display); font-size: 1.3rem; margin-top: 2.2rem; padding-top: 1.4rem; border-top: 1px solid var(--line); }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 17rem), 1fr)); gap: 1rem; margin-top: 1rem; }
+.card { display: grid; grid-template-rows: auto 1fr; background: var(--panel); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
+.thumb { position: relative; aspect-ratio: 16 / 9; max-width: 100%; background: var(--field); border: 0; padding: 0; display: block; width: 100%; cursor: default; }
+.thumb img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.thumb.has-img { cursor: zoom-in; }
+.thumb .ph { position: absolute; inset: 0; display: grid; place-items: center; color: var(--ink-3); font-size: 0.85rem;
+  background-image: repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.025) 0 1px, transparent 1px 14px); }
+.thumb.working .ph::after { content: ""; width: 1.6rem; height: 1.6rem; border-radius: 50%; border: 2px solid var(--line-strong); border-top-color: var(--accent); animation: spin 0.9s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+.meta { display: grid; gap: 0.35rem; align-content: start; padding: 0.75rem 0.9rem 0.9rem; }
+.title { font-weight: 700; }
+.file { font-family: var(--font-mono); font-size: 0.8rem; color: var(--ink-2); overflow-wrap: anywhere; }
+.chip { justify-self: start; font-size: 0.75rem; font-weight: 700; border-radius: 5px; padding: 0.05rem 0.45rem; border: 1px solid var(--line-strong); color: var(--ink-2); }
+.chip.exists { color: var(--info); border-color: color-mix(in srgb, var(--info) 45%, transparent); }
+.chip.done { color: var(--ok); border-color: color-mix(in srgb, var(--ok) 45%, transparent); }
+.chip.working { color: var(--accent); border-color: color-mix(in srgb, var(--accent) 45%, transparent); }
+.chip.error { color: var(--warn); border-color: color-mix(in srgb, var(--warn) 45%, transparent); }
+.check { font-size: 0.84rem; color: var(--ink-2); }
+.check b { color: var(--warn); font-weight: 600; margin-right: 0.3rem; }
+.err { font-size: 0.82rem; color: var(--warn); }
+.card .actions { margin-top: 0.3rem; }
+.viewer { position: fixed; inset: 0; z-index: 20; display: grid; place-items: center; background: rgba(3, 5, 9, 0.92); cursor: zoom-out; padding: 1rem; }
+.viewer img { max-width: min(96vw, 1600px); max-height: 90vh; border-radius: 10px; }
+@media (prefers-reduced-motion: reduce) { .thumb.working .ph::after { animation: none; } .meter i { transition: none; } }
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+</head>
+<body>
+<main class="wrap">
+  <p class="eyebrow">사건 수사실</p>
+  <h1>그림 한꺼번에 만들기</h1>
+  <p class="lede">게임에 연결한 Cloudflare AI로 표지와 힌트 그림을 한 번에 만듭니다. 이미 GitHub에 올라가 있는 그림은 건너뛰고, 다 만든 그림은 images 폴더가 든 ZIP 파일 하나로 내려받습니다.</p>
+
+  <div class="top-grid">
+    <section class="panel" aria-labelledby="how-h">
+      <h2 id="how-h">쓰는 순서</h2>
+      <ol class="steps">
+        <li><span>오른쪽 칸에 중계 서버 주소와 암호가 있는지 봅니다. 이 브라우저에서 게임의 AI 연결을 해 두었다면 자동으로 채워져 있습니다.</span></li>
+        <li><span><b>모두 만들기</b>를 누릅니다. 그림 한 장에 몇 초씩 걸립니다.</span></li>
+        <li><span>그림마다 확인 항목을 보고, 마음에 들지 않으면 <b>다시 만들기</b>를 누릅니다.</span></li>
+        <li><span><b>ZIP으로 내려받기</b>를 누르고, 내려받은 파일을 더블클릭해 압축을 풉니다. images 폴더가 나옵니다.</span></li>
+        <li><span>GitHub 저장소에서 <b>Add file → Upload files</b>를 누르고 images 폴더를 통째로 끌어다 놓은 뒤 <b>Commit changes</b>를 누릅니다.</span></li>
+      </ol>
+      <p class="note">그림을 만들 때마다 Cloudflare의 하루 무료 AI 사용량을 씁니다. 46장을 다 만들면 하루 사용량의 많게는 절반쯤을 쓰니(추정), 게임하는 날 직전보다는 미리 만들어 두세요.</p>
+    </section>
+    <section class="panel" aria-labelledby="conn-h">
+      <h2 id="conn-h">AI 연결</h2>
+      <div class="conn">
+        <label for="relay-url">중계 서버 주소</label>
+        <input id="relay-url" type="url" inputmode="url" spellcheck="false" placeholder="https://case-room-judge.이름.workers.dev">
+        <label for="relay-pass">암호</label>
+        <input id="relay-pass" type="password" autocomplete="off">
+      </div>
+      <p class="note">여기 넣은 주소와 암호는 이 브라우저에만 저장되고, 게임의 AI 연결과 함께 씁니다.</p>
+    </section>
+  </div>
+
+  <section class="bar" aria-label="진행 상황">
+    <div class="bar-row">
+      <p class="counts" id="counts"></p>
+      <div class="actions">
+        <button type="button" class="btn primary" id="run">모두 만들기</button>
+        <button type="button" class="btn" id="stop" hidden>멈추기</button>
+        <button type="button" class="btn" id="zip" disabled>ZIP으로 내려받기</button>
+      </div>
+    </div>
+    <div class="meter" aria-hidden="true"><i id="meter"></i></div>
+    <p class="msg" id="msg" role="status" hidden></p>
+  </section>
+
+  <div id="groups"></div>
+</main>
+<div class="viewer" id="viewer" hidden></div>
+
+<script>
+(() => {
+  "use strict";
+
+  const ITEMS = [
+ {
+  "name": "hero",
+  "group": "home",
+  "title": "홈 화면 그림",
+  "check": "글자나 숫자가 그림에 들어가면 안 됩니다. 무섭거나 범죄 현장 같은 분위기가 아니어야 합니다.",
+  "prompt": "A quiet detective's desk at night seen from slightly above: scattered photographs and case folders, an old magnifying glass, a notebook with pencil sketches, and a mug of hot cocoa, all lit by a single warm desk lamp; rain streaks on a dark window in the background; inviting and mysterious rather than scary.\n\nStyle: cinematic, semi-realistic digital painting; muted noir palette with deep navy shadows and warm lamplight accents; soft film grain; wide 16:9 landscape. Suitable for a church youth group: no gore, no blood, no injuries, no dead bodies. No text, letters, numbers, signs, logos or watermarks anywhere in the image."
+ },
+ {
+  "name": "blank-homework-cover",
+  "group": "mystery",
+  "title": "백지 숙제 · 표지",
+  "check": "레몬, 종이 위의 글씨, 켜진 램프가 보이면 안 됩니다. 정답이 드러납니다.",
+  "prompt": "A teacher's desk in an empty classroom after school: a single sheet of paper that looks completely blank lies in the center next to a red pen and a gradebook; a small desk lamp beside it is switched off; late-afternoon sunlight through the windows.\n\nStyle: cinematic, semi-realistic digital painting; muted noir palette with deep navy shadows and warm lamplight accents; soft film grain; wide 16:9 landscape. Suitable for a church youth group: no gore, no blood, no injuries, no dead bodies. No text, letters, numbers, signs, logos or watermarks anywhere in the image."
+ },
+ {
+  "name": "blank-homework-hint1",
+  "group": "mystery",
+  "title": "백지 숙제 · 힌트 1 그림",
+  "check": "읽을 수 있는 글자나 레몬이 보이면 안 됩니다.",
+  "prompt": "A sheet of paper that looks blank, laid next to a small evidence ruler; tilted toward the lamp, faint glossy streaks shine on its surface as if something clear was brushed on and dried. Nothing on it is readable.\n\nStyle: evidence photograph for a detective case file: a realistic close-up of the objects laid out on a dark wooden desk, seen from slightly above, lit by a single warm lamp; shallow depth of field; muted colors; wide 16:9. No people unless the description includes them. Suitable for a church youth group: no gore, no blood, no injuries. No text, letters, numbers, logos or watermarks."
+ },
+ {
+  "name": "blank-homework-hint2",
+  "group": "mystery",
+  "title": "백지 숙제 · 힌트 2 그림",
+  "check": "종이에 글씨가 나타난 모습이 보이면 안 됩니다.",
+  "prompt": "Half a squeezed lemon, a used cotton swab, and a small glass dish with a few drops of clear juice, laid out as evidence; the warm glowing bulb of a desk lamp shows at the edge of the frame.\n\nStyle: evidence photograph for a detective case file: a realistic close-up of the objects laid out on a dark wooden desk, seen from slightly above, lit by a single warm lamp; shallow depth of field; muted colors; wide 16:9. No people unless the description includes them. Suitable for a church youth group: no gore, no blood, no injuries. No text, letters, numbers, logos or watermarks."
+ },
+ {
+  "name": "july-snowman-cover",
+  "group": "mystery",
+  "title": "7월의 눈사람 · 표지",
+  "check": "생일 고깔모자, 아이스링크, 트럭에 실린 얼음이 보이면 안 됩니다.",
+  "prompt": "A suburban Texas front yard on a blazing-hot July afternoon: a real snowman stands on dry, sun-baked grass, slightly melting, with heat shimmer in the air; neighbors in summer clothes watch from the sidewalk; a small girl stands in front of the snowman with her hands over her mouth in delight.\n\nStyle: cinematic, semi-realistic digital painting; muted noir palette with deep navy shadows and warm lamplight accents; soft film grain; wide 16:9 landscape. Suitable for a church youth group: no gore, no blood, no injuries, no dead bodies. No text, letters, numbers, signs, logos or watermarks anywhere in the image."
+ },
+ {
+  "name": "july-snowman-hint1",
+  "group": "mystery",
+  "title": "7월의 눈사람 · 힌트 1 그림",
+  "check": "아이스링크나 정빙기가 보이면 안 됩니다.",
+  "prompt": "A clear glass evidence jar half full of white, snow-like ice shavings that are starting to melt, next to a pickup-truck key on a leather key ring and a few drops of water on the desk.\n\nStyle: evidence photograph for a detective case file: a realistic close-up of the objects laid out on a dark wooden desk, seen from slightly above, lit by a single warm lamp; shallow depth of field; muted colors; wide 16:9. No people unless the description includes them. Suitable for a church youth group: no gore, no blood, no injuries. No text, letters, numbers, logos or watermarks."
+ },
+ {
+  "name": "july-snowman-hint2",
+  "group": "mystery",
+  "title": "7월의 눈사람 · 힌트 2 그림",
+  "check": "팔찌나 스케이트에 상표나 글씨가 없어야 합니다.",
+  "prompt": "A pair of rental ice skates, a plain paper wristband from a skating rink, and a small metal tray holding a pile of white ice shavings.\n\nStyle: evidence photograph for a detective case file: a realistic close-up of the objects laid out on a dark wooden desk, seen from slightly above, lit by a single warm lamp; shallow depth of field; muted colors; wide 16:9. No people unless the description includes them. Suitable for a church youth group: no gore, no blood, no injuries. No text, letters, numbers, logos or watermarks."
+ },
+ {
+  "name": "lights-at-nine-cover",
+  "group": "mystery",
+  "title": "아홉 시의 불빛 · 표지",
+  "check": "사람이나 전화기가 보이면 안 됩니다.",
+  "prompt": "A night view across a wide, dark valley: two small houses on opposite hillsides, far apart, each with warm lit windows; a sky full of stars; calm and quiet.\n\nStyle: cinematic, semi-realistic digital painting; muted noir palette with deep navy shadows and warm lamplight accents; soft film grain; wide 16:9 landscape. Suitable for a church youth group: no gore, no blood, no injuries, no dead bodies. No text, letters, numbers, signs, logos or watermarks anywhere in the image."
+ },
+ {
+  "name": "lights-at-nine-hint1",
+  "group": "mystery",
+  "title": "아홉 시의 불빛 · 힌트 1 그림",
+  "check": "시계 숫자가 이상하게 그려졌으면 숫자 없는 시계로 다시 만듭니다.",
+  "prompt": "Two old-fashioned light switches on small wooden plates, one flipped up and one flipped down, beside a plain wristwatch whose hands point to nine o'clock.\n\nStyle: evidence photograph for a detective case file: a realistic close-up of the objects laid out on a dark wooden desk, seen from slightly above, lit by a single warm lamp; shallow depth of field; muted colors; wide 16:9. No people unless the description includes them. Suitable for a church youth group: no gore, no blood, no injuries. No text, letters, numbers, logos or watermarks."
+ },
+ {
+  "name": "lights-at-nine-hint2",
+  "group": "mystery",
+  "title": "아홉 시의 불빛 · 힌트 2 그림",
+  "check": "전화기나 액자에 글씨가 보이면 안 됩니다.",
+  "prompt": "A small hearing aid, a pair of reading glasses, and an old framed photo of an elderly father with his grown daughter, faces soft and out of focus; an old landline phone is pushed to the side.\n\nStyle: evidence photograph for a detective case file: a realistic close-up of the objects laid out on a dark wooden desk, seen from slightly above, lit by a single warm lamp; shallow depth of field; muted colors; wide 16:9. No people unless the description includes them. Suitable for a church youth group: no gore, no blood, no injuries. No text, letters, numbers, logos or watermarks."
+ },
+ {
+  "name": "midnight-cooler-cover",
+  "group": "mystery",
+  "title": "한밤의 아이스박스 · 표지",
+  "check": "사람이 보이면 안 됩니다.",
+  "prompt": "A rustic retreat-cabin kitchen at dawn: a large blue snack cooler on the floor, closed with a four-dial combination padlock that is still locked (the dials show no readable numbers); empty chip bags and cookie crumbs scattered around it; soft winter light through frosted windows.\n\nStyle: cinematic, semi-realistic digital painting; muted noir palette with deep navy shadows and warm lamplight accents; soft film grain; wide 16:9 landscape. Suitable for a church youth group: no gore, no blood, no injuries, no dead bodies. No text, letters, numbers, signs, logos or watermarks anywhere in the image."
+ },
+ {
+  "name": "midnight-cooler-hint1",
+  "group": "mystery",
+  "title": "한밤의 아이스박스 · 힌트 1 그림",
+  "check": "사람이 보이면 안 됩니다.",
+  "prompt": "A pair of fuzzy slippers with cookie crumbs stuck to their soles, an empty chip bag, and a crumpled pillowcase.\n\nStyle: evidence photograph for a detective case file: a realistic close-up of the objects laid out on a dark wooden desk, seen from slightly above, lit by a single warm lamp; shallow depth of field; muted colors; wide 16:9. No people unless the description includes them. Suitable for a church youth group: no gore, no blood, no injuries. No text, letters, numbers, logos or watermarks."
+ },
+ {
+  "name": "midnight-cooler-hint2",
+  "group": "mystery",
+  "title": "한밤의 아이스박스 · 힌트 2 그림",
+  "check": "휴대폰 화면에 REC나 시간 같은 글자가 들어가거나 얼굴이 보이면 안 됩니다.",
+  "prompt": "A smartphone propped against a mug, its screen showing a dark, grainy night-vision still of a hallway with a blurry figure in pajamas; beside it, an open four-dial combination padlock.\n\nStyle: evidence photograph for a detective case file: a realistic close-up of the objects laid out on a dark wooden desk, seen from slightly above, lit by a single warm lamp; shallow depth of field; muted colors; wide 16:9. No people unless the description includes them. Suitable for a church youth group: no gore, no blood, no injuries. No text, letters, numbers, logos or watermarks."
+ },
+ {
+  "name": "romeo-juliet-cover",
+  "group": "mystery",
+  "title": "로미오와 줄리엣 · 표지",
+  "check": "물고기, 어항 모양, 쓰러진 사람이 보이면 안 됩니다.",
+  "prompt": "A sunlit living-room floor beside an open window: a curtain billowing in the wind, a small puddle of water with scattered shards of curved broken glass, and an empty little table by the window; calm and quiet, no people.\n\nStyle: cinematic, semi-realistic digital painting; muted noir palette with deep navy shadows and warm lamplight accents; soft film grain; wide 16:9 landscape. Suitable for a church youth group: no gore, no blood, no injuries, no dead bodies. No text, letters, numbers, signs, logos or watermarks anywhere in the image."
+ },
+ {
+  "name": "romeo-juliet-hint1",
+  "group": "mystery",
+  "title": "로미오와 줄리엣 · 힌트 1 그림",
+  "check": "물고기가 보이거나 통에 글씨가 있으면 안 됩니다.",
+  "prompt": "An unlabeled shaker can of fish-food flakes, a tiny green aquarium net, and a few colorful aquarium pebbles.\n\nStyle: evidence photograph for a detective case file: a realistic close-up of the objects laid out on a dark wooden desk, seen from slightly above, lit by a single warm lamp; shallow depth of field; muted colors; wide 16:9. No people unless the description includes them. Suitable for a church youth group: no gore, no blood, no injuries. No text, letters, numbers, logos or watermarks."
+ },
+ {
+  "name": "romeo-juliet-hint2",
+  "group": "mystery",
+  "title": "로미오와 줄리엣 · 힌트 2 그림",
+  "check": "물고기가 보이면 안 됩니다.",
+  "prompt": "Curved shards of a broken round glass bowl collected on a cloth, still wet, with a strand of green water plant and a few colorful pebbles among them.\n\nStyle: evidence photograph for a detective case file: a realistic close-up of the objects laid out on a dark wooden desk, seen from slightly above, lit by a single warm lamp; shallow depth of field; muted colors; wide 16:9. No people unless the description includes them. Suitable for a church youth group: no gore, no blood, no injuries. No text, letters, numbers, logos or watermarks."
+ },
+ {
+  "name": "hotel-bankrupt-cover",
+  "group": "mystery",
+  "title": "호텔 앞의 파산 · 표지",
+  "check": "주사위, 게임판, 지폐, 거대한 손이 보이면 안 됩니다.",
+  "prompt": "A glowing hotel entrance on a city street at night with a silver car stopped at the curb, photographed with a strong tilt-shift effect so the whole scene looks slightly like a miniature model; moody lighting.\n\nStyle: cinematic, semi-realistic digital painting; muted noir palette with deep navy shadows and warm lamplight accents; soft film grain; wide 16:9 landscape. Suitable for a church youth group: no gore, no blood, no injuries, no dead bodies. No text, letters, numbers, signs, logos or watermarks anywhere in the image."
+ },
+ {
+  "name": "hotel-bankrupt-hint1",
+  "group": "mystery",
+  "title": "호텔 앞의 파산 · 힌트 1 그림",
+  "check": "상표나 글씨가 없어야 합니다.",
+  "prompt": "A tiny silver metal car game piece in a small clear evidence bag, beside a coin for scale.\n\nStyle: evidence photograph for a detective case file: a realistic close-up of the objects laid out on a dark wooden desk, seen from slightly above, lit by a single warm lamp; shallow depth of field; muted colors; wide 16:9. No people unless the description includes them. Suitable for a church youth group: no gore, no blood, no injuries. No text, letters, numbers, logos or watermarks."
+ },
+ {
+  "name": "hotel-bankrupt-hint2",
+  "group": "mystery",
+  "title": "호텔 앞의 파산 · 힌트 2 그림",
+  "check": "게임 상표나 지폐 글씨가 보이면 안 됩니다.",
+  "prompt": "A pair of dice, a small red plastic hotel piece, a tiny green house piece, and a short stack of colorful paper play money.\n\nStyle: evidence photograph for a detective case file: a realistic close-up of the objects laid out on a dark wooden desk, seen from slightly above, lit by a single warm lamp; shallow depth of field; muted colors; wide 16:9. No people unless the description includes them. Suitable for a church youth group: no gore, no blood, no injuries. No text, letters, numbers, logos or watermarks."
+ },
+ {
+  "name": "elevator-man-cover",
+  "group": "mystery",
+  "title": "엘리베이터의 남자 · 표지",
+  "check": "사람의 키를 짐작할 수 있는 모습이 보이면 안 됩니다.",
+  "prompt": "An apartment-building hallway in the evening: an elevator door closing on the left, and on the right an open stairwell door with the long shadow of someone climbing the stairs; no person visible.\n\nStyle: cinematic, semi-realistic digital painting; muted noir palette with deep navy shadows and warm lamplight accents; soft film grain; wide 16:9 landscape. Suitable for a church youth group: no gore, no blood, no injuries, no dead bodies. No text, letters, numbers, signs, logos or watermarks anywhere in the image."
+ },
+ {
+  "name": "elevator-man-hint1",
+  "group": "mystery",
+  "title": "엘리베이터의 남자 · 힌트 1 그림",
+  "check": "버튼 숫자가 읽히지 않는 편이 좋습니다.",
+  "prompt": "A small folding step stool beside a printed photo of a tall elevator button panel; the button labels in the photo are blurry and unreadable.\n\nStyle: evidence photograph for a detective case file: a realistic close-up of the objects laid out on a dark wooden desk, seen from slightly above, lit by a single warm lamp; shallow depth of field; muted colors; wide 16:9. No people unless the description includes them. Suitable for a church youth group: no gore, no blood, no injuries. No text, letters, numbers, logos or watermarks."
+ },
+ {
+  "name": "elevator-man-hint2",
+  "group": "mystery",
+  "title": "엘리베이터의 남자 · 힌트 2 그림",
+  "check": "사람이 보이면 안 됩니다.",
+  "prompt": "A closed, wet black umbrella lying on the desk with water pooled around it; its tip is scuffed with a small round mark, as if it has been used to press something.\n\nStyle: evidence photograph for a detective case file: a realistic close-up of the objects laid out on a dark wooden desk, seen from slightly above, lit by a single warm lamp; shallow depth of field; muted colors; wide 16:9. No people unless the description includes them. Suitable for a church youth group: no gore, no blood, no injuries. No text, letters, numbers, logos or watermarks."
+ },
+ {
+  "name": "desert-man-cover",
+  "group": "mystery",
+  "title": "사막의 남자 · 표지",
+  "check": "사람, 열기구, 옷가지가 보이면 안 됩니다.",
+  "prompt": "A vast empty desert under a harsh midday sun: smooth, untouched sand dunes with no footprints anywhere and shimmering heat haze; in the foreground, a single broken wooden match lies half-buried in the sand.\n\nStyle: cinematic, semi-realistic digital painting; muted noir palette with deep navy shadows and warm lamplight accents; soft film grain; wide 16:9 landscape. Suitable for a church youth group: no gore, no blood, no injuries, no dead bodies. No text, letters, numbers, signs, logos or watermarks anywhere in the image."
+ },
+ {
+  "name": "desert-man-hint1",
+  "group": "mystery",
+  "title": "사막의 남자 · 힌트 1 그림",
+  "check": "열기구의 천이나 바구니가 통째로 보이면 안 됩니다.",
+  "prompt": "A short length of frayed rope tied to a small brass ring and clip, lying on a little pile of desert sand.\n\nStyle: evidence photograph for a detective case file: a realistic close-up of the objects laid out on a dark wooden desk, seen from slightly above, lit by a single warm lamp; shallow depth of field; muted colors; wide 16:9. No people unless the description includes them. Suitable for a church youth group: no gore, no blood, no injuries. No text, letters, numbers, logos or watermarks."
+ },
+ {
+  "name": "desert-man-hint2",
+  "group": "mystery",
+  "title": "사막의 남자 · 힌트 2 그림",
+  "check": "사람이 보이면 안 됩니다.",
+  "prompt": "Several whole wooden matches laid in a neat row, and one broken, shorter match set apart from the rest under the lamp.\n\nStyle: evidence photograph for a detective case file: a realistic close-up of the objects laid out on a dark wooden desk, seen from slightly above, lit by a single warm lamp; shallow depth of field; muted colors; wide 16:9. No people unless the description includes them. Suitable for a church youth group: no gore, no blood, no injuries. No text, letters, numbers, logos or watermarks."
+ },
+ {
+  "name": "forest-swimmer-cover",
+  "group": "mystery",
+  "title": "숲속의 수영복 · 표지",
+  "check": "사람, 비행기, 호수가 보이면 안 됩니다.",
+  "prompt": "A forest just after a huge wildfire: blackened tree trunks, gray ash on the ground, thin smoke drifting, tiny distant silhouettes of firefighters; in the foreground on the ash lies a pair of swimming goggles.\n\nStyle: cinematic, semi-realistic digital painting; muted noir palette with deep navy shadows and warm lamplight accents; soft film grain; wide 16:9 landscape. Suitable for a church youth group: no gore, no blood, no injuries, no dead bodies. No text, letters, numbers, signs, logos or watermarks anywhere in the image."
+ },
+ {
+  "name": "forest-swimmer-hint1",
+  "group": "mystery",
+  "title": "숲속의 수영복 · 힌트 1 그림",
+  "check": "비행기가 보이면 안 됩니다.",
+  "prompt": "A small clear evidence bag of gray ash that holds a strand of green lake weed and a tiny freshwater shell, beside a pair of swimming goggles.\n\nStyle: evidence photograph for a detective case file: a realistic close-up of the objects laid out on a dark wooden desk, seen from slightly above, lit by a single warm lamp; shallow depth of field; muted colors; wide 16:9. No people unless the description includes them. Suitable for a church youth group: no gore, no blood, no injuries. No text, letters, numbers, logos or watermarks."
+ },
+ {
+  "name": "forest-swimmer-hint2",
+  "group": "mystery",
+  "title": "숲속의 수영복 · 힌트 2 그림",
+  "check": "물속에 사람이 보이거나 사진에 글씨가 있으면 안 됩니다.",
+  "prompt": "A printed photo of a yellow firefighting seaplane scooping water from a lake, lying next to a glass jar of slightly murky lake water.\n\nStyle: evidence photograph for a detective case file: a realistic close-up of the objects laid out on a dark wooden desk, seen from slightly above, lit by a single warm lamp; shallow depth of field; muted colors; wide 16:9. No people unless the description includes them. Suitable for a church youth group: no gore, no blood, no injuries. No text, letters, numbers, logos or watermarks."
+ },
+ {
+  "name": "turtle-soup-cover",
+  "group": "mystery",
+  "title": "바다거북 스프 · 표지",
+  "check": "사람이나 바다거북 모양이 보이면 안 됩니다.",
+  "prompt": "A seaside restaurant terrace at dusk: a single bowl of soup on a white tablecloth with a spoon set down beside it and an empty chair pushed back; the dark sea and a distant lighthouse behind; a melancholy mood.\n\nStyle: cinematic, semi-realistic digital painting; muted noir palette with deep navy shadows and warm lamplight accents; soft film grain; wide 16:9 landscape. Suitable for a church youth group: no gore, no blood, no injuries, no dead bodies. No text, letters, numbers, signs, logos or watermarks anywhere in the image."
+ },
+ {
+  "name": "turtle-soup-hint1",
+  "group": "mystery",
+  "title": "바다거북 스프 · 힌트 1 그림",
+  "check": "그릇 속 음식이나 사람이 보이면 안 됩니다.",
+  "prompt": "An old, dented tin bowl and a worn metal spoon, salt-stained and weathered, as if kept from a long journey at sea.\n\nStyle: evidence photograph for a detective case file: a realistic close-up of the objects laid out on a dark wooden desk, seen from slightly above, lit by a single warm lamp; shallow depth of field; muted colors; wide 16:9. No people unless the description includes them. Suitable for a church youth group: no gore, no blood, no injuries. No text, letters, numbers, logos or watermarks."
+ },
+ {
+  "name": "turtle-soup-hint2",
+  "group": "mystery",
+  "title": "바다거북 스프 · 힌트 2 그림",
+  "check": "구명조끼에 배 이름 같은 글씨가 있으면 안 됩니다.",
+  "prompt": "A faded, salt-stained orange life jacket folded beside a coil of sea rope and the broken handle of a small wooden oar.\n\nStyle: evidence photograph for a detective case file: a realistic close-up of the objects laid out on a dark wooden desk, seen from slightly above, lit by a single warm lamp; shallow depth of field; muted colors; wide 16:9. No people unless the description includes them. Suitable for a church youth group: no gore, no blood, no injuries. No text, letters, numbers, logos or watermarks."
+ },
+ {
+  "name": "through-the-roof-cover",
+  "group": "bible",
+  "title": "지붕을 뚫고 · 표지",
+  "check": "예수님이나 얼굴이 보이면 안 됩니다. 네 사람의 관계(친구, 가족)를 짐작하게 하는 모습도 넣지 않습니다.",
+  "prompt": "A first-century Galilean stone house with a flat roof of wooden beams, branches and packed clay; a crowd fills the doorway and spills into the street; on the roof, four men seen from behind are opening a hole in the roof; bright daylight.\n\nStyle: cinematic, semi-realistic digital painting of the ancient Near East; muted palette with deep shadows and warm oil-lamp light; soft film grain; wide 16:9 landscape. People appear only as distant figures or from behind, with faces not visible. Do not depict Jesus. Suitable for a church youth group: no gore, no blood, no injuries, no dead bodies. No text, letters, logos or watermarks."
+ },
+ {
+  "name": "through-the-roof-hint1",
+  "group": "bible",
+  "title": "지붕을 뚫고 · 힌트 1 그림",
+  "check": "사람이 보이면 안 됩니다.",
+  "prompt": "A stone doorstep covered with countless overlapping dusty sandal prints, with a dropped clay oil lamp lying at its edge.\n\nStyle: evidence photograph of ancient objects for a case file: a realistic close-up of the items laid out on rough linen or worn stone, seen from slightly above, lit by warm oil-lamp light; shallow depth of field; muted colors; wide 16:9. No people and no faces. Do not depict Jesus. Suitable for a church youth group: no gore, no blood. No text, letters, logos or watermarks."
+ },
+ {
+  "name": "through-the-roof-hint2",
+  "group": "bible",
+  "title": "지붕을 뚫고 · 힌트 2 그림",
+  "check": "두루마리에 글씨가 보이면 안 됩니다.",
+  "prompt": "A rolled-up woven sleeping mat tied with rope, and beside it a closed scroll case and a writing reed of the kind teachers of the law carried.\n\nStyle: evidence photograph of ancient objects for a case file: a realistic close-up of the items laid out on rough linen or worn stone, seen from slightly above, lit by warm oil-lamp light; shallow depth of field; muted colors; wide 16:9. No people and no faces. Do not depict Jesus. Suitable for a church youth group: no gore, no blood. No text, letters, logos or watermarks."
+ },
+ {
+  "name": "left-at-the-gate-cover",
+  "group": "bible",
+  "title": "문밖에 세워 둔 사람 · 표지",
+  "check": "얼굴이 보이면 안 됩니다.",
+  "prompt": "Night in ancient Jerusalem: a heavy wooden gate in a stone courtyard wall lit by a single oil lamp; a man's hand and sleeve knock on the gate; through a window above, the warm glow of many people gathered inside.\n\nStyle: cinematic, semi-realistic digital painting of the ancient Near East; muted palette with deep shadows and warm oil-lamp light; soft film grain; wide 16:9 landscape. People appear only as distant figures or from behind, with faces not visible. Do not depict Jesus. Suitable for a church youth group: no gore, no blood, no injuries, no dead bodies. No text, letters, logos or watermarks."
+ },
+ {
+  "name": "left-at-the-gate-hint1",
+  "group": "bible",
+  "title": "문밖에 세워 둔 사람 · 힌트 1 그림",
+  "check": "천사의 모습(날개 등)이나 사람이 보이면 안 됩니다. 본문은 천사의 모습을 묘사하지 않습니다.",
+  "prompt": "Two heavy iron chains with open shackles lying on a stone prison floor in a pool of soft, unexplained light.\n\nStyle: evidence photograph of ancient objects for a case file: a realistic close-up of the items laid out on rough linen or worn stone, seen from slightly above, lit by warm oil-lamp light; shallow depth of field; muted colors; wide 16:9. No people and no faces. Do not depict Jesus. Suitable for a church youth group: no gore, no blood. No text, letters, logos or watermarks."
+ },
+ {
+  "name": "left-at-the-gate-hint2",
+  "group": "bible",
+  "title": "문밖에 세워 둔 사람 · 힌트 2 그림",
+  "check": "사람이 보이면 안 됩니다.",
+  "prompt": "Many small clay oil lamps still burning together on a low table late at night, with cloaks and sandals left on the floor around it as if many people were gathered there.\n\nStyle: evidence photograph of ancient objects for a case file: a realistic close-up of the items laid out on rough linen or worn stone, seen from slightly above, lit by warm oil-lamp light; shallow depth of field; muted colors; wide 16:9. No people and no faces. Do not depict Jesus. Suitable for a church youth group: no gore, no blood. No text, letters, logos or watermarks."
+ },
+ {
+  "name": "strange-order-cover",
+  "group": "bible",
+  "title": "왕의 이상한 명령 · 표지",
+  "check": "아기가 칼 가까이 있거나 위험해 보이는 모습이 있으면 안 됩니다.",
+  "prompt": "An ancient Israelite royal hall: a sword lies across a stone table in front of a carved throne; two women stand apart in the foreground, seen from behind; shafts of light and a tense atmosphere; no baby visible.\n\nStyle: cinematic, semi-realistic digital painting of the ancient Near East; muted palette with deep shadows and warm oil-lamp light; soft film grain; wide 16:9 landscape. People appear only as distant figures or from behind, with faces not visible. Do not depict Jesus. Suitable for a church youth group: no gore, no blood, no injuries, no dead bodies. No text, letters, logos or watermarks."
+ },
+ {
+  "name": "strange-order-hint1",
+  "group": "bible",
+  "title": "왕의 이상한 명령 · 힌트 1 그림",
+  "check": "아기가 보이면 안 됩니다.",
+  "prompt": "Two small, nearly identical swaddling cloths laid side by side on linen, one neatly folded and one rumpled.\n\nStyle: evidence photograph of ancient objects for a case file: a realistic close-up of the items laid out on rough linen or worn stone, seen from slightly above, lit by warm oil-lamp light; shallow depth of field; muted colors; wide 16:9. No people and no faces. Do not depict Jesus. Suitable for a church youth group: no gore, no blood. No text, letters, logos or watermarks."
+ },
+ {
+  "name": "strange-order-hint2",
+  "group": "bible",
+  "title": "왕의 이상한 명령 · 힌트 2 그림",
+  "check": "사람이나 아기가 보이면 안 됩니다.",
+  "prompt": "A royal sword lying on a stone table beside a single swaddling cloth, and a woman's headscarf dropped on the floor in front of the table as if she had fallen to her knees.\n\nStyle: evidence photograph of ancient objects for a case file: a realistic close-up of the items laid out on rough linen or worn stone, seen from slightly above, lit by warm oil-lamp light; shallow depth of field; muted colors; wide 16:9. No people and no faces. Do not depict Jesus. Suitable for a church youth group: no gore, no blood. No text, letters, logos or watermarks."
+ },
+ {
+  "name": "cup-in-the-sack-cover",
+  "group": "bible",
+  "title": "자루 속의 은잔 · 표지",
+  "check": "얼굴이 보이면 안 됩니다. 형제 수(11명)를 정확히 맞출 필요는 없습니다.",
+  "prompt": "Dawn on a desert road outside an Egyptian city: donkeys loaded with grain sacks; one sack lies slit open on the ground, grain spilling out, a gleaming silver cup half-buried in the grain; men seen from behind; Egyptian guards approaching in the distance.\n\nStyle: cinematic, semi-realistic digital painting of the ancient Near East; muted palette with deep shadows and warm oil-lamp light; soft film grain; wide 16:9 landscape. People appear only as distant figures or from behind, with faces not visible. Do not depict Jesus. Suitable for a church youth group: no gore, no blood, no injuries, no dead bodies. No text, letters, logos or watermarks."
+ },
+ {
+  "name": "cup-in-the-sack-hint1",
+  "group": "bible",
+  "title": "자루 속의 은잔 · 힌트 1 그림",
+  "check": "사람이 보이면 안 됩니다.",
+  "prompt": "An ornate silver cup resting on the grain inside an open burlap sack, next to a small leather pouch of silver pieces tucked back into the same sack.\n\nStyle: evidence photograph of ancient objects for a case file: a realistic close-up of the items laid out on rough linen or worn stone, seen from slightly above, lit by warm oil-lamp light; shallow depth of field; muted colors; wide 16:9. No people and no faces. Do not depict Jesus. Suitable for a church youth group: no gore, no blood. No text, letters, logos or watermarks."
+ },
+ {
+  "name": "cup-in-the-sack-hint2",
+  "group": "bible",
+  "title": "자루 속의 은잔 · 힌트 2 그림",
+  "check": "피 묻은 모습이 있으면 안 됩니다. 은 조각은 대략 스무 개면 됩니다(창 37:28). '채색옷'의 화려한 색은 해석 전통이니 단순한 긴 옷이면 충분합니다.",
+  "prompt": "A long robe folded on a flat stone, with twenty silver pieces stacked beside it.\n\nStyle: evidence photograph of ancient objects for a case file: a realistic close-up of the items laid out on rough linen or worn stone, seen from slightly above, lit by warm oil-lamp light; shallow depth of field; muted colors; wide 16:9. No people and no faces. Do not depict Jesus. Suitable for a church youth group: no gore, no blood. No text, letters, logos or watermarks."
+ },
+ {
+  "name": "locked-upper-room-cover",
+  "group": "bible",
+  "title": "잠긴 다락방 · 표지",
+  "check": "왕의 모습, 피, 무기가 보이면 안 됩니다.",
+  "prompt": "An ancient palace: at the top of a dim stone staircase, the heavy wooden doors of a cool upper room are shut and locked; two servants wait awkwardly outside in the shadows, one holding a large key.\n\nStyle: cinematic, semi-realistic digital painting of the ancient Near East; muted palette with deep shadows and warm oil-lamp light; soft film grain; wide 16:9 landscape. People appear only as distant figures or from behind, with faces not visible. Do not depict Jesus. Suitable for a church youth group: no gore, no blood, no injuries, no dead bodies. No text, letters, logos or watermarks."
+ },
+ {
+  "name": "locked-upper-room-hint1",
+  "group": "bible",
+  "title": "잠긴 다락방 · 힌트 1 그림",
+  "check": "사람이 보이면 안 됩니다.",
+  "prompt": "Tribute laid out on a stone floor before the foot of a carved throne: baskets of grain, sealed clay jars, and bundles of cloth.\n\nStyle: evidence photograph of ancient objects for a case file: a realistic close-up of the items laid out on rough linen or worn stone, seen from slightly above, lit by warm oil-lamp light; shallow depth of field; muted colors; wide 16:9. No people and no faces. Do not depict Jesus. Suitable for a church youth group: no gore, no blood. No text, letters, logos or watermarks."
+ },
+ {
+  "name": "locked-upper-room-hint2",
+  "group": "bible",
+  "title": "잠긴 다락방 · 힌트 2 그림",
+  "check": "피가 보이면 안 됩니다.",
+  "prompt": "A short double-edged dagger about a forearm long, lying on rough linen beside a leather strap made to tie around a thigh.\n\nStyle: evidence photograph of ancient objects for a case file: a realistic close-up of the items laid out on rough linen or worn stone, seen from slightly above, lit by warm oil-lamp light; shallow depth of field; muted colors; wide 16:9. No people and no faces. Do not depict Jesus. Suitable for a church youth group: no gore, no blood. No text, letters, logos or watermarks."
+ }
+];
+  const IMG_W = 1024, IMG_H = 576;     // 16:9, the shape the game shows
+  const CONCURRENCY = 2;
+  const KEY_URL = "caseRoomRelayUrl", KEY_PASS = "caseRoomRelayPass";
+
+  const STATUS = { checking: "확인 중", exists: "이미 올라가 있음", todo: "아직 없음", working: "만드는 중", done: "새로 만듦", error: "오류" };
+  const state = ITEMS.map(it => Object.assign({}, it, { status: "checking", ext: "jpg", url: "", blob: null, err: "" }));
+  let running = false;
+  let stopFlag = false;
+  const zipped = new Set();   // pictures already saved in a downloaded ZIP
+
+  const $ = id => document.getElementById(id);
+  const esc = s => String(s).replace(/[&<>"']/g, ch => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[ch]);
+  const sleep = ms => new Promise(r => setTimeout(r, ms));
+  const recall = k => { try { return localStorage.getItem(k) || ""; } catch (e) { return ""; } };
+  const remember = (k, v) => { try { localStorage.setItem(k, v); } catch (e) { /* storage unavailable */ } };
+
+  /* ---------- Connection ---------- */
+  const urlIn = $("relay-url"), passIn = $("relay-pass");
+  urlIn.value = recall(KEY_URL);
+  passIn.value = recall(KEY_PASS);
+  urlIn.addEventListener("change", () => remember(KEY_URL, urlIn.value.trim()));
+  passIn.addEventListener("change", () => remember(KEY_PASS, passIn.value.trim()));
+
+  function resetTime() {
+    const d = new Date();
+    d.setUTCHours(24, 0, 0, 0);
+    try { return d.toLocaleTimeString("ko-KR", { hour: "numeric", minute: "2-digit" }); } catch (e) { return "00:00 UTC"; }
+  }
+  function errText(e) {
+    switch (e && e.code) {
+      case "setup": return "중계 서버 주소(https://로 시작)와 암호를 넣어 주세요.";
+      case "pass": return "중계 서버가 암호를 거부했습니다. 암호를 확인해 주세요.";
+      case "limit": return `오늘 쓸 수 있는 무료 AI 사용량을 다 썼습니다. ${resetTime()}에 다시 채워집니다. 지금까지 만든 그림은 ZIP으로 내려받을 수 있습니다.`;
+      case "old": return "중계 서버가 아직 예전 코드입니다. Cloudflare의 Edit code에서 새 worker.js를 붙여 넣고 Deploy를 눌러 주세요.";
+      case "config": return "중계 서버 설정이 끝나지 않았습니다. Cloudflare에서 Workers AI 바인딩(이름 AI)과 PASSCODE를 확인해 주세요.";
+      case "down": return "중계 서버에 연결하지 못했습니다. 인터넷 연결과 주소를 확인해 주세요.";
+      default: return "그림을 받지 못했습니다. 다시 만들기를 눌러 주세요." + (e && e.detail ? ` (${e.detail})` : "");
+    }
+  }
+  function showMsg(text, bad) {
+    const m = $("msg");
+    m.textContent = text;
+    m.classList.toggle("bad", !!bad);
+    m.hidden = !text;
+  }
+
+  /* ---------- Cards ---------- */
+  const GROUPS = [["home", "홈 화면"], ["mystery", "일반 추리"], ["bible", "성경 사건"]];
+  $("groups").innerHTML = GROUPS.map(([g, label]) => {
+    const list = state.filter(it => it.group === g);
+    return `<h2 class="group-title">${esc(label)}</h2><div class="grid">${list.map(it => `<article class="card" data-name="${esc(it.name)}"></article>`).join("")}</div>`;
+  }).join("");
+
+  function draw(it) {
+    const card = document.querySelector(`.card[data-name="${it.name}"]`);
+    if (!card) return;
+    const file = `${it.name}.${it.ext}`;
+    const busy = it.status === "working" || it.status === "checking";
+    card.innerHTML = `
+      <button type="button" class="thumb${it.url ? " has-img" : ""}${it.status === "working" ? " working" : ""}" data-view="${esc(it.name)}" aria-label="${esc(it.title)} 크게 보기" ${it.url ? "" : "tabindex=\"-1\""}>
+        ${it.url ? `<img src="${esc(it.url)}" alt="${esc(it.title)}">` : `<span class="ph">${it.status === "working" ? "" : "그림 없음"}</span>`}
+      </button>
+      <div class="meta">
+        <p class="title">${esc(it.title)}</p>
+        <p class="file">${esc(file)}</p>
+        <span class="chip ${it.status}">${esc(STATUS[it.status])}</span>
+        <p class="check"><b>확인</b>${esc(it.check)}</p>
+        ${it.err ? `<p class="err">${esc(it.err)}</p>` : ""}
+        <div class="actions">
+          <button type="button" class="btn small" data-redo="${esc(it.name)}" ${busy || running ? "disabled" : ""}>${it.status === "todo" ? "만들기" : "다시 만들기"}</button>
+          ${it.status === "done" && it.url ? `<a class="btn small" href="${esc(it.url)}" download="${esc(file)}">내려받기</a>` : ""}
+        </div>
+      </div>`;
+  }
+  function drawAll() { state.forEach(draw); }
+
+  function updateBar() {
+    const total = state.length;
+    const exists = state.filter(it => it.status === "exists").length;
+    const done = state.filter(it => it.status === "done").length;
+    const left = state.filter(it => it.status === "todo" || it.status === "error").length;
+    const checking = state.some(it => it.status === "checking");
+    $("counts").innerHTML = `<span>전체 <b>${total}</b></span><span>이미 올라감 <b>${exists}</b></span><span>새로 만듦 <b>${done}</b></span><span>남음 <b>${left}</b></span>`;
+    $("meter").style.width = `${Math.round(((exists + done) / total) * 100)}%`;
+    $("run").disabled = running || checking || left === 0;
+    $("run").hidden = running;
+    $("stop").hidden = !running;
+    $("zip").disabled = running || done === 0;
+    $("zip").textContent = done ? `ZIP으로 내려받기 (${done}장)` : "ZIP으로 내려받기";
+  }
+
+  /* ---------- Pictures already on the site ---------- */
+  async function exists(url) {
+    try {
+      const r = await fetch(url, { method: "HEAD", cache: "no-store" });
+      return r.ok && (r.headers.get("content-type") || "").startsWith("image/");
+    } catch (e) {
+      return false;
+    }
+  }
+  async function checkExisting() {
+    await Promise.all(state.map(async it => {
+      for (const ext of ["jpg", "png"]) {
+        if (await exists(`images/${it.name}.${ext}`)) {
+          it.status = "exists";
+          it.ext = ext;
+          it.url = `images/${it.name}.${ext}`;
+          draw(it);
+          return;
+        }
+      }
+      it.status = "todo";
+      draw(it);
+    }));
+    updateBar();
+  }
+
+  /* ---------- Making one picture ---------- */
+  function b64ToBytes(b64) {
+    const clean = b64.includes(",") && b64.startsWith("data:") ? b64.split(",")[1] : b64;
+    const bin = atob(clean);
+    const bytes = new Uint8Array(bin.length);
+    for (let i = 0; i < bin.length; i++) bytes[i] = bin.charCodeAt(i);
+    return bytes;
+  }
+  function sniff(b) {
+    if (b[0] === 0xff && b[1] === 0xd8) return "image/jpeg";
+    if (b[0] === 0x89 && b[1] === 0x50) return "image/png";
+    if (b[0] === 0x52 && b[1] === 0x49 && b[8] === 0x57) return "image/webp";
+    return "image/png";
+  }
+  // Save every picture as .jpg (smaller), or as .png when a .png with that name is already on the site, so the upload replaces it.
+  async function encode(b64, ext) {
+    const bytes = b64ToBytes(b64);
+    const src = new Blob([bytes], { type: sniff(bytes) });
+    const bmp = await createImageBitmap(src);
+    const canvas = document.createElement("canvas");
+    canvas.width = bmp.width;
+    canvas.height = bmp.height;
+    canvas.getContext("2d").drawImage(bmp, 0, 0);
+    if (bmp.close) bmp.close();
+    const type = ext === "png" ? "image/png" : "image/jpeg";
+    return new Promise((resolve, reject) => canvas.toBlob(b => (b ? resolve(b) : reject({ code: "fail" })), type, 0.86));
+  }
+
+  async function makeOne(it) {
+    const url = urlIn.value.trim();
+    const pass = passIn.value.trim();
+    if (!/^https:\/\/\S+$/i.test(url) || !pass) throw { code: "setup" };
+    it.status = "working";
+    it.err = "";
+    draw(it);
+    const seed = Math.floor(Math.random() * 2147483647);
+    let res = null, data = null;
+    for (let attempt = 0; attempt < 2; attempt++) {
+      try {
+        res = await fetch(url, {
+          method: "POST",
+          headers: { "Content-Type": "application/json", "X-Passcode": pass },
+          body: JSON.stringify({ task: "image", prompt: it.prompt, width: IMG_W, height: IMG_H, seed })
+        });
+      } catch (e) {
+        throw { code: "down" };
+      }
+      try { data = await res.json(); } catch (e) { data = null; }
+      if (res.status === 503 && attempt === 0) { await sleep(4000); continue; }   // the model was busy: wait and try once more
+      break;
+    }
+    const error = data && data.error;
+    if (!res.ok) {
+      if (res.status === 401 || error === "bad_passcode") throw { code: "pass" };
+      if (res.status === 429 || error === "rate_limited") throw { code: "limit" };
+      if (error === "not_configured") throw { code: "config" };
+      throw { code: "fail", detail: data && data.detail ? String(data.detail).slice(0, 120) : "" };
+    }
+    if (data && typeof data.text === "string" && !data.image) throw { code: "old" };
+    if (!data || typeof data.image !== "string" || !data.image) throw { code: "fail" };
+    const blob = await encode(data.image, it.ext);
+    if (it.url && it.url.startsWith("blob:")) URL.revokeObjectURL(it.url);
+    it.blob = blob;
+    it.url = URL.createObjectURL(blob);
+    it.status = "done";
+    draw(it);
+  }
+
+  const FATAL = new Set(["setup", "pass", "limit", "old", "config", "down"]);
+
+  async function runQueue(queue) {
+    running = true;
+    stopFlag = false;
+    showMsg("");
+    drawAll();
+    updateBar();
+    let fatal = null;
+    const lane = async () => {
+      while (!stopFlag && !fatal && queue.length) {
+        const it = queue.shift();
+        try {
+          await makeOne(it);
+        } catch (e) {
+          it.status = "error";
+          it.err = FATAL.has(e && e.code) ? "" : errText(e);
+          draw(it);
+          if (FATAL.has(e && e.code)) fatal = e;
+        }
+        updateBar();
+      }
+    };
+    await Promise.all(Array.from({ length: CONCURRENCY }, lane));
+    running = false;
+    drawAll();
+    updateBar();
+    if (fatal) showMsg(errText(fatal), true);
+    else if (stopFlag) showMsg("멈췄습니다. 모두 만들기를 다시 누르면 남은 그림부터 이어서 만듭니다.");
+    else if (state.some(it => it.status === "error")) showMsg("일부 그림을 만들지 못했습니다. 오류가 난 그림의 다시 만들기를 누르거나 모두 만들기를 다시 눌러 주세요.", true);
+    else showMsg("다 만들었습니다. 그림마다 확인 항목을 살펴본 뒤 ZIP으로 내려받으세요.");
+  }
+
+  $("run").addEventListener("click", () => {
+    if (running) return;
+    runQueue(state.filter(it => it.status === "todo" || it.status === "error"));
+  });
+  $("stop").addEventListener("click", () => { stopFlag = true; showMsg("지금 만드는 그림까지 마치고 멈춥니다."); });
+
+  document.addEventListener("click", e => {
+    const redo = e.target.closest("[data-redo]");
+    if (redo && !redo.disabled && !running) {
+      const it = state.find(x => x.name === redo.dataset.redo);
+      if (it) runQueue([it]);
+      return;
+    }
+    const view = e.target.closest("[data-view]");
+    if (view) {
+      const it = state.find(x => x.name === view.dataset.view);
+      if (it && it.url) {
+        const v = $("viewer");
+        v.innerHTML = `<img src="${esc(it.url)}" alt="${esc(it.title)}">`;
+        v.hidden = false;
+      }
+    }
+  });
+  $("viewer").addEventListener("click", () => { $("viewer").hidden = true; $("viewer").innerHTML = ""; });
+  document.addEventListener("keydown", e => { if (e.key === "Escape") { $("viewer").hidden = true; $("viewer").innerHTML = ""; } });
+
+  /* ---------- ZIP ---------- */
+  $("zip").addEventListener("click", async () => {
+    const done = state.filter(it => it.status === "done" && it.blob);
+    if (!done.length) return;
+    if (typeof JSZip === "undefined") {
+      showMsg("ZIP 기능을 불러오지 못했습니다. 그림마다 있는 내려받기 버튼으로 받아 images 폴더에 모아 주세요.", true);
+      return;
+    }
+    $("zip").disabled = true;
+    try {
+      const zip = new JSZip();
+      const folder = zip.folder("images");
+      for (const it of done) { folder.file(`${it.name}.${it.ext}`, it.blob); zipped.add(it.url); }
+      const blob = await zip.generateAsync({ type: "blob" });
+      const a = document.createElement("a");
+      a.href = URL.createObjectURL(blob);
+      a.download = "case-room-images.zip";
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      setTimeout(() => URL.revokeObjectURL(a.href), 5000);
+      showMsg(`ZIP 파일(그림 ${done.length}장)을 내려받았습니다. 압축을 풀어 나온 images 폴더를 GitHub에 올려 주세요.`);
+    } catch (err) {
+      showMsg("ZIP 파일을 만들지 못했습니다. 그림마다 있는 내려받기 버튼을 써 주세요.", true);
+    } finally {
+      updateBar();
+    }
+  });
+
+  window.addEventListener("beforeunload", e => {
+    if (state.some(it => it.status === "done" && !zipped.has(it.url))) { e.preventDefault(); e.returnValue = ""; }
+  });
+
+  drawAll();
+  updateBar();
+  checkExisting();
+})();
+</script>
+</body>
+</html>

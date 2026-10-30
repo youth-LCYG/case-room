@@ -542,7 +542,7 @@
      "check": "사람이 보이면 안 됩니다."
     },
     "truth": {
-     "scene": "Inside an apartment elevator on a rainy evening: a short adult man in a raincoat reaching up and pressing a high button with the tip of his closed umbrella; the button labels are blurred and unreadable; friendly, not mocking.",
+     "scene": "Inside an apartment elevator on a rainy evening: a very short adult man, about as tall as a child, in a raincoat, stretching his arm up and pressing a button far above his head with the tip of his closed, dripping umbrella; the buttons he can reach are low; the button labels are blurred and unreadable; friendly, not mocking.",
      "check": "버튼 숫자가 읽히면 안 됩니다. 사람을 놀리는 느낌이 들면 안 됩니다."
     }
    }
@@ -624,7 +624,7 @@
      "check": "사람이 보이면 안 됩니다."
     },
     "truth": {
-     "scene": "Bright desert afternoon: a hot-air balloon rising away over a rocky canyon in the distance, while in the foreground a sunburned man in a plain white undershirt and boxer shorts sits on a sand dune with his arms crossed, grumpily holding a broken match; comic.",
+     "scene": "Bright desert afternoon: a hot-air balloon rising away over a rocky canyon in the distance, while in the foreground a sunburned man in a plain white undershirt and boxer shorts sits on a sand dune with his arms crossed, grumpily holding a broken match; the sand all around him is smooth and wind-swept with no footprints at all; comic.",
      "check": "지나친 노출이 없어야 합니다. 글자가 보이면 안 됩니다."
     }
    }

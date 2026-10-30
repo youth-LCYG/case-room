@@ -1,0 +1,60 @@
+# When cases.json changes, make any pictures it lists that images/ doesn't have yet.
+# It also checks once a day, so pictures left over when the free Cloudflare allowance ran out get made the next day.
+# Needs two repository secrets: RELAY_URL and RELAY_PASS (Settings > Secrets and variables > Actions).
+name: Make pictures
+
+on:
+  push:
+    paths:
+      - "cases.json"
+  schedule:
+    - cron: "17 9 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+
+concurrency:
+  group: pictures
+  cancel-in-progress: false
+
+jobs:
+  pictures:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install the image library
+        run: pip install pillow
+
+      - name: Check the cases file
+        run: python3 tools/validate.py cases.json
+
+      - name: Make missing pictures
+        env:
+          RELAY_URL: ${{ secrets.RELAY_URL }}
+          RELAY_PASS: ${{ secrets.RELAY_PASS }}
+        run: python3 tools/make_pictures.py
+
+      - name: Save new pictures
+        run: |
+          git add images
+          if git diff --cached --quiet; then
+            echo "No new pictures to save."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Add pictures for new cases"
+          git pull --rebase
+          git push
+          # Ask GitHub Pages to publish the new pictures (harmless if it already does).
+          curl -sS -X POST -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+            -H "Accept: application/vnd.github+json" \
+            "https://api.github.com/repos/${{ github.repository }}/pages/builds" || true

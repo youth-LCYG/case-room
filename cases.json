@@ -1,0 +1,1482 @@
+{
+ "about": "Case Room cases. The game (index.html) and the picture page (make-pictures.html) both read this file. See CASES.md before editing.",
+ "maxCases": 30,
+ "pictureStyles": {
+  "m": "Style: cinematic, semi-realistic digital painting; muted noir palette with deep navy shadows and warm lamplight accents; soft film grain; wide 16:9 landscape. Suitable for a church youth group: no gore, no blood, no injuries, no dead bodies. No text, letters, numbers, signs, logos or watermarks anywhere in the image.",
+  "b": "Style: cinematic, semi-realistic digital painting of the ancient Near East; muted palette with deep shadows and warm oil-lamp light; soft film grain; wide 16:9 landscape. People appear only as distant figures or from behind, with faces not visible. Do not depict Jesus. Suitable for a church youth group: no gore, no blood, no injuries, no dead bodies. No text, letters, logos or watermarks.",
+  "mh": "Style: evidence photograph for a detective case file: a realistic close-up of the objects laid out on a dark wooden desk, seen from slightly above, lit by a single warm lamp; shallow depth of field; muted colors; wide 16:9. No people unless the description includes them. Suitable for a church youth group: no gore, no blood, no injuries. No text, letters, numbers, logos or watermarks.",
+  "bh": "Style: evidence photograph of ancient objects for a case file: a realistic close-up of the items laid out on rough linen or worn stone, seen from slightly above, lit by warm oil-lamp light; shallow depth of field; muted colors; wide 16:9. No people and no faces. Do not depict Jesus. Suitable for a church youth group: no gore, no blood. No text, letters, logos or watermarks."
+ },
+ "extraPictures": [
+  {
+   "name": "hero",
+   "title": "홈 화면 그림",
+   "style": "m",
+   "scene": "A quiet detective's desk at night seen from slightly above: scattered photographs and case folders, an old magnifying glass, a notebook with pencil sketches, and a mug of hot cocoa, all lit by a single warm desk lamp; rain streaks on a dark window in the background; inviting and mysterious rather than scary.",
+   "check": "글자나 숫자가 그림에 들어가면 안 됩니다. 무섭거나 범죄 현장 같은 분위기가 아니어야 합니다."
+  }
+ ],
+ "cases": [
+  {
+   "id": "blank-homework",
+   "kind": "mystery",
+   "level": 1,
+   "added": "2026-10-29",
+   "title": {
+    "en": "The Blank Homework",
+    "ko": "백지 숙제"
+   },
+   "setup": {
+    "en": "Maya turned in her homework: a completely blank sheet of paper. Her teacher took the page to her desk, and a moment later she smiled and gave Maya an A+.",
+    "ko": "마야는 아무것도 쓰여 있지 않은 백지 한 장을 숙제로 냈습니다. 선생님은 그 종이를 자기 책상으로 가져가더니, 잠시 뒤 미소를 지으며 마야에게 A+를 주었습니다."
+   },
+   "truth": {
+    "en": "The paper only looked blank. Maya's science class was studying chemical reactions, and the assignment was to write a secret message in invisible ink. Maya wrote hers with lemon juice, which dries clear. At her desk, the teacher held the page close to a warm lamp. The heat turned the dried lemon juice brown, and Maya's message appeared. Maya had done exactly what the assignment asked.",
+    "ko": "종이는 비어 보였을 뿐입니다. 마야의 과학 시간은 화학 반응을 배우는 중이었고, 숙제는 '보이지 않는 잉크로 비밀 메시지 쓰기'였습니다. 마야는 마르면 투명해지는 레몬즙으로 글을 썼습니다. 선생님이 책상에서 종이를 따뜻한 스탠드 불빛 가까이 대자, 열 때문에 마른 레몬즙이 갈색으로 변하면서 마야의 메시지가 나타났습니다. 마야는 숙제를 정확히 해낸 것입니다."
+   },
+   "keys": [
+    {
+     "id": "ink",
+     "label": {
+      "en": "What was on the page",
+      "ko": "종이에 있던 것"
+     },
+     "text": {
+      "en": "A hidden message written in invisible ink (lemon juice).",
+      "ko": "보이지 않는 잉크(레몬즙)로 쓴 숨은 메시지."
+     }
+    },
+    {
+     "id": "task",
+     "label": {
+      "en": "Why it earned an A+",
+      "ko": "A+를 받은 이유"
+     },
+     "text": {
+      "en": "Writing in invisible ink was the assignment itself, and the teacher revealed the message with heat.",
+      "ko": "보이지 않는 잉크로 쓰는 것이 바로 숙제였고, 선생님은 열을 가해 글씨를 드러냈다."
+     }
+    }
+   ],
+   "hints": [
+    {
+     "en": "The page was not really blank.",
+     "ko": "종이는 사실 비어 있지 않았습니다."
+    },
+    {
+     "en": "It was science class. What happens to some liquids when they dry, and then get warm?",
+     "ko": "과학 시간이었습니다. 어떤 액체는 마른 뒤에 열을 받으면 어떻게 될까요?"
+    }
+   ],
+   "facts": "- Maya is a student. The teacher is her science teacher.\n- The class was studying chemical reactions.\n- The assignment was to write a secret message in invisible ink.\n- Maya wrote her message with lemon juice, using a cotton swab. Dried lemon juice is clear, so the page looked blank.\n- At her desk, the teacher held the page close to a warm desk lamp (a light bulb). The heat turned the dried lemon juice brown and the message appeared.\n- Maya's message said: \"Science is magic you can explain.\"\n- The teacher understood right away. She was not tricked, and nobody cheated. The A+ was for doing the assignment well.\n- It was not a code, a joke, an art project, white ink, or pencil.\n- Maya's age, grade, school, and the teacher's name are not part of the story (IRRELEVANT).",
+   "pictures": {
+    "cover": {
+     "scene": "A teacher's desk in an empty classroom after school: a single sheet of paper that looks completely blank lies in the center next to a red pen and a gradebook; a small desk lamp beside it is switched off; late-afternoon sunlight through the windows.",
+     "check": "레몬, 종이 위의 글씨, 켜진 램프가 보이면 안 됩니다. 정답이 드러납니다."
+    },
+    "hint1": {
+     "scene": "A sheet of paper that looks blank, laid next to a small evidence ruler; tilted toward the lamp, faint glossy streaks shine on its surface as if something clear was brushed on and dried. Nothing on it is readable.",
+     "check": "읽을 수 있는 글자나 레몬이 보이면 안 됩니다."
+    },
+    "hint2": {
+     "scene": "Half a squeezed lemon, a used cotton swab, and a small glass dish with a few drops of clear juice, laid out as evidence; the warm glowing bulb of a desk lamp shows at the edge of the frame.",
+     "check": "종이에 글씨가 나타난 모습이 보이면 안 됩니다."
+    },
+    "truth": {
+     "scene": "A smiling teacher at her desk holding a sheet of paper close to a glowing desk lamp, faint brown squiggles appearing on the warmed paper (not readable), with half a lemon and a cotton swab on the desk; warm, cheerful classroom light.",
+     "check": "읽을 수 있는 글자가 보이면 안 됩니다."
+    }
+   }
+  },
+  {
+   "id": "july-snowman",
+   "kind": "mystery",
+   "level": 1,
+   "added": "2026-10-29",
+   "title": {
+    "en": "A Snowman in July",
+    "ko": "7월의 눈사람"
+   },
+   "setup": {
+    "en": "On a 100-degree day in July in Texas, a family built a real snowman in their front yard. Neighbors came out to cheer, and a six-year-old girl cried happy tears.",
+    "ko": "기온이 섭씨 38도까지 오른 텍사스의 7월, 한 가족이 앞마당에 진짜 눈으로 눈사람을 만들었습니다. 이웃들이 나와서 환호했고, 여섯 살 여자아이는 기뻐서 울었습니다."
+   },
+   "truth": {
+    "en": "The snow came from the town's ice rink. When an ice resurfacing machine (a Zamboni) smooths the rink, it scrapes off ice shavings that look and feel like real snow, and rinks usually throw them away. It was Lily's sixth birthday. She had never seen snow, and her only wish was to see it. Her dad asked the ice rink, and they gave him a whole pickup truck full of shavings for free. The family and neighbors hurried to build the snowman before it melted, as a birthday surprise for Lily.",
+    "ko": "눈은 동네 아이스링크에서 왔습니다. 정빙기(잠보니)가 링크 얼음판을 고르게 다듬을 때 깎여 나오는 얼음 가루는 진짜 눈처럼 보이고 만져지는데, 링크에서는 보통 그냥 버립니다. 그날은 릴리의 여섯 번째 생일이었습니다. 한 번도 눈을 본 적이 없는 릴리의 유일한 소원은 눈을 보는 것이었습니다. 아빠가 아이스링크에 부탁하자, 링크에서 얼음 가루를 픽업트럭 한가득 공짜로 내주었습니다. 가족과 이웃들은 눈이 녹기 전에 서둘러 눈사람을 만들어 릴리에게 생일 선물로 깜짝 보여 주었습니다."
+   },
+   "keys": [
+    {
+     "id": "rink",
+     "label": {
+      "en": "Where the snow came from",
+      "ko": "눈의 출처"
+     },
+     "text": {
+      "en": "Ice shavings from an ice rink, scraped off by a Zamboni.",
+      "ko": "아이스링크에서 정빙기가 깎아 낸 얼음 가루."
+     }
+    },
+    {
+     "id": "gift",
+     "label": {
+      "en": "Why they built it",
+      "ko": "눈사람을 만든 이유"
+     },
+     "text": {
+      "en": "A birthday surprise for a girl who had never seen snow and wished to see it.",
+      "ko": "눈을 한 번도 본 적 없는 아이의 생일 소원을 이뤄 주려는 깜짝 선물."
+     }
+    }
+   ],
+   "hints": [
+    {
+     "en": "The snow did not fall from the sky, and nobody made it at home.",
+     "ko": "눈은 하늘에서 내린 것도, 집에서 만든 것도 아닙니다."
+    },
+    {
+     "en": "Think of a place in town that stays frozen all year, and what gets scraped off there every day.",
+     "ko": "동네에서 1년 내내 얼어 있는 곳, 그리고 그곳에서 날마다 깎여 나오는 것을 떠올려 보세요."
+    }
+   ],
+   "facts": "- A hot July day in Texas, about 100°F (38°C).\n- The snow was ice shavings from the town's ice rink. An ice resurfacing machine (a Zamboni) scrapes them off the rink; they look and feel like real snow. So a machine scraped it off, but it was not a snow machine or artificial snow.\n- Rinks normally throw the shavings away. The rink gave a whole pickup truck of shavings for free when the dad asked.\n- The girl is Lily. That day was her sixth birthday. She had never seen snow, and her only birthday wish was to see snow.\n- Lily's dad brought the shavings home in his pickup truck. The family and neighbors built the snowman quickly before it melted, as a birthday surprise.\n- The girl who cried happy tears is Lily.\n- The snow did not come from a store, a freezer, a movie set, the mountains, or the sky. Nobody was sick; there is no sad backstory.\n- Neighbors' names and the rink's name are not part of the story (IRRELEVANT).",
+   "pictures": {
+    "cover": {
+     "scene": "A suburban Texas front yard on a blazing-hot July afternoon: a real snowman stands on dry, sun-baked grass, slightly melting, with heat shimmer in the air; neighbors in summer clothes watch from the sidewalk; a small girl stands in front of the snowman with her hands over her mouth in delight.",
+     "check": "생일 고깔모자, 아이스링크, 트럭에 실린 얼음이 보이면 안 됩니다."
+    },
+    "hint1": {
+     "scene": "A clear glass evidence jar half full of white, snow-like ice shavings that are starting to melt, next to a pickup-truck key on a leather key ring and a few drops of water on the desk.",
+     "check": "아이스링크나 정빙기가 보이면 안 됩니다."
+    },
+    "hint2": {
+     "scene": "A pair of rental ice skates, a plain paper wristband from a skating rink, and a small metal tray holding a pile of white ice shavings.",
+     "check": "팔찌나 스케이트에 상표나 글씨가 없어야 합니다."
+    },
+    "truth": {
+     "scene": "A sunny Texas front yard in July: a little girl in a summer dress hugging a slightly melting snowman while family and neighbors cheer around her; a pickup truck in the driveway with white ice shavings piled in its bed; joyful.",
+     "check": "글자나 간판이 보이면 안 됩니다."
+    }
+   }
+  },
+  {
+   "id": "lights-at-nine",
+   "kind": "mystery",
+   "level": 2,
+   "added": "2026-10-29",
+   "title": {
+    "en": "Lights at Nine",
+    "ko": "아홉 시의 불빛"
+   },
+   "setup": {
+    "en": "Every night at exactly 9:00, Grace switches off every light in her house for ten seconds, then turns them back on. A minute later, a house far across the valley does the same. Grace and the person in that house never talk on the phone.",
+    "ko": "그레이스는 매일 밤 정각 9시가 되면 집 안의 불을 모두 10초 동안 껐다가 다시 켭니다. 1분쯤 뒤, 골짜기 건너 멀리 있는 집 한 채도 똑같이 합니다. 그레이스와 그 집 사람은 전화 통화를 하지 않습니다."
+   },
+   "truth": {
+    "en": "The house across the valley belongs to Grace's father. He is in his eighties, lives alone, and is very hard of hearing, so phone calls don't work for him, and he never learned to text. Years ago they agreed on a signal. At 9:00, Grace blinks her lights to say, \"Good night. Are you okay?\" When her father blinks his lights back, it means, \"I'm fine. Good night.\" If his lights ever fail to answer, Grace will drive over at once to check on him. So far, he has answered every single night.",
+    "ko": "골짜기 건너편 집에는 그레이스의 아버지가 삽니다. 여든이 넘은 아버지는 혼자 살고 귀가 많이 어두워서 전화 통화가 어렵고, 문자도 배운 적이 없습니다. 그래서 오래전 두 사람은 신호를 정했습니다. 9시에 그레이스가 불을 깜빡이면 \"안녕히 주무세요. 괜찮으세요?\"라는 뜻이고, 아버지가 불을 깜빡여 답하면 \"나는 괜찮다. 잘 자라.\"라는 뜻입니다. 아버지 집 불빛이 대답하지 않는 날이 오면, 그레이스는 곧바로 차를 몰고 가서 살펴볼 것입니다. 지금까지 아버지는 하루도 빠짐없이 대답했습니다."
+   },
+   "keys": [
+    {
+     "id": "signal",
+     "label": {
+      "en": "What the lights mean",
+      "ko": "불빛의 의미"
+     },
+     "text": {
+      "en": "A signal between the two houses: \"Good night, are you okay?\" and \"I'm fine.\"",
+      "ko": "두 집이 주고받는 신호다. \"괜찮으세요?\"와 \"괜찮다\"."
+     }
+    },
+    {
+     "id": "who",
+     "label": {
+      "en": "Who lives across the valley",
+      "ko": "건너편에 사는 사람"
+     },
+     "text": {
+      "en": "Grace's elderly father, who lives alone.",
+      "ko": "혼자 사는 그레이스의 연로한 아버지."
+     }
+    },
+    {
+     "id": "why",
+     "label": {
+      "en": "Why they do it this way",
+      "ko": "이렇게 하는 이유"
+     },
+     "text": {
+      "en": "He can't use the phone because he is hard of hearing, and it is a nightly check that he is safe.",
+      "ko": "아버지는 귀가 어두워 전화를 못 하고, 매일 밤 아버지가 무사한지 확인하는 것이다."
+     }
+    }
+   ],
+   "hints": [
+    {
+     "en": "The two houses are having a conversation.",
+     "ko": "두 집은 대화를 나누고 있습니다."
+    },
+    {
+     "en": "The person across the valley is family, and this is about making sure someone is safe.",
+     "ko": "건너편 사람은 가족이고, 이것은 누군가가 무사한지 확인하는 일입니다."
+    }
+   ],
+   "facts": "- The house across the valley belongs to Grace's father. He is in his eighties and lives alone. Grace is his adult daughter.\n- He is very hard of hearing, so phone calls don't work for him. He never learned to text and does not use video calls.\n- Years ago, they agreed on the light signal.\n- Grace's blink at 9:00 means \"Good night. Are you okay?\" Her father's blink back means \"I'm fine. Good night.\"\n- If his lights ever fail to blink back, Grace will drive over right away (about ten minutes by car) to check on him. So far he has answered every night.\n- The two houses can see each other across the valley.\n- It is not a game, a prank, a power problem, a code for anyone else, a religious ritual, or a way to save electricity. No neighbors or strangers are involved.\n- Grace's mother, Grace's job, and Grace's exact age are not part of the story (IRRELEVANT).",
+   "pictures": {
+    "cover": {
+     "scene": "A night view across a wide, dark valley: two small houses on opposite hillsides, far apart, each with warm lit windows; a sky full of stars; calm and quiet.",
+     "check": "사람이나 전화기가 보이면 안 됩니다."
+    },
+    "hint1": {
+     "scene": "Two old-fashioned light switches on small wooden plates, one flipped up and one flipped down, beside a plain wristwatch whose hands point to nine o'clock.",
+     "check": "시계 숫자가 이상하게 그려졌으면 숫자 없는 시계로 다시 만듭니다."
+    },
+    "hint2": {
+     "scene": "A small hearing aid, a pair of reading glasses, and an old framed photo of an elderly father with his grown daughter, faces soft and out of focus; an old landline phone is pushed to the side.",
+     "check": "전화기나 액자에 글씨가 보이면 안 됩니다."
+    },
+    "truth": {
+     "scene": "Night across a wide valley: in a small house on one hillside an elderly father at a lit window raising his hand, and on the opposite hillside his grown daughter at her lit window smiling; a sky full of stars; warm and peaceful.",
+     "check": "글자가 보이면 안 됩니다."
+    }
+   }
+  },
+  {
+   "id": "midnight-cooler",
+   "kind": "mystery",
+   "level": 2,
+   "added": "2026-10-29",
+   "title": {
+    "en": "The Midnight Cooler",
+    "ko": "한밤의 아이스박스"
+   },
+   "setup": {
+    "en": "At a winter retreat, the snack cooler was locked with a 4-digit code that only one adult knew. Every morning for three days, the lock was still closed, but more snacks were gone. Nobody confessed. On the third morning, one video solved the case.",
+    "ko": "겨울 수련회에서 간식 아이스박스는 어른 한 사람만 아는 네 자리 비밀번호 자물쇠로 잠겨 있었습니다. 사흘 동안 아침마다 자물쇠는 그대로 잠겨 있었는데, 간식은 계속 줄어들었습니다. 아무도 자백하지 않았습니다. 사흘째 아침, 영상 하나가 사건을 해결했습니다."
+   },
+   "truth": {
+    "en": "The snack thief was Pastor Dan, the only adult who knew the code. He sleepwalks. Each night he got up in his sleep, opened the lock with the code he had set himself, ate snacks, locked it again out of habit, and went back to bed. He remembered nothing, so when he said, \"It wasn't me,\" he honestly believed it. After two mornings of missing snacks, a few students hid a phone near the cooler and left it recording overnight. On the third morning, the video showed Pastor Dan in his pajamas, eyes half closed, eating chips. Everyone laughed, Pastor Dan most of all, and he bought new snacks.",
+    "ko": "간식 도둑은 비밀번호를 아는 유일한 어른, 댄 목사님이었습니다. 목사님은 몽유병이 있었습니다. 밤마다 잠든 채 일어나 자기가 정한 비밀번호로 자물쇠를 열고, 간식을 먹고, 습관처럼 다시 잠근 뒤 잠자리로 돌아갔습니다. 본인은 아무것도 기억하지 못했기 때문에 \"나는 안 먹었다\"는 말도 진심이었습니다. 간식이 두 번 사라지자, 학생 몇 명이 그날 밤 아이스박스 근처에 휴대폰을 숨겨 두고 밤새 녹화를 켜 두었습니다. 사흘째 아침, 영상에는 잠옷 차림에 눈을 반쯤 감은 댄 목사님이 과자를 먹는 모습이 찍혀 있었습니다. 모두가 웃었고, 가장 크게 웃은 사람은 목사님이었습니다. 목사님은 간식을 새로 사 왔습니다."
+   },
+   "keys": [
+    {
+     "id": "who",
+     "label": {
+      "en": "Who took the snacks",
+      "ko": "간식을 가져간 사람"
+     },
+     "text": {
+      "en": "Pastor Dan, the one adult who knew the code.",
+      "ko": "비밀번호를 아는 유일한 어른, 댄 목사님."
+     }
+    },
+    {
+     "id": "sleep",
+     "label": {
+      "en": "Why nobody knew",
+      "ko": "아무도 몰랐던 이유"
+     },
+     "text": {
+      "en": "He was sleepwalking. He didn't remember, so his denial was honest, and he relocked the cooler out of habit.",
+      "ko": "몽유병이었다. 본인도 기억하지 못해 부인한 말이 진심이었고, 습관처럼 다시 잠갔다."
+     }
+    },
+    {
+     "id": "video",
+     "label": {
+      "en": "How it was solved",
+      "ko": "해결된 방법"
+     },
+     "text": {
+      "en": "Students left a phone recording near the cooler overnight, and the video showed him.",
+      "ko": "학생들이 밤새 휴대폰으로 아이스박스 주변을 녹화했고, 영상에 목사님이 찍혔다."
+     }
+    }
+   ],
+   "hints": [
+    {
+     "en": "The person who did it was telling the truth when they said, \"It wasn't me.\"",
+     "ko": "범인은 \"내가 안 그랬다\"고 말할 때 거짓말을 하지 않았습니다."
+    },
+    {
+     "en": "Think about who could open the lock without breaking it, and what some people do in their sleep.",
+     "ko": "자물쇠를 부수지 않고 열 수 있는 사람이 누구인지, 그리고 어떤 사람들이 잠결에 하는 일을 생각해 보세요."
+    }
+   ],
+   "facts": "- A church youth winter retreat at a cabin. The snacks were kept in a cooler locked with a 4-digit combination lock.\n- Only Pastor Dan, the youth pastor and the adult in charge, knew the code. He set it himself and told no one.\n- Pastor Dan sleepwalks; it has happened now and then since he was a child.\n- Each night he got up in his sleep, opened the lock, ate snacks (mostly chips and cookies), locked it again out of habit, and went back to bed.\n- He remembered nothing. When he said \"It wasn't me,\" he sincerely believed it. He was not lying.\n- No student took snacks. No animal was involved. The lock was not broken or hacked, and nobody else learned or guessed the code.\n- After snacks had gone missing two mornings in a row, a few students hid a phone near the cooler that night and left it recording. On the third morning, the video showed Pastor Dan in his pajamas, eyes half closed, eating chips.\n- Everyone laughed, Pastor Dan most of all. Nobody was punished. He bought new snacks.\n- Which students, exact snack counts, and brands are not part of the story (IRRELEVANT).",
+   "pictures": {
+    "cover": {
+     "scene": "A rustic retreat-cabin kitchen at dawn: a large blue snack cooler on the floor, closed with a four-dial combination padlock that is still locked (the dials show no readable numbers); empty chip bags and cookie crumbs scattered around it; soft winter light through frosted windows.",
+     "check": "사람이 보이면 안 됩니다."
+    },
+    "hint1": {
+     "scene": "A pair of fuzzy slippers with cookie crumbs stuck to their soles, an empty chip bag, and a crumpled pillowcase.",
+     "check": "사람이 보이면 안 됩니다."
+    },
+    "hint2": {
+     "scene": "A smartphone propped against a mug, its screen showing a dark, grainy night-vision still of a hallway with a blurry figure in pajamas; beside it, an open four-dial combination padlock.",
+     "check": "휴대폰 화면에 REC나 시간 같은 글자가 들어가거나 얼굴이 보이면 안 됩니다."
+    },
+    "truth": {
+     "scene": "A grainy black-and-white night-vision camera view of a cabin kitchen: a man in pajamas, eyes half closed, sits on the floor beside an open snack cooler, munching chips in his sleep; funny and harmless.",
+     "check": "글자나 시간 표시가 보이면 안 됩니다."
+    }
+   }
+  },
+  {
+   "id": "romeo-juliet",
+   "kind": "mystery",
+   "level": 1,
+   "added": "2026-10-29",
+   "title": {
+    "en": "Romeo and Juliet",
+    "ko": "로미오와 줄리엣"
+   },
+   "setup": {
+    "en": "Romeo and Juliet were lying on the floor, gasping, in a puddle of water surrounded by pieces of broken glass. The window was open, and neither of them had a single scratch. Ten minutes later, both of them were perfectly fine.",
+    "ko": "로미오와 줄리엣이 깨진 유리 조각이 흩어진 물웅덩이 한가운데, 바닥에 누워 헐떡이고 있었습니다. 창문은 열려 있었고, 둘 다 긁힌 자국 하나 없었습니다. 10분 뒤, 둘은 아무 일 없었다는 듯 멀쩡해졌습니다."
+   },
+   "truth": {
+    "en": "Romeo and Juliet are goldfish. Their glass fishbowl sat on a table by the window. A strong gust of wind blew in through the open window, the curtain swung and knocked the bowl off the table, and it shattered on the floor. Just then the family's son came home. He saw the two fish flopping in the puddle, ran to the kitchen for a pot of water, scooped them up with his hands, and dropped them in. Ten minutes later they were swimming around as if nothing had happened. That weekend, the family bought a new bowl and put it far from the window.",
+    "ko": "로미오와 줄리엣은 금붕어입니다. 둘이 사는 유리 어항은 창가 탁자 위에 있었습니다. 열린 창문으로 세찬 바람이 불어 들어오자 커튼이 펄럭이며 어항을 쳐서 떨어뜨렸고, 어항은 바닥에서 깨졌습니다. 마침 그때 그 집 아들이 집에 들어왔습니다. 물웅덩이에서 파닥거리는 두 마리를 본 아들은 부엌으로 달려가 냄비에 물을 받아 왔고, 손으로 둘을 건져 냄비에 넣었습니다. 10분 뒤 둘은 아무 일 없었다는 듯 헤엄치고 있었습니다. 그 주말, 가족은 새 어항을 사서 창문에서 멀리 두었습니다."
+   },
+   "keys": [
+    {
+     "id": "fish",
+     "label": {
+      "en": "Who Romeo and Juliet are",
+      "ko": "로미오와 줄리엣의 정체"
+     },
+     "text": {
+      "en": "They are goldfish, not people.",
+      "ko": "사람이 아니라 금붕어다."
+     }
+    },
+    {
+     "id": "bowl",
+     "label": {
+      "en": "What happened",
+      "ko": "무슨 일이 있었나"
+     },
+     "text": {
+      "en": "Wind through the open window knocked their fishbowl off the table and it broke.",
+      "ko": "열린 창으로 들어온 바람에 어항이 떨어져 깨졌다."
+     }
+    },
+    {
+     "id": "saved",
+     "label": {
+      "en": "Why they were fine",
+      "ko": "멀쩡해진 이유"
+     },
+     "text": {
+      "en": "The family's son came home just in time and put them in a pot of water.",
+      "ko": "마침 집에 온 아들이 둘을 냄비 물에 옮겨 살렸다."
+     }
+    }
+   ],
+   "hints": [
+    {
+     "en": "Romeo and Juliet are not people.",
+     "ko": "로미오와 줄리엣은 사람이 아닙니다."
+    },
+    {
+     "en": "The broken glass used to hold the water.",
+     "ko": "깨진 유리는 원래 그 물을 담고 있었습니다."
+    }
+   ],
+   "facts": "- Romeo and Juliet are two pet goldfish in a family's house. They are not people.\n- Their glass fishbowl sat on a table by the window.\n- A strong gust of wind blew through the open window. The curtain swung and knocked the bowl off the table. It shattered on the floor and the water spilled.\n- \"Gasping\" means the two fish were flopping and struggling out of the water. The glass did not cut them.\n- Right then, the family's son came home. He saw them, ran to the kitchen, filled a pot with water, scooped the fish up with his hands, and put them in. Within ten minutes they were swimming normally.\n- Nobody died and nobody was hurt. No person or animal knocked the bowl over: there was no cat, no break-in, and nobody did it on purpose.\n- That weekend the family bought a new bowl and put it away from the window.\n- The family's children named the fish after Shakespeare's play; otherwise the play has nothing to do with it.\n- The family's names, the son's age, and the time of day are not part of the story (IRRELEVANT).",
+   "pictures": {
+    "cover": {
+     "scene": "A sunlit living-room floor beside an open window: a curtain billowing in the wind, a small puddle of water with scattered shards of curved broken glass, and an empty little table by the window; calm and quiet, no people.",
+     "check": "물고기, 어항 모양, 쓰러진 사람이 보이면 안 됩니다."
+    },
+    "hint1": {
+     "scene": "An unlabeled shaker can of fish-food flakes, a tiny green aquarium net, and a few colorful aquarium pebbles.",
+     "check": "물고기가 보이거나 통에 글씨가 있으면 안 됩니다."
+    },
+    "hint2": {
+     "scene": "Curved shards of a broken round glass bowl collected on a cloth, still wet, with a strand of green water plant and a few colorful pebbles among them.",
+     "check": "물고기가 보이면 안 됩니다."
+    },
+    "truth": {
+     "scene": "A boy kneeling on a wet living-room floor, gently lowering two orange goldfish into a cooking pot of water with his cupped hands; pieces of a broken round fishbowl nearby and a curtain blowing at the open window; relief and warmth.",
+     "check": "피나 상처, 글자가 보이면 안 됩니다."
+    }
+   }
+  },
+  {
+   "id": "hotel-bankrupt",
+   "kind": "mystery",
+   "level": 1,
+   "added": "2026-10-29",
+   "title": {
+    "en": "Bankrupt at the Hotel",
+    "ko": "호텔 앞의 파산"
+   },
+   "setup": {
+    "en": "A man pushed his car along until it stopped in front of a hotel. The moment it stopped, he knew he was bankrupt.",
+    "ko": "한 남자가 자기 차를 밀고 가다가 호텔 앞에 멈췄습니다. 차가 멈춘 그 순간, 그는 자신이 파산했다는 것을 알았습니다."
+   },
+   "truth": {
+    "en": "He was playing Monopoly. His game piece was the little car token, so \"pushing his car\" meant moving his piece along the board. It stopped on a property where another player had built a hotel. He didn't have enough money to pay the rent, so he went bankrupt and was out of the game.",
+    "ko": "그는 보드게임 모노폴리(부루마블과 비슷한 게임)를 하고 있었습니다. 그의 말이 작은 자동차 모양이어서, '차를 밀었다'는 것은 판 위에서 말을 옮겼다는 뜻입니다. 말이 멈춘 칸에는 다른 사람이 지어 놓은 호텔이 있었습니다. 통행료를 낼 돈이 없던 그는 파산했고, 게임에서 탈락했습니다."
+   },
+   "keys": [
+    {
+     "id": "game",
+     "label": {
+      "en": "Where this happened",
+      "ko": "이 일이 일어난 곳"
+     },
+     "text": {
+      "en": "In a board game (Monopoly), not in real life.",
+      "ko": "현실이 아니라 보드게임(모노폴리) 속."
+     }
+    },
+    {
+     "id": "rent",
+     "label": {
+      "en": "Why he went bankrupt",
+      "ko": "파산한 이유"
+     },
+     "text": {
+      "en": "His car token landed on a property with another player's hotel, and he couldn't pay the rent.",
+      "ko": "그의 자동차 말이 다른 사람의 호텔이 있는 칸에 멈췄고, 통행료를 낼 수 없었다."
+     }
+    }
+   ],
+   "hints": [
+    {
+     "en": "The car is very, very small.",
+     "ko": "그 차는 아주아주 작습니다."
+    },
+    {
+     "en": "This happened at a table, during a game.",
+     "ko": "이 일은 탁자 위에서, 게임을 하다가 일어났습니다."
+    }
+   ],
+   "facts": "- The man was playing the board game Monopoly at a table with family and friends. (If asked about a similar game such as the Korean game Blue Marble, answer YES.)\n- \"His car\" is his game piece, the small car token. \"Pushing\" it means moving it along the board after rolling the dice.\n- It stopped on a property where another player had built a hotel. He could not pay the rent, so he went bankrupt and was out of the game.\n- There was no real car, no real hotel, and no real money lost.\n- The other players' names and the time of day are not part of the story (IRRELEVANT).",
+   "pictures": {
+    "cover": {
+     "scene": "A glowing hotel entrance on a city street at night with a silver car stopped at the curb, photographed with a strong tilt-shift effect so the whole scene looks slightly like a miniature model; moody lighting.",
+     "check": "주사위, 게임판, 지폐, 거대한 손이 보이면 안 됩니다."
+    },
+    "hint1": {
+     "scene": "A tiny silver metal car game piece in a small clear evidence bag, beside a coin for scale.",
+     "check": "상표나 글씨가 없어야 합니다."
+    },
+    "hint2": {
+     "scene": "A pair of dice, a small red plastic hotel piece, a tiny green house piece, and a short stack of colorful paper play money.",
+     "check": "게임 상표나 지폐 글씨가 보이면 안 됩니다."
+    },
+    "truth": {
+     "scene": "A family laughing around a board game on a kitchen table at night: a tiny silver car game piece stopped on a space with a small red hotel piece, dice and colorful play money scattered, one player throwing up his hands in mock despair.",
+     "check": "게임 상표나 글자, 숫자가 보이면 안 됩니다."
+    }
+   }
+  },
+  {
+   "id": "elevator-man",
+   "kind": "mystery",
+   "level": 2,
+   "added": "2026-10-29",
+   "title": {
+    "en": "The Elevator Man",
+    "ko": "엘리베이터의 남자"
+   },
+   "setup": {
+    "en": "A man lives on the 10th floor of an apartment building. Every morning he takes the elevator down to the lobby. Every evening he rides it only to the 7th floor and walks up the last three floors. But on rainy days, or when someone else is in the elevator, he rides all the way to the 10th floor.",
+    "ko": "한 남자가 아파트 10층에 삽니다. 아침마다 그는 엘리베이터를 타고 1층으로 내려갑니다. 그런데 저녁에 돌아올 때는 7층까지만 엘리베이터를 타고, 나머지 세 층은 계단으로 걸어 올라갑니다. 단, 비가 오는 날이나 엘리베이터에 다른 사람이 함께 탔을 때는 10층까지 곧장 올라갑니다."
+   },
+   "truth": {
+    "en": "The man is very short. Inside the elevator, the highest button he can reach is 7. Going down is easy, because the lobby button is low. On rainy days he carries an umbrella and presses 10 with its tip, and when someone else is in the elevator, he simply asks them to press 10 for him.",
+    "ko": "남자는 키가 아주 작습니다. 엘리베이터 안에서 그의 손이 닿는 가장 높은 버튼이 7층입니다. 1층 버튼은 낮은 곳에 있어서 내려갈 때는 문제가 없습니다. 비 오는 날에는 우산을 들고 있으니 우산 끝으로 10층 버튼을 누르고, 다른 사람이 함께 탔을 때는 10층을 눌러 달라고 부탁합니다."
+   },
+   "keys": [
+    {
+     "id": "reach",
+     "label": {
+      "en": "Why he stops at 7",
+      "ko": "7층에서 내리는 이유"
+     },
+     "text": {
+      "en": "He is very short and can't reach the 10 button; 7 is the highest he can reach.",
+      "ko": "키가 아주 작아 10층 버튼에 손이 닿지 않고, 7층이 닿는 한계다."
+     }
+    },
+    {
+     "id": "help",
+     "label": {
+      "en": "Rainy days and other riders",
+      "ko": "비 오는 날과 다른 사람이 있을 때"
+     },
+     "text": {
+      "en": "On rainy days he presses 10 with his umbrella; when others are there, he asks them to press it.",
+      "ko": "비 오는 날은 우산으로 10층을 누르고, 다른 사람이 있으면 눌러 달라고 한다."
+     }
+    }
+   ],
+   "hints": [
+    {
+     "en": "The answer has to do with the buttons, not with exercise.",
+     "ko": "답은 운동이 아니라 버튼과 관련이 있습니다."
+    },
+    {
+     "en": "What does he carry on rainy days, and how could it help him?",
+     "ko": "비 오는 날 그가 들고 다니는 물건은 무엇이고, 그것이 어떻게 도움이 될까요?"
+    }
+   ],
+   "facts": "- The man is an adult who is very short, about the height of a young child.\n- Inside the elevator, the highest button he can reach is 7. The lobby button is low, so going down is easy.\n- He is not exercising, not afraid of anything, and nothing is wrong with the elevator or with floors 8 to 10. He is not visiting anyone on the 7th floor.\n- On rainy days he carries an umbrella and presses 10 with its tip. When someone else is in the elevator, he asks them to press 10.\n- His name and job are not part of the story (IRRELEVANT).",
+   "pictures": {
+    "cover": {
+     "scene": "An apartment-building hallway in the evening: an elevator door closing on the left, and on the right an open stairwell door with the long shadow of someone climbing the stairs; no person visible.",
+     "check": "사람의 키를 짐작할 수 있는 모습이 보이면 안 됩니다."
+    },
+    "hint1": {
+     "scene": "A small folding step stool beside a printed photo of a tall elevator button panel; the button labels in the photo are blurry and unreadable.",
+     "check": "버튼 숫자가 읽히지 않는 편이 좋습니다."
+    },
+    "hint2": {
+     "scene": "A closed, wet black umbrella lying on the desk with water pooled around it; its tip is scuffed with a small round mark, as if it has been used to press something.",
+     "check": "사람이 보이면 안 됩니다."
+    },
+    "truth": {
+     "scene": "Inside an apartment elevator on a rainy evening: a short adult man in a raincoat reaching up and pressing a high button with the tip of his closed umbrella; the button labels are blurred and unreadable; friendly, not mocking.",
+     "check": "버튼 숫자가 읽히면 안 됩니다. 사람을 놀리는 느낌이 들면 안 됩니다."
+    }
+   }
+  },
+  {
+   "id": "desert-man",
+   "kind": "mystery",
+   "level": 2,
+   "added": "2026-10-29",
+   "title": {
+    "en": "The Man in the Desert",
+    "ko": "사막의 남자"
+   },
+   "setup": {
+    "en": "A man was found sitting in the middle of the desert in nothing but his underwear, holding half of a broken match. There were no footprints anywhere around him. He was sunburned and grumpy, but not hurt at all.",
+    "ko": "사막 한가운데서 속옷 차림의 남자가 앉아 있는 채로 발견되었습니다. 그의 손에는 반쯤 부러진 성냥개비가 쥐어져 있었고, 주변 어디에도 발자국이 없었습니다. 그는 햇볕에 그을리고 잔뜩 뿔이 나 있었지만, 다친 데는 하나도 없었습니다."
+   },
+   "truth": {
+    "en": "The man had been flying over the desert in a hot-air balloon with a few friends. The balloon started losing height, and strong wind was pushing them toward a rocky canyon. To get over it, the balloon had to be lighter. They threw out everything they could, even their clothes, but it still wasn't enough: one person had to get out. While the basket skimmed low over soft sand, they drew matches, agreeing that whoever got the short, broken one would jump. He drew it and hopped down onto the sand. The lighter balloon rose over the canyon, and his friends radioed for help. He stayed right where he landed, as you should when you are stranded in the desert, so there were no footprints. A rescue truck picked him up an hour later.",
+    "ko": "남자는 친구 몇 명과 함께 열기구를 타고 사막 위를 날고 있었습니다. 그런데 열기구가 점점 내려앉았고, 세찬 바람이 그들을 바위 협곡 쪽으로 밀어붙였습니다. 협곡을 넘으려면 열기구가 더 가벼워져야 했습니다. 그들은 짐은 물론 옷까지 모두 던져 버렸지만, 그래도 모자랐습니다. 한 사람이 내려야 했습니다. 바구니가 부드러운 모래 위를 낮게 스치는 동안, 그들은 성냥개비로 제비를 뽑아 부러진 짧은 성냥을 뽑는 사람이 뛰어내리기로 했습니다. 그가 그것을 뽑았고, 모래 위로 폴짝 뛰어내렸습니다. 가벼워진 열기구는 협곡을 넘었고, 친구들은 무전으로 구조를 요청했습니다. 그는 사막에 고립되었을 때 해야 하는 대로 그 자리에서 움직이지 않고 기다렸기 때문에 발자국이 없었습니다. 한 시간 뒤 구조 트럭이 그를 데려갔습니다."
+   },
+   "keys": [
+    {
+     "id": "balloon",
+     "label": {
+      "en": "How he got there",
+      "ko": "그가 그곳에 온 방법"
+     },
+     "text": {
+      "en": "He jumped down from a hot-air balloon skimming low over the sand, so there are no footprints.",
+      "ko": "모래 위를 낮게 스치던 열기구에서 뛰어내렸다. 그래서 발자국이 없다."
+     }
+    },
+    {
+     "id": "weight",
+     "label": {
+      "en": "Why he had no clothes",
+      "ko": "옷이 없는 이유"
+     },
+     "text": {
+      "en": "The balloon had to get lighter to clear a canyon, so they threw everything out, even their clothes.",
+      "ko": "협곡을 넘으려면 가벼워져야 해서 옷까지 다 던졌다."
+     }
+    },
+    {
+     "id": "match",
+     "label": {
+      "en": "What the match means",
+      "ko": "성냥의 의미"
+     },
+     "text": {
+      "en": "They drew matches to decide who would get out, and he drew the broken one.",
+      "ko": "누가 내릴지 성냥으로 제비를 뽑았고, 그가 부러진 성냥을 뽑았다."
+     }
+    }
+   ],
+   "hints": [
+    {
+     "en": "He didn't walk to the spot where he was found.",
+     "ko": "그는 걸어서 그 자리에 온 것이 아닙니다."
+    },
+    {
+     "en": "The broken match was part of a choice made by a group of people.",
+     "ko": "부러진 성냥은 여러 사람이 무언가를 정할 때 쓰였습니다."
+    }
+   ],
+   "facts": "- The man was flying over the desert in a hot-air balloon with a few friends. How many friends does not matter.\n- The balloon was losing height, and strong wind was carrying them toward a rocky canyon. To rise over it safely, the balloon had to be lighter.\n- They threw out all their supplies, and even took off their clothes (down to their underwear) and threw them out. It still wasn't enough, so one person had to get out.\n- While the basket skimmed just above soft sand, they drew lots with matches; one match was broken short. Whoever drew it would jump. He drew it and hopped out onto the sand, as the group had agreed. It was a short jump and he was not hurt.\n- The lighter balloon rose and cleared the canyon. His friends landed safely on the other side and radioed for help.\n- He stayed where he landed, as people stranded in the desert are told to do, so there are no footprints. A rescue truck picked him up about an hour later. He was sunburned and grumpy about drawing the short match, but fine.\n- He was not pushed, robbed, or lost on foot. Nobody died and nobody was hurt.\n- His name, his friends' names, and which desert it was are not part of the story (IRRELEVANT).",
+   "pictures": {
+    "cover": {
+     "scene": "A vast empty desert under a harsh midday sun: smooth, untouched sand dunes with no footprints anywhere and shimmering heat haze; in the foreground, a single broken wooden match lies half-buried in the sand.",
+     "check": "사람, 열기구, 옷가지가 보이면 안 됩니다."
+    },
+    "hint1": {
+     "scene": "A short length of frayed rope tied to a small brass ring and clip, lying on a little pile of desert sand.",
+     "check": "열기구의 천이나 바구니가 통째로 보이면 안 됩니다."
+    },
+    "hint2": {
+     "scene": "Several whole wooden matches laid in a neat row, and one broken, shorter match set apart from the rest under the lamp.",
+     "check": "사람이 보이면 안 됩니다."
+    },
+    "truth": {
+     "scene": "Bright desert afternoon: a hot-air balloon rising away over a rocky canyon in the distance, while in the foreground a sunburned man in a plain white undershirt and boxer shorts sits on a sand dune with his arms crossed, grumpily holding a broken match; comic.",
+     "check": "지나친 노출이 없어야 합니다. 글자가 보이면 안 됩니다."
+    }
+   }
+  },
+  {
+   "id": "forest-swimmer",
+   "kind": "mystery",
+   "level": 2,
+   "added": "2026-10-29",
+   "title": {
+    "en": "The Swimmer in the Forest",
+    "ko": "숲속의 수영복"
+   },
+   "setup": {
+    "en": "After a huge forest fire was put out, firefighters found a man sitting in the middle of the burned forest. He was soaking wet, wearing only swim trunks and goggles, and looked very confused. The nearest lake was miles away.",
+    "ko": "거대한 산불이 꺼진 뒤, 소방대원들은 불탄 숲 한가운데 앉아 있는 남자를 발견했습니다. 그는 흠뻑 젖은 채 수영복과 물안경만 걸치고 있었고, 몹시 어리둥절한 얼굴이었습니다. 가장 가까운 호수는 몇 킬로미터나 떨어져 있었습니다."
+   },
+   "truth": {
+    "en": "The man had been swimming in that faraway lake. To fight the fire, a firefighting helicopter flew low over the lake and dipped the huge bucket hanging below it into the water, and it scooped him up along with the water. The pilot, who always keeps an eye on the bucket, saw something moving inside it. Instead of dumping the water on the fire, he flew to the nearest clearing where the fire had already burned out and gently set the bucket down. The man climbed out, soaking wet and very confused, and the ground crew found him there once that part of the fire was out.",
+    "ko": "남자는 몇 킬로미터 떨어진 그 호수에서 수영을 하고 있었습니다. 산불을 끄려고 소방 헬리콥터가 호수 위로 낮게 날아와, 아래에 매단 커다란 물통을 물속에 담가 물을 퍼 올렸습니다. 그런데 그도 물과 함께 퍼 올려졌습니다. 늘 물통을 지켜보는 조종사는 물통 안에서 무언가 움직이는 것을 보았습니다. 조종사는 물을 불 위에 쏟는 대신, 불이 이미 다 타고 꺼진 가장 가까운 빈터로 날아가 물통을 살며시 내려놓았습니다. 남자는 흠뻑 젖은 채 어리둥절한 얼굴로 물통에서 기어 나왔고, 그 일대의 불이 꺼지자 지상 대원들이 그곳에서 그를 발견했습니다."
+   },
+   "keys": [
+    {
+     "id": "swim",
+     "label": {
+      "en": "What he was doing before",
+      "ko": "그가 하고 있던 일"
+     },
+     "text": {
+      "en": "He was swimming in a lake far from the forest.",
+      "ko": "숲에서 멀리 떨어진 호수에서 수영하고 있었다."
+     }
+    },
+    {
+     "id": "bucket",
+     "label": {
+      "en": "How he got into the forest",
+      "ko": "숲에 오게 된 경위"
+     },
+     "text": {
+      "en": "A firefighting helicopter's water bucket scooped him up with the lake water.",
+      "ko": "소방 헬리콥터의 물통이 호수 물과 함께 그를 퍼 올렸다."
+     }
+    },
+    {
+     "id": "pilot",
+     "label": {
+      "en": "Why he wasn't hurt",
+      "ko": "다치지 않은 이유"
+     },
+     "text": {
+      "en": "The pilot saw him in the bucket and set it down gently in a burned-out clearing instead of dumping it on the fire.",
+      "ko": "조종사가 물통 속 그를 보고, 불 위에 쏟는 대신 불이 꺼진 빈터에 살며시 내려놓았다."
+     }
+    }
+   ],
+   "hints": [
+    {
+     "en": "He did not walk or run into the forest.",
+     "ko": "그는 걸어서도, 뛰어서도 숲에 들어가지 않았습니다."
+    },
+    {
+     "en": "Think about how such a huge fire is put out, and where all that water comes from.",
+     "ko": "그렇게 큰 산불을 어떻게 끄는지, 그 많은 물은 어디서 오는지 생각해 보세요."
+    }
+   ],
+   "facts": "- There was a large forest fire. Firefighting helicopters dipped big buckets hanging below them into a lake miles away and dropped the water on the fire.\n- The man was swimming in that lake. A helicopter's bucket dipped into the water right where he was and scooped him up with the water. Nobody on the ground noticed. (If asked about an airplane, answer NO: it was a helicopter with a hanging bucket.)\n- The pilot, who watches the bucket all the time, saw something moving inside it. Instead of dropping the water on the fire, he flew to the nearest open clearing where the fire had already burned out and gently set the bucket down on the ground. He radioed the ground crew.\n- The man climbed out of the bucket, soaking wet and very confused, wearing only swim trunks and goggles. The ground crew reached him as soon as that part of the fire was out. He was not hurt.\n- He was not a firefighter, not a lost hiker, and not running from the fire. Nobody put him there on purpose. Nobody died.\n- This is a tall tale told as a puzzle; within the game, treat it as what happened.\n- His name and the lake's name are not part of the story (IRRELEVANT).",
+   "pictures": {
+    "cover": {
+     "scene": "A forest just after a huge wildfire: blackened tree trunks, gray ash on the ground, thin smoke drifting, tiny distant silhouettes of firefighters; in the foreground on the ash lies a pair of swimming goggles.",
+     "check": "사람, 비행기, 호수가 보이면 안 됩니다."
+    },
+    "hint1": {
+     "scene": "A small clear evidence bag of gray ash that holds a strand of green lake weed and a tiny freshwater shell, beside a pair of swimming goggles.",
+     "check": "비행기가 보이면 안 됩니다."
+    },
+    "hint2": {
+     "scene": "A printed photo of a red firefighting helicopter flying low over a lake with a large orange water bucket hanging beneath it on a long cable, lying next to a glass jar of slightly murky lake water.",
+     "check": "물통 속 사람이나 사진에 글씨가 보이면 안 됩니다."
+    },
+    "truth": {
+     "scene": "A red firefighting helicopter hovering low over a burned-out forest clearing, having just set a big orange water bucket down on the ground; a dripping man in swim trunks and goggles climbs out of the bucket looking utterly confused; smoke far in the distance.",
+     "check": "불길 속의 사람이나 다친 모습이 보이면 안 됩니다."
+    }
+   }
+  },
+  {
+   "id": "turtle-soup",
+   "kind": "mystery",
+   "level": 3,
+   "added": "2026-10-29",
+   "title": {
+    "en": "Sea Turtle Soup",
+    "ko": "바다거북 스프"
+   },
+   "setup": {
+    "en": "A man ordered sea turtle soup at a seaside restaurant. After one spoonful, he asked the chef, \"Excuse me, is this really sea turtle soup?\" The chef said it was. The man paid, went home, and that night he ended a twenty-year friendship.",
+    "ko": "한 남자가 바닷가 식당에서 바다거북 스프를 주문했습니다. 한 숟가락 맛본 그는 요리사에게 \"실례지만, 이게 정말 바다거북 스프입니까?\" 하고 물었습니다. 요리사가 그렇다고 하자, 남자는 값을 치르고 집으로 돌아가 그날 밤 20년 된 우정을 끝냈습니다."
+   },
+   "truth": {
+    "en": "Twenty years earlier, the man and his best friend were sailing when their boat sank. They reached a tiny deserted island in the lifeboat. The man had hurt his leg, so every night his friend went out alone, saying he was hunting sea turtles, and came back with hot \"sea turtle soup.\" That soup kept them going for ten days until a passing ship found them. Back home, the friend was called a hero, and his book about how he kept them alive became a bestseller. Today, tasting real sea turtle soup for the first time, the man realized the island soup had tasted nothing like it. It had tasted like canned beef stew. The only cans on that trip had been in the lifeboat's emergency box, and his friend had said the box was lost when the boat sank. So his friend had hidden it, and that box also held signal flares and an emergency radio. They could have been rescued on the very first day. His friend had kept them stranded for ten days to become a hero.",
+    "ko": "20년 전, 남자는 가장 친한 친구와 요트를 타다가 배가 가라앉았습니다. 둘은 구명보트를 타고 작은 무인도에 닿았습니다. 남자는 다리를 다쳐 움직이기 어려웠고, 친구는 밤마다 혼자 나가 \"바다거북을 잡았다\"며 뜨끈한 '바다거북 스프'를 끓여 왔습니다. 그 스프 덕분에 둘은 열흘을 버텼고, 지나가던 배에 구조되었습니다. 돌아온 친구는 영웅이 되었고, 자기가 어떻게 둘을 살렸는지 쓴 책은 베스트셀러가 되었습니다. 그런데 오늘 진짜 바다거북 스프를 처음 맛본 남자는, 섬에서 먹은 스프가 이것과 전혀 다른 맛이었다는 것을 깨달았습니다. 그것은 통조림 소고기 스튜 맛이었습니다. 그 여행에서 통조림은 구명보트의 비상 상자에만 있었는데, 친구는 그 상자를 배와 함께 잃어버렸다고 했었습니다. 친구가 상자를 숨긴 것이었습니다. 그 상자에는 조명탄과 비상 무전기도 들어 있었습니다. 둘은 첫날 구조될 수 있었습니다. 친구는 영웅이 되려고 열흘 동안 둘을 섬에 붙잡아 둔 것이었습니다."
+   },
+   "keys": [
+    {
+     "id": "island",
+     "label": {
+      "en": "His past",
+      "ko": "그의 과거"
+     },
+     "text": {
+      "en": "Twenty years ago he was stranded on a deserted island with his best friend, who 'hunted sea turtles' for soup and later became a hero.",
+      "ko": "20년 전 가장 친한 친구와 무인도에 고립되었고, 친구는 '바다거북을 잡아' 스프를 끓였다며 훗날 영웅이 되었다."
+     }
+    },
+    {
+     "id": "cans",
+     "label": {
+      "en": "The island soup",
+      "ko": "섬에서 먹은 스프"
+     },
+     "text": {
+      "en": "It was canned stew from the lifeboat's emergency box, the box his friend had said was lost.",
+      "ko": "친구가 잃어버렸다던 구명보트 비상 상자의 통조림 스튜였다."
+     }
+    },
+    {
+     "id": "radio",
+     "label": {
+      "en": "Why he ended the friendship",
+      "ko": "우정을 끝낸 이유"
+     },
+     "text": {
+      "en": "The box also held signal flares and a radio, so they could have been rescued on day one; his friend kept them stranded to become a hero.",
+      "ko": "상자에는 조명탄과 무전기도 있어 첫날 구조될 수 있었다. 친구는 영웅이 되려고 열흘을 버텼다."
+     }
+    }
+   ],
+   "hints": [
+    {
+     "en": "This was not the first time someone had told him he was eating sea turtle soup.",
+     "ko": "그가 '바다거북 스프'라는 말을 들으며 무언가를 먹은 것은 이번이 처음이 아니었습니다."
+    },
+    {
+     "en": "Long ago, he and his best friend were stranded together, and only one of them ever went out to find food.",
+     "ko": "오래전 그는 가장 친한 친구와 함께 고립된 적이 있는데, 먹을 것을 구하러 나간 사람은 언제나 한 사람뿐이었습니다."
+    }
+   ],
+   "facts": "- Twenty years earlier, the man and his best friend were sailing when their boat sank in a storm. They escaped in the lifeboat and reached a tiny deserted island.\n- The man had hurt his leg and stayed at their shelter. Every night his friend went out alone, saying he was hunting sea turtles on the beach, and came back with hot \"sea turtle soup\" cooked over a fire.\n- They lived on that soup for ten days until a passing ship rescued them. Both were thin and tired but fine.\n- Back home, the friend was praised as a hero for keeping them alive, and he wrote a bestselling book about it.\n- The lifeboat had an emergency box with canned beef stew, signal flares, and an emergency radio. The friend told the man the box had been lost when the boat sank. That was a lie: he had hidden it on the island.\n- The \"sea turtle soup\" on the island was really the canned stew, heated over the fire. There were never any sea turtles on the island.\n- At the seaside restaurant, the man tasted real sea turtle soup for the first time. It tasted nothing like the island soup, which had tasted like canned beef stew. He realized his friend had hidden the box, and that with the flares and radio they could have been rescued on the very first day. His friend had kept them stranded for ten days to become a hero.\n- That night the man ended their twenty-year friendship. He did not hurt anyone, and he did not hurt himself.\n- Nobody died, and nobody was eaten. No human meat was involved. (Players who know the famous original puzzle may ask about this: answer NO.)\n- The restaurant soup really was sea turtle soup. The chef did nothing wrong and is not otherwise involved. There was no poison, and the man was not allergic or sick.\n- Names, the restaurant's name, the year, and how he ended the friendship (call, text, letter) are not part of the story (IRRELEVANT).",
+   "pictures": {
+    "cover": {
+     "scene": "A seaside restaurant terrace at dusk: a single bowl of soup on a white tablecloth with a spoon set down beside it and an empty chair pushed back; the dark sea and a distant lighthouse behind; a melancholy mood.",
+     "check": "사람이나 바다거북 모양이 보이면 안 됩니다."
+    },
+    "hint1": {
+     "scene": "An old, dented tin bowl and a worn metal spoon, salt-stained and weathered, as if kept from a long journey at sea.",
+     "check": "그릇 속 음식이나 사람이 보이면 안 됩니다."
+    },
+    "hint2": {
+     "scene": "A faded, salt-stained orange life jacket folded beside a coil of sea rope and the broken handle of a small wooden oar.",
+     "check": "구명조끼에 배 이름 같은 글씨가 있으면 안 됩니다."
+    },
+    "truth": {
+     "scene": "Night on a tiny deserted island: behind a rock, away from a small campfire, a man secretly opens a hidden emergency box full of canned food, signal flares, and a radio; in the distance his injured friend sleeps by the fire; tense mood.",
+     "check": "무기나 글자가 보이면 안 됩니다."
+    }
+   }
+  },
+  {
+   "id": "wrong-door-feast",
+   "kind": "mystery",
+   "level": 2,
+   "added": "2026-10-30",
+   "title": {
+    "en": "The Wrong Door",
+    "ko": "잘못 배달된 생일상"
+   },
+   "setup": {
+    "en": "An older couple ordered a birthday feast: fried chicken, pizza, and a cake. It was delivered to the apartment right below theirs. They knew it, but they didn't call the restaurant or knock on their neighbors' door. Instead, they ordered two bowls of black-bean noodles for themselves and smiled all through dinner.",
+    "ko": "한 노부부가 치킨과 피자, 케이크까지 생일상을 주문했습니다. 그런데 그 음식은 바로 아랫집으로 배달되었습니다. 부부는 그 사실을 알고 있었지만, 가게에 전화하지도, 아랫집 문을 두드리지도 않았습니다. 대신 자기들 먹을 짜장면 두 그릇을 시키고, 저녁 내내 싱글벙글 웃었습니다."
+   },
+   "truth": {
+    "en": "The delivery wasn't a mistake. The couple had typed in the downstairs address on purpose. A mom and her twin boys lived in the apartment below, and money had been tight for them that year. A few days earlier, in the elevator, the couple overheard one of the twins whisper, \"Mom says we can't have a party this year.\" The couple wanted to give the boys a birthday feast without making their mom feel embarrassed or in debt to anyone, so they made it look like a delivery mistake. They had paid in advance and asked the restaurant to say, \"It's already paid for. Please enjoy it.\" When the boys' mom called the restaurant, that is exactly what she heard. The family downstairs thought it was a happy accident, and the couple upstairs never told anyone.",
+    "ko": "배달 실수가 아니었습니다. 부부가 일부러 아랫집 주소를 적어 넣은 것이었습니다. 아랫집에는 엄마와 쌍둥이 형제가 살았는데, 그해 살림이 넉넉하지 않았습니다. 며칠 전 엘리베이터에서 부부는 쌍둥이 중 하나가 \"엄마가 올해는 생일 파티 못 한대\" 하고 속삭이는 것을 들었습니다. 부부는 아이들 엄마가 미안해하거나 누구에게 신세를 졌다고 느끼지 않게 생일상을 차려 주고 싶었습니다. 그래서 배달 실수처럼 꾸몄습니다. 값은 미리 치렀고, 가게에는 \"이미 계산된 음식이니 맛있게 드세요\"라고만 말해 달라고 부탁해 두었습니다. 아이들 엄마가 가게에 전화했을 때 들은 말이 바로 그것이었습니다. 아랫집 가족은 운 좋은 실수라고 생각했고, 윗집 부부는 아무에게도 말하지 않았습니다."
+   },
+   "keys": [
+    {
+     "id": "purpose",
+     "label": {
+      "en": "Was it a mistake?",
+      "ko": "실수였나"
+     },
+     "text": {
+      "en": "No. The couple typed the downstairs address on purpose and paid in advance.",
+      "ko": "아니다. 부부가 일부러 아랫집 주소를 적고 값을 미리 치렀다."
+     }
+    },
+    {
+     "id": "twins",
+     "label": {
+      "en": "Whose birthday it was",
+      "ko": "누구의 생일이었나"
+     },
+     "text": {
+      "en": "The twin boys downstairs, whose family couldn't afford a party that year.",
+      "ko": "그해 형편이 어려워 파티를 못 하게 된 아랫집 쌍둥이 형제의 생일."
+     }
+    },
+    {
+     "id": "secret",
+     "label": {
+      "en": "Why they kept it secret",
+      "ko": "숨긴 이유"
+     },
+     "text": {
+      "en": "So the boys' mom wouldn't feel embarrassed or in debt; the restaurant only said it was already paid for.",
+      "ko": "아이들 엄마가 미안해하거나 신세 진 기분이 들지 않게. 가게는 이미 계산된 음식이라고만 했다."
+     }
+    }
+   ],
+   "hints": [
+    {
+     "en": "The delivery driver didn't make a mistake.",
+     "ko": "배달 기사는 실수하지 않았습니다."
+    },
+    {
+     "en": "It was somebody's birthday, but not the couple's.",
+     "ko": "누군가의 생일이었지만, 부부의 생일은 아니었습니다."
+    }
+   ],
+   "facts": "- An older married couple, both retired, live in an apartment building.\n- The couple and the family downstairs know each other only as neighbors who say hello in the elevator.\n- They ordered a birthday feast (fried chicken, pizza, and a birthday cake) on a delivery app, and on purpose they typed in the address of the apartment directly below theirs. They paid in advance.\n- They also called the restaurant and asked: if anyone calls about this order, just say, \"It's already paid for. Please enjoy it.\"\n- A mother and her twin boys live downstairs. Money was tight for them that year. Why money was tight is not part of the story (IRRELEVANT).\n- A few days earlier, in the elevator, the couple overheard one twin whisper, \"Mom says we can't have a party this year.\" The twins' birthday was that day.\n- The couple wanted the boys to have a birthday feast without their mother feeling embarrassed, pitied, or in debt. So they made it look like a delivery mistake.\n- The delivery driver delivered exactly to the address on the order; the driver made no mistake.\n- The mother downstairs called the restaurant, heard \"It's already paid for. Please enjoy it,\" and the family celebrated. They believe it was a lucky mistake and do not know the couple sent it.\n- The couple ordered two bowls of black-bean noodles (jajangmyeon) for themselves and were happy all evening.\n- It was not the couple's birthday or anniversary. Nothing was stolen, nobody was tricked in a hurtful way, and nobody was angry. Nobody was hurt.\n- The couple never told anyone.\n- The restaurant's name, the floor numbers, and the twins' names and age are not part of the story (IRRELEVANT).",
+   "pictures": {
+    "cover": {
+     "scene": "A quiet apartment-building stairwell at night: on the landing below, a delivery bag with a pizza box and a cake box sits in front of a closed apartment door; one floor up, warm light spills from a half-open door; cozy and mysterious; no people.",
+     "check": "사람이나 글자, 호수 숫자가 보이면 안 됩니다."
+    },
+    "hint1": {
+     "scene": "A smartphone lying face-up on a kitchen counter, its food-delivery order screen blurred so nothing is readable, next to two empty takeout bowls of black-bean noodles with chopsticks.",
+     "check": "읽을 수 있는 글자나 숫자가 보이면 안 됩니다."
+    },
+    "hint2": {
+     "scene": "Two small paper party hats and a pack of colorful birthday candles left on a doormat in an apartment hallway.",
+     "check": "사람이나 글자가 보이면 안 됩니다."
+    },
+    "truth": {
+     "scene": "A modest apartment kitchen at night: twin boys in pajamas cheering at a table piled with fried chicken, pizza, and a birthday cake with lit candles, their mother laughing beside them; warm and joyful.",
+     "check": "글자가 보이면 안 됩니다."
+    }
+   }
+  },
+  {
+   "id": "business-trip",
+   "kind": "mystery",
+   "level": 2,
+   "added": "2026-10-30",
+   "title": {
+    "en": "Dad's Business Trip",
+    "ko": "아빠의 출장"
+   },
+   "setup": {
+    "en": "In November, a mother told her daughter that Dad had gone on a four-day business trip. But Dad's car never left the parking lot, his shoes stayed by the front door, and three times a day the mother set a tray of food outside the closed study door and later carried it back empty. Even on the coldest night, the study window stayed wide open.",
+    "ko": "11월, 엄마는 딸에게 아빠가 나흘 동안 출장을 갔다고 말했습니다. 그런데 아빠의 차는 주차장에서 한 번도 움직이지 않았고, 아빠의 구두도 현관에 그대로 있었습니다. 엄마는 하루 세 번, 닫힌 서재 문 앞에 밥상을 내려놓았다가 나중에 빈 그릇을 들고 나왔습니다. 가장 추운 밤에도 서재 창문은 활짝 열려 있었습니다."
+   },
+   "truth": {
+    "en": "Dad never went anywhere. Four days before his daughter's college entrance exam, the biggest test of her life, he came down with a bad case of the flu, and the doctor said it was very contagious. If she caught it, she might have to take the exam with a high fever, and if she knew he was sick, she would worry and want to take care of him. So Dad shut himself in the study, and Mom told their daughter he was on a business trip. Mom left his meals outside the door, and Dad kept the window open to air out the room so the flu wouldn't spread. Every night he texted his daughter as if from a hotel: \"Get some sleep. I'm proud of you.\" On the evening of the exam, when she came home, the study door opened, and there was Dad, his fever gone, waiting to hug her.",
+    "ko": "아빠는 어디에도 가지 않았습니다. 딸의 수능을 나흘 앞두고 아빠가 독한 독감에 걸렸고, 의사는 전염이 잘 된다고 했습니다. 딸이 옮으면 고열 속에서 시험을 봐야 할 수도 있었고, 아빠가 아프다는 것을 알면 걱정하며 간호하겠다고 나설 것이 뻔했습니다. 그래서 아빠는 서재에 스스로 들어가 문을 닫았고, 엄마는 딸에게 아빠가 출장을 갔다고 말했습니다. 엄마는 끼니마다 서재 문 앞에 밥을 놓아두었고, 아빠는 독감이 퍼지지 않도록 창문을 열어 방을 환기했습니다. 아빠는 밤마다 호텔에 있는 척 딸에게 문자를 보냈습니다. \"일찍 자. 우리 딸 자랑스럽다.\" 수능 날 저녁, 시험을 마치고 돌아온 딸 앞에서 서재 문이 열렸습니다. 열이 다 내린 아빠가 딸을 안아 주려고 기다리고 있었습니다."
+   },
+   "keys": [
+    {
+     "id": "home",
+     "label": {
+      "en": "Where Dad was",
+      "ko": "아빠가 있던 곳"
+     },
+     "text": {
+      "en": "He never left; he stayed shut in the study at home the whole time.",
+      "ko": "어디에도 가지 않고 내내 집 서재에 있었다."
+     }
+    },
+    {
+     "id": "flu",
+     "label": {
+      "en": "Why he hid",
+      "ko": "숨은 이유"
+     },
+     "text": {
+      "en": "He had the flu right before his daughter's college entrance exam and didn't want her to catch it.",
+      "ko": "딸의 수능 직전에 독감에 걸려, 딸에게 옮기지 않으려 했다."
+     }
+    },
+    {
+     "id": "trip",
+     "label": {
+      "en": "Why they called it a business trip",
+      "ko": "'출장'이라고 한 이유"
+     },
+     "text": {
+      "en": "So she wouldn't worry or try to take care of him until the exam was over.",
+      "ko": "시험이 끝날 때까지 딸이 걱정하거나 간호하겠다고 나서지 않게."
+     }
+    }
+   ],
+   "hints": [
+    {
+     "en": "Dad never left the house.",
+     "ko": "아빠는 집 밖으로 한 발짝도 나가지 않았습니다."
+    },
+    {
+     "en": "Someone in the family had the most important day of her life coming up, and Dad was protecting her from something he had.",
+     "ko": "가족 중 한 사람에게 인생에서 가장 중요한 날이 다가오고 있었고, 아빠는 자기가 가진 무언가로부터 그 사람을 지키고 있었습니다."
+    }
+   ],
+   "facts": "- The family: Mom, Dad, and their daughter, a high-school senior. They live in an apartment.\n- Four days before the daughter's college entrance exam (a one-day national exam in November that decides university admission), Dad came down with a bad case of the flu. The doctor said it was very contagious.\n- Mom and Dad decided Dad would stay in the study and not come out until the exam was over, so the daughter wouldn't catch the flu.\n- They told the daughter Dad was on a four-day business trip, so she wouldn't worry or insist on taking care of him. She believed it. She left early and came home late from studying, so she didn't notice his car or shoes.\n- Dad's car and shoes stayed home because he never left. He used the bathroom and showered only while the daughter was out.\n- Dad did nothing wrong. Nobody was in trouble, and he wasn't hiding from anyone dangerous.\n- Three times a day Mom, wearing a mask, left meals on a tray outside the study door and later took the empty dishes back.\n- Dad kept the study window open even on cold nights to air out the room so the flu wouldn't spread through the apartment.\n- Every night Dad texted his daughter as if he were at a hotel, to encourage her.\n- The daughter did not catch the flu and took the exam healthy.\n- On the evening of the exam, when she came home, Dad, whose fever was gone, opened the study door and hugged her. They laughed and cried together. Nobody was angry about the \"business trip.\"\n- Nobody died, and nobody was badly hurt. Dad recovered fully.\n- How the daughter did on the exam, her name, her school, and the city are not part of the story (IRRELEVANT).",
+   "pictures": {
+    "cover": {
+     "scene": "A dark apartment hallway at night in late autumn: a closed study door with a tray of rice porridge, small side dishes, and a cup of tea on the floor in front of it; by the front door, a pair of men's dress shoes neatly placed; cold blue moonlight; quiet and mysterious; no people.",
+     "check": "사람이나 글자가 보이면 안 됩니다."
+    },
+    "hint1": {
+     "scene": "A man's car key and leather wallet lying on a wooden shoe cabinet beside a pair of polished men's dress shoes, as if their owner never left home.",
+     "check": "사람이나 글자가 보이면 안 됩니다."
+    },
+    "hint2": {
+     "scene": "A face mask, a digital thermometer with a blank screen, and packets of cold medicine on a tray, next to a teenager's stack of thick exam workbooks covered in colorful sticky tabs; no readable writing.",
+     "check": "글자나 숫자가 읽히면 안 됩니다."
+    },
+    "truth": {
+     "scene": "Evening in a cozy apartment: a father in pajamas and a cardigan opening a study door with open arms as his teenage daughter, still wearing her school backpack, rushes toward him in happy surprise; the mother smiling behind them; warm lamplight; joyful.",
+     "check": "글자가 보이면 안 됩니다."
+    }
+   }
+  },
+  {
+   "id": "covered-face",
+   "kind": "bible",
+   "level": 1,
+   "added": "2026-10-30",
+   "ref": {
+    "en": "Exodus 34:29–35",
+    "ko": "출애굽기 34:29–35"
+   },
+   "abbr": {
+    "en": "Exod 34:29–35",
+    "ko": "출 34:29–35"
+   },
+   "title": {
+    "en": "The Covered Face",
+    "ko": "얼굴을 가린 사람"
+   },
+   "setup": {
+    "en": "A man came down from a mountain, and everyone, even his own older brother, was afraid to come near him. From then on, he usually kept his face covered with a veil. But every time he went in to speak with God, he took the veil off.",
+    "ko": "한 남자가 산에서 내려오자, 사람들은 물론 그의 친형까지 그를 두려워하며 가까이 오지 못했습니다. 그 뒤로 그는 평소 얼굴을 수건으로 가리고 지냈습니다. 그런데 하나님께 말씀드리러 들어갈 때마다 그 수건을 벗었습니다."
+   },
+   "truth": {
+    "en": "The man was Moses. He had spent forty days and forty nights on Mount Sinai with the LORD, and he came down carrying the two stone tablets of the covenant. He did not know it, but the skin of his face was shining because he had been talking with God. When Aaron and all the people saw his shining face, they were afraid to come near him. Moses called them back and told them everything the LORD had commanded. When he finished speaking, he put a veil over his face. From then on, whenever Moses went in before the LORD to speak with him, he took the veil off until he came out. When he came out and told the people what God had commanded, they saw that his face was shining. Then he put the veil back on until he went in to speak with God again.",
+    "ko": "그 남자는 모세였습니다. 모세는 시내산에서 사십 일 밤낮을 여호와와 함께 있다가, 언약의 돌판 두 개를 들고 내려왔습니다. 자기는 몰랐지만, 하나님과 말씀을 나누었기 때문에 그의 얼굴 피부에서 광채가 나고 있었습니다. 아론과 온 백성은 빛나는 그의 얼굴을 보고 두려워서 가까이 오지 못했습니다. 모세가 그들을 부르자 그들이 돌아왔고, 모세는 여호와께서 명령하신 것을 모두 전했습니다. 말을 마친 모세는 수건으로 얼굴을 가렸습니다. 그 뒤로 모세는 여호와 앞에 들어가 말씀드릴 때마다, 나올 때까지 수건을 벗었습니다. 나와서 명령받은 것을 백성에게 전할 때 백성은 그의 얼굴에서 광채가 나는 것을 보았고, 모세는 다시 들어가 말씀드릴 때까지 수건으로 얼굴을 가렸습니다."
+   },
+   "keys": [
+    {
+     "id": "moses",
+     "label": {
+      "en": "Who he was and where he had been",
+      "ko": "그는 누구이고 어디에 있었나"
+     },
+     "text": {
+      "en": "Moses, coming down from Mount Sinai after forty days with the LORD.",
+      "ko": "사십 일 동안 여호와와 함께 있다가 시내산에서 내려온 모세."
+     }
+    },
+    {
+     "id": "shine",
+     "label": {
+      "en": "Why people were afraid",
+      "ko": "사람들이 두려워한 이유"
+     },
+     "text": {
+      "en": "The skin of his face was shining because he had been talking with God, and he didn't know it.",
+      "ko": "하나님과 말씀을 나누어 그의 얼굴 피부에서 광채가 났다. 그는 그것을 몰랐다."
+     }
+    },
+    {
+     "id": "veil",
+     "label": {
+      "en": "When the veil came off",
+      "ko": "수건을 벗은 때"
+     },
+     "text": {
+      "en": "He took it off whenever he went in before the LORD; people saw his shining face when he passed on God's words, and then he covered it again.",
+      "ko": "여호와 앞에 들어갈 때 벗었고, 말씀을 전할 때 백성은 빛나는 얼굴을 보았으며, 그 뒤 다시 가렸다."
+     }
+    }
+   ],
+   "hints": [
+    {
+     "en": "Nothing was wrong with his face. Something about it was different, and people could see it right away.",
+     "ko": "그의 얼굴은 다치거나 병든 것이 아니었습니다. 다만 무언가가 달라져서 사람들이 곧바로 알아볼 수 있었습니다."
+    },
+    {
+     "en": "Up on the mountain, he had been talking with God for forty days.",
+     "ko": "산 위에서 그는 사십 일 동안 하나님과 이야기하고 있었습니다."
+    }
+   ],
+   "silent": [
+    {
+     "en": "Why Moses wore the veil. Exodus never says. Paul reads it as hiding a glory that was fading (2 Corinthians 3:13); others think it was to ease the people's fear. Both are interpretations.",
+     "ko": "모세가 왜 수건을 썼는지. 출애굽기는 이유를 말하지 않습니다. 바울은 없어질 영광의 끝을 보지 못하게 하려 한 것으로 읽고(고후 3:13), 백성의 두려움을 덜어 주려 했다고 보는 해석도 있습니다. 둘 다 해석입니다."
+    },
+    {
+     "en": "Whether he wore the veil while speaking to the people. The old King James Version reads it that way, but most modern translations, and the Korean 개역개정, say he put it on after he finished speaking.",
+     "ko": "백성에게 말하는 동안에도 수건을 썼는지. 옛 영어 성경(KJV)은 그렇게 읽지만, 대부분의 현대 번역과 개역개정은 말을 마친 뒤에 가렸다고 번역합니다."
+    },
+    {
+     "en": "What the shining looked like, or how long it lasted.",
+     "ko": "광채가 어떤 모습이었는지, 얼마나 오래 갔는지."
+    }
+   ],
+   "facts": "- Moses came down from Mount Sinai with the two tablets of the testimony in his hand. He did not know that the skin of his face shone because he had been talking with God (Exodus 34:29).\n- Before this, Moses had been on the mountain with the LORD forty days and forty nights; he neither ate bread nor drank water, and the words of the covenant were written on the tablets (34:28). These were the second tablets; the first ones were broken after the golden calf (32:19; 34:1).\n- Aaron (Moses' older brother, Exodus 7:7) and all the people of Israel saw that the skin of his face shone, and they were afraid to come near him (34:30).\n- Moses called to them. Aaron and all the leaders came back and Moses talked with them; afterward all the people came near, and he commanded them all that the LORD had spoken with him on Mount Sinai (34:31-32).\n- When Moses had finished speaking with them, he put a veil over his face (34:33).\n- Whenever Moses went in before the LORD to speak with him, he removed the veil until he came out. When he came out and told the people what he was commanded, the people saw that the skin of his face was shining, and Moses put the veil over his face again until he went in to speak with the LORD (34:34-35).\n- Nothing was wrong with his face: no injury, burn, or sickness. He had not done anything wrong, and he was not hiding from anyone.\n- He did not have horns. (An old Latin translation read the Hebrew word for \"shone\" as \"horned,\" which is why Michelangelo's famous statue of Moses has horns. If asked, answer NO.)\n- The New Testament comments on this scene in 2 Corinthians 3:7-18.\n- No one was hurt.",
+   "notStated": "- Why Moses put on the veil (Exodus gives no reason; Paul's reading in 2 Corinthians 3:13 is an interpretation).\n- What the shining looked like or how long it lasted.\n- What the veil was made of, or its color.\n- Whether Moses ever saw his own shining face.\n- Exactly where he \"went in\" before the LORD (the passage doesn't name the place in these verses).",
+   "pictures": {
+    "cover": {
+     "scene": "Dawn breaking over a rugged desert mountain; at its foot, a plain folded linen cloth rests on a flat rock, with a distant camp of tents below in the valley; quiet and holy.",
+     "check": "사람, 얼굴, 빛나는 사람 모습, 글자가 보이면 안 됩니다. 정답이 드러납니다."
+    },
+    "hint1": {
+     "scene": "A folded plain linen veil beside a small round bronze mirror that reflects a bright, warm glow, laid out on rough linen.",
+     "check": "얼굴이나 사람이 보이면 안 됩니다."
+    },
+    "hint2": {
+     "scene": "Two rough-cut stone tablets lying face down on a rocky mountain ledge at dawn, next to an empty, completely dry clay water jar.",
+     "check": "돌판에 글자가 보이면 안 됩니다. 사람이 없어야 합니다."
+    },
+    "truth": {
+     "scene": "At the foot of a rugged desert mountain at dawn, a man seen from behind holds two stone tablets, a soft radiant glow shining around his head, while a crowd far away draws back in awe; holy and quiet.",
+     "check": "얼굴이나 글자가 보이면 안 됩니다."
+    }
+   }
+  },
+  {
+   "id": "poured-out-water",
+   "kind": "bible",
+   "level": 2,
+   "added": "2026-10-30",
+   "ref": {
+    "en": "2 Samuel 23:13–17",
+    "ko": "사무엘하 23:13–17"
+   },
+   "abbr": {
+    "en": "2 Sam 23:13–17",
+    "ko": "삼하 23:13–17"
+   },
+   "title": {
+    "en": "The Water He Poured Out",
+    "ko": "쏟아 버린 물"
+   },
+   "setup": {
+    "en": "Three soldiers broke straight through an enemy camp to draw water from one particular well, then carried it all the way back to their commander. He did not drink a single drop. Instead, he poured it all out.",
+    "ko": "세 명의 용사가 적군 진영을 뚫고 들어가 어느 우물에서 물을 길어, 먼 길을 되돌아와 지휘관에게 바쳤습니다. 그런데 지휘관은 한 모금도 마시지 않았습니다. 그는 그 물을 모두 쏟아 버렸습니다."
+   },
+   "truth": {
+    "en": "The commander was David. He was in the stronghold near the cave of Adullam, while the Philistines held Bethlehem, David's hometown, with troops camped in the Valley of Rephaim. David said longingly, \"Oh, that someone would give me water to drink from the well of Bethlehem that is by the gate!\" Three of his mighty men heard it, broke through the Philistine camp, drew water from that very well, and brought it to him. But David would not drink it. He poured it out to the LORD and said, \"Far be it from me, O LORD, that I should do this. Shall I drink the blood of the men who went at the risk of their lives?\" To David, that water was worth his men's lives, too precious for him to drink, so he poured it out before the LORD instead.",
+    "ko": "지휘관은 다윗이었습니다. 다윗은 아둘람 굴 근처의 요새에 있었고, 블레셋 군대는 다윗의 고향 베들레헴에 수비대를 두고 르바임 골짜기에 진을 치고 있었습니다. 다윗이 간절하게 \"누가 베들레헴 성문 곁에 있는 우물물을 길어다 내게 마시게 해 줄까!\" 하고 말했습니다. 그 말을 들은 세 용사가 블레셋 진영을 뚫고 들어가 바로 그 우물에서 물을 길어 다윗에게 가져왔습니다. 그러나 다윗은 그 물을 마시려 하지 않았습니다. 그는 물을 여호와께 부어 드리며 말했습니다. \"여호와여, 내가 결코 이런 일을 하지 않겠습니다. 이것은 목숨을 걸고 다녀온 사람들의 피가 아닙니까?\" 다윗에게 그 물은 부하들의 목숨과 같았습니다. 그래서 자기가 마시지 않고 여호와 앞에 부어 드린 것입니다."
+   },
+   "keys": [
+    {
+     "id": "david",
+     "label": {
+      "en": "Who the commander was, and which well",
+      "ko": "지휘관과 그 우물"
+     },
+     "text": {
+      "en": "David, longing for water from the well by the gate of Bethlehem, his hometown, which the Philistines held.",
+      "ko": "다윗. 블레셋이 차지한 고향 베들레헴의 성문 곁 우물물을 그리워했다."
+     }
+    },
+    {
+     "id": "risk",
+     "label": {
+      "en": "Why the soldiers went",
+      "ko": "용사들이 간 이유"
+     },
+     "text": {
+      "en": "Three of his mighty men heard his wish and risked their lives to bring the water.",
+      "ko": "그의 소원을 들은 세 용사가 목숨을 걸고 물을 가져왔다."
+     }
+    },
+    {
+     "id": "poured",
+     "label": {
+      "en": "Why he poured it out",
+      "ko": "쏟아 버린 이유"
+     },
+     "text": {
+      "en": "He would not drink what had cost his men's lives (\"the blood of the men\"), so he poured it out to the LORD.",
+      "ko": "부하들이 목숨을 건 물(\"그 사람들의 피\")을 마실 수 없어 여호와께 부어 드렸다."
+     }
+    }
+   ],
+   "hints": [
+    {
+     "en": "The commander wasn't angry or ungrateful. The water was too precious to drink.",
+     "ko": "지휘관은 화가 난 것도, 고마움을 모른 것도 아닙니다. 그 물은 마시기엔 너무 귀했습니다."
+    },
+    {
+     "en": "The well was in the commander's hometown, and it all started with one wish he said out loud.",
+     "ko": "그 우물은 지휘관의 고향에 있었고, 모든 일은 그가 소리 내어 말한 소원 하나에서 시작되었습니다."
+    }
+   ],
+   "silent": [
+    {
+     "en": "Whether David meant his words as an order. He spoke \"longingly\"; the text never says he told anyone to go.",
+     "ko": "다윗의 말이 명령이었는지. 본문은 그가 '간절히' 말했다고만 하고, 누구에게 가라고 명령했다고는 하지 않습니다."
+    },
+    {
+     "en": "When this happened. It may have been while David was hiding from Saul or after he became king; interpreters differ.",
+     "ko": "이 일이 언제였는지. 사울을 피해 다니던 때인지, 왕이 된 뒤인지 해석이 갈립니다."
+    },
+    {
+     "en": "Whether pouring it out was meant as a drink offering. Many interpreters read it that way; the text says only that he poured it out to the LORD.",
+     "ko": "물을 부은 것이 붓는 제사(전제)였는지. 그렇게 읽는 해석자가 많지만, 본문은 '여호와께 부어 드렸다'고만 합니다."
+    }
+   ],
+   "facts": "- Three of the thirty chief men went down and came about harvest time to David at the cave of Adullam, while a band of Philistines was encamped in the Valley of Rephaim (2 Samuel 23:13).\n- David was then in the stronghold, and the garrison of the Philistines was then at Bethlehem (23:14). Bethlehem was David's hometown (1 Samuel 16:1; 17:12).\n- David said longingly, \"Oh, that someone would give me water to drink from the well of Bethlehem that is by the gate!\" (23:15)\n- The three mighty men broke through the camp of the Philistines, drew water out of the well of Bethlehem by the gate, and carried it back to David (23:16).\n- He would not drink it. He poured it out to the LORD and said, \"Far be it from me, O LORD, that I should do this. Shall I drink the blood of the men who went at the risk of their lives?\" Therefore he would not drink it (23:16-17).\n- Parallel account: 1 Chronicles 11:15-19 (\"Shall I drink the lifeblood of these men? For at the risk of their lives they brought it\"). Details there also count as stated.\n- The water itself was ordinary well water; nothing was wrong with it (no poison, not dirty). David was not angry with the men.\n- \"Blood\" in David's words is a figure of speech for their lives. Nobody was killed or hurt in this account, and the three came back safely.",
+   "notStated": "- The names of the three men in this scene (vv. 13-17), and how they got through the camp.\n- Whether David meant his words as a request or an order.\n- Whether this happened before or after David became king.\n- How the three men felt when he poured the water out.\n- How much water there was, or what they carried it in.",
+   "pictures": {
+    "cover": {
+     "scene": "A rocky hillside stronghold at night above a dark valley; far below, the small campfires of an enemy camp; in the foreground, a single clay water jar sits on a flat rock in the moonlight.",
+     "check": "사람 얼굴이나 글자가 보이면 안 됩니다."
+    },
+    "hint1": {
+     "scene": "An empty clay jar lying on its side beside a dark patch of wet earth where water has just been poured out, next to a small heap of stones, lit by an oil lamp.",
+     "check": "사람이나 글자가 보이면 안 됩니다."
+    },
+    "hint2": {
+     "scene": "An old stone well with a worn rim beside the weathered wooden post of an ancient town gate; a leather bucket and a coil of rope rest on the rim in early morning mist.",
+     "check": "사람이나 글자가 보이면 안 됩니다."
+    },
+    "truth": {
+     "scene": "Inside a rocky stronghold at night lit by an oil lamp, a man seen from behind slowly pours water from a clay jar onto the ground while three weary soldiers stand in silhouette watching; reverent.",
+     "check": "얼굴이나 글자가 보이면 안 됩니다."
+    }
+   }
+  },
+  {
+   "id": "torn-clothes",
+   "kind": "bible",
+   "level": 2,
+   "added": "2026-10-30",
+   "ref": {
+    "en": "Acts 14:8–18",
+    "ko": "사도행전 14:8–18"
+   },
+   "abbr": {
+    "en": "Acts 14:8–18",
+    "ko": "행 14:8–18"
+   },
+   "title": {
+    "en": "Torn Clothes at the Gate",
+    "ko": "옷을 찢은 두 나그네"
+   },
+   "setup": {
+    "en": "At a city gate, a priest brought oxen and flower garlands, and a cheering crowd gathered to offer sacrifices to two traveling visitors. When the two visitors heard about it, they tore their own clothes and rushed into the crowd, shouting.",
+    "ko": "어느 도시의 성문 앞에 제사장이 소들과 꽃 화환을 가져왔고, 환호하는 군중이 두 나그네에게 제사를 드리려고 모여들었습니다. 이 소식을 들은 두 나그네는 자기 옷을 찢고 군중 속으로 뛰어들며 소리쳤습니다."
+   },
+   "truth": {
+    "en": "The two travelers were the apostles Paul and Barnabas, preaching in the city of Lystra. A man there could not use his feet; he had been that way since birth and had never walked. As he listened to Paul, Paul saw that he had faith to be made well and said loudly, \"Stand upright on your feet!\" The man sprang up and began walking. The crowd shouted in their own Lycaonian language, \"The gods have come down to us in the likeness of men!\" They called Barnabas Zeus, and Paul Hermes, because Paul did most of the speaking. The priest of Zeus, whose temple stood at the entrance to the city, brought oxen and garlands to the gates to offer sacrifice with the crowds. When Paul and Barnabas heard of it, they tore their clothes and rushed into the crowd, crying out, \"Why are you doing these things? We are men, just like you! We bring you good news, that you should turn from these empty things to the living God, who made the heaven and the earth and the sea and everything in them.\" Even with these words, they could barely stop the people from offering sacrifices to them.",
+    "ko": "두 나그네는 루스드라에서 복음을 전하던 사도 바울과 바나바였습니다. 그 도시에는 나면서부터 발을 쓰지 못해 한 번도 걸어 본 적이 없는 사람이 있었습니다. 바울의 말을 듣고 있던 그에게 구원받을 만한 믿음이 있는 것을 본 바울이 큰 소리로 \"네 발로 똑바로 일어서라!\" 하고 말하자, 그는 벌떡 일어나 걷기 시작했습니다. 이를 본 무리는 루가오니아 말로 \"신들이 사람의 모습으로 우리에게 내려오셨다!\" 하고 외쳤습니다. 그들은 바나바를 제우스라 부르고, 주로 말을 한 바울을 헤르메스라 불렀습니다. 성문 앞에 신전이 있는 제우스의 제사장은 소들과 화환을 성문 앞으로 가져와 무리와 함께 제사를 드리려 했습니다. 이 말을 들은 바울과 바나바는 옷을 찢고 무리 속으로 뛰어들어 외쳤습니다. \"여러분, 어찌하여 이런 일을 합니까? 우리도 여러분과 똑같은 사람입니다. 우리가 여러분에게 복음을 전하는 것은, 이런 헛된 일을 버리고 하늘과 땅과 바다와 그 가운데 있는 모든 것을 지으신 살아 계신 하나님께로 돌아오게 하려는 것입니다.\" 이렇게 말하고도 그들은 무리가 자기들에게 제사하는 것을 겨우 말릴 수 있었습니다."
+   },
+   "keys": [
+    {
+     "id": "healed",
+     "label": {
+      "en": "What started it",
+      "ko": "일의 시작"
+     },
+     "text": {
+      "en": "Paul healed a man who had never walked, and the crowd thought gods had come down.",
+      "ko": "바울이 한 번도 걸어 본 적 없는 사람을 고치자, 무리는 신들이 내려왔다고 생각했다."
+     }
+    },
+    {
+     "id": "gods",
+     "label": {
+      "en": "Who the crowd thought they were",
+      "ko": "무리가 생각한 두 나그네의 정체"
+     },
+     "text": {
+      "en": "Zeus and Hermes; the travelers were really Paul and Barnabas.",
+      "ko": "제우스와 헤르메스. 실제로는 바울과 바나바였다."
+     }
+    },
+    {
+     "id": "glory",
+     "label": {
+      "en": "Why they tore their clothes",
+      "ko": "옷을 찢은 이유"
+     },
+     "text": {
+      "en": "They refused to be worshiped: they said they were men like everyone else and pointed the people to the living God who made all things.",
+      "ko": "자기들이 숭배받는 것을 거부했다. 자기들도 똑같은 사람이라며 만물을 지으신 살아 계신 하나님을 가리켰다."
+     }
+    }
+   ],
+   "hints": [
+    {
+     "en": "The crowd was sure the two visitors were not human.",
+     "ko": "무리는 두 나그네가 사람이 아니라고 굳게 믿었습니다."
+    },
+    {
+     "en": "Just before this, a man in that city who had never walked in his life stood up and walked.",
+     "ko": "바로 직전에, 그 도시에서 평생 한 번도 걸어 본 적 없는 사람이 일어나 걸었습니다."
+    }
+   ],
+   "silent": [
+    {
+     "en": "Whether Paul and Barnabas understood what the crowd was shouting. The crowd spoke Lycaonian, and the text says the two reacted only when they \"heard of\" the sacrifice.",
+     "ko": "바울과 바나바가 무리의 외침을 알아들었는지. 무리는 루가오니아 말로 외쳤고, 본문은 두 사람이 제사 소식을 '듣고서야' 반응했다고만 합니다."
+    },
+    {
+     "en": "Why the crowd thought of Zeus and Hermes in particular. Many interpreters connect it to an old local legend about these two gods visiting the region in disguise (told by the Roman poet Ovid), but Acts doesn't mention it.",
+     "ko": "왜 하필 제우스와 헤르메스였는지. 두 신이 변장하고 그 지방을 찾아왔다는 옛 전설(로마 시인 오비디우스의 기록)과 연결하는 해석이 많지만, 사도행전은 언급하지 않습니다."
+    },
+    {
+     "en": "What became of the healed man afterward.",
+     "ko": "고침받은 사람이 그 뒤 어떻게 되었는지."
+    }
+   ],
+   "facts": "- At Lystra there was a man sitting who could not use his feet. He was crippled from birth and had never walked (Acts 14:8).\n- He listened to Paul speaking. Paul, looking intently at him and seeing that he had faith to be made well, said in a loud voice, \"Stand upright on your feet.\" He sprang up and began walking (14:9-10).\n- When the crowds saw what Paul had done, they shouted in Lycaonian, \"The gods have come down to us in the likeness of men!\" (14:11)\n- They called Barnabas Zeus, and Paul Hermes, because he was the chief speaker (14:12). (Older Korean translations spell these names 쓰스 and 허메; treat them as the same names.)\n- The priest of Zeus, whose temple was at the entrance to the city, brought oxen and garlands to the gates and wanted to offer sacrifice with the crowds (14:13).\n- When the apostles Barnabas and Paul heard of it, they tore their garments and rushed out into the crowd, crying out (14:14):\n- \"Men, why are you doing these things? We also are men, of like nature with you, and we bring you good news, that you should turn from these vain things to a living God, who made the heaven and the earth and the sea and all that is in them.\" God let the nations walk in their own ways, yet did not leave himself without witness: he gave rains from heaven and fruitful seasons, satisfying hearts with food and gladness (14:15-17).\n- Even with these words they scarcely restrained the people from offering sacrifice to them (14:18).\n- Background (not stated in Acts 14): in the Bible, tearing one's clothes is a sign of grief or horror, for example at blasphemy (Mark 14:63).\n- No one was hurt in 14:8-18, and the passage doesn't say a sacrifice was actually completed.\n- Right after this case (14:19-20), opponents from Antioch and Iconium won over the crowds; Paul was stoned and dragged out of the city, but he got up and went back into the city. Answer honestly if asked, but this is outside the case.",
+   "notStated": "- The healed man's name or age (beyond \"crippled from birth\").\n- Whether Paul and Barnabas understood Lycaonian.\n- How many oxen there were, what the garlands were for, or what they were made of.\n- Why the crowd chose Zeus and Hermes in particular (no legend is mentioned in Acts).\n- Whether any sacrifice was actually offered.",
+   "pictures": {
+    "cover": {
+     "scene": "The gate of an ancient Greco-Roman hill town in bright daylight: two white oxen and baskets of flower garlands are brought toward the gate, a small columned stone temple stands beside the entrance, and a crowd seen only from behind raises its arms; festive yet uneasy.",
+     "check": "사람 얼굴이나 신상의 얼굴이 크게 보이면 안 됩니다. 글자가 없어야 합니다."
+    },
+    "hint1": {
+     "scene": "A garland of flowers and a piece of plain travel cloak torn straight down from the neckline, lying on worn stone paving in front of a small temple's steps.",
+     "check": "사람이나 얼굴, 글자가 보이면 안 됩니다."
+    },
+    "hint2": {
+     "scene": "An empty, worn reed mat and a small clay begging bowl left on the stone pavement beside a city gate, as if the person who always sat there had suddenly stood up and walked away.",
+     "check": "사람이나 글자가 보이면 안 됩니다."
+    },
+    "truth": {
+     "scene": "At the gate of an ancient Greco-Roman town, two travelers seen from behind rush toward a cheering crowd, tearing the fronts of their cloaks, as a priest beside a small columned temple brings two oxen and flower garlands; dramatic daylight.",
+     "check": "얼굴이나 신상의 얼굴, 글자가 보이면 안 됩니다."
+    }
+   }
+  },
+  {
+   "id": "moldy-bread",
+   "kind": "bible",
+   "level": 3,
+   "added": "2026-10-30",
+   "ref": {
+    "en": "Joshua 9:3–27",
+    "ko": "여호수아 9:3–27"
+   },
+   "abbr": {
+    "en": "Josh 9:3–27",
+    "ko": "수 9:3–27"
+   },
+   "title": {
+    "en": "The Moldy Bread",
+    "ko": "곰팡이 핀 빵"
+   },
+   "setup": {
+    "en": "Strangers arrived at an army camp. Their bread was dry and moldy, their wineskins were cracked and patched, and their sandals and clothes were worn out. \"We have come from a very distant country,\" they said, \"so make a peace treaty with us.\" The men took some of their food, and the leaders swore a peace treaty with them. Three days later, it came out that the strangers lived close by. Even so, the treaty was kept.",
+    "ko": "낯선 사람들이 한 군대의 진영에 찾아왔습니다. 그들의 빵은 바싹 말라 곰팡이가 피어 있었고, 가죽 부대는 터져서 기운 자국투성이였으며, 신과 옷은 다 해져 있었습니다. 그들은 \"우리는 아주 먼 나라에서 왔으니 우리와 평화 조약을 맺어 주십시오\" 하고 말했습니다. 사람들은 그들의 양식을 받아 보았고, 지도자들은 그들과 평화 조약을 맺으며 맹세했습니다. 그런데 사흘 뒤, 그들이 바로 가까이 사는 사람들이라는 것이 드러났습니다. 그래도 조약은 지켜졌습니다."
+   },
+   "truth": {
+    "en": "The strangers were the people of Gibeon, a city in the land Israel was entering, only about three days' march from Israel's camp at Gilgal. They had heard what Joshua and Israel had done to Jericho and Ai, and they feared for their lives. So they acted with cunning: they loaded worn-out sacks and cracked, patched wineskins onto their donkeys, put on worn-out, patched sandals and old clothes, and took bread that was dry and moldy, so they would look like travelers from far away. They told Joshua, \"Our bread was still warm when we left home, and look at it now.\" Israel's men took some of their provisions, but they did not ask the LORD for guidance. Joshua made peace with them, and the leaders swore to them by the LORD to let them live. Three days later Israel learned that the Gibeonites were neighbors. The people grumbled, but the leaders said, \"We have sworn to them by the LORD, the God of Israel, and now we may not touch them.\" Israel kept its oath and let them live, and the Gibeonites became woodcutters and water carriers for the community and for the altar of the LORD.",
+    "ko": "낯선 사람들은 이스라엘이 들어가고 있던 땅의 성읍 기브온 사람들이었고, 이스라엘이 진을 친 길갈에서 사흘 길밖에 떨어지지 않은 곳에 살고 있었습니다. 그들은 여호수아와 이스라엘이 여리고와 아이에 행한 일을 듣고 목숨을 잃을까 몹시 두려워했습니다. 그래서 꾀를 냈습니다. 낡은 자루와 터져서 기운 가죽 부대를 나귀에 싣고, 기운 낡은 신을 신고 낡은 옷을 입고, 바싹 말라 곰팡이 난 빵을 챙겨 먼 길을 온 사람들처럼 꾸몄습니다. 그들은 여호수아에게 \"이 빵은 우리가 집을 떠나던 날에는 따끈했는데, 보십시오, 이제 말라서 곰팡이가 났습니다\" 하고 말했습니다. 이스라엘 사람들은 그들의 양식을 받아 보았지만, 여호와께 묻지 않았습니다. 여호수아는 그들과 화친하여 살려 두기로 조약을 맺었고, 회중의 지도자들은 여호와의 이름으로 맹세했습니다. 사흘 뒤 이스라엘은 그들이 이웃이라는 것을 알게 되었습니다. 백성은 지도자들을 원망했지만, 지도자들은 \"우리가 이스라엘의 하나님 여호와로 그들에게 맹세하였으니 이제 그들을 건드릴 수 없다\"고 말했습니다. 이스라엘은 맹세를 지켜 그들을 살려 두었고, 기브온 사람들은 회중과 여호와의 제단을 위해 나무를 패고 물을 긷는 사람이 되었습니다."
+   },
+   "keys": [
+    {
+     "id": "disguise",
+     "label": {
+      "en": "Why the bread was moldy",
+      "ko": "빵에 곰팡이가 핀 이유"
+     },
+     "text": {
+      "en": "They were neighbors, the Gibeonites, who faked a long journey with old bread, worn-out gear, and patched sandals.",
+      "ko": "가까이 사는 기브온 사람들이 오래된 빵과 낡은 짐, 기운 신으로 먼 길을 온 것처럼 꾸몄다."
+     }
+    },
+    {
+     "id": "fear",
+     "label": {
+      "en": "Why they lied",
+      "ko": "거짓말한 이유"
+     },
+     "text": {
+      "en": "They had heard what Israel did to Jericho and Ai, and they feared for their lives.",
+      "ko": "이스라엘이 여리고와 아이에 한 일을 듣고 목숨을 잃을까 두려워했다."
+     }
+    },
+    {
+     "id": "oath",
+     "label": {
+      "en": "Why the treaty was kept",
+      "ko": "조약을 지킨 이유"
+     },
+     "text": {
+      "en": "Israel had not asked the LORD, but the leaders had sworn by the LORD, so they kept their word and let them live.",
+      "ko": "이스라엘은 여호와께 묻지 않았지만, 여호와의 이름으로 맹세했기에 약속을 지켜 그들을 살려 두었다."
+     }
+    }
+   ],
+   "hints": [
+    {
+     "en": "The strangers' things had been made to look old on purpose.",
+     "ko": "낯선 사람들의 물건은 일부러 낡아 보이게 만든 것이었습니다."
+    },
+    {
+     "en": "The leaders checked the bread, but before making a promise they forgot to ask someone very important.",
+     "ko": "지도자들은 빵은 살펴봤지만, 약속하기 전에 꼭 여쭈어야 할 분께 묻는 것을 잊었습니다."
+    }
+   ],
+   "silent": [
+    {
+     "en": "What \"took some of their provisions\" (9:14) means exactly: whether they tasted the bread, inspected it, or shared a meal to seal the treaty. Translations and interpreters differ.",
+     "ko": "\"그들의 양식을 취하고\"(9:14)가 정확히 무슨 뜻인지. 빵을 맛본 것인지, 살펴본 것인지, 조약을 맺으며 함께 먹은 것인지 번역과 해석이 갈립니다."
+    },
+    {
+     "en": "Who told Israel the truth after three days. The text says only that they \"heard\" it.",
+     "ko": "사흘 뒤 누가 이스라엘에게 사실을 알려 주었는지. 본문은 그들이 '들었다'고만 합니다."
+    }
+   ],
+   "facts": "- Context: under Joshua, Israel had entered Canaan and taken Jericho and Ai (Joshua 6-8). Their camp was at Gilgal (9:6).\n- When the inhabitants of Gibeon heard what Joshua had done to Jericho and Ai, they acted with cunning (9:3-4).\n- They took worn-out sacks for their donkeys and wineskins worn out, torn, and mended; they wore worn-out, patched sandals and worn-out clothes; and all their bread was dry and moldy (9:4-5). (Some English translations say \"dry and crumbly\"; Korean 개역개정 says it was moldy. Answer YES to \"moldy.\")\n- They went to Joshua in the camp at Gilgal and said, \"We have come from a distant country, so now make a covenant with us\" (9:6). The men of Israel said to these Hivites, \"Perhaps you live among us; then how can we make a covenant with you?\" (9:7)\n- When Joshua asked who they were, they said they came from a very distant country because of the fame of the LORD, having heard what he did in Egypt and to the kings Sihon and Og (9:8-10).\n- They said their bread was still warm when they left home and was now dry and moldy, their wineskins were new and had burst, and their clothes and sandals were worn out from the very long journey (9:11-13).\n- The men took some of their provisions, but did not ask counsel from the LORD (9:14).\n- Joshua made peace with them and made a covenant to let them live, and the leaders of the congregation swore to them (9:15).\n- Three days after the covenant, Israel heard that they were their neighbors who lived among them. Israel set out and reached their cities on the third day: Gibeon, Chephirah, Beeroth, and Kiriath-jearim (9:16-17).\n- Israel did not attack them, because the leaders had sworn to them by the LORD, the God of Israel. All the congregation grumbled against the leaders (9:18). The leaders said, \"We have sworn to them by the LORD, the God of Israel, and now we may not touch them... Let them live, lest wrath be upon us, because of the oath\" (9:19-20).\n- They became cutters of wood and drawers of water for all the congregation (9:21). Joshua asked, \"Why did you deceive us?\" and said some of them would always be servants, woodcutters and water carriers for the house of God (9:22-23).\n- The Gibeonites answered that they had been told the LORD had commanded Moses to give Israel all the land, so they greatly feared for their lives and did this. \"We are in your hand; do what seems good and right\" (9:24-25).\n- Joshua delivered them from the people of Israel, and they did not kill them. That day he made them woodcutters and water carriers for the congregation and for the altar of the LORD (9:26-27).\n- Nobody was hurt in this account, and no one fought.\n- Later, when five kings attacked Gibeon for making peace with Israel, Gibeon asked Joshua for help and Israel came to defend them (Joshua 10:1-9). Answer honestly if asked, but this is outside the case.",
+   "notStated": "- The names of the envoys or how many came.\n- Exactly what \"took some of their provisions\" (9:14) involved: tasting, inspecting, or sharing a meal.\n- Who told Israel the truth after three days.\n- How the Gibeonites made their things look old, beyond what verses 4-5 describe.\n- How the Gibeonites felt about becoming woodcutters and water carriers.",
+   "pictures": {
+    "cover": {
+     "scene": "The edge of an ancient desert army camp at dusk with rows of dark goat-hair tents; in the foreground, a few weary travelers seen only from behind, leading dusty donkeys loaded with worn, patched sacks and cracked leather wineskins; long shadows; quiet and tense.",
+     "check": "얼굴이나 글자가 보이면 안 됩니다."
+    },
+    "hint1": {
+     "scene": "A pair of worn leather sandals and a cracked leather wineskin, both covered with patches whose stitching looks suspiciously fresh and new, laid out as evidence.",
+     "check": "사람이나 글자가 보이면 안 됩니다."
+    },
+    "hint2": {
+     "scene": "A round flatbread, dry, cracked, and spotted with green-gray mold, with one small piece broken off, lying on a woven cloth beside an empty clay cup.",
+     "check": "사람이나 글자가 보이면 안 됩니다."
+    },
+    "truth": {
+     "scene": "Morning on a hill in ancient Canaan: men seen from behind carry bundles of firewood and clay water jars up toward a simple stone altar, with rows of tents in the valley below; peaceful.",
+     "check": "얼굴이나 글자가 보이면 안 됩니다."
+    }
+   }
+  },
+  {
+   "id": "feast-for-the-enemy",
+   "kind": "bible",
+   "level": 3,
+   "added": "2026-10-30",
+   "ref": {
+    "en": "2 Kings 6:8–23",
+    "ko": "열왕기하 6:8–23"
+   },
+   "abbr": {
+    "en": "2 Kgs 6:8–23",
+    "ko": "왕하 6:8–23"
+   },
+   "title": {
+    "en": "A Feast for the Enemy",
+    "ko": "적군을 위한 잔치"
+   },
+   "setup": {
+    "en": "Time after time, an enemy king planned secret ambushes, and every time, the other king stayed away from that exact spot. Then the enemy king sent a great army with horses and chariots. Before long, that whole army was standing in the middle of its enemy's capital city. No one harmed them. Instead, they were served a great feast and sent home, and after that the raiding parties stopped coming.",
+    "ko": "적국의 왕이 몰래 매복 작전을 짤 때마다, 상대편 왕은 번번이 바로 그 장소를 피해 갔습니다. 마침내 적국의 왕은 말과 병거를 갖춘 대군을 보냈습니다. 그런데 얼마 뒤, 그 군대 전체가 적국의 수도 한복판에 서 있었습니다. 아무도 그들을 해치지 않았습니다. 오히려 그들은 큰 잔치를 대접받고 집으로 돌아갔고, 그 뒤로 습격대가 다시는 오지 않았습니다."
+   },
+   "truth": {
+    "en": "The enemy was the king of Syria (Aram). Every time he planned where to camp against Israel, the prophet Elisha warned the king of Israel, and Israel's king stayed away from that place, more than once or twice. The Syrian king was sure there was a spy among his officers, but one of them said, \"None of us, my lord. Elisha, the prophet in Israel, tells the king of Israel the words you speak in your bedroom.\" So the king sent a great army with horses and chariots to Dothan to seize Elisha, and they surrounded the city by night. In the morning, Elisha's servant panicked, but Elisha said, \"Do not be afraid, for those who are with us are more than those who are with them,\" and prayed that the LORD would open his servant's eyes. The servant saw the mountain full of horses and chariots of fire all around Elisha. When the Syrians came down, Elisha prayed, and the LORD struck them with blindness. Elisha told them, \"This is not the way, and this is not the city. Follow me, and I will bring you to the man you seek,\" and led them to Samaria, Israel's capital. There the LORD opened their eyes, and they found themselves in the middle of Samaria. The king of Israel asked, \"My father, shall I strike them down?\" Elisha said no: \"Set bread and water before them, so they may eat and drink and go to their master.\" The king prepared a great feast for them and sent them home, and the Syrian raiders did not come into Israel again.",
+    "ko": "적국의 왕은 아람 왕이었습니다. 그가 이스라엘을 치려고 어디에 진을 칠지 의논할 때마다, 선지자 엘리사가 이스라엘 왕에게 미리 알려 주었고, 이스라엘 왕은 그곳을 피했습니다. 한두 번이 아니었습니다. 아람 왕은 신하 중에 첩자가 있다고 생각했지만, 한 신하가 말했습니다. \"아닙니다, 내 주 왕이여. 이스라엘의 선지자 엘리사가 왕께서 침실에서 하신 말씀까지 이스라엘 왕에게 알립니다.\" 그래서 아람 왕은 엘리사를 잡으려고 말과 병거와 대군을 도단으로 보냈고, 그들은 밤에 와서 성을 에워쌌습니다. 아침에 엘리사의 사환이 겁에 질리자, 엘리사는 \"두려워하지 말라. 우리와 함께한 자가 그들과 함께한 자보다 많다\"고 하며, 사환의 눈을 열어 달라고 기도했습니다. 그러자 사환의 눈에 엘리사를 둘러싼 산에 불말과 불병거가 가득한 것이 보였습니다. 아람 군대가 내려오자 엘리사가 기도했고, 여호와께서 그들의 눈을 어둡게 하셨습니다. 엘리사는 그들에게 \"이 길도 아니요 이 성도 아니니 나를 따라오라. 너희가 찾는 사람에게로 인도하겠다\" 하고는 이스라엘의 수도 사마리아로 데려갔습니다. 그곳에서 여호와께서 그들의 눈을 여시자, 그들은 자기들이 사마리아 한복판에 있음을 보았습니다. 이스라엘 왕이 \"내 아버지여, 내가 치리이까?\" 하고 묻자, 엘리사는 치지 말라고 하며 \"떡과 물을 그들 앞에 두어 먹고 마시게 하고 그들의 주인에게로 돌려보내라\"고 했습니다. 왕은 그들을 위해 큰 잔치를 베풀고 돌려보냈고, 그 뒤로 아람 습격대는 다시는 이스라엘 땅에 들어오지 않았습니다."
+   },
+   "keys": [
+    {
+     "id": "elisha",
+     "label": {
+      "en": "How the plans leaked",
+      "ko": "작전이 새어 나간 방법"
+     },
+     "text": {
+      "en": "There was no spy: the prophet Elisha warned the king of Israel every time.",
+      "ko": "첩자는 없었다. 선지자 엘리사가 이스라엘 왕에게 매번 미리 알렸다."
+     }
+    },
+    {
+     "id": "blind",
+     "label": {
+      "en": "How the army got into the capital",
+      "ko": "적군이 수도에 오게 된 경위"
+     },
+     "text": {
+      "en": "They came to seize Elisha; the LORD struck them with blindness, and Elisha himself led them to Samaria.",
+      "ko": "엘리사를 잡으러 왔다가, 여호와께서 그들의 눈을 어둡게 하셨고 엘리사가 직접 사마리아로 데려갔다."
+     }
+    },
+    {
+     "id": "feast",
+     "label": {
+      "en": "Why they were fed, not harmed",
+      "ko": "해치지 않고 대접한 이유"
+     },
+     "text": {
+      "en": "Elisha told the king not to strike them but to feed them and send them home; after that the raids stopped.",
+      "ko": "엘리사가 치지 말고 먹여서 돌려보내라고 했고, 그 뒤로 습격이 그쳤다."
+     }
+    }
+   ],
+   "hints": [
+    {
+     "en": "There was no spy. Someone on the other side simply knew what was said in secret, even in the king's bedroom.",
+     "ko": "첩자는 없었습니다. 상대편의 한 사람이 왕의 침실에서 한 말까지 알고 있었을 뿐입니다."
+    },
+    {
+     "en": "The army came to capture one man, and that same man led them into the city. They just couldn't see where they were going.",
+     "ko": "그 군대는 한 사람을 잡으러 왔는데, 바로 그 사람이 그들을 성안으로 이끌었습니다. 다만 그들은 어디로 가는지 볼 수 없었습니다."
+    }
+   ],
+   "silent": [
+    {
+     "en": "What exactly the \"blindness\" was. The Hebrew word (also used in Genesis 19:11) may mean a dazzling confusion rather than total blindness; interpreters differ.",
+     "ko": "'눈을 어둡게 하심'이 정확히 어떤 상태였는지. 같은 히브리어가 창 19:11에도 나오는데, 완전히 앞을 못 보는 것인지 정신이 혼미해 알아보지 못하는 것인지 해석이 갈립니다."
+    },
+    {
+     "en": "Whether Elisha's words, \"This is not the way, and this is not the city,\" count as a trick. The text reports them without judging.",
+     "ko": "엘리사의 \"이 길도 아니요 이 성도 아니다\"라는 말이 속임수였는지. 본문은 평가 없이 기록만 합니다."
+    },
+    {
+     "en": "Whether the Syrian soldiers also saw the horses and chariots of fire. The text says only that the servant's eyes were opened to them.",
+     "ko": "아람 군사들도 불말과 불병거를 보았는지. 본문은 사환의 눈이 열려 보았다고만 합니다."
+    }
+   ],
+   "facts": "- The king of Syria (Aram) was at war with Israel and planned with his servants, \"At such and such a place shall be my camp\" (2 Kings 6:8).\n- The man of God (Elisha) sent word to the king of Israel to beware of passing that place, and the king of Israel sent to the place he was told about; so he kept himself safe there more than once or twice (6:9-10).\n- The king of Syria was greatly troubled and asked his servants who among them was for the king of Israel. One said, \"None, my lord, O king; but Elisha, the prophet who is in Israel, tells the king of Israel the words that you speak in your bedroom\" (6:11-12).\n- He learned that Elisha was in Dothan and sent horses, chariots, and a great army; they came by night and surrounded the city (6:13-14).\n- In the morning, Elisha's servant saw the army and said, \"Alas, my master! What shall we do?\" Elisha said, \"Do not be afraid, for those who are with us are more than those who are with them\" (6:15-16).\n- Elisha prayed, \"O LORD, please open his eyes that he may see,\" and the servant saw that the mountain was full of horses and chariots of fire all around Elisha (6:17).\n- When the Syrians came down against him, Elisha prayed, and the LORD struck them with blindness (6:18).\n- Elisha said to them, \"This is not the way, and this is not the city. Follow me, and I will bring you to the man whom you seek,\" and he led them to Samaria (6:19).\n- In Samaria, Elisha prayed and the LORD opened their eyes; they saw that they were in the midst of Samaria (6:20).\n- The king of Israel asked, \"My father, shall I strike them down? Shall I strike them down?\" Elisha answered, \"You shall not strike them down... Set bread and water before them, that they may eat and drink and go to their master\" (6:21-22).\n- The king prepared a great feast for them; when they had eaten and drunk, he sent them away to their master, and the Syrians did not come again on raids into the land of Israel (6:23).\n- No one was killed or hurt in this account.\n- Afterward (6:24), the king of Syria gathered his whole army and besieged Samaria. That was a full war rather than raiding parties, and it is outside this case. Answer honestly if asked.",
+   "notStated": "- The name of the king of Syria in 6:8-23 (6:24 names Ben-hadad, but in a separate scene).\n- How Elisha knew the plans; the text calls him \"the man of God\" but doesn't describe how he learned them.\n- What the \"blindness\" was exactly.\n- Whether the Syrian soldiers saw the chariots of fire.\n- How many soldiers came, or what the feast included beyond bread and water.",
+   "pictures": {
+    "cover": {
+     "scene": "The central square of an ancient walled hill city at dusk: long low tables set with bread, fruit, and water jars, and foreign soldiers' spears and round shields stacked neatly against a wall nearby; warm lamplight; peaceful.",
+     "check": "사람 얼굴이나 싸우는 장면, 글자가 보이면 안 됩니다."
+    },
+    "hint1": {
+     "scene": "Pebbles and small wooden markers arranged on a sand table shaped into hills and a mountain pass, like a secret battle plan, on a richly carved table beside a heavy bedroom curtain; no writing anywhere.",
+     "check": "사람이나 글자, 지도 글씨가 보이면 안 됩니다."
+    },
+    "hint2": {
+     "scene": "A prophet's plain wooden walking staff lying across a stone road that leads toward a great city gate, with a dropped bronze soldier's helmet beside it.",
+     "check": "사람이나 얼굴, 글자가 보이면 안 됩니다."
+    },
+    "truth": {
+     "scene": "Dawn over the hills around a small walled town: the hillsides are ringed with glowing horses and chariots of fire, while a young servant seen from behind on a flat rooftop stares in awe; an army camp waits below; majestic.",
+     "check": "얼굴이나 싸우는 장면, 글자가 보이면 안 됩니다."
+    }
+   }
+  }
+ ]
+}

@@ -332,6 +332,25 @@ h1, h2, h3, h4 { font-weight: 700; }
 .keylist strong { color: var(--ink); }
 .readit { color: var(--ink-2); }
 
+/* Closing: truth picture, key-point chips, clue archive */
+.truth-pic .media { border-radius: 10px; border: 1px solid var(--line); margin-top: 0.45rem; }
+.truth-pic:has(.truth-media:not(.has-img)) { display: none; }
+.kchips { display: flex; flex-wrap: wrap; gap: 0.45rem; margin-top: 0.45rem; }
+.kchip {
+  display: inline-flex; align-items: center; gap: 0.35rem; padding: 0.32rem 0.7rem; border-radius: 999px;
+  border: 1px solid var(--line-strong); background: var(--field); color: var(--ink-2); font-size: 0.9rem; font-weight: 600;
+}
+.kchip.hit { color: var(--yes); border-color: color-mix(in srgb, var(--yes) 50%, transparent); }
+.kchip i { font-style: normal; }
+.clue-archive .arch-head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.4rem 1rem; }
+.unlock-chip {
+  font-family: var(--font-mono); font-size: 0.74rem; color: var(--accent); border-radius: 6px; padding: 0.15rem 0.5rem;
+  border: 1px solid color-mix(in srgb, var(--accent) 45%, transparent);
+}
+.hint-card.archive { cursor: default; box-sizing: border-box; }
+.hint-card.archive:hover { border-color: var(--line); }
+.hint-tag.unlocked { color: var(--accent); }
+
 /* Hint pop-up */
 .clue-modal {
   position: fixed; inset: 0; z-index: 40; display: flex; overflow-y: auto; background: rgba(3, 5, 9, 0.8);
@@ -386,547 +405,7 @@ h1, h2, h3, h4 { font-weight: 700; }
   "use strict";
 
   /* ---------- Cases ---------- */
-  const CASES = [
-    {
-      id: "blank-homework", kind: "mystery", level: 1, file: "No. 01",
-      title: { en: "The Blank Homework", ko: "백지 숙제" },
-      setup: {
-        en: `Maya turned in her homework: a completely blank sheet of paper. Her teacher took the page to her desk, and a moment later she smiled and gave Maya an A+.`,
-        ko: `마야는 아무것도 쓰여 있지 않은 백지 한 장을 숙제로 냈습니다. 선생님은 그 종이를 자기 책상으로 가져가더니, 잠시 뒤 미소를 지으며 마야에게 A+를 주었습니다.`
-      },
-      truth: {
-        en: `The paper only looked blank. Maya's science class was studying chemical reactions, and the assignment was to write a secret message in invisible ink. Maya wrote hers with lemon juice, which dries clear. At her desk, the teacher held the page close to a warm lamp. The heat turned the dried lemon juice brown, and Maya's message appeared. Maya had done exactly what the assignment asked.`,
-        ko: `종이는 비어 보였을 뿐입니다. 마야의 과학 시간은 화학 반응을 배우는 중이었고, 숙제는 '보이지 않는 잉크로 비밀 메시지 쓰기'였습니다. 마야는 마르면 투명해지는 레몬즙으로 글을 썼습니다. 선생님이 책상에서 종이를 따뜻한 스탠드 불빛 가까이 대자, 열 때문에 마른 레몬즙이 갈색으로 변하면서 마야의 메시지가 나타났습니다. 마야는 숙제를 정확히 해낸 것입니다.`
-      },
-      keys: [
-        { id: "ink", label: { en: "What was on the page", ko: "종이에 있던 것" },
-          text: { en: "A hidden message written in invisible ink (lemon juice).", ko: "보이지 않는 잉크(레몬즙)로 쓴 숨은 메시지." } },
-        { id: "task", label: { en: "Why it earned an A+", ko: "A+를 받은 이유" },
-          text: { en: "Writing in invisible ink was the assignment itself, and the teacher revealed the message with heat.", ko: "보이지 않는 잉크로 쓰는 것이 바로 숙제였고, 선생님은 열을 가해 글씨를 드러냈다." } }
-      ],
-      hints: [
-        { en: "The page was not really blank.", ko: "종이는 사실 비어 있지 않았습니다." },
-        { en: "It was science class. What happens to some liquids when they dry, and then get warm?", ko: "과학 시간이었습니다. 어떤 액체는 마른 뒤에 열을 받으면 어떻게 될까요?" }
-      ],
-      facts: `- Maya is a student. The teacher is her science teacher.
-- The class was studying chemical reactions.
-- The assignment was to write a secret message in invisible ink.
-- Maya wrote her message with lemon juice, using a cotton swab. Dried lemon juice is clear, so the page looked blank.
-- At her desk, the teacher held the page close to a warm desk lamp (a light bulb). The heat turned the dried lemon juice brown and the message appeared.
-- Maya's message said: "Science is magic you can explain."
-- The teacher understood right away. She was not tricked, and nobody cheated. The A+ was for doing the assignment well.
-- It was not a code, a joke, an art project, white ink, or pencil.
-- Maya's age, grade, school, and the teacher's name are not part of the story (IRRELEVANT).`
-    },
-    {
-      id: "july-snowman", kind: "mystery", level: 1, file: "No. 02",
-      title: { en: "A Snowman in July", ko: "7월의 눈사람" },
-      setup: {
-        en: `On a 100-degree day in July in Texas, a family built a real snowman in their front yard. Neighbors came out to cheer, and a six-year-old girl cried happy tears.`,
-        ko: `기온이 섭씨 38도까지 오른 텍사스의 7월, 한 가족이 앞마당에 진짜 눈으로 눈사람을 만들었습니다. 이웃들이 나와서 환호했고, 여섯 살 여자아이는 기뻐서 울었습니다.`
-      },
-      truth: {
-        en: `The snow came from the town's ice rink. When an ice resurfacing machine (a Zamboni) smooths the rink, it scrapes off ice shavings that look and feel like real snow, and rinks usually throw them away. It was Lily's sixth birthday. She had never seen snow, and her only wish was to see it. Her dad asked the ice rink, and they gave him a whole pickup truck full of shavings for free. The family and neighbors hurried to build the snowman before it melted, as a birthday surprise for Lily.`,
-        ko: `눈은 동네 아이스링크에서 왔습니다. 정빙기(잠보니)가 링크 얼음판을 고르게 다듬을 때 깎여 나오는 얼음 가루는 진짜 눈처럼 보이고 만져지는데, 링크에서는 보통 그냥 버립니다. 그날은 릴리의 여섯 번째 생일이었습니다. 한 번도 눈을 본 적이 없는 릴리의 유일한 소원은 눈을 보는 것이었습니다. 아빠가 아이스링크에 부탁하자, 링크에서 얼음 가루를 픽업트럭 한가득 공짜로 내주었습니다. 가족과 이웃들은 눈이 녹기 전에 서둘러 눈사람을 만들어 릴리에게 생일 선물로 깜짝 보여 주었습니다.`
-      },
-      keys: [
-        { id: "rink", label: { en: "Where the snow came from", ko: "눈의 출처" },
-          text: { en: "Ice shavings from an ice rink, scraped off by a Zamboni.", ko: "아이스링크에서 정빙기가 깎아 낸 얼음 가루." } },
-        { id: "gift", label: { en: "Why they built it", ko: "눈사람을 만든 이유" },
-          text: { en: "A birthday surprise for a girl who had never seen snow and wished to see it.", ko: "눈을 한 번도 본 적 없는 아이의 생일 소원을 이뤄 주려는 깜짝 선물." } }
-      ],
-      hints: [
-        { en: "The snow did not fall from the sky, and nobody made it at home.", ko: "눈은 하늘에서 내린 것도, 집에서 만든 것도 아닙니다." },
-        { en: "Think of a place in town that stays frozen all year, and what gets scraped off there every day.", ko: "동네에서 1년 내내 얼어 있는 곳, 그리고 그곳에서 날마다 깎여 나오는 것을 떠올려 보세요." }
-      ],
-      facts: `- A hot July day in Texas, about 100°F (38°C).
-- The snow was ice shavings from the town's ice rink. An ice resurfacing machine (a Zamboni) scrapes them off the rink; they look and feel like real snow. So a machine scraped it off, but it was not a snow machine or artificial snow.
-- Rinks normally throw the shavings away. The rink gave a whole pickup truck of shavings for free when the dad asked.
-- The girl is Lily. That day was her sixth birthday. She had never seen snow, and her only birthday wish was to see snow.
-- Lily's dad brought the shavings home in his pickup truck. The family and neighbors built the snowman quickly before it melted, as a birthday surprise.
-- The girl who cried happy tears is Lily.
-- The snow did not come from a store, a freezer, a movie set, the mountains, or the sky. Nobody was sick; there is no sad backstory.
-- Neighbors' names and the rink's name are not part of the story (IRRELEVANT).`
-    },
-    {
-      id: "lights-at-nine", kind: "mystery", level: 2, file: "No. 03",
-      title: { en: "Lights at Nine", ko: "아홉 시의 불빛" },
-      setup: {
-        en: `Every night at exactly 9:00, Grace switches off every light in her house for ten seconds, then turns them back on. A minute later, a house far across the valley does the same. Grace and the person in that house never talk on the phone.`,
-        ko: `그레이스는 매일 밤 정각 9시가 되면 집 안의 불을 모두 10초 동안 껐다가 다시 켭니다. 1분쯤 뒤, 골짜기 건너 멀리 있는 집 한 채도 똑같이 합니다. 그레이스와 그 집 사람은 전화 통화를 하지 않습니다.`
-      },
-      truth: {
-        en: `The house across the valley belongs to Grace's father. He is in his eighties, lives alone, and is very hard of hearing, so phone calls don't work for him, and he never learned to text. Years ago they agreed on a signal. At 9:00, Grace blinks her lights to say, "Good night. Are you okay?" When her father blinks his lights back, it means, "I'm fine. Good night." If his lights ever fail to answer, Grace will drive over at once to check on him. So far, he has answered every single night.`,
-        ko: `골짜기 건너편 집에는 그레이스의 아버지가 삽니다. 여든이 넘은 아버지는 혼자 살고 귀가 많이 어두워서 전화 통화가 어렵고, 문자도 배운 적이 없습니다. 그래서 오래전 두 사람은 신호를 정했습니다. 9시에 그레이스가 불을 깜빡이면 "안녕히 주무세요. 괜찮으세요?"라는 뜻이고, 아버지가 불을 깜빡여 답하면 "나는 괜찮다. 잘 자라."라는 뜻입니다. 아버지 집 불빛이 대답하지 않는 날이 오면, 그레이스는 곧바로 차를 몰고 가서 살펴볼 것입니다. 지금까지 아버지는 하루도 빠짐없이 대답했습니다.`
-      },
-      keys: [
-        { id: "signal", label: { en: "What the lights mean", ko: "불빛의 의미" },
-          text: { en: "A signal between the two houses: \"Good night, are you okay?\" and \"I'm fine.\"", ko: "두 집이 주고받는 신호다. \"괜찮으세요?\"와 \"괜찮다\"." } },
-        { id: "who", label: { en: "Who lives across the valley", ko: "건너편에 사는 사람" },
-          text: { en: "Grace's elderly father, who lives alone.", ko: "혼자 사는 그레이스의 연로한 아버지." } },
-        { id: "why", label: { en: "Why they do it this way", ko: "이렇게 하는 이유" },
-          text: { en: "He can't use the phone because he is hard of hearing, and it is a nightly check that he is safe.", ko: "아버지는 귀가 어두워 전화를 못 하고, 매일 밤 아버지가 무사한지 확인하는 것이다." } }
-      ],
-      hints: [
-        { en: "The two houses are having a conversation.", ko: "두 집은 대화를 나누고 있습니다." },
-        { en: "The person across the valley is family, and this is about making sure someone is safe.", ko: "건너편 사람은 가족이고, 이것은 누군가가 무사한지 확인하는 일입니다." }
-      ],
-      facts: `- The house across the valley belongs to Grace's father. He is in his eighties and lives alone. Grace is his adult daughter.
-- He is very hard of hearing, so phone calls don't work for him. He never learned to text and does not use video calls.
-- Years ago, they agreed on the light signal.
-- Grace's blink at 9:00 means "Good night. Are you okay?" Her father's blink back means "I'm fine. Good night."
-- If his lights ever fail to blink back, Grace will drive over right away (about ten minutes by car) to check on him. So far he has answered every night.
-- The two houses can see each other across the valley.
-- It is not a game, a prank, a power problem, a code for anyone else, a religious ritual, or a way to save electricity. No neighbors or strangers are involved.
-- Grace's mother, Grace's job, and Grace's exact age are not part of the story (IRRELEVANT).`
-    },
-    {
-      id: "midnight-cooler", kind: "mystery", level: 2, file: "No. 04",
-      title: { en: "The Midnight Cooler", ko: "한밤의 아이스박스" },
-      setup: {
-        en: `At a winter retreat, the snack cooler was locked with a 4-digit code that only one adult knew. Every morning for three days, the lock was still closed, but more snacks were gone. Nobody confessed. On the third morning, one video solved the case.`,
-        ko: `겨울 수련회에서 간식 아이스박스는 어른 한 사람만 아는 네 자리 비밀번호 자물쇠로 잠겨 있었습니다. 사흘 동안 아침마다 자물쇠는 그대로 잠겨 있었는데, 간식은 계속 줄어들었습니다. 아무도 자백하지 않았습니다. 사흘째 아침, 영상 하나가 사건을 해결했습니다.`
-      },
-      truth: {
-        en: `The snack thief was Pastor Dan, the only adult who knew the code. He sleepwalks. Each night he got up in his sleep, opened the lock with the code he had set himself, ate snacks, locked it again out of habit, and went back to bed. He remembered nothing, so when he said, "It wasn't me," he honestly believed it. After two mornings of missing snacks, a few students hid a phone near the cooler and left it recording overnight. On the third morning, the video showed Pastor Dan in his pajamas, eyes half closed, eating chips. Everyone laughed, Pastor Dan most of all, and he bought new snacks.`,
-        ko: `간식 도둑은 비밀번호를 아는 유일한 어른, 댄 목사님이었습니다. 목사님은 몽유병이 있었습니다. 밤마다 잠든 채 일어나 자기가 정한 비밀번호로 자물쇠를 열고, 간식을 먹고, 습관처럼 다시 잠근 뒤 잠자리로 돌아갔습니다. 본인은 아무것도 기억하지 못했기 때문에 "나는 안 먹었다"는 말도 진심이었습니다. 간식이 두 번 사라지자, 학생 몇 명이 그날 밤 아이스박스 근처에 휴대폰을 숨겨 두고 밤새 녹화를 켜 두었습니다. 사흘째 아침, 영상에는 잠옷 차림에 눈을 반쯤 감은 댄 목사님이 과자를 먹는 모습이 찍혀 있었습니다. 모두가 웃었고, 가장 크게 웃은 사람은 목사님이었습니다. 목사님은 간식을 새로 사 왔습니다.`
-      },
-      keys: [
-        { id: "who", label: { en: "Who took the snacks", ko: "간식을 가져간 사람" },
-          text: { en: "Pastor Dan, the one adult who knew the code.", ko: "비밀번호를 아는 유일한 어른, 댄 목사님." } },
-        { id: "sleep", label: { en: "Why nobody knew", ko: "아무도 몰랐던 이유" },
-          text: { en: "He was sleepwalking. He didn't remember, so his denial was honest, and he relocked the cooler out of habit.", ko: "몽유병이었다. 본인도 기억하지 못해 부인한 말이 진심이었고, 습관처럼 다시 잠갔다." } },
-        { id: "video", label: { en: "How it was solved", ko: "해결된 방법" },
-          text: { en: "Students left a phone recording near the cooler overnight, and the video showed him.", ko: "학생들이 밤새 휴대폰으로 아이스박스 주변을 녹화했고, 영상에 목사님이 찍혔다." } }
-      ],
-      hints: [
-        { en: "The person who did it was telling the truth when they said, \"It wasn't me.\"", ko: "범인은 \"내가 안 그랬다\"고 말할 때 거짓말을 하지 않았습니다." },
-        { en: "Think about who could open the lock without breaking it, and what some people do in their sleep.", ko: "자물쇠를 부수지 않고 열 수 있는 사람이 누구인지, 그리고 어떤 사람들이 잠결에 하는 일을 생각해 보세요." }
-      ],
-      facts: `- A church youth winter retreat at a cabin. The snacks were kept in a cooler locked with a 4-digit combination lock.
-- Only Pastor Dan, the youth pastor and the adult in charge, knew the code. He set it himself and told no one.
-- Pastor Dan sleepwalks; it has happened now and then since he was a child.
-- Each night he got up in his sleep, opened the lock, ate snacks (mostly chips and cookies), locked it again out of habit, and went back to bed.
-- He remembered nothing. When he said "It wasn't me," he sincerely believed it. He was not lying.
-- No student took snacks. No animal was involved. The lock was not broken or hacked, and nobody else learned or guessed the code.
-- After snacks had gone missing two mornings in a row, a few students hid a phone near the cooler that night and left it recording. On the third morning, the video showed Pastor Dan in his pajamas, eyes half closed, eating chips.
-- Everyone laughed, Pastor Dan most of all. Nobody was punished. He bought new snacks.
-- Which students, exact snack counts, and brands are not part of the story (IRRELEVANT).`
-    },
-    {
-      id: "romeo-juliet", kind: "mystery", level: 1, file: "No. 05",
-      title: { en: "Romeo and Juliet", ko: "로미오와 줄리엣" },
-      setup: {
-        en: `Romeo and Juliet are lying dead on the floor. Around them are a puddle of water and pieces of broken glass. The window is open, and there is not a single wound on their bodies.`,
-        ko: `로미오와 줄리엣이 바닥에 죽은 채 누워 있습니다. 주변에는 물웅덩이와 깨진 유리 조각이 흩어져 있습니다. 창문은 열려 있고, 둘의 몸에는 상처 하나 없습니다.`
-      },
-      truth: {
-        en: `Romeo and Juliet are goldfish. Their glass fishbowl sat on a table by the window. A strong gust of wind blew in through the open window, the curtain swung and knocked the bowl off the table, and it shattered on the floor. Left out of the water, the two fish died.`,
-        ko: `로미오와 줄리엣은 금붕어입니다. 둘이 살던 유리 어항은 창가 탁자 위에 있었습니다. 열린 창문으로 세찬 바람이 불어 들어오자 커튼이 펄럭이며 어항을 쳐서 떨어뜨렸고, 어항은 바닥에서 깨졌습니다. 물 밖으로 나온 두 마리 금붕어는 결국 죽었습니다.`
-      },
-      keys: [
-        { id: "fish", label: { en: "Who Romeo and Juliet are", ko: "로미오와 줄리엣의 정체" },
-          text: { en: "They are goldfish, not people.", ko: "사람이 아니라 금붕어다." } },
-        { id: "bowl", label: { en: "What happened", ko: "무슨 일이 있었나" },
-          text: { en: "Wind through the open window knocked their fishbowl to the floor; it broke, and they died out of water.", ko: "열린 창으로 들어온 바람에 어항이 떨어져 깨졌고, 둘은 물 밖에서 죽었다." } }
-      ],
-      hints: [
-        { en: "Romeo and Juliet are not people.", ko: "로미오와 줄리엣은 사람이 아닙니다." },
-        { en: "The broken glass used to hold the water.", ko: "깨진 유리는 원래 그 물을 담고 있었습니다." }
-      ],
-      facts: `- Romeo and Juliet are two pet goldfish in a family's house. They are not people.
-- Their glass fishbowl sat on a table by the window.
-- A strong gust of wind blew through the open window. The curtain swung and knocked the bowl off the table. It shattered on the floor and the water spilled.
-- The fish died because they were out of water. Nobody was home at the time.
-- No person or animal killed them. There was no cat, no poison, and no break-in.
-- The family's children named them after Shakespeare's play; otherwise the play has nothing to do with it.
-- The family's names and the time of day are not part of the story (IRRELEVANT).`
-    },
-    {
-      id: "hotel-bankrupt", kind: "mystery", level: 1, file: "No. 06",
-      title: { en: "Bankrupt at the Hotel", ko: "호텔 앞의 파산" },
-      setup: {
-        en: `A man pushed his car along until it stopped in front of a hotel. The moment it stopped, he knew he was bankrupt.`,
-        ko: `한 남자가 자기 차를 밀고 가다가 호텔 앞에 멈췄습니다. 차가 멈춘 그 순간, 그는 자신이 파산했다는 것을 알았습니다.`
-      },
-      truth: {
-        en: `He was playing Monopoly. His game piece was the little car token, so "pushing his car" meant moving his piece along the board. It stopped on a property where another player had built a hotel. He didn't have enough money to pay the rent, so he went bankrupt and was out of the game.`,
-        ko: `그는 보드게임 모노폴리(부루마블과 비슷한 게임)를 하고 있었습니다. 그의 말이 작은 자동차 모양이어서, '차를 밀었다'는 것은 판 위에서 말을 옮겼다는 뜻입니다. 말이 멈춘 칸에는 다른 사람이 지어 놓은 호텔이 있었습니다. 통행료를 낼 돈이 없던 그는 파산했고, 게임에서 탈락했습니다.`
-      },
-      keys: [
-        { id: "game", label: { en: "Where this happened", ko: "이 일이 일어난 곳" },
-          text: { en: "In a board game (Monopoly), not in real life.", ko: "현실이 아니라 보드게임(모노폴리) 속." } },
-        { id: "rent", label: { en: "Why he went bankrupt", ko: "파산한 이유" },
-          text: { en: "His car token landed on a property with another player's hotel, and he couldn't pay the rent.", ko: "그의 자동차 말이 다른 사람의 호텔이 있는 칸에 멈췄고, 통행료를 낼 수 없었다." } }
-      ],
-      hints: [
-        { en: "The car is very, very small.", ko: "그 차는 아주아주 작습니다." },
-        { en: "This happened at a table, during a game.", ko: "이 일은 탁자 위에서, 게임을 하다가 일어났습니다." }
-      ],
-      facts: `- The man was playing the board game Monopoly at a table with family and friends. (If asked about a similar game such as the Korean game Blue Marble, answer YES.)
-- "His car" is his game piece, the small car token. "Pushing" it means moving it along the board after rolling the dice.
-- It stopped on a property where another player had built a hotel. He could not pay the rent, so he went bankrupt and was out of the game.
-- There was no real car, no real hotel, and no real money lost.
-- The other players' names and the time of day are not part of the story (IRRELEVANT).`
-    },
-    {
-      id: "elevator-man", kind: "mystery", level: 2, file: "No. 07",
-      title: { en: "The Elevator Man", ko: "엘리베이터의 남자" },
-      setup: {
-        en: `A man lives on the 10th floor of an apartment building. Every morning he takes the elevator down to the lobby. Every evening he rides it only to the 7th floor and walks up the last three floors. But on rainy days, or when someone else is in the elevator, he rides all the way to the 10th floor.`,
-        ko: `한 남자가 아파트 10층에 삽니다. 아침마다 그는 엘리베이터를 타고 1층으로 내려갑니다. 그런데 저녁에 돌아올 때는 7층까지만 엘리베이터를 타고, 나머지 세 층은 계단으로 걸어 올라갑니다. 단, 비가 오는 날이나 엘리베이터에 다른 사람이 함께 탔을 때는 10층까지 곧장 올라갑니다.`
-      },
-      truth: {
-        en: `The man is very short. Inside the elevator, the highest button he can reach is 7. Going down is easy, because the lobby button is low. On rainy days he carries an umbrella and presses 10 with its tip, and when someone else is in the elevator, he simply asks them to press 10 for him.`,
-        ko: `남자는 키가 아주 작습니다. 엘리베이터 안에서 그의 손이 닿는 가장 높은 버튼이 7층입니다. 1층 버튼은 낮은 곳에 있어서 내려갈 때는 문제가 없습니다. 비 오는 날에는 우산을 들고 있으니 우산 끝으로 10층 버튼을 누르고, 다른 사람이 함께 탔을 때는 10층을 눌러 달라고 부탁합니다.`
-      },
-      keys: [
-        { id: "reach", label: { en: "Why he stops at 7", ko: "7층에서 내리는 이유" },
-          text: { en: "He is very short and can't reach the 10 button; 7 is the highest he can reach.", ko: "키가 아주 작아 10층 버튼에 손이 닿지 않고, 7층이 닿는 한계다." } },
-        { id: "help", label: { en: "Rainy days and other riders", ko: "비 오는 날과 다른 사람이 있을 때" },
-          text: { en: "On rainy days he presses 10 with his umbrella; when others are there, he asks them to press it.", ko: "비 오는 날은 우산으로 10층을 누르고, 다른 사람이 있으면 눌러 달라고 한다." } }
-      ],
-      hints: [
-        { en: "The answer has to do with the buttons, not with exercise.", ko: "답은 운동이 아니라 버튼과 관련이 있습니다." },
-        { en: "What does he carry on rainy days, and how could it help him?", ko: "비 오는 날 그가 들고 다니는 물건은 무엇이고, 그것이 어떻게 도움이 될까요?" }
-      ],
-      facts: `- The man is an adult who is very short, about the height of a young child.
-- Inside the elevator, the highest button he can reach is 7. The lobby button is low, so going down is easy.
-- He is not exercising, not afraid of anything, and nothing is wrong with the elevator or with floors 8 to 10. He is not visiting anyone on the 7th floor.
-- On rainy days he carries an umbrella and presses 10 with its tip. When someone else is in the elevator, he asks them to press 10.
-- His name and job are not part of the story (IRRELEVANT).`
-    },
-    {
-      id: "desert-man", kind: "mystery", level: 2, file: "No. 08",
-      title: { en: "The Man in the Desert", ko: "사막의 남자" },
-      setup: {
-        en: `A man lies dead in the middle of the desert, without a stitch of clothing. In his hand is half of a broken match. There are no footprints anywhere around him.`,
-        ko: `사막 한가운데에 한 남자가 옷을 하나도 걸치지 않은 채 죽어 있습니다. 그의 손에는 반쯤 부러진 성냥개비가 쥐어져 있습니다. 주변 어디에도 발자국이 없습니다.`
-      },
-      truth: {
-        en: `The man had been flying over the desert in a hot-air balloon with a few friends. The balloon began to sink, and they were going to crash. They threw out everything they could, even their clothes, but the balloon kept sinking. One person still had to go. They drew matches, agreeing that whoever got the short, broken one would jump. He drew it, and he jumped so the others could live. That is why he has no clothes, holds a broken match, and left no footprints.`,
-        ko: `남자는 친구 몇 명과 열기구를 타고 사막 위를 날고 있었습니다. 그런데 열기구가 점점 내려앉아 추락할 상황이 되었습니다. 그들은 짐은 물론 옷까지 모두 던져 버렸지만, 열기구는 계속 가라앉았습니다. 결국 한 사람이 내려야 했습니다. 그들은 성냥개비로 제비를 뽑아, 부러진 짧은 성냥을 뽑는 사람이 뛰어내리기로 했습니다. 그가 부러진 성냥을 뽑았고, 다른 사람들을 살리려고 뛰어내렸습니다. 그래서 그는 옷이 없고, 부러진 성냥을 쥐고 있으며, 발자국도 남기지 않은 것입니다.`
-      },
-      keys: [
-        { id: "balloon", label: { en: "How he got there", ko: "그가 그곳에 온 방법" },
-          text: { en: "He fell from a hot-air balloon, which is why there are no footprints.", ko: "열기구에서 떨어졌다. 그래서 발자국이 없다." } },
-        { id: "weight", label: { en: "Why he had no clothes", ko: "옷이 없는 이유" },
-          text: { en: "The balloon was sinking, so they threw everything out to lighten it, even their clothes.", ko: "열기구가 가라앉아 무게를 줄이려고 옷까지 다 던졌다." } },
-        { id: "match", label: { en: "What the match means", ko: "성냥의 의미" },
-          text: { en: "They drew matches to decide who would jump; he drew the broken one and jumped to save the others.", ko: "누가 뛰어내릴지 성냥으로 제비를 뽑았고, 부러진 성냥을 뽑은 그가 다른 사람들을 살리려고 뛰어내렸다." } }
-      ],
-      hints: [
-        { en: "He didn't walk to the spot where he died.", ko: "그는 걸어서 그 자리에 온 것이 아닙니다." },
-        { en: "The broken match was part of a choice made by a group of people.", ko: "부러진 성냥은 여러 사람이 무언가를 정할 때 쓰였습니다." }
-      ],
-      facts: `- The man was flying over the desert in a hot-air balloon with a few friends. How many friends does not matter.
-- The balloon was sinking and would crash. They threw out all their supplies and even took off their clothes and threw them out to make it lighter. It still kept sinking.
-- They agreed one person had to jump. They drew lots with matches; one match was broken short. Whoever drew the broken match would jump.
-- He drew the broken match and jumped, by his own choice as the group had agreed, so the others could live. He died from the fall.
-- He was not pushed, murdered, or robbed. He did not die of thirst or heat, and he was not lost. He was not depressed or wanting to die.
-- There are no footprints because he fell from the sky.
-- The others landed safely.
-- His name, his nationality, and which desert it was are not part of the story (IRRELEVANT).`
-    },
-    {
-      id: "forest-swimmer", kind: "mystery", level: 2, file: "No. 09",
-      title: { en: "The Swimmer in the Forest", ko: "숲속의 수영복" },
-      setup: {
-        en: `After a huge forest fire was put out, rescuers found a man lying dead in the middle of the burned forest. He was wearing only a swimsuit. The nearest lake was miles away.`,
-        ko: `거대한 산불이 꺼진 뒤, 구조대는 불탄 숲 한가운데서 죽어 있는 남자를 발견했습니다. 그는 수영복만 입고 있었습니다. 가장 가까운 호수는 몇 킬로미터나 떨어져 있었습니다.`
-      },
-      truth: {
-        en: `The man had been swimming in that faraway lake. To fight the fire, a firefighting plane swooped low over the lake and scooped up a huge load of water, and it scooped him up too, without anyone noticing. Then the plane flew over the burning forest and dropped its water, and the man fell with it into the middle of the fire.`,
-        ko: `남자는 몇 킬로미터 떨어진 그 호수에서 수영을 하고 있었습니다. 산불을 끄려고 소방 비행기가 호수 위로 낮게 날며 물을 한가득 퍼 담았는데, 아무도 모르는 사이에 그도 물과 함께 퍼 올려졌습니다. 비행기가 불타는 숲 위로 날아가 물을 쏟아붓자, 남자는 물과 함께 불길 한가운데로 떨어졌습니다.`
-      },
-      keys: [
-        { id: "swim", label: { en: "What he was doing before", ko: "그가 하고 있던 일" },
-          text: { en: "He was swimming in a lake far from the forest.", ko: "숲에서 멀리 떨어진 호수에서 수영하고 있었다." } },
-        { id: "plane", label: { en: "How he got into the forest", ko: "숲에 오게 된 경위" },
-          text: { en: "A firefighting plane scooped him up with the lake water and dropped him on the fire.", ko: "소방 비행기가 호수 물을 퍼 올릴 때 함께 퍼 올려져 불 위에 떨어졌다." } }
-      ],
-      hints: [
-        { en: "He did not walk or run into the forest.", ko: "그는 걸어서도, 뛰어서도 숲에 들어가지 않았습니다." },
-        { en: "Think about how such a huge fire is put out, and where all that water comes from.", ko: "그렇게 큰 산불을 어떻게 끄는지, 그 많은 물은 어디서 오는지 생각해 보세요." }
-      ],
-      facts: `- There was a large forest fire. Firefighting aircraft scooped water from a lake miles away and dropped it on the fire.
-- The man was swimming in that lake. A firefighting plane skimmed the lake and scooped him up along with the water. Nobody noticed. (If asked about a helicopter with a water bucket, answer YES; the idea is the same.)
-- The plane dropped the water over the fire, and the man fell into the burning forest with it. He died from the fall and the fire.
-- He was not murdered, not a firefighter, not a lost hiker, and not running from the fire. Nobody put him there on purpose.
-- This is a famous tale told as a puzzle; within the game, treat it as what happened.
-- His name and the lake's name are not part of the story (IRRELEVANT).`
-    },
-    {
-      id: "turtle-soup", kind: "mystery", level: 3, file: "No. 10",
-      title: { en: "Sea Turtle Soup", ko: "바다거북 스프" },
-      setup: {
-        en: `A man ordered sea turtle soup at a seaside restaurant. After one spoonful, he asked the chef, "Excuse me, is this really sea turtle soup?" The chef said it was. The man paid, went home, and took his own life that night.`,
-        ko: `한 남자가 바닷가 식당에서 바다거북 스프를 주문했습니다. 한 숟가락 맛본 그는 요리사에게 "실례지만, 이게 정말 바다거북 스프입니까?" 하고 물었습니다. 요리사가 그렇다고 하자, 남자는 값을 치르고 집으로 돌아가 그날 밤 스스로 목숨을 끊었습니다.`
-      },
-      truth: {
-        en: `Years earlier, the man's ship had sunk, and he drifted for many days in a lifeboat with a few other survivors, including his close friend. There was nothing to eat, and his friend died. When the man was close to starving, the other survivors gave him a bowl they called "sea turtle soup." He ate it and survived. At the restaurant, he tasted real sea turtle soup for the first time and realized it tasted nothing like the soup in the lifeboat. He understood that what he had eaten back then was made from his dead friend. Unable to live with that, he took his own life.`,
-        ko: `몇 년 전, 남자가 탄 배가 침몰했고 그는 몇몇 생존자와 함께 구명보트를 타고 여러 날 바다를 떠돌았습니다. 그중에는 그의 친한 친구도 있었습니다. 먹을 것은 하나도 없었고, 친구는 결국 죽었습니다. 굶어 죽기 직전이던 남자에게 다른 생존자들이 '바다거북 스프'라며 한 그릇을 건넸고, 그는 그것을 먹고 살아남았습니다. 식당에서 진짜 바다거북 스프를 처음 맛본 그는, 그 맛이 구명보트에서 먹은 것과 전혀 다르다는 것을 알았습니다. 그때 먹은 스프가 죽은 친구로 만든 것이었음을 깨달은 그는 그 사실을 견디지 못하고 스스로 목숨을 끊었습니다.`
-      },
-      keys: [
-        { id: "wreck", label: { en: "His past", ko: "그의 과거" },
-          text: { en: "He once survived a shipwreck, adrift and starving in a lifeboat.", ko: "예전에 배가 침몰해 구명보트에서 굶주리며 표류한 적이 있다." } },
-        { id: "soup", label: { en: "The first soup", ko: "처음 먹은 스프" },
-          text: { en: "The 'sea turtle soup' he was given in the lifeboat was really made from his dead friend.", ko: "구명보트에서 '바다거북 스프'라며 받은 것은 사실 죽은 친구로 만든 것이었다." } },
-        { id: "taste", label: { en: "Why one spoonful changed everything", ko: "한 숟가락이 모든 것을 바꾼 이유" },
-          text: { en: "Real sea turtle soup tasted different, so he realized the truth and couldn't live with it.", ko: "진짜 바다거북 스프는 맛이 달랐고, 그래서 진실을 깨달아 견디지 못했다." } }
-      ],
-      hints: [
-        { en: "This was not the first time in his life someone had told him he was eating sea turtle soup.", ko: "그가 '바다거북 스프'라는 말을 들으며 무언가를 먹은 것은 이번이 처음이 아니었습니다." },
-        { en: "Long ago, he and a few others were stranded at sea with nothing to eat.", ko: "오래전 그는 몇 사람과 함께 먹을 것 하나 없이 바다에 고립된 적이 있습니다." }
-      ],
-      facts: `- Years earlier, the man's ship sank. He and a few other survivors, including his close friend, drifted in a lifeboat for many days with no food.
-- His friend died in the lifeboat from hunger and exhaustion. Nobody killed him.
-- When the man was close to starving, the other survivors gave him a bowl they called "sea turtle soup." It was really made from his dead friend's body. He did not know. He ate it and survived, and they were rescued later.
-- At the seaside restaurant, he tasted real sea turtle soup for the first time. It tasted completely different from the lifeboat soup.
-- He realized what he had eaten back then. Unable to bear it, he took his own life that night.
-- The restaurant soup really was sea turtle soup. The chef did nothing wrong and is not otherwise involved. There was no poison.
-- The man was not allergic, sick, or in debt.
-- Names, the restaurant's name, and the year are not part of the story (IRRELEVANT).`
-    },
-    {
-      id: "through-the-roof", kind: "bible", level: 1,
-      ref: { en: "Mark 2:1–12", ko: "마가복음 2:1–12" },
-      abbr: { en: "Mk 2:1–12", ko: "막 2:1–12" },
-      title: { en: "Through the Roof", ko: "지붕을 뚫고" },
-      setup: {
-        en: `Four men climbed onto a packed house and dug a hole through the roof. Then they lowered a man lying on a mat down into the crowded room. A little later, that same man walked out in front of everyone, carrying the mat himself, and the whole crowd praised God.`,
-        ko: `네 사람이 사람들로 꽉 찬 집 지붕에 올라가 구멍을 뚫었습니다. 그리고 자리에 누운 한 사람을 북적이는 방 안으로 달아 내렸습니다. 잠시 후 바로 그 사람이 자기 자리를 직접 들고 모든 사람 앞에서 걸어 나갔고, 모인 사람들이 다 하나님께 영광을 돌렸습니다.`
-      },
-      truth: {
-        en: `Jesus had come back to Capernaum, and so many people crowded into the house where he was that there was no room left, not even at the door. Some people came bringing a paralyzed man, carried by four men. Because of the crowd they couldn't get him to Jesus, so they opened up the roof above him and lowered the man on his mat. When Jesus saw their faith, he said to the man, "Son, your sins are forgiven." Some teachers of the law sitting there thought, "This is blasphemy. Who can forgive sins but God alone?" Jesus knew their thoughts. To show that the Son of Man has authority on earth to forgive sins, he told the man, "Get up, take your mat, and go home." The man got up, picked up his mat at once, and walked out in front of them all. Everyone was amazed and praised God, saying, "We have never seen anything like this!"`,
-        ko: `예수님이 가버나움으로 돌아오시자, 예수님이 계신 집에 사람들이 몰려들어 문 앞까지 빈자리가 없었습니다. 사람들이 중풍병자 한 사람을 데려왔는데, 네 사람이 그를 메고 있었습니다. 무리 때문에 예수님께 데려갈 수 없자, 그들은 예수님이 계신 곳 위의 지붕을 뜯어 구멍을 내고 중풍병자가 누운 자리를 달아 내렸습니다. 예수님은 그들의 믿음을 보시고 그 사람에게 "얘야, 네 죄가 용서받았다"고 말씀하셨습니다. 거기 앉아 있던 몇몇 서기관은 속으로 "이것은 신성모독이다. 하나님 한 분 외에 누가 죄를 용서할 수 있는가?" 하고 생각했습니다. 예수님은 그들의 생각을 아시고, 인자가 땅에서 죄를 용서하는 권세가 있음을 보이시려고 그 사람에게 "일어나 네 자리를 들고 집으로 가라"고 하셨습니다. 그는 일어나 곧 자리를 들고 모든 사람 앞에서 나갔습니다. 사람들은 다 놀라 하나님께 영광을 돌리며 "우리가 이런 일을 처음 본다"고 말했습니다.`
-      },
-      keys: [
-        { id: "who", label: { en: "Who the man was and why they came", ko: "그 사람은 누구이고 왜 왔나" },
-          text: { en: "He was paralyzed, and four men were bringing him to Jesus, who was inside.", ko: "중풍병자였고, 네 사람이 그를 안에 계신 예수님께 데려가려 했다." } },
-        { id: "roof", label: { en: "Why the roof", ko: "왜 지붕이었나" },
-          text: { en: "The crowd blocked the door, so they opened the roof to get him to Jesus.", ko: "무리가 문을 막고 있어서 지붕을 뚫어 예수님께 내렸다." } },
-        { id: "forgive", label: { en: "What Jesus did", ko: "예수님이 하신 일" },
-          text: { en: "Jesus forgave his sins and healed him to show he has authority to forgive sins.", ko: "예수님이 그의 죄를 용서하시고, 죄를 용서하는 권세를 보이시려고 그를 고치셨다." } }
-      ],
-      hints: [
-        { en: "Someone everyone wanted to see was inside that house, and the door was blocked.", ko: "모두가 보고 싶어 하던 분이 그 집 안에 계셨고, 문은 막혀 있었습니다." },
-        { en: "The man could not walk. Before healing him, Jesus said something that only God has the right to say.", ko: "그 사람은 걸을 수 없었습니다. 예수님은 그를 고치시기 전에, 하나님만 하실 수 있는 말씀을 먼저 하셨습니다." }
-      ],
-      silent: [
-        { en: "Whether the four men were his friends or family. Mark only says he was carried by four.", ko: "네 사람이 그의 친구였는지 가족이었는지. 마가는 '네 사람이 메었다'고만 말합니다." },
-        { en: "Whose house it was. Many readers connect it with Simon Peter's house (Mark 1:29), but Mark 2 doesn't name the owner.", ko: "누구의 집이었는지. 많은 해석자가 시몬 베드로의 집(막 1:29)과 연결하지만, 2장은 집주인을 밝히지 않습니다." },
-        { en: "Who fixed the roof afterward.", ko: "누가 나중에 지붕을 고쳤는지." }
-      ],
-      facts: `- Place: a house in Capernaum where Jesus was staying ("at home") after he returned (Mark 2:1).
-- So many gathered that there was no more room, not even at the door; Jesus was preaching the word to them (2:2).
-- Some people came bringing to him a paralyzed man, carried by four men (2:3).
-- They could not get near Jesus because of the crowd, so they removed the roof above him, dug through, and let down the mat (bed) the paralyzed man lay on (2:4).
-- When Jesus saw their faith, he said to the paralyzed man, "Son (child), your sins are forgiven" (2:5).
-- Some scribes (teachers of the law) sitting there questioned in their hearts: "Why does this man speak like that? He is blaspheming! Who can forgive sins but God alone?" (2:6-7)
-- Jesus knew in his spirit what they were thinking and asked which is easier, to say "Your sins are forgiven" or "Rise, take up your bed and walk" (2:8-9).
-- "So that you may know that the Son of Man has authority on earth to forgive sins," he said to the paralyzed man, "Rise, pick up your bed, and go home" (2:10-11).
-- The man rose, immediately picked up his bed, and went out before them all. All were amazed and glorified God, saying, "We never saw anything like this!" (2:12)
-- Parallel accounts are Matthew 9:1-8 and Luke 5:17-26; details found there also count as stated (Luke 5:19 says they let him down through the roof tiles; Luke 5:17 says Pharisees and teachers of the law were sitting there).
-- Jesus did not scold the men about the roof. Nobody was arrested or punished.`,
-      notStated: `- The names of the four men, and whether they were friends, relatives, or hired helpers.
-- Who owned the house. Tradition often suggests Peter's house (Mark 1:29), but Mark 2 does not say.
-- How or by whom the roof was repaired, or what the owner thought.
-- The man's age, how long he had been paralyzed, what caused it, and whether his sin caused it.
-- Whether the paralyzed man himself had faith (the text says Jesus saw "their faith" without saying exactly whose).`
-    },
-    {
-      id: "left-at-the-gate", kind: "bible", level: 2,
-      ref: { en: "Acts 12:1–17", ko: "사도행전 12:1–17" },
-      abbr: { en: "Acts 12:1–17", ko: "행 12:1–17" },
-      title: { en: "Left at the Gate", ko: "문밖에 세워 둔 사람" },
-      setup: {
-        en: `Late at night, a man knocked at the gate of a house where many people had gathered. A servant girl recognized his voice and was so happy that she ran inside without opening the gate. The people inside told her, "You're out of your mind!" The man kept knocking.`,
-        ko: `늦은 밤, 많은 사람이 모여 있던 집 대문을 한 남자가 두드렸습니다. 한 여종이 그의 목소리를 알아듣고 너무 기뻐서, 문도 열지 않은 채 안으로 달려 들어갔습니다. 안에 있던 사람들은 그녀에게 "네가 미쳤구나!" 하고 말했습니다. 남자는 계속 문을 두드렸습니다.`
-      },
-      truth: {
-        en: `King Herod had put James, the brother of John, to death with the sword. When he saw that this pleased the people, he arrested Peter too, planning to bring him out to the people after the Passover. Peter was kept in prison under heavy guard, but the church was praying hard to God for him. On the night before Herod was going to bring him out, Peter was sleeping between two soldiers, bound with two chains. An angel of the Lord woke him; the chains fell from his hands, and Peter followed the angel past the guards. The iron gate leading into the city opened by itself. At first Peter thought he was seeing a vision. Then he went to the house of Mary, the mother of John Mark, where many were gathered and praying. When he knocked, a servant girl named Rhoda came to answer. She recognized Peter's voice and, in her joy, ran back without opening the gate. They told her she was out of her mind; when she kept insisting, they said, "It is his angel." Peter kept knocking, and when they opened the gate, they were amazed. He told them how the Lord had brought him out of prison, asked them to tell James and the brothers, and left for another place.`,
-        ko: `헤롯 왕은 요한의 형제 야고보를 칼로 죽였고, 그 일을 사람들이 기뻐하는 것을 보고 베드로까지 잡아 가두었습니다. 유월절이 지나면 백성 앞에 끌어낼 생각이었습니다. 베드로는 삼엄한 경비 속에 갇혀 있었지만, 교회는 그를 위해 하나님께 간절히 기도하고 있었습니다. 헤롯이 그를 끌어내려던 바로 전날 밤, 베드로는 두 쇠사슬에 묶인 채 두 군인 사이에서 자고 있었습니다. 주의 천사가 그를 깨우자 쇠사슬이 손에서 벗겨졌고, 베드로는 천사를 따라 경비병들을 지나갔습니다. 성으로 통하는 쇠문이 저절로 열렸습니다. 베드로는 처음에 환상을 보는 줄 알았습니다. 정신을 차린 베드로는 마가라 하는 요한의 어머니 마리아의 집으로 갔고, 그곳에는 많은 사람이 모여 기도하고 있었습니다. 베드로가 대문을 두드리자 로데라는 여종이 나왔습니다. 로데는 베드로의 목소리를 알아듣고 너무 기뻐서 문을 열지도 않고 달려 들어갔습니다. 사람들은 "네가 미쳤다"고 했고, 로데가 거듭 우기자 "그의 천사다"라고 했습니다. 베드로가 계속 문을 두드렸고, 사람들이 문을 열고 그를 보자 깜짝 놀랐습니다. 베드로는 주께서 어떻게 자기를 감옥에서 이끌어 내셨는지 이야기하고, 이 일을 야고보와 형제들에게 전하라고 한 뒤 다른 곳으로 떠났습니다.`
-      },
-      keys: [
-        { id: "who", label: { en: "Who was knocking", ko: "문을 두드린 사람" },
-          text: { en: "Peter, who had just been freed from prison.", ko: "막 감옥에서 풀려난 베드로." } },
-        { id: "escape", label: { en: "How he got out", ko: "풀려난 경위" },
-          text: { en: "An angel freed him the night before Herod would bring him out: the chains fell off and the gate opened by itself.", ko: "헤롯이 그를 끌어내기 전날 밤 천사가 그를 풀어 주었다. 쇠사슬이 벗겨지고 쇠문이 저절로 열렸다." } },
-        { id: "prayer", label: { en: "Why the people inside didn't believe", ko: "사람들이 믿지 못한 이유" },
-          text: { en: "They were gathered praying for Peter, yet couldn't believe he was really at the gate; Rhoda was so overjoyed she forgot to open it.", ko: "그들은 베드로를 위해 모여 기도하고 있었지만 그가 정말 문밖에 왔다는 것을 믿지 못했다. 로데는 너무 기뻐서 문 여는 것을 잊었다." } }
-      ],
-      hints: [
-        { en: "The man at the gate was supposed to be in prison, guarded by soldiers.", ko: "문밖의 남자는 원래 군인들의 감시를 받으며 감옥에 있어야 할 사람이었습니다." },
-        { en: "The people inside were praying for this very man at that very moment.", ko: "안에 있던 사람들은 바로 그때 바로 그 사람을 위해 기도하고 있었습니다." }
-      ],
-      silent: [
-        { en: "Rhoda's age. Luke calls her a servant girl but doesn't say how old she was.", ko: "로데의 나이. 누가는 그녀를 여종(여자 아이)이라고만 부르고 나이는 말하지 않습니다." },
-        { en: "Exactly what the church was asking for. Acts 12:5 says they prayed earnestly for him, not specifically for his escape.", ko: "교회가 정확히 무엇을 구했는지. 행 12:5은 그를 위해 간절히 기도했다고만 하고, 탈출을 구했다고 특정하지 않습니다." },
-        { en: "What they meant by \"It is his angel.\" The text doesn't explain.", ko: "\"그의 천사다\"라는 말이 무슨 뜻이었는지. 본문은 설명하지 않습니다." }
-      ],
-      facts: `- Herod the king laid violent hands on some who belonged to the church and killed James the brother of John with the sword (Acts 12:1-2).
-- Seeing that it pleased the Jews, he arrested Peter also, during the days of Unleavened Bread. He put him in prison, guarded by four squads of four soldiers each, intending to bring him out to the people after the Passover (12:3-4).
-- Peter was kept in prison, but earnest prayer for him was made to God by the church (12:5).
-- The very night before Herod was about to bring him out, Peter was sleeping between two soldiers, bound with two chains, and sentries before the door were guarding the prison (12:6).
-- An angel of the Lord stood by him and a light shone in the cell. The angel struck Peter on the side, woke him, and said, "Get up quickly." The chains fell off his hands. The angel told him to dress, put on his sandals, wrap his cloak around him, and follow (12:7-8).
-- Peter followed, not knowing that what the angel was doing was real; he thought he was seeing a vision (12:9).
-- They passed the first and second guard and came to the iron gate leading into the city. It opened for them by itself. They went along one street, and then the angel left him (12:10).
-- Peter came to himself and said, "Now I am sure that the Lord has sent his angel and rescued me from the hand of Herod" (12:11).
-- He went to the house of Mary, the mother of John whose other name was Mark, where many were gathered together and were praying (12:12).
-- He knocked at the door of the gateway, and a servant girl named Rhoda came to answer (12:13). Recognizing Peter's voice, in her joy she did not open the gate but ran in and reported that Peter was standing at the gate (12:14).
-- They said, "You are out of your mind." She kept insisting, and they kept saying, "It is his angel!" (12:15)
-- Peter continued knocking. When they opened, they saw him and were amazed (12:16).
-- He motioned with his hand for them to be silent, described how the Lord had brought him out of the prison, said "Tell these things to James and to the brothers," and departed to another place (12:17).
-- Afterward, at daybreak there was great disturbance among the soldiers. Herod searched for Peter, did not find him, examined the sentries, and ordered that they be put to death (12:18-19).`,
-      notStated: `- Rhoda's age or appearance, and whether she was scolded or praised.
-- What exactly the church asked for in prayer.
-- What they meant by "It is his angel."
-- The name of the "other place" Peter went to.
-- Whether Peter was afraid, the exact hour of the night, or how long he knocked.`
-    },
-    {
-      id: "strange-order", kind: "bible", level: 2,
-      ref: { en: "1 Kings 3:16–28", ko: "열왕기상 3:16–28" },
-      abbr: { en: "1 Kgs 3:16–28", ko: "왕상 3:16–28" },
-      title: { en: "The King's Strange Order", ko: "왕의 이상한 명령" },
-      setup: {
-        en: `A king had a sword brought to him and commanded that a living baby be cut in two. Because of that order, the baby lived and went home in the arms of his real mother.`,
-        ko: `한 왕이 칼을 가져오게 하더니, 살아 있는 아기를 둘로 나누라고 명령했습니다. 그런데 바로 그 명령 덕분에 아기는 살았고, 진짜 엄마의 품에 안겨 집으로 돌아갔습니다.`
-      },
-      truth: {
-        en: `Two women came to King Solomon. They lived in the same house, and each had given birth to a son, three days apart; no one else was in the house. During the night, one woman's son died because she lay on him. She got up at midnight, took the other woman's living son from her side while she slept, and put her dead son in his place. In the morning, the mother found the dead baby, looked closely, and saw that he was not her son. Before the king, both women claimed the living child. Solomon called for a sword and ordered the living child divided in two, half for each. The real mother, whose heart burned with love for her son, cried out, "Please, my lord, give her the living child. Don't kill him!" But the other said, "He shall be neither mine nor yours. Divide him!" Then Solomon said, "Give the living child to the first woman. Do not kill him. She is his mother." When all Israel heard the verdict, they stood in awe of the king, because they saw that God's wisdom was in him to do justice.`,
-        ko: `두 여인이 솔로몬 왕에게 왔습니다. 두 사람은 한집에 살았고, 사흘 간격으로 각각 아들을 낳았으며, 집에는 그 둘밖에 없었습니다. 밤에 한 여인이 자기 아들 위에 누워 아이가 죽었습니다. 그 여인은 한밤중에 일어나, 다른 여인이 잠든 사이 그 곁에서 살아 있는 아들을 데려가고 자기의 죽은 아들을 그 자리에 뉘었습니다. 아침에 엄마는 죽은 아기를 발견했지만, 자세히 보니 자기 아들이 아니었습니다. 왕 앞에서 두 여인은 모두 살아 있는 아이가 자기 아들이라고 주장했습니다. 솔로몬은 칼을 가져오게 하고, 산 아이를 둘로 나누어 반씩 주라고 명령했습니다. 그러자 아들을 향한 사랑으로 애가 탄 진짜 엄마가 외쳤습니다. "내 주여, 산 아이를 저 여자에게 주시고 제발 죽이지 마십시오!" 그러나 다른 여인은 "내 것도 네 것도 되지 않게 나누자"고 했습니다. 왕은 "산 아이를 처음 여인에게 주고 죽이지 말라. 그가 아이의 어머니다"라고 판결했습니다. 온 이스라엘이 이 판결을 듣고 왕을 두려워했으니, 하나님의 지혜가 그에게 있어 정의를 행하는 것을 보았기 때문입니다.`
-      },
-      keys: [
-        { id: "swap", label: { en: "What the case was about", ko: "어떤 사건이었나" },
-          text: { en: "Two women both claimed the same living baby; one woman's baby had died and she secretly swapped them.", ko: "두 여인이 같은 아기를 서로 자기 아이라고 주장했다. 한 여인의 아기가 죽자 몰래 바꿔치기했다." } },
-        { id: "love", label: { en: "How the order revealed the truth", ko: "명령이 진실을 드러낸 방법" },
-          text: { en: "The real mother begged the king to give the baby away rather than let him die, while the other agreed to divide him. So the king knew who the mother was.", ko: "진짜 엄마는 아기가 죽느니 차라리 넘겨주겠다고 애원했고, 다른 여인은 나누자고 했다. 그래서 왕은 누가 엄마인지 알았다." } },
-        { id: "wisdom", label: { en: "The king and his wisdom", ko: "그 왕과 그의 지혜" },
-          text: { en: "It was King Solomon, and the people saw that God's wisdom was in him.", ko: "솔로몬 왕이었고, 백성은 하나님의 지혜가 그에게 있음을 보았다." } }
-      ],
-      hints: [
-        { en: "Two people each said, \"This baby is mine.\"", ko: "두 사람이 저마다 \"이 아기는 내 아기\"라고 했습니다." },
-        { en: "Pay attention to how each woman reacted to the king's order.", ko: "왕의 명령에 두 여인이 각각 어떻게 반응했는지 생각해 보세요." }
-      ],
-      silent: [
-        { en: "Whether Solomon really meant to carry out the order. The text records the order and the result, not his inner plan.", ko: "솔로몬이 정말 명령대로 할 생각이었는지. 본문은 명령과 결과를 기록할 뿐 왕의 속마음은 말하지 않습니다." },
-        { en: "The women's names, or what happened afterward to the woman who lied. (The text introduces them as prostitutes and gives no names.)", ko: "두 여인의 이름, 그리고 거짓말한 여인이 그 뒤에 어떻게 되었는지. (본문은 두 사람을 창기라고 소개할 뿐 이름은 밝히지 않습니다.)" }
-      ],
-      facts: `- Two women who were prostitutes came to King Solomon and stood before him (1 Kings 3:16).
-- They lived in the same house. The first gave birth while the other was in the house; three days later the second also gave birth. They were alone; no one else was in the house (3:17-18).
-- The second woman's son died in the night because she lay on him (3:19).
-- She got up at midnight, took the first woman's son from beside her while she slept, laid him at her own breast, and laid her dead son at the first woman's breast (3:20).
-- In the morning the first woman got up to nurse her child and found him dead; when she looked at him closely, he was not the son she had borne (3:21).
-- Before the king, each insisted that the living child was hers and the dead one was the other's (3:22-23).
-- The king said, "Bring me a sword," and a sword was brought (3:24). He said, "Divide the living child in two, and give half to the one and half to the other" (3:25).
-- The woman whose son was alive, because her heart yearned for her son, said, "Oh, my lord, give her the living child, and by no means put him to death." The other said, "He shall be neither mine nor yours; divide him" (3:26).
-- The king answered, "Give the living child to the first woman, and by no means put him to death; she is his mother" (3:27).
-- All Israel heard of the judgment and stood in awe of the king, because they saw that the wisdom of God was in him to do justice (3:28).
-- Earlier in the chapter (3:5-14), God appeared to Solomon in a dream at Gibeon; Solomon asked for an understanding mind to govern and to discern between good and evil, and God gave him a wise and discerning mind.
-- The baby was not harmed; no sword touched him.`,
-      notStated: `- Whether Solomon intended to carry out the order.
-- The women's names, the babies' names, or their ages.
-- What happened afterward to the woman who lied (no punishment is recorded).
-- How long the dispute had gone on before they came to the king.`
-    },
-    {
-      id: "cup-in-the-sack", kind: "bible", level: 3,
-      ref: { en: "Genesis 44:1–45:15", ko: "창세기 44:1–45:15" },
-      abbr: { en: "Gen 44–45", ko: "창 44–45" },
-      title: { en: "The Cup in the Sack", ko: "자루 속의 은잔" },
-      setup: {
-        en: `Eleven brothers were chased down on the road and accused of stealing a powerful ruler's silver cup. They swore they were innocent. The ruler's servant searched their grain sacks, from the oldest brother's to the youngest's, and found the cup in the very last one. The brothers tore their clothes in despair. Yet in the end, that same scene turned into a tearful, joyful reunion.`,
-        ko: `열한 형제가 길에서 추격당해 붙잡혔고, 한 권력자의 은잔을 훔쳤다는 혐의를 받았습니다. 형제들은 결백하다고 맹세했습니다. 권력자의 청지기가 맏형의 자루부터 막내의 자루까지 차례로 뒤지자, 은잔은 맨 마지막 자루에서 나왔습니다. 형제들은 절망하여 옷을 찢었습니다. 그런데 결국 그 자리는 눈물 어린 기쁜 재회의 자리가 되었습니다.`
-      },
-      truth: {
-        en: `The powerful ruler was Joseph, the governor of Egypt and their own brother. Years earlier, these brothers had sold him into slavery, and they didn't recognize him now. Joseph ordered his steward to fill their sacks with grain, return each man's money, and put his own silver cup in the sack of Benjamin, the youngest. So the brothers really were innocent; the cup had been planted. When they were brought back, Judah said they would all become slaves. Joseph said that only the man who had the cup would stay as his slave, and the rest could go home in peace. Then Judah stepped forward. He explained that their father's life was bound up with Benjamin's, and that losing him would kill their father. He begged to stay as a slave in Benjamin's place. Joseph could no longer hold himself back. He sent everyone else out, wept so loudly that the Egyptians heard, and said, "I am Joseph, your brother, whom you sold into Egypt." He told them not to be distressed, because God had sent him ahead of them to save lives.`,
-        ko: `그 권력자는 애굽의 총리 요셉, 곧 그들의 형제였습니다. 여러 해 전 이 형들은 요셉을 노예로 팔았고, 지금은 그를 알아보지 못했습니다. 요셉은 청지기에게 형제들의 자루에 곡식을 채우고, 각 사람의 돈을 도로 넣고, 막내 베냐민의 자루에는 자기 은잔까지 넣으라고 명령했습니다. 그러니 형제들은 정말 결백했고, 은잔은 일부러 넣어 둔 것이었습니다. 다시 끌려온 자리에서 유다는 모두가 종이 되겠다고 했습니다. 요셉은 잔이 나온 사람만 종으로 남고 나머지는 평안히 돌아가라고 했습니다. 그때 유다가 나섰습니다. 아버지의 목숨이 베냐민의 목숨과 하나로 묶여 있어서 베냐민을 잃으면 아버지가 죽을 것이라고 말하고, 자기가 베냐민 대신 종으로 남겠다고 간청했습니다. 요셉은 더 이상 자신을 억제하지 못했습니다. 다른 사람들을 모두 내보내고, 애굽 사람들이 들을 만큼 큰 소리로 울며 말했습니다. "나는 당신들이 애굽에 판 동생 요셉입니다." 그리고 하나님이 생명을 구하시려고 자기를 먼저 보내셨으니 근심하지 말라고 했습니다.`
-      },
-      keys: [
-        { id: "planted", label: { en: "Who put the cup there", ko: "누가 은잔을 넣었나" },
-          text: { en: "The ruler himself ordered it planted. The brothers were innocent.", ko: "그 권력자가 직접 넣으라고 명령했다. 형제들은 결백했다." } },
-        { id: "joseph", label: { en: "Who the ruler was", ko: "그 권력자는 누구였나" },
-          text: { en: "Joseph, the brother they had sold years before, now governor of Egypt.", ko: "여러 해 전 그들이 팔아넘긴 동생 요셉. 지금은 애굽의 총리." } },
-        { id: "judah", label: { en: "What turned it into a reunion", ko: "재회로 바뀐 계기" },
-          text: { en: "Judah offered to become a slave in Benjamin's place, and then Joseph revealed who he was.", ko: "유다가 베냐민 대신 종이 되겠다고 나섰고, 그러자 요셉이 자기 정체를 밝혔다." } }
-      ],
-      hints: [
-        { en: "The brothers really were innocent. Someone wanted the cup to be found there.", ko: "형제들은 정말 결백했습니다. 누군가 은잔이 거기서 발견되기를 원했습니다." },
-        { en: "Years earlier, these brothers had done something terrible to another brother.", ko: "여러 해 전, 이 형제들은 다른 한 형제에게 끔찍한 일을 저질렀습니다." }
-      ],
-      silent: [
-        { en: "Why Joseph planted the cup. Genesis never states his reason. Many interpreters read it as a test of whether the brothers had changed (would they abandon Benjamin as they once abandoned Joseph?), but that is an interpretation.", ko: "요셉이 왜 은잔을 넣게 했는지. 창세기는 이유를 직접 말하지 않습니다. 많은 해석자가 '형들이 달라졌는지, 예전에 요셉을 버렸듯 베냐민도 버릴지 시험한 것'으로 읽지만, 그것은 해석입니다." },
-        { en: "Whether Joseph really used the cup for divination. It comes up in the steward's and Joseph's words (44:5, 15), but the narrator never says he did.", ko: "요셉이 정말 그 잔으로 점을 쳤는지. 청지기와 요셉의 말에 나오지만(44:5, 15), 화자는 그가 실제로 그랬다고 말하지 않습니다." }
-      ],
-      facts: `- Background: during a famine, Jacob's sons came to Egypt to buy grain. Years earlier they had sold their brother Joseph to traders (Genesis 37), who took him to Egypt, and Joseph rose to be governor over Egypt, second only to Pharaoh. The brothers did not recognize him (42:8). On this second trip they brought the youngest, Benjamin, Joseph's full brother (Genesis 43).
-- Joseph commanded the steward of his house to fill the men's sacks with food, as much as they could carry, to put each man's money in the mouth of his sack, and to put Joseph's silver cup in the mouth of the youngest's sack with his grain money (44:1-2).
-- At dawn the men were sent away with their donkeys. Not far from the city, Joseph told the steward to pursue them and say, "Why have you repaid evil for good? Is it not from this that my lord drinks, and by this that he practices divination?" (44:3-5)
-- The brothers protested their innocence, pointing out that they had even brought back the money found in their sacks on the first trip. They said whoever had the cup should die and the rest would become slaves (44:7-9). The steward said whoever had it would become his servant and the rest would be innocent (44:10).
-- They quickly unloaded. The steward searched, beginning with the eldest and ending with the youngest, and the cup was found in Benjamin's sack (44:11-12).
-- They tore their clothes, reloaded their donkeys, and returned to the city (44:13).
-- Judah and his brothers came to Joseph's house and fell to the ground before him. Joseph said, "Do you not know that a man like me can indeed practice divination?" (44:14-15)
-- Judah said, "God has found out the guilt of your servants; we are my lord's servants, both we and he in whose hand the cup was found." Joseph said only the man in whose hand the cup was found would be his servant, and the rest should go up in peace to their father (44:16-17).
-- Judah's long plea (44:18-34): their father Jacob's life is bound up in the boy's life; if the boy is not with them, their father will die; Judah had made himself a pledge of safety for the boy to his father; "let your servant remain instead of the boy as a servant to my lord, and let the boy go back with his brothers" (44:33).
-- Joseph could not control himself and cried, "Make everyone go out from me." No one stayed with him while he made himself known (45:1). He wept aloud, and the Egyptians and Pharaoh's household heard it (45:2).
-- He said, "I am Joseph! Is my father still alive?" The brothers were dismayed and could not answer (45:3). "I am your brother, Joseph, whom you sold into Egypt. Do not be distressed or angry with yourselves... God sent me before you to preserve life" (45:4-5). "It was not you who sent me here, but God" (45:8).
-- He told them to bring their father down to Egypt (45:9-13), wept on Benjamin's neck, kissed all his brothers and wept over them, and afterward his brothers talked with him (45:14-15).
-- Benjamin did not steal the cup; none of the brothers stole anything.`,
-      notStated: `- Joseph's reason for planting the cup. A "test" or any other motive is interpretation; the narrator does not state it.
-- Whether Joseph really practiced divination with the cup.
-- Benjamin's age at this time.
-- What the steward knew or thought beyond following orders.
-- The name of the city.`
-    },
-    {
-      id: "locked-upper-room", kind: "bible", level: 3,
-      ref: { en: "Judges 3:12–30", ko: "사사기 3:12–30" },
-      abbr: { en: "Judg 3:12–30", ko: "삿 3:12–30" },
-      title: { en: "The Locked Upper Room", ko: "잠긴 다락방" },
-      setup: {
-        en: `The king's servants found the doors of his upper room locked. Assuming he was using the toilet, they waited outside until they were embarrassed. When he still didn't open the doors, they unlocked them with a key and found the king lying dead on the floor. The visitor who had last been alone with him was long gone.`,
-        ko: `왕의 신하들은 다락방 문이 잠겨 있는 것을 보았습니다. 왕이 용변을 보는 중이라고 생각한 그들은 민망할 만큼 오래 문밖에서 기다렸습니다. 그래도 왕이 문을 열지 않자 열쇠로 문을 열었는데, 왕은 바닥에 쓰러져 죽어 있었습니다. 마지막으로 왕과 단둘이 있던 방문객은 이미 멀리 사라진 뒤였습니다.`
-      },
-      truth: {
-        en: `Israel had done evil in the LORD's sight, and the LORD let Eglon, king of Moab, defeat them; Israel served Eglon for eighteen years. When the Israelites cried out to the LORD, he raised up a deliverer for them: Ehud, a left-handed man from the tribe of Benjamin. Israel sent Ehud to deliver their tribute to Eglon. Ehud had made a short, double-edged sword and strapped it on his right thigh under his clothes. After he presented the tribute, he sent away the men who had carried it, then turned back alone and said, "I have a secret message for you, O king." The king called for silence, and all his attendants left. Ehud came to Eglon as he sat alone in his cool upper room and said, "I have a message from God for you." As the king rose from his seat, Ehud reached with his left hand, took the sword from his right thigh, and thrust it into the king's belly. Eglon was a very fat man; the fat closed over the blade, and Ehud did not pull it out. Ehud went out, shut the doors of the upper room behind him, and locked them. While the servants waited, Ehud escaped. He blew a trumpet in the hill country of Ephraim, led Israel against Moab, and the land had peace for eighty years.`,
-        ko: `이스라엘이 여호와 보시기에 악을 행하자, 여호와께서 모압 왕 에글론이 이스라엘을 치게 하셨고 이스라엘은 열여덟 해 동안 에글론을 섬겼습니다. 이스라엘이 여호와께 부르짖자 여호와께서 구원자를 세우셨는데, 그가 베냐민 지파의 왼손잡이 에훗입니다. 이스라엘은 에훗을 통해 에글론에게 조공을 보냈습니다. 에훗은 양쪽에 날이 선 짧은 칼을 만들어 옷 속 오른쪽 허벅지에 찼습니다. 조공을 바친 뒤 에훗은 조공을 메고 온 사람들을 돌려보내고, 혼자 되돌아와 "왕이여, 내가 은밀히 아뢸 말씀이 있습니다" 하고 말했습니다. 왕이 조용히 하라고 하자 시종들이 모두 나갔습니다. 에훗은 시원한 다락방에 혼자 앉아 있는 에글론에게 다가가 "하나님의 말씀을 전하러 왔습니다" 하고 말했습니다. 왕이 자리에서 일어서자, 에훗은 왼손으로 오른쪽 허벅지의 칼을 뽑아 왕의 배를 찔렀습니다. 에글론은 몹시 뚱뚱한 사람이라 기름이 칼날을 덮었고, 에훗은 칼을 빼지 않았습니다. 에훗은 밖으로 나가 다락방 문을 닫고 잠갔습니다. 신하들이 기다리는 동안 에훗은 도망했습니다. 그는 에브라임 산지에서 나팔을 불어 이스라엘을 이끌고 모압을 쳤고, 그 땅은 팔십 년 동안 평온했습니다.`
-      },
-      keys: [
-        { id: "ehud", label: { en: "Who killed the king", ko: "왕을 죽인 사람" },
-          text: { en: "Ehud, the visitor: a deliverer God raised up to free Israel from King Eglon of Moab.", ko: "방문객 에훗. 이스라엘을 모압 왕 에글론에게서 구하려고 하나님이 세우신 구원자." } },
-        { id: "sword", label: { en: "How he did it", ko: "어떻게 했나" },
-          text: { en: "He was left-handed and hid a short sword on his right thigh, then got the king alone by saying he had a secret message from God.", ko: "왼손잡이였던 그는 짧은 칼을 오른쪽 허벅지에 숨겼고, 하나님의 은밀한 말씀이 있다며 왕과 단둘이 되었다." } },
-        { id: "lock", label: { en: "Why the servants waited", ko: "신하들이 기다린 이유" },
-          text: { en: "Ehud locked the doors behind him, and the servants thought the king was relieving himself, which gave Ehud time to escape.", ko: "에훗이 문을 잠그고 나갔고, 신하들은 왕이 용변을 보는 줄 알고 기다렸다. 그사이 에훗은 도망쳤다." } }
-      ],
-      hints: [
-        { en: "The visitor came with tribute for the king, and then said he had a secret message for him.", ko: "방문객은 왕에게 바칠 조공을 들고 왔고, 그 뒤 왕에게 은밀히 아뢸 말씀이 있다고 했습니다." },
-        { en: "The visitor was left-handed. Where would a left-handed man carry a weapon?", ko: "방문객은 왼손잡이였습니다. 왼손잡이라면 무기를 어디에 찼을까요?" }
-      ],
-      silent: [
-        { en: "Whether anyone searched Ehud. The text only says he strapped the sword on his right thigh. Many interpreters think that's why it went unnoticed, since a right-handed man would wear his sword on the left.", ko: "누가 에훗의 몸을 수색했는지. 본문은 칼을 오른쪽 허벅지에 찼다고만 말합니다. 오른손잡이라면 칼을 왼쪽에 찼을 테니 그래서 들키지 않았다고 보는 해석이 많습니다." },
-        { en: "Exactly how Ehud got out. Verse 23 uses a Hebrew word (misderon) found nowhere else in the Bible; it may mean a porch, a passage, or even a toilet shaft.", ko: "에훗이 정확히 어디로 빠져나갔는지. 23절의 히브리어 '미스데론'은 성경에서 여기에만 나오는 단어라 현관인지, 통로인지, 심지어 변소 구멍인지 확실하지 않습니다." },
-        { en: "Whether the servants smelled anything. Some readers connect the end of verse 22 with the servants' guess, but the text doesn't say so.", ko: "신하들이 무슨 냄새를 맡았는지. 22절 끝부분과 신하들의 짐작을 연결해 읽는 사람도 있지만, 본문은 그렇게 말하지 않습니다." }
-      ],
-      facts: `- Israel again did evil in the sight of the LORD, and the LORD strengthened Eglon king of Moab against Israel. Eglon, with the Ammonites and Amalekites, defeated Israel and took the city of palms. Israel served Eglon eighteen years (Judges 3:12-14).
-- Israel cried out to the LORD, and the LORD raised up for them a deliverer, Ehud the son of Gera, a Benjaminite, a left-handed man. Israel sent tribute by him to Eglon (3:15).
-- Ehud made for himself a sword with two edges, about a cubit (a short cubit) long, and strapped it on his right thigh under his clothes (3:16).
-- He presented the tribute to Eglon. Eglon was a very fat man (3:17).
-- When he had finished presenting the tribute, he sent away the people who had carried it (3:18). He himself turned back at the idols (carved stones) near Gilgal and said, "I have a secret message for you, O king." The king said, "Silence," and all his attendants went out (3:19).
-- Ehud came to him as he was sitting alone in his cool roof chamber (upper room) and said, "I have a message from God for you." The king rose from his seat (3:20).
-- Ehud reached with his left hand, took the sword from his right thigh, and thrust it into the king's belly (3:21). The hilt went in after the blade, the fat closed over the blade, and he did not pull the sword out (3:22).
-- Ehud went out into the porch (Hebrew misderon, meaning uncertain), closed the doors of the roof chamber behind him, and locked them (3:23).
-- When he had gone, the servants came. Seeing the doors locked, they thought, "Surely he is relieving himself in the closet of the cool chamber." They waited until they were embarrassed. When he still did not open the doors, they took the key and opened them, and their lord lay dead on the floor (3:24-25).
-- Ehud escaped while they delayed, passed beyond the idols, and escaped to Seirah (3:26). He sounded the trumpet in the hill country of Ephraim and said, "Follow me, for the LORD has given your enemies the Moabites into your hand." They seized the fords of the Jordan and struck down about ten thousand Moabites (3:27-29). Moab was subdued that day, and the land had rest for eighty years (3:30).
-- Ehud was alone with the king; no one helped him inside the room.`,
-      notStated: `- Whether Ehud was searched, or whether guards stood at the door.
-- Ehud's exact escape route (the word misderon in 3:23 is uncertain).
-- The last clause of 3:22 uses another rare Hebrew word, and translations differ ("the dung came out" or "it came out at the back"). If asked about it, answer NOT_STATED.
-- Whether the servants smelled anything.
-- Ehud's feelings, such as fear.`
-    }
-  ];
+  const CASES = []; // filled from cases.json when the page opens
 
   /* ---------- Interface text ---------- */
   const UI = {
@@ -934,6 +413,17 @@ h1, h2, h3, h4 { font-weight: 700; }
       brand: "Case Room",
       kicker: "A yes-or-no deduction game",
       heroAlt: "Case Room",
+      bibleTag: n => `Bible ${n}`,
+      loading: "Opening the case files…",
+      loadError: "Couldn't load the cases. Check the internet connection and try again.",
+      retry: "Try again",
+      truthPicTitle: "The whole story",
+      keyChipsTitle: n => `Key points · ${n}`,
+      archiveTitle: "Clue archive",
+      clueOpenedTag: "Opened during the case",
+      clueUnlockedTag: "Unlocked at closing",
+      unlockedChip: n => `${n} unlocked`,
+      archiveNote: "Clues you didn't open during the case are unlocked now that it's closed.",
       keysChip: n => `${n} key points`,
       zoom: "Zoom",
       hintEarly: n => `Open hint ${n} now`,
@@ -1042,6 +532,17 @@ h1, h2, h3, h4 { font-weight: 700; }
       brand: "사건 수사실",
       kicker: "예/아니오 추리 게임",
       heroAlt: "사건 수사실",
+      bibleTag: n => `성경 ${n}`,
+      loading: "사건 파일을 여는 중…",
+      loadError: "사건 목록을 불러오지 못했습니다. 인터넷 연결을 확인하고 다시 시도해 주세요.",
+      retry: "다시 시도",
+      truthPicTitle: "전체 진상",
+      keyChipsTitle: n => `정답 기준 ${n}`,
+      archiveTitle: "단서 보관함",
+      clueOpenedTag: "수사 중 공개",
+      clueUnlockedTag: "종결 후 해금",
+      unlockedChip: n => `미공개 ${n}개 해금`,
+      archiveNote: "수사 중에 열지 않았던 단서가 사건이 끝나 모두 해금되었습니다.",
       keysChip: n => `핵심 ${n}개`,
       zoom: "크게 보기",
       hintEarly: n => `힌트 ${n} 바로 보기`,
@@ -1207,6 +708,8 @@ h1, h2, h3, h4 { font-weight: 700; }
   }
 
   const u = () => UI[state.lang];
+  // The Claude version carries its cases inline; the GitHub version reads them from cases.json.
+  let casesStatus = CASES.length ? "ready" : "loading";
   const L = obj => (obj && (obj[state.lang] ?? obj.en)) || "";
   const esc = s => String(s).replace(/[&<>"']/g, ch => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[ch]);
   const cur = () => CASES.find(c => c.id === state.caseId);
@@ -1398,9 +901,10 @@ h1, h2, h3, h4 { font-weight: 700; }
     if (box) box.classList.remove("has-img");
   }, true);
 
-  const caseNo = c => (c.file || "").replace(/\D/g, "");
-  const tagFor = c => c.kind === "bible" ? L(c.abbr) : `Case ${caseNo(c)}`;
-  const bigFor = c => c.kind === "bible" ? L(c.abbr).split(":")[0] : caseNo(c);
+  // Cases are numbered by their place on each shelf. A Bible case shows its passage only after it is closed.
+  const caseNo = c => String(CASES.filter(k => k.kind === c.kind).indexOf(c) + 1).padStart(2, "0");
+  const tagFor = c => c.kind === "bible" ? u().bibleTag(caseNo(c)) : `Case ${caseNo(c)}`;
+  const bigFor = c => caseNo(c);
 
   /* ---------- Rendering ---------- */
   const app = document.getElementById("app");
@@ -1512,9 +1016,31 @@ h1, h2, h3, h4 { font-weight: 700; }
         </div>
         ${CAN_IMAGES ? media("hero", t.heroAlt, { cls: "hero-media" }) : ""}
       </section>
-      ${shelf("mystery", t.mysteries, t.mysteriesNote, ["YES", "NO", "IRRELEVANT"])}
-      ${shelf("bible", t.bible, t.bibleNote, ["YES", "NO", "NOT_STATED"])}
+      ${casesStatus === "ready"
+        ? `${shelf("mystery", t.mysteries, t.mysteriesNote, ["YES", "NO", "IRRELEVANT"])}
+      ${shelf("bible", t.bible, t.bibleNote, ["YES", "NO", "NOT_STATED"])}`
+        : `<section class="panel load-state" aria-live="polite">${casesStatus === "error"
+          ? `<p class="notice">${esc(t.loadError)}</p><div class="actions"><button type="button" class="btn btn-primary" data-act="reload-cases">${esc(t.retry)}</button></div>`
+          : `<p class="fineprint">${esc(t.loading)}</p>`}</section>`}
     </main>`;
+  }
+
+  // Once a case is closed, every hint is shown with its picture, including the ones nobody opened.
+  function clueArchive(c, g, t) {
+    const unlocked = Math.max(0, c.hints.length - g.hints);
+    const cards = c.hints.map((h, i) => {
+      const opened = i < g.hints;
+      return `<article class="hint-card archive">
+          <span class="hint-top"><span class="eyebrow">${esc(t.hintBtn(i + 1))}</span><span class="hint-tag${opened ? "" : " unlocked"}">${esc(opened ? t.clueOpenedTag : t.clueUnlockedTag)}</span></span>
+          <span class="htext">${esc(L(h))}</span>
+          ${CAN_IMAGES ? media(`${c.id}-hint${i + 1}`, `${L(c.title)} · ${t.hintBtn(i + 1)}`, { cls: "hint-media", zoom: true }) : ""}
+        </article>`;
+    }).join("");
+    return `<section class="tools b-tools clue-archive" aria-labelledby="arch-h">
+        <div class="arch-head"><h3 id="arch-h" class="eyebrow">${esc(t.archiveTitle)}</h3>${unlocked ? `<span class="unlock-chip">${esc(t.unlockedChip(unlocked))}</span>` : ""}</div>
+        ${unlocked ? `<p class="fineprint">${esc(t.archiveNote)}</p>` : ""}
+        ${cards}
+      </section>`;
   }
 
   function caseView() {
@@ -1599,14 +1125,24 @@ h1, h2, h3, h4 { font-weight: 700; }
       const actions = confirmAct ? "" : `<div class="actions">${hintBtn}${modeBtns}<button type="button" class="btn" data-act="reveal">${esc(t.reveal)}</button></div>
         ${g.hints < c.hints.length ? `<p class="fineprint">${esc(t.hintRule(HINT_EVERY))}</p>` : ""}`;
       tools = `<section class="tools b-tools">${actions}${panel}${hints}</section>`;
+    } else {
+      tools = clueArchive(c, g, t);
     }
 
     let ask;
     if (closed) {
       const solved = g.status === "solved";
+      const hits = g.lastCheck ? g.lastCheck.hits : null;
+      const found = hits ? c.keys.filter(k => hits[k.id]).length : 0;
+      const chips = c.keys.map(k => {
+        const ok = !!(hits && hits[k.id]);
+        return `<span class="kchip${ok ? " hit" : ""}">${ok ? '<i aria-hidden="true">✓</i>' : ""}${esc(L(k.label))}</span>`;
+      }).join("");
       ask = `<section class="closing b-ask" aria-live="polite">
         <span class="verdict ${solved ? "v-yes" : "v-meh"}${freshStamp ? " fresh" : ""}">${esc(solved ? t.closedSolved : t.closedRevealed)}</span>
         ${solved ? `<p class="rank">${esc(t.rank[rankIndex(q, manualHints(g))])}</p><p class="readit">${esc(t.solvedIn(q, g.hints))}</p>` : ""}
+        ${CAN_IMAGES ? `<div class="truth-pic"><p class="eyebrow">${esc(t.truthPicTitle)}</p>${media(`${c.id}-truth`, `${L(c.title)} · ${t.truthPicTitle}`, { cls: "truth-media", zoom: true })}</div>` : ""}
+        <div class="kchips-wrap"><p class="eyebrow">${esc(t.keyChipsTitle(c.keys.length))}${hits ? ` · ${esc(t.keysFound(found, c.keys.length))}` : ""}</p><div class="kchips">${chips}</div></div>
         ${truthBlock(c, t, "h3")}
         ${bible ? `<p class="readit">${esc(t.readIt)}: <strong>${esc(L(c.ref))}</strong></p>` : ""}
         <div class="actions">
@@ -1678,7 +1214,7 @@ h1, h2, h3, h4 { font-weight: 700; }
     return `<main>
       <div class="case-head">
         <button type="button" class="back" data-act="home">← ${esc(t.allCases)}</button>
-        <div class="fileline"><span class="fileno">${esc(bible ? L(c.ref) : tagFor(c))}</span>${dots(c)}</div>
+        <div class="fileline"><span class="fileno">${esc(bible && closed ? L(c.ref) : tagFor(c))}</span>${dots(c)}</div>
         <h2 class="case-title">${esc(L(c.title))}</h2>
       </div>
       <div class="case-grid">
@@ -2024,6 +1560,7 @@ h1, h2, h3, h4 { font-weight: 700; }
       }
       case "open": openCase(b.dataset.id); break;
       case "home": goHome(); break;
+      case "reload-cases": loadCases(); break;
       case "hint":
         if (g && g.hints < c.hints.length) { openHint(c, g, "manual"); render(); }
         break;
@@ -2102,7 +1639,25 @@ h1, h2, h3, h4 { font-weight: 700; }
     render();
   }
 
+  async function loadCases() {
+    casesStatus = "loading";
+    render();
+    try {
+      const res = await fetch("cases.json", { cache: "no-cache" });
+      if (!res.ok) throw new Error("HTTP " + res.status);
+      const data = await res.json();
+      const list = (Array.isArray(data) ? data : data.cases || []).filter(c => c && c.id && c.title && c.setup && Array.isArray(c.keys));
+      if (!list.length) throw new Error("no cases");
+      CASES.splice(0, CASES.length, ...list);
+      casesStatus = "ready";
+    } catch (e) {
+      casesStatus = "error";
+    }
+    render();
+  }
+
   render();
+  if (casesStatus !== "ready") loadCases();
   initAI();
   try {
     const hot = window.claude && window.claude.hot;

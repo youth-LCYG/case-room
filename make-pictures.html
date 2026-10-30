@@ -116,7 +116,7 @@ h1 { font-family: var(--font-display); font-size: clamp(1.8rem, 3.6vw, 2.4rem); 
 <main class="wrap">
   <p class="eyebrow">사건 수사실</p>
   <h1>그림 한꺼번에 만들기</h1>
-  <p class="lede">게임에 연결한 Cloudflare AI로 표지와 힌트 그림을 한 번에 만듭니다. 이미 GitHub에 올라가 있는 그림은 건너뛰고, 다 만든 그림은 images 폴더가 든 ZIP 파일 하나로 내려받습니다.</p>
+  <p class="lede">게임에 연결한 Cloudflare AI로 표지와 힌트 그림을 만듭니다. 새 사건을 GitHub에 올리면 그림은 GitHub가 자동으로 만들어 붙이니, 이 페이지는 마음에 들지 않는 그림을 다시 만들 때 씁니다. 이미 올라가 있는 그림은 건너뛰고, 새로 만든 그림은 images 폴더가 든 ZIP 파일 하나로 내려받습니다.</p>
 
   <div class="top-grid">
     <section class="panel" aria-labelledby="how-h">
@@ -128,7 +128,7 @@ h1 { font-family: var(--font-display); font-size: clamp(1.8rem, 3.6vw, 2.4rem); 
         <li><span><b>ZIP으로 내려받기</b>를 누르고, 내려받은 파일을 더블클릭해 압축을 풉니다. images 폴더가 나옵니다.</span></li>
         <li><span>GitHub 저장소에서 <b>Add file → Upload files</b>를 누르고 images 폴더를 통째로 끌어다 놓은 뒤 <b>Commit changes</b>를 누릅니다.</span></li>
       </ol>
-      <p class="note">그림을 만들 때마다 Cloudflare의 하루 무료 AI 사용량을 씁니다. 46장을 다 만들면 하루 사용량의 많게는 절반쯤을 쓰니(추정), 게임하는 날 직전보다는 미리 만들어 두세요.</p>
+      <p class="note">그림을 만들 때마다 Cloudflare의 하루 무료 AI 사용량을 씁니다. 게임하는 날 직전보다는 미리 만들어 두세요. 이미 올라가 있는 그림을 바꾸려면 그 그림의 다시 만들기를 누른 뒤, ZIP의 images 폴더를 올리면 같은 이름의 파일이 바뀝니다.</p>
     </section>
     <section class="panel" aria-labelledby="conn-h">
       <h2 id="conn-h">AI 연결</h2>
@@ -163,336 +163,31 @@ h1 { font-family: var(--font-display); font-size: clamp(1.8rem, 3.6vw, 2.4rem); 
 (() => {
   "use strict";
 
-  const ITEMS = [
- {
-  "name": "hero",
-  "group": "home",
-  "title": "홈 화면 그림",
-  "check": "글자나 숫자가 그림에 들어가면 안 됩니다. 무섭거나 범죄 현장 같은 분위기가 아니어야 합니다.",
-  "prompt": "A quiet detective's desk at night seen from slightly above: scattered photographs and case folders, an old magnifying glass, a notebook with pencil sketches, and a mug of hot cocoa, all lit by a single warm desk lamp; rain streaks on a dark window in the background; inviting and mysterious rather than scary.\n\nStyle: cinematic, semi-realistic digital painting; muted noir palette with deep navy shadows and warm lamplight accents; soft film grain; wide 16:9 landscape. Suitable for a church youth group: no gore, no blood, no injuries, no dead bodies. No text, letters, numbers, signs, logos or watermarks anywhere in the image."
- },
- {
-  "name": "blank-homework-cover",
-  "group": "mystery",
-  "title": "백지 숙제 · 표지",
-  "check": "레몬, 종이 위의 글씨, 켜진 램프가 보이면 안 됩니다. 정답이 드러납니다.",
-  "prompt": "A teacher's desk in an empty classroom after school: a single sheet of paper that looks completely blank lies in the center next to a red pen and a gradebook; a small desk lamp beside it is switched off; late-afternoon sunlight through the windows.\n\nStyle: cinematic, semi-realistic digital painting; muted noir palette with deep navy shadows and warm lamplight accents; soft film grain; wide 16:9 landscape. Suitable for a church youth group: no gore, no blood, no injuries, no dead bodies. No text, letters, numbers, signs, logos or watermarks anywhere in the image."
- },
- {
-  "name": "blank-homework-hint1",
-  "group": "mystery",
-  "title": "백지 숙제 · 힌트 1 그림",
-  "check": "읽을 수 있는 글자나 레몬이 보이면 안 됩니다.",
-  "prompt": "A sheet of paper that looks blank, laid next to a small evidence ruler; tilted toward the lamp, faint glossy streaks shine on its surface as if something clear was brushed on and dried. Nothing on it is readable.\n\nStyle: evidence photograph for a detective case file: a realistic close-up of the objects laid out on a dark wooden desk, seen from slightly above, lit by a single warm lamp; shallow depth of field; muted colors; wide 16:9. No people unless the description includes them. Suitable for a church youth group: no gore, no blood, no injuries. No text, letters, numbers, logos or watermarks."
- },
- {
-  "name": "blank-homework-hint2",
-  "group": "mystery",
-  "title": "백지 숙제 · 힌트 2 그림",
-  "check": "종이에 글씨가 나타난 모습이 보이면 안 됩니다.",
-  "prompt": "Half a squeezed lemon, a used cotton swab, and a small glass dish with a few drops of clear juice, laid out as evidence; the warm glowing bulb of a desk lamp shows at the edge of the frame.\n\nStyle: evidence photograph for a detective case file: a realistic close-up of the objects laid out on a dark wooden desk, seen from slightly above, lit by a single warm lamp; shallow depth of field; muted colors; wide 16:9. No people unless the description includes them. Suitable for a church youth group: no gore, no blood, no injuries. No text, letters, numbers, logos or watermarks."
- },
- {
-  "name": "july-snowman-cover",
-  "group": "mystery",
-  "title": "7월의 눈사람 · 표지",
-  "check": "생일 고깔모자, 아이스링크, 트럭에 실린 얼음이 보이면 안 됩니다.",
-  "prompt": "A suburban Texas front yard on a blazing-hot July afternoon: a real snowman stands on dry, sun-baked grass, slightly melting, with heat shimmer in the air; neighbors in summer clothes watch from the sidewalk; a small girl stands in front of the snowman with her hands over her mouth in delight.\n\nStyle: cinematic, semi-realistic digital painting; muted noir palette with deep navy shadows and warm lamplight accents; soft film grain; wide 16:9 landscape. Suitable for a church youth group: no gore, no blood, no injuries, no dead bodies. No text, letters, numbers, signs, logos or watermarks anywhere in the image."
- },
- {
-  "name": "july-snowman-hint1",
-  "group": "mystery",
-  "title": "7월의 눈사람 · 힌트 1 그림",
-  "check": "아이스링크나 정빙기가 보이면 안 됩니다.",
-  "prompt": "A clear glass evidence jar half full of white, snow-like ice shavings that are starting to melt, next to a pickup-truck key on a leather key ring and a few drops of water on the desk.\n\nStyle: evidence photograph for a detective case file: a realistic close-up of the objects laid out on a dark wooden desk, seen from slightly above, lit by a single warm lamp; shallow depth of field; muted colors; wide 16:9. No people unless the description includes them. Suitable for a church youth group: no gore, no blood, no injuries. No text, letters, numbers, logos or watermarks."
- },
- {
-  "name": "july-snowman-hint2",
-  "group": "mystery",
-  "title": "7월의 눈사람 · 힌트 2 그림",
-  "check": "팔찌나 스케이트에 상표나 글씨가 없어야 합니다.",
-  "prompt": "A pair of rental ice skates, a plain paper wristband from a skating rink, and a small metal tray holding a pile of white ice shavings.\n\nStyle: evidence photograph for a detective case file: a realistic close-up of the objects laid out on a dark wooden desk, seen from slightly above, lit by a single warm lamp; shallow depth of field; muted colors; wide 16:9. No people unless the description includes them. Suitable for a church youth group: no gore, no blood, no injuries. No text, letters, numbers, logos or watermarks."
- },
- {
-  "name": "lights-at-nine-cover",
-  "group": "mystery",
-  "title": "아홉 시의 불빛 · 표지",
-  "check": "사람이나 전화기가 보이면 안 됩니다.",
-  "prompt": "A night view across a wide, dark valley: two small houses on opposite hillsides, far apart, each with warm lit windows; a sky full of stars; calm and quiet.\n\nStyle: cinematic, semi-realistic digital painting; muted noir palette with deep navy shadows and warm lamplight accents; soft film grain; wide 16:9 landscape. Suitable for a church youth group: no gore, no blood, no injuries, no dead bodies. No text, letters, numbers, signs, logos or watermarks anywhere in the image."
- },
- {
-  "name": "lights-at-nine-hint1",
-  "group": "mystery",
-  "title": "아홉 시의 불빛 · 힌트 1 그림",
-  "check": "시계 숫자가 이상하게 그려졌으면 숫자 없는 시계로 다시 만듭니다.",
-  "prompt": "Two old-fashioned light switches on small wooden plates, one flipped up and one flipped down, beside a plain wristwatch whose hands point to nine o'clock.\n\nStyle: evidence photograph for a detective case file: a realistic close-up of the objects laid out on a dark wooden desk, seen from slightly above, lit by a single warm lamp; shallow depth of field; muted colors; wide 16:9. No people unless the description includes them. Suitable for a church youth group: no gore, no blood, no injuries. No text, letters, numbers, logos or watermarks."
- },
- {
-  "name": "lights-at-nine-hint2",
-  "group": "mystery",
-  "title": "아홉 시의 불빛 · 힌트 2 그림",
-  "check": "전화기나 액자에 글씨가 보이면 안 됩니다.",
-  "prompt": "A small hearing aid, a pair of reading glasses, and an old framed photo of an elderly father with his grown daughter, faces soft and out of focus; an old landline phone is pushed to the side.\n\nStyle: evidence photograph for a detective case file: a realistic close-up of the objects laid out on a dark wooden desk, seen from slightly above, lit by a single warm lamp; shallow depth of field; muted colors; wide 16:9. No people unless the description includes them. Suitable for a church youth group: no gore, no blood, no injuries. No text, letters, numbers, logos or watermarks."
- },
- {
-  "name": "midnight-cooler-cover",
-  "group": "mystery",
-  "title": "한밤의 아이스박스 · 표지",
-  "check": "사람이 보이면 안 됩니다.",
-  "prompt": "A rustic retreat-cabin kitchen at dawn: a large blue snack cooler on the floor, closed with a four-dial combination padlock that is still locked (the dials show no readable numbers); empty chip bags and cookie crumbs scattered around it; soft winter light through frosted windows.\n\nStyle: cinematic, semi-realistic digital painting; muted noir palette with deep navy shadows and warm lamplight accents; soft film grain; wide 16:9 landscape. Suitable for a church youth group: no gore, no blood, no injuries, no dead bodies. No text, letters, numbers, signs, logos or watermarks anywhere in the image."
- },
- {
-  "name": "midnight-cooler-hint1",
-  "group": "mystery",
-  "title": "한밤의 아이스박스 · 힌트 1 그림",
-  "check": "사람이 보이면 안 됩니다.",
-  "prompt": "A pair of fuzzy slippers with cookie crumbs stuck to their soles, an empty chip bag, and a crumpled pillowcase.\n\nStyle: evidence photograph for a detective case file: a realistic close-up of the objects laid out on a dark wooden desk, seen from slightly above, lit by a single warm lamp; shallow depth of field; muted colors; wide 16:9. No people unless the description includes them. Suitable for a church youth group: no gore, no blood, no injuries. No text, letters, numbers, logos or watermarks."
- },
- {
-  "name": "midnight-cooler-hint2",
-  "group": "mystery",
-  "title": "한밤의 아이스박스 · 힌트 2 그림",
-  "check": "휴대폰 화면에 REC나 시간 같은 글자가 들어가거나 얼굴이 보이면 안 됩니다.",
-  "prompt": "A smartphone propped against a mug, its screen showing a dark, grainy night-vision still of a hallway with a blurry figure in pajamas; beside it, an open four-dial combination padlock.\n\nStyle: evidence photograph for a detective case file: a realistic close-up of the objects laid out on a dark wooden desk, seen from slightly above, lit by a single warm lamp; shallow depth of field; muted colors; wide 16:9. No people unless the description includes them. Suitable for a church youth group: no gore, no blood, no injuries. No text, letters, numbers, logos or watermarks."
- },
- {
-  "name": "romeo-juliet-cover",
-  "group": "mystery",
-  "title": "로미오와 줄리엣 · 표지",
-  "check": "물고기, 어항 모양, 쓰러진 사람이 보이면 안 됩니다.",
-  "prompt": "A sunlit living-room floor beside an open window: a curtain billowing in the wind, a small puddle of water with scattered shards of curved broken glass, and an empty little table by the window; calm and quiet, no people.\n\nStyle: cinematic, semi-realistic digital painting; muted noir palette with deep navy shadows and warm lamplight accents; soft film grain; wide 16:9 landscape. Suitable for a church youth group: no gore, no blood, no injuries, no dead bodies. No text, letters, numbers, signs, logos or watermarks anywhere in the image."
- },
- {
-  "name": "romeo-juliet-hint1",
-  "group": "mystery",
-  "title": "로미오와 줄리엣 · 힌트 1 그림",
-  "check": "물고기가 보이거나 통에 글씨가 있으면 안 됩니다.",
-  "prompt": "An unlabeled shaker can of fish-food flakes, a tiny green aquarium net, and a few colorful aquarium pebbles.\n\nStyle: evidence photograph for a detective case file: a realistic close-up of the objects laid out on a dark wooden desk, seen from slightly above, lit by a single warm lamp; shallow depth of field; muted colors; wide 16:9. No people unless the description includes them. Suitable for a church youth group: no gore, no blood, no injuries. No text, letters, numbers, logos or watermarks."
- },
- {
-  "name": "romeo-juliet-hint2",
-  "group": "mystery",
-  "title": "로미오와 줄리엣 · 힌트 2 그림",
-  "check": "물고기가 보이면 안 됩니다.",
-  "prompt": "Curved shards of a broken round glass bowl collected on a cloth, still wet, with a strand of green water plant and a few colorful pebbles among them.\n\nStyle: evidence photograph for a detective case file: a realistic close-up of the objects laid out on a dark wooden desk, seen from slightly above, lit by a single warm lamp; shallow depth of field; muted colors; wide 16:9. No people unless the description includes them. Suitable for a church youth group: no gore, no blood, no injuries. No text, letters, numbers, logos or watermarks."
- },
- {
-  "name": "hotel-bankrupt-cover",
-  "group": "mystery",
-  "title": "호텔 앞의 파산 · 표지",
-  "check": "주사위, 게임판, 지폐, 거대한 손이 보이면 안 됩니다.",
-  "prompt": "A glowing hotel entrance on a city street at night with a silver car stopped at the curb, photographed with a strong tilt-shift effect so the whole scene looks slightly like a miniature model; moody lighting.\n\nStyle: cinematic, semi-realistic digital painting; muted noir palette with deep navy shadows and warm lamplight accents; soft film grain; wide 16:9 landscape. Suitable for a church youth group: no gore, no blood, no injuries, no dead bodies. No text, letters, numbers, signs, logos or watermarks anywhere in the image."
- },
- {
-  "name": "hotel-bankrupt-hint1",
-  "group": "mystery",
-  "title": "호텔 앞의 파산 · 힌트 1 그림",
-  "check": "상표나 글씨가 없어야 합니다.",
-  "prompt": "A tiny silver metal car game piece in a small clear evidence bag, beside a coin for scale.\n\nStyle: evidence photograph for a detective case file: a realistic close-up of the objects laid out on a dark wooden desk, seen from slightly above, lit by a single warm lamp; shallow depth of field; muted colors; wide 16:9. No people unless the description includes them. Suitable for a church youth group: no gore, no blood, no injuries. No text, letters, numbers, logos or watermarks."
- },
- {
-  "name": "hotel-bankrupt-hint2",
-  "group": "mystery",
-  "title": "호텔 앞의 파산 · 힌트 2 그림",
-  "check": "게임 상표나 지폐 글씨가 보이면 안 됩니다.",
-  "prompt": "A pair of dice, a small red plastic hotel piece, a tiny green house piece, and a short stack of colorful paper play money.\n\nStyle: evidence photograph for a detective case file: a realistic close-up of the objects laid out on a dark wooden desk, seen from slightly above, lit by a single warm lamp; shallow depth of field; muted colors; wide 16:9. No people unless the description includes them. Suitable for a church youth group: no gore, no blood, no injuries. No text, letters, numbers, logos or watermarks."
- },
- {
-  "name": "elevator-man-cover",
-  "group": "mystery",
-  "title": "엘리베이터의 남자 · 표지",
-  "check": "사람의 키를 짐작할 수 있는 모습이 보이면 안 됩니다.",
-  "prompt": "An apartment-building hallway in the evening: an elevator door closing on the left, and on the right an open stairwell door with the long shadow of someone climbing the stairs; no person visible.\n\nStyle: cinematic, semi-realistic digital painting; muted noir palette with deep navy shadows and warm lamplight accents; soft film grain; wide 16:9 landscape. Suitable for a church youth group: no gore, no blood, no injuries, no dead bodies. No text, letters, numbers, signs, logos or watermarks anywhere in the image."
- },
- {
-  "name": "elevator-man-hint1",
-  "group": "mystery",
-  "title": "엘리베이터의 남자 · 힌트 1 그림",
-  "check": "버튼 숫자가 읽히지 않는 편이 좋습니다.",
-  "prompt": "A small folding step stool beside a printed photo of a tall elevator button panel; the button labels in the photo are blurry and unreadable.\n\nStyle: evidence photograph for a detective case file: a realistic close-up of the objects laid out on a dark wooden desk, seen from slightly above, lit by a single warm lamp; shallow depth of field; muted colors; wide 16:9. No people unless the description includes them. Suitable for a church youth group: no gore, no blood, no injuries. No text, letters, numbers, logos or watermarks."
- },
- {
-  "name": "elevator-man-hint2",
-  "group": "mystery",
-  "title": "엘리베이터의 남자 · 힌트 2 그림",
-  "check": "사람이 보이면 안 됩니다.",
-  "prompt": "A closed, wet black umbrella lying on the desk with water pooled around it; its tip is scuffed with a small round mark, as if it has been used to press something.\n\nStyle: evidence photograph for a detective case file: a realistic close-up of the objects laid out on a dark wooden desk, seen from slightly above, lit by a single warm lamp; shallow depth of field; muted colors; wide 16:9. No people unless the description includes them. Suitable for a church youth group: no gore, no blood, no injuries. No text, letters, numbers, logos or watermarks."
- },
- {
-  "name": "desert-man-cover",
-  "group": "mystery",
-  "title": "사막의 남자 · 표지",
-  "check": "사람, 열기구, 옷가지가 보이면 안 됩니다.",
-  "prompt": "A vast empty desert under a harsh midday sun: smooth, untouched sand dunes with no footprints anywhere and shimmering heat haze; in the foreground, a single broken wooden match lies half-buried in the sand.\n\nStyle: cinematic, semi-realistic digital painting; muted noir palette with deep navy shadows and warm lamplight accents; soft film grain; wide 16:9 landscape. Suitable for a church youth group: no gore, no blood, no injuries, no dead bodies. No text, letters, numbers, signs, logos or watermarks anywhere in the image."
- },
- {
-  "name": "desert-man-hint1",
-  "group": "mystery",
-  "title": "사막의 남자 · 힌트 1 그림",
-  "check": "열기구의 천이나 바구니가 통째로 보이면 안 됩니다.",
-  "prompt": "A short length of frayed rope tied to a small brass ring and clip, lying on a little pile of desert sand.\n\nStyle: evidence photograph for a detective case file: a realistic close-up of the objects laid out on a dark wooden desk, seen from slightly above, lit by a single warm lamp; shallow depth of field; muted colors; wide 16:9. No people unless the description includes them. Suitable for a church youth group: no gore, no blood, no injuries. No text, letters, numbers, logos or watermarks."
- },
- {
-  "name": "desert-man-hint2",
-  "group": "mystery",
-  "title": "사막의 남자 · 힌트 2 그림",
-  "check": "사람이 보이면 안 됩니다.",
-  "prompt": "Several whole wooden matches laid in a neat row, and one broken, shorter match set apart from the rest under the lamp.\n\nStyle: evidence photograph for a detective case file: a realistic close-up of the objects laid out on a dark wooden desk, seen from slightly above, lit by a single warm lamp; shallow depth of field; muted colors; wide 16:9. No people unless the description includes them. Suitable for a church youth group: no gore, no blood, no injuries. No text, letters, numbers, logos or watermarks."
- },
- {
-  "name": "forest-swimmer-cover",
-  "group": "mystery",
-  "title": "숲속의 수영복 · 표지",
-  "check": "사람, 비행기, 호수가 보이면 안 됩니다.",
-  "prompt": "A forest just after a huge wildfire: blackened tree trunks, gray ash on the ground, thin smoke drifting, tiny distant silhouettes of firefighters; in the foreground on the ash lies a pair of swimming goggles.\n\nStyle: cinematic, semi-realistic digital painting; muted noir palette with deep navy shadows and warm lamplight accents; soft film grain; wide 16:9 landscape. Suitable for a church youth group: no gore, no blood, no injuries, no dead bodies. No text, letters, numbers, signs, logos or watermarks anywhere in the image."
- },
- {
-  "name": "forest-swimmer-hint1",
-  "group": "mystery",
-  "title": "숲속의 수영복 · 힌트 1 그림",
-  "check": "비행기가 보이면 안 됩니다.",
-  "prompt": "A small clear evidence bag of gray ash that holds a strand of green lake weed and a tiny freshwater shell, beside a pair of swimming goggles.\n\nStyle: evidence photograph for a detective case file: a realistic close-up of the objects laid out on a dark wooden desk, seen from slightly above, lit by a single warm lamp; shallow depth of field; muted colors; wide 16:9. No people unless the description includes them. Suitable for a church youth group: no gore, no blood, no injuries. No text, letters, numbers, logos or watermarks."
- },
- {
-  "name": "forest-swimmer-hint2",
-  "group": "mystery",
-  "title": "숲속의 수영복 · 힌트 2 그림",
-  "check": "물속에 사람이 보이거나 사진에 글씨가 있으면 안 됩니다.",
-  "prompt": "A printed photo of a yellow firefighting seaplane scooping water from a lake, lying next to a glass jar of slightly murky lake water.\n\nStyle: evidence photograph for a detective case file: a realistic close-up of the objects laid out on a dark wooden desk, seen from slightly above, lit by a single warm lamp; shallow depth of field; muted colors; wide 16:9. No people unless the description includes them. Suitable for a church youth group: no gore, no blood, no injuries. No text, letters, numbers, logos or watermarks."
- },
- {
-  "name": "turtle-soup-cover",
-  "group": "mystery",
-  "title": "바다거북 스프 · 표지",
-  "check": "사람이나 바다거북 모양이 보이면 안 됩니다.",
-  "prompt": "A seaside restaurant terrace at dusk: a single bowl of soup on a white tablecloth with a spoon set down beside it and an empty chair pushed back; the dark sea and a distant lighthouse behind; a melancholy mood.\n\nStyle: cinematic, semi-realistic digital painting; muted noir palette with deep navy shadows and warm lamplight accents; soft film grain; wide 16:9 landscape. Suitable for a church youth group: no gore, no blood, no injuries, no dead bodies. No text, letters, numbers, signs, logos or watermarks anywhere in the image."
- },
- {
-  "name": "turtle-soup-hint1",
-  "group": "mystery",
-  "title": "바다거북 스프 · 힌트 1 그림",
-  "check": "그릇 속 음식이나 사람이 보이면 안 됩니다.",
-  "prompt": "An old, dented tin bowl and a worn metal spoon, salt-stained and weathered, as if kept from a long journey at sea.\n\nStyle: evidence photograph for a detective case file: a realistic close-up of the objects laid out on a dark wooden desk, seen from slightly above, lit by a single warm lamp; shallow depth of field; muted colors; wide 16:9. No people unless the description includes them. Suitable for a church youth group: no gore, no blood, no injuries. No text, letters, numbers, logos or watermarks."
- },
- {
-  "name": "turtle-soup-hint2",
-  "group": "mystery",
-  "title": "바다거북 스프 · 힌트 2 그림",
-  "check": "구명조끼에 배 이름 같은 글씨가 있으면 안 됩니다.",
-  "prompt": "A faded, salt-stained orange life jacket folded beside a coil of sea rope and the broken handle of a small wooden oar.\n\nStyle: evidence photograph for a detective case file: a realistic close-up of the objects laid out on a dark wooden desk, seen from slightly above, lit by a single warm lamp; shallow depth of field; muted colors; wide 16:9. No people unless the description includes them. Suitable for a church youth group: no gore, no blood, no injuries. No text, letters, numbers, logos or watermarks."
- },
- {
-  "name": "through-the-roof-cover",
-  "group": "bible",
-  "title": "지붕을 뚫고 · 표지",
-  "check": "예수님이나 얼굴이 보이면 안 됩니다. 네 사람의 관계(친구, 가족)를 짐작하게 하는 모습도 넣지 않습니다.",
-  "prompt": "A first-century Galilean stone house with a flat roof of wooden beams, branches and packed clay; a crowd fills the doorway and spills into the street; on the roof, four men seen from behind are opening a hole in the roof; bright daylight.\n\nStyle: cinematic, semi-realistic digital painting of the ancient Near East; muted palette with deep shadows and warm oil-lamp light; soft film grain; wide 16:9 landscape. People appear only as distant figures or from behind, with faces not visible. Do not depict Jesus. Suitable for a church youth group: no gore, no blood, no injuries, no dead bodies. No text, letters, logos or watermarks."
- },
- {
-  "name": "through-the-roof-hint1",
-  "group": "bible",
-  "title": "지붕을 뚫고 · 힌트 1 그림",
-  "check": "사람이 보이면 안 됩니다.",
-  "prompt": "A stone doorstep covered with countless overlapping dusty sandal prints, with a dropped clay oil lamp lying at its edge.\n\nStyle: evidence photograph of ancient objects for a case file: a realistic close-up of the items laid out on rough linen or worn stone, seen from slightly above, lit by warm oil-lamp light; shallow depth of field; muted colors; wide 16:9. No people and no faces. Do not depict Jesus. Suitable for a church youth group: no gore, no blood. No text, letters, logos or watermarks."
- },
- {
-  "name": "through-the-roof-hint2",
-  "group": "bible",
-  "title": "지붕을 뚫고 · 힌트 2 그림",
-  "check": "두루마리에 글씨가 보이면 안 됩니다.",
-  "prompt": "A rolled-up woven sleeping mat tied with rope, and beside it a closed scroll case and a writing reed of the kind teachers of the law carried.\n\nStyle: evidence photograph of ancient objects for a case file: a realistic close-up of the items laid out on rough linen or worn stone, seen from slightly above, lit by warm oil-lamp light; shallow depth of field; muted colors; wide 16:9. No people and no faces. Do not depict Jesus. Suitable for a church youth group: no gore, no blood. No text, letters, logos or watermarks."
- },
- {
-  "name": "left-at-the-gate-cover",
-  "group": "bible",
-  "title": "문밖에 세워 둔 사람 · 표지",
-  "check": "얼굴이 보이면 안 됩니다.",
-  "prompt": "Night in ancient Jerusalem: a heavy wooden gate in a stone courtyard wall lit by a single oil lamp; a man's hand and sleeve knock on the gate; through a window above, the warm glow of many people gathered inside.\n\nStyle: cinematic, semi-realistic digital painting of the ancient Near East; muted palette with deep shadows and warm oil-lamp light; soft film grain; wide 16:9 landscape. People appear only as distant figures or from behind, with faces not visible. Do not depict Jesus. Suitable for a church youth group: no gore, no blood, no injuries, no dead bodies. No text, letters, logos or watermarks."
- },
- {
-  "name": "left-at-the-gate-hint1",
-  "group": "bible",
-  "title": "문밖에 세워 둔 사람 · 힌트 1 그림",
-  "check": "천사의 모습(날개 등)이나 사람이 보이면 안 됩니다. 본문은 천사의 모습을 묘사하지 않습니다.",
-  "prompt": "Two heavy iron chains with open shackles lying on a stone prison floor in a pool of soft, unexplained light.\n\nStyle: evidence photograph of ancient objects for a case file: a realistic close-up of the items laid out on rough linen or worn stone, seen from slightly above, lit by warm oil-lamp light; shallow depth of field; muted colors; wide 16:9. No people and no faces. Do not depict Jesus. Suitable for a church youth group: no gore, no blood. No text, letters, logos or watermarks."
- },
- {
-  "name": "left-at-the-gate-hint2",
-  "group": "bible",
-  "title": "문밖에 세워 둔 사람 · 힌트 2 그림",
-  "check": "사람이 보이면 안 됩니다.",
-  "prompt": "Many small clay oil lamps still burning together on a low table late at night, with cloaks and sandals left on the floor around it as if many people were gathered there.\n\nStyle: evidence photograph of ancient objects for a case file: a realistic close-up of the items laid out on rough linen or worn stone, seen from slightly above, lit by warm oil-lamp light; shallow depth of field; muted colors; wide 16:9. No people and no faces. Do not depict Jesus. Suitable for a church youth group: no gore, no blood. No text, letters, logos or watermarks."
- },
- {
-  "name": "strange-order-cover",
-  "group": "bible",
-  "title": "왕의 이상한 명령 · 표지",
-  "check": "아기가 칼 가까이 있거나 위험해 보이는 모습이 있으면 안 됩니다.",
-  "prompt": "An ancient Israelite royal hall: a sword lies across a stone table in front of a carved throne; two women stand apart in the foreground, seen from behind; shafts of light and a tense atmosphere; no baby visible.\n\nStyle: cinematic, semi-realistic digital painting of the ancient Near East; muted palette with deep shadows and warm oil-lamp light; soft film grain; wide 16:9 landscape. People appear only as distant figures or from behind, with faces not visible. Do not depict Jesus. Suitable for a church youth group: no gore, no blood, no injuries, no dead bodies. No text, letters, logos or watermarks."
- },
- {
-  "name": "strange-order-hint1",
-  "group": "bible",
-  "title": "왕의 이상한 명령 · 힌트 1 그림",
-  "check": "아기가 보이면 안 됩니다.",
-  "prompt": "Two small, nearly identical swaddling cloths laid side by side on linen, one neatly folded and one rumpled.\n\nStyle: evidence photograph of ancient objects for a case file: a realistic close-up of the items laid out on rough linen or worn stone, seen from slightly above, lit by warm oil-lamp light; shallow depth of field; muted colors; wide 16:9. No people and no faces. Do not depict Jesus. Suitable for a church youth group: no gore, no blood. No text, letters, logos or watermarks."
- },
- {
-  "name": "strange-order-hint2",
-  "group": "bible",
-  "title": "왕의 이상한 명령 · 힌트 2 그림",
-  "check": "사람이나 아기가 보이면 안 됩니다.",
-  "prompt": "A royal sword lying on a stone table beside a single swaddling cloth, and a woman's headscarf dropped on the floor in front of the table as if she had fallen to her knees.\n\nStyle: evidence photograph of ancient objects for a case file: a realistic close-up of the items laid out on rough linen or worn stone, seen from slightly above, lit by warm oil-lamp light; shallow depth of field; muted colors; wide 16:9. No people and no faces. Do not depict Jesus. Suitable for a church youth group: no gore, no blood. No text, letters, logos or watermarks."
- },
- {
-  "name": "cup-in-the-sack-cover",
-  "group": "bible",
-  "title": "자루 속의 은잔 · 표지",
-  "check": "얼굴이 보이면 안 됩니다. 형제 수(11명)를 정확히 맞출 필요는 없습니다.",
-  "prompt": "Dawn on a desert road outside an Egyptian city: donkeys loaded with grain sacks; one sack lies slit open on the ground, grain spilling out, a gleaming silver cup half-buried in the grain; men seen from behind; Egyptian guards approaching in the distance.\n\nStyle: cinematic, semi-realistic digital painting of the ancient Near East; muted palette with deep shadows and warm oil-lamp light; soft film grain; wide 16:9 landscape. People appear only as distant figures or from behind, with faces not visible. Do not depict Jesus. Suitable for a church youth group: no gore, no blood, no injuries, no dead bodies. No text, letters, logos or watermarks."
- },
- {
-  "name": "cup-in-the-sack-hint1",
-  "group": "bible",
-  "title": "자루 속의 은잔 · 힌트 1 그림",
-  "check": "사람이 보이면 안 됩니다.",
-  "prompt": "An ornate silver cup resting on the grain inside an open burlap sack, next to a small leather pouch of silver pieces tucked back into the same sack.\n\nStyle: evidence photograph of ancient objects for a case file: a realistic close-up of the items laid out on rough linen or worn stone, seen from slightly above, lit by warm oil-lamp light; shallow depth of field; muted colors; wide 16:9. No people and no faces. Do not depict Jesus. Suitable for a church youth group: no gore, no blood. No text, letters, logos or watermarks."
- },
- {
-  "name": "cup-in-the-sack-hint2",
-  "group": "bible",
-  "title": "자루 속의 은잔 · 힌트 2 그림",
-  "check": "피 묻은 모습이 있으면 안 됩니다. 은 조각은 대략 스무 개면 됩니다(창 37:28). '채색옷'의 화려한 색은 해석 전통이니 단순한 긴 옷이면 충분합니다.",
-  "prompt": "A long robe folded on a flat stone, with twenty silver pieces stacked beside it.\n\nStyle: evidence photograph of ancient objects for a case file: a realistic close-up of the items laid out on rough linen or worn stone, seen from slightly above, lit by warm oil-lamp light; shallow depth of field; muted colors; wide 16:9. No people and no faces. Do not depict Jesus. Suitable for a church youth group: no gore, no blood. No text, letters, logos or watermarks."
- },
- {
-  "name": "locked-upper-room-cover",
-  "group": "bible",
-  "title": "잠긴 다락방 · 표지",
-  "check": "왕의 모습, 피, 무기가 보이면 안 됩니다.",
-  "prompt": "An ancient palace: at the top of a dim stone staircase, the heavy wooden doors of a cool upper room are shut and locked; two servants wait awkwardly outside in the shadows, one holding a large key.\n\nStyle: cinematic, semi-realistic digital painting of the ancient Near East; muted palette with deep shadows and warm oil-lamp light; soft film grain; wide 16:9 landscape. People appear only as distant figures or from behind, with faces not visible. Do not depict Jesus. Suitable for a church youth group: no gore, no blood, no injuries, no dead bodies. No text, letters, logos or watermarks."
- },
- {
-  "name": "locked-upper-room-hint1",
-  "group": "bible",
-  "title": "잠긴 다락방 · 힌트 1 그림",
-  "check": "사람이 보이면 안 됩니다.",
-  "prompt": "Tribute laid out on a stone floor before the foot of a carved throne: baskets of grain, sealed clay jars, and bundles of cloth.\n\nStyle: evidence photograph of ancient objects for a case file: a realistic close-up of the items laid out on rough linen or worn stone, seen from slightly above, lit by warm oil-lamp light; shallow depth of field; muted colors; wide 16:9. No people and no faces. Do not depict Jesus. Suitable for a church youth group: no gore, no blood. No text, letters, logos or watermarks."
- },
- {
-  "name": "locked-upper-room-hint2",
-  "group": "bible",
-  "title": "잠긴 다락방 · 힌트 2 그림",
-  "check": "피가 보이면 안 됩니다.",
-  "prompt": "A short double-edged dagger about a forearm long, lying on rough linen beside a leather strap made to tie around a thigh.\n\nStyle: evidence photograph of ancient objects for a case file: a realistic close-up of the items laid out on rough linen or worn stone, seen from slightly above, lit by warm oil-lamp light; shallow depth of field; muted colors; wide 16:9. No people and no faces. Do not depict Jesus. Suitable for a church youth group: no gore, no blood. No text, letters, logos or watermarks."
- }
-];
+  // The list of pictures comes from cases.json, the same file the game reads.
+  const LABEL = { cover: "표지", hint1: "힌트 1 그림", hint2: "힌트 2 그림", truth: "진상 그림" };
+  function itemsFrom(data) {
+    const st = data.pictureStyles || {};
+    const items = [];
+    for (const p of data.extraPictures || []) {
+      items.push({ name: p.name, group: "home", title: p.title || p.name, check: p.check || "", prompt: `${p.scene}\n\n${st[p.style] || ""}`.trim() });
+    }
+    for (const c of data.cases || []) {
+      const base = c.kind === "bible" ? "b" : "m";
+      for (const slot of ["cover", "hint1", "hint2", "truth"]) {
+        const p = (c.pictures || {})[slot];
+        if (!p || !p.scene) continue;
+        const style = st[slot === "cover" || slot === "truth" ? base : base + "h"] || "";
+        items.push({ name: `${c.id}-${slot}`, group: c.kind, title: `${(c.title || {}).ko || c.id} · ${LABEL[slot]}`, check: p.check || "", prompt: `${p.scene}\n\n${style}`.trim() });
+      }
+    }
+    return items;
+  }
   const IMG_W = 1024, IMG_H = 576;     // 16:9, the shape the game shows
   const CONCURRENCY = 2;
   const KEY_URL = "caseRoomRelayUrl", KEY_PASS = "caseRoomRelayPass";
 
   const STATUS = { checking: "확인 중", exists: "이미 올라가 있음", todo: "아직 없음", working: "만드는 중", done: "새로 만듦", error: "오류" };
-  const state = ITEMS.map(it => Object.assign({}, it, { status: "checking", ext: "jpg", url: "", blob: null, err: "" }));
+  let state = [];
   let running = false;
   let stopFlag = false;
   const zipped = new Set();   // pictures already saved in a downloaded ZIP
@@ -535,10 +230,12 @@ h1 { font-family: var(--font-display); font-size: clamp(1.8rem, 3.6vw, 2.4rem); 
 
   /* ---------- Cards ---------- */
   const GROUPS = [["home", "홈 화면"], ["mystery", "일반 추리"], ["bible", "성경 사건"]];
-  $("groups").innerHTML = GROUPS.map(([g, label]) => {
-    const list = state.filter(it => it.group === g);
-    return `<h2 class="group-title">${esc(label)}</h2><div class="grid">${list.map(it => `<article class="card" data-name="${esc(it.name)}"></article>`).join("")}</div>`;
-  }).join("");
+  function renderGroups() {
+    $("groups").innerHTML = GROUPS.map(([g, label]) => {
+      const list = state.filter(it => it.group === g);
+      return list.length ? `<h2 class="group-title">${esc(label)}</h2><div class="grid">${list.map(it => `<article class="card" data-name="${esc(it.name)}"></article>`).join("")}</div>` : "";
+    }).join("");
+  }
 
   function draw(it) {
     const card = document.querySelector(`.card[data-name="${it.name}"]`);
@@ -764,9 +461,23 @@ h1 { font-family: var(--font-display); font-size: clamp(1.8rem, 3.6vw, 2.4rem); 
     if (state.some(it => it.status === "done" && !zipped.has(it.url))) { e.preventDefault(); e.returnValue = ""; }
   });
 
-  drawAll();
-  updateBar();
-  checkExisting();
+  async function start() {
+    $("run").disabled = true;
+    try {
+      const res = await fetch("cases.json", { cache: "no-cache" });
+      if (!res.ok) throw new Error("HTTP " + res.status);
+      state = itemsFrom(await res.json()).map(it => Object.assign({}, it, { status: "checking", ext: "jpg", url: "", blob: null, err: "" }));
+      if (!state.length) throw new Error("empty");
+    } catch (e) {
+      showMsg("사건 목록(cases.json)을 불러오지 못했습니다. 이 페이지는 게임과 같은 GitHub 주소에서 열어 주세요.", true);
+      return;
+    }
+    renderGroups();
+    drawAll();
+    updateBar();
+    checkExisting();
+  }
+  start();
 })();
 </script>
 </body>

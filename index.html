@@ -113,6 +113,7 @@ h1, h2, h3, h4 { font-weight: 700; }
   transition: border-color 0.15s, background-color 0.15s, filter 0.15s;
 }
 .btn:hover { border-color: var(--ink-3); }
+a.btn { text-decoration: none; }
 .btn-primary { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
 .btn-primary:hover { border-color: var(--accent); filter: brightness(1.08); }
 .btn-danger { background: transparent; border-color: color-mix(in srgb, var(--no) 55%, transparent); color: var(--no); }
@@ -351,9 +352,9 @@ h1, h2, h3, h4 { font-weight: 700; }
 .cp-count b { font-size: clamp(2.6rem, 6vw, 3.6rem); font-weight: 700; font-variant-numeric: tabular-nums; }
 .cp-count span { color: var(--ink-3); font-size: 0.86rem; }
 @media (max-width: 600px) {
-  .cp-score { grid-template-columns: minmax(0, 1fr) auto; }
+  .cp-score:not(.cp-teams) { grid-template-columns: minmax(0, 1fr) auto; }
   .cp-rank { border-right: 0; padding-right: 0; }
-  .cp-case { grid-column: 1 / -1; grid-row: 2; padding-top: 0.85rem; border-top: 1px solid var(--line); }
+  .cp-score:not(.cp-teams) .cp-case { grid-column: 1 / -1; grid-row: 2; padding-top: 0.85rem; border-top: 1px solid var(--line); }
 }
 .cp-truth { display: grid; gap: 1.1rem; background: var(--panel); border: 1px solid var(--line); border-radius: 16px; padding: 1.3rem 1.4rem 1.5rem; }
 .cp-truth > .eyebrow { justify-self: center; color: var(--accent); }
@@ -472,9 +473,90 @@ h1, h2, h3, h4 { font-weight: 700; }
 }
 .lb-close svg { width: 1.1rem; height: 1.1rem; }
 
+/* Hint sound button */
+.icon-btn {
+  display: inline-grid; place-items: center; width: 2.2rem; height: 2.2rem; padding: 0; border-radius: 8px; cursor: pointer;
+  border: 1px solid var(--line-strong); background: var(--panel-2); color: var(--ink-3);
+}
+.icon-btn svg { width: 1.15rem; height: 1.15rem; }
+.icon-btn[aria-pressed="true"] { color: var(--accent); }
+.icon-btn:hover { border-color: var(--ink-3); color: var(--ink); }
+
+/* Play mode dock on the home screen */
+.play-dock {
+  position: sticky; bottom: 0; z-index: 20; display: grid; gap: 0.6rem; margin-top: 1.2rem;
+  padding-block: 0.8rem max(0.8rem, env(safe-area-inset-bottom, 0px));
+  background: linear-gradient(to top, var(--bg) 70%, transparent);
+}
+.play-bar {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 0.6rem 1rem; padding: 0.7rem 0.9rem;
+  background: var(--panel); border: 1px solid var(--line-strong); border-radius: 14px; box-shadow: 0 18px 40px -24px #000;
+}
+.tchips { display: flex; flex-wrap: wrap; gap: 0.4rem; flex: 1 1 auto; }
+.tchip {
+  display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.25rem 0.65rem; border-radius: 999px; font-size: 0.88rem; font-weight: 600;
+  border: 1px solid color-mix(in srgb, var(--tc) 50%, transparent); background: color-mix(in srgb, var(--tc) 10%, transparent);
+}
+.tchip b { color: var(--ink-2); font-weight: 600; }
+.tchip i, .ts-name i, .team-stats i, .team-table th i, .team-btn i {
+  display: inline-block; flex: none; width: 0.55rem; height: 0.55rem; border-radius: 50%; background: var(--tc);
+}
+.team-setup { max-width: 40rem; }
+.ts-row { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem 1rem; }
+.ts-names { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 11rem), 1fr)); gap: 0.5rem; }
+.ts-name { display: flex; align-items: center; gap: 0.5rem; padding: 0 0.6rem; background: var(--field); border: 1px solid var(--line-strong); border-radius: 8px; }
+.ts-name input { flex: 1; min-width: 0; border: 0; background: transparent; padding: 0.55rem 0; font-size: 1rem; }
+.ts-name input:focus { outline: none; }
+.ts-name:focus-within { outline: 2px solid var(--accent); outline-offset: 1px; }
+
+/* Desk: total with penalty, hint meter, emergency hint */
+.count-big { flex-wrap: wrap; }
+.count-big em { flex-basis: 100%; font-style: normal; font-size: 0.82rem; color: var(--no); }
+.hint-meter { display: grid; gap: 0.45rem; }
+.hm-top { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.4rem 0.8rem; }
+.hm-bar { height: 0.5rem; border-radius: 999px; background: var(--field); border: 1px solid var(--line); overflow: hidden; }
+.hm-bar i { display: block; height: 100%; border-radius: inherit; background: var(--accent); transition: width 0.3s ease; }
+.btn-emergency { color: var(--no); border-color: color-mix(in srgb, var(--no) 55%, transparent); background: color-mix(in srgb, var(--no) 8%, transparent); }
+.btn-emergency:hover { border-color: var(--no); }
+.hint-confirm { padding: 0.8rem 0.9rem; }
+
+/* Team battle on the case screen */
+.team-strip { display: grid; gap: 0.6rem; padding: 0.75rem 0.85rem; border-radius: 12px; background: var(--field); border: 1px solid var(--line); }
+.turn-now { display: flex; flex-wrap: wrap; align-items: center; gap: 0.3rem 0.7rem; }
+.turn-now span { font-size: 0.85rem; color: var(--ink-3); }
+.turn-now b { flex: 1 1 auto; font-size: 1.35rem; font-weight: 700; color: var(--tc); }
+.team-stats { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.team-stats li {
+  display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.25rem 0.6rem; border-radius: 8px;
+  border: 1px solid var(--line-strong); font-size: 0.9rem; color: var(--ink-2);
+}
+.team-stats li b { color: var(--ink); font-variant-numeric: tabular-nums; }
+.team-stats li.on { border-color: var(--tc); background: color-mix(in srgb, var(--tc) 12%, transparent); color: var(--ink); }
+.stage-team { font-size: 0.85rem; font-weight: 700; color: var(--tc); }
+.tteam {
+  display: inline-block; margin-right: 0.45rem; padding: 0 0.4rem; border-radius: 5px; vertical-align: 0.08em;
+  font-size: 0.78rem; font-weight: 700; color: var(--tc); border: 1px solid color-mix(in srgb, var(--tc) 50%, transparent);
+}
+.team-btn.on { border-color: var(--tc); background: color-mix(in srgb, var(--tc) 14%, transparent); }
+
+/* Team battle on the closing screen */
+.cp-teams { grid-template-columns: minmax(0, 1fr); }
+.cp-title[style] { color: var(--tc); }
+.team-table { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+.team-table th, .team-table td { padding: 0.55rem 0.6rem; border-top: 1px solid var(--line); text-align: right; }
+.team-table thead th { border-top: 0; font-family: var(--font-mono); font-size: 0.72rem; font-weight: 500; letter-spacing: 0.08em; color: var(--ink-3); }
+.team-table thead th:first-child, .team-table th[scope="row"] { text-align: left; }
+.team-table th[scope="row"] { font-weight: 700; white-space: nowrap; }
+.team-table th[scope="row"] i { margin-right: 0.45rem; vertical-align: 0.1em; }
+.team-table tr.win th, .team-table tr.win td { background: color-mix(in srgb, var(--tc) 10%, transparent); }
+.team-table td b { font-size: 1.1rem; }
+.win-tag { margin-left: 0.3rem; padding: 0.05rem 0.4rem; border-radius: 5px; font-size: 0.72rem; font-weight: 700; color: var(--accent-ink); background: var(--accent); vertical-align: 0.1em; }
+.cp-series { color: var(--ink-2); font-size: 0.92rem; }
+.cp-series .eyebrow { margin-right: 0.4rem; }
+
 @media (prefers-reduced-motion: reduce) {
   .verdict.fresh, .cp-head.fresh, .thinking::after, .mode-chip[data-s="connecting"] i, .clue-card { animation: none; }
-  .case-card, .media img, .vbtn, .btn { transition: none; }
+  .case-card, .media img, .vbtn, .btn, .hm-bar i { transition: none; }
   .case-card:hover, .case-card:hover .media img { transform: none; }
 }
 </style>
@@ -515,8 +597,38 @@ h1, h2, h3, h4 { font-weight: 700; }
       cpScoreLabel: "Result",
       cpRankLabel: "Rank",
       cpNoRank: "No rank",
-      cpHints: (h, a, m) => `Hints ${h} · automatic ${a} · early ${m}`,
-      cpQuestionsUnit: "questions",
+      cpHints: (h, a, m, p) => `Hints ${h} · automatic ${a} · emergency ${m}${p ? ` (+${p})` : ""}`,
+      cpQuestionsUnit: "Q",
+      totalLabel: "Q",
+      totalBreak: (q, p) => `${q} questions + ${p} penalty`,
+      hintMeterLabel: "Progress to the next hint",
+      emergencyBtn: "Emergency hint +10",
+      emergencyConfirm: "An emergency hint adds 10 to the count. Open it?",
+      emergencyConfirmTeam: name => `${name} takes the 10-point penalty. Open the emergency hint?`,
+      emergencyYes: "Open (+10)",
+      soundOnLabel: "Hint sound is on",
+      soundOffLabel: "Hint sound is off",
+      playLabel: "How to play",
+      playSolo: "Solo",
+      playTeam: "Team battle",
+      playSoloNote: "One person, or everyone together as one team.",
+      teamSetup: "Teams",
+      teamCount: "Number of teams",
+      teamNameLabel: n => `Name of team ${n}`,
+      teamDefault: i => `Team ${"ABCD"[i]}`,
+      teamWinsShort: n => `${n} win${n === 1 ? "" : "s"}`,
+      teamResetScore: "Reset wins",
+      turnNow: "Now asking",
+      passTurn: "Pass to the next team",
+      solvedByQ: "Which team solved it?",
+      teamWins: name => `${name} wins!`,
+      teamSub: "First team to reach the truth.",
+      teamSeries: "Wins so far",
+      teamColName: "Team",
+      teamColQ: "Questions",
+      teamColPen: "Penalty",
+      teamColTotal: "Total",
+      winnerTag: "Winner",
       cpTruthLabel: "The whole story",
       cpLogTitle: n => `Question record · ${n}`,
       cpNew: "Investigate another case",
@@ -535,7 +647,7 @@ h1, h2, h3, h4 { font-weight: 700; }
         "If a question can't be answered with yes or no, or asks two things at once, have them ask it another way. You don't need to record it.",
         "If it isn't covered below: in a mystery, press Doesn't matter; in a Bible case, press The text doesn't say.",
         "Tick each key point when the players find it. When they've found them all, press They solved it to open the closing screen.",
-        `A hint opens on the players' screen by itself every ${n} questions. To show one sooner, press the hint button. The hint closes there when you press the next answer.`
+        `A hint opens on the players' screen by itself every ${n} questions. To show one sooner, press Emergency hint (10 is added to the count). The hint closes there when you press the next answer.`
       ],
       hostTruthTitle: "The answer",
       hostKeysTitle: "Key points to find · tick each one when they find it",
@@ -543,22 +655,19 @@ h1, h2, h3, h4 { font-weight: 700; }
       hostFactsTitle: "Facts for judging",
       hostNotStatedTitle: "Not in the passage · answer “The text doesn't say”",
       hostHintsTitle: "Hints",
-      hostHintOpen: n => `Show hint ${n} on the players' screen`,
       hostHintOpened: "Shown",
       hostHintLocked: "Not shown yet",
       keysChip: n => `${n} key points`,
       zoom: "Zoom",
-      hintEarly: n => `Open hint ${n} now`,
-      hintRule: n => `A hint opens automatically every ${n} questions. Opening one early counts against your rank.`,
       nextHintIn: n => `${n} more question${n === 1 ? "" : "s"} to the next hint`,
       allHintsOpen: "All hints are open",
       clueNew: "A new hint is open",
       clueAuto: n => `Opened automatically after ${n} questions.`,
-      clueManual: "Opened early. It counts against your rank.",
+      clueManual: "Emergency hint: 10 was added to the count.",
       cluePrev: "Previous",
       clueNext: "Next",
       hintAutoTag: n => `Opened at ${n} questions`,
-      hintManualTag: "Opened early",
+      hintManualTag: "Emergency · +10",
       tagline: "Yes-or-no questions only. Find the truth.",
       steps: ["Read the case aloud.", "Ask questions that can be answered yes or no.", "Solve it with as few questions as you can."],
       mysteries: "Mysteries",
@@ -591,7 +700,6 @@ h1, h2, h3, h4 { font-weight: 700; }
       stampLabel: "Stamp the answer",
       undo: "Undo last answer",
       noRecord: "(not written down)",
-      questions: "Questions",
       hints: "Hints",
       hintBtn: n => `Hint ${n}`,
       solve: "Solve the case",
@@ -672,8 +780,38 @@ h1, h2, h3, h4 { font-weight: 700; }
       cpScoreLabel: "수사 결과",
       cpRankLabel: "등급",
       cpNoRank: "등급 없음",
-      cpHints: (h, a, m) => `힌트 ${h}개 · 자동 ${a} · 미리 ${m}`,
+      cpHints: (h, a, m, p) => `힌트 ${h}개 · 자동 ${a} · 긴급 ${m}${p ? ` (+${p}문)` : ""}`,
       cpQuestionsUnit: "문",
+      totalLabel: "문",
+      totalBreak: (q, p) => `질문 ${q} + 벌점 ${p}`,
+      hintMeterLabel: "다음 힌트까지 진행",
+      emergencyBtn: "긴급 힌트 열기 +10문",
+      emergencyConfirm: "긴급 힌트를 열면 벌점 10문이 더해집니다. 열까요?",
+      emergencyConfirmTeam: name => `${name}에 벌점 10문이 더해집니다. 긴급 힌트를 열까요?`,
+      emergencyYes: "열기 (+10문)",
+      soundOnLabel: "알림음 켜짐",
+      soundOffLabel: "알림음 꺼짐",
+      playLabel: "플레이 방식",
+      playSolo: "단독 수사",
+      playTeam: "팀 대항전",
+      playSoloNote: "혼자, 또는 다 함께 한 팀으로 풉니다.",
+      teamSetup: "팀 설정",
+      teamCount: "팀 수",
+      teamNameLabel: n => `${n}번 팀 이름`,
+      teamDefault: i => `${"ABCD"[i]}팀`,
+      teamWinsShort: n => `${n}승`,
+      teamResetScore: "전적 초기화",
+      turnNow: "지금 차례",
+      passTurn: "다음 팀으로 넘기기",
+      solvedByQ: "어느 팀이 맞혔나요?",
+      teamWins: name => `${name} 승리!`,
+      teamSub: "가장 먼저 진실에 도달한 팀입니다.",
+      teamSeries: "지금까지 전적",
+      teamColName: "팀",
+      teamColQ: "질문",
+      teamColPen: "벌점",
+      teamColTotal: "합계",
+      winnerTag: "승리",
       cpTruthLabel: "전체 진상 공개",
       cpLogTitle: n => `수사 기록 · 질문 ${n}개`,
       cpNew: "새로운 사건 수사하기",
@@ -692,7 +830,7 @@ h1, h2, h3, h4 { font-weight: 700; }
         "예·아니오로 답할 수 없는 질문이거나 두 가지를 한꺼번에 물으면 다시 물어보게 하세요. 기록하지 않아도 됩니다.",
         "아래에 없는 내용이면, 일반 추리는 '상관없음', 성경 사건은 '본문은 말하지 않음'을 누르세요.",
         "아이들이 핵심을 찾을 때마다 체크하세요. 모두 찾으면 '사건 해결!'을 눌러 사건 종결 화면을 여세요.",
-        `질문 ${n}개마다 힌트가 아이들 화면에 자동으로 열립니다. 더 일찍 보여 주려면 힌트 버튼을 누르세요. 힌트 창은 다음 답을 누르면 아이들 화면에서 저절로 닫힙니다.`
+        `질문 ${n}개마다 힌트가 아이들 화면에 자동으로 열립니다. 더 일찍 보여 주려면 '긴급 힌트'를 누르세요(벌점 10문). 힌트 창은 다음 답을 누르면 아이들 화면에서 저절로 닫힙니다.`
       ],
       hostTruthTitle: "정답(진상)",
       hostKeysTitle: "찾아야 할 핵심 · 아이들이 찾으면 체크하세요",
@@ -700,22 +838,19 @@ h1, h2, h3, h4 { font-weight: 700; }
       hostFactsTitle: "판정 도움말",
       hostNotStatedTitle: "본문에 없는 것 · '본문은 말하지 않음'으로 답하세요",
       hostHintsTitle: "힌트",
-      hostHintOpen: n => `아이들 화면에 힌트 ${n} 열기`,
       hostHintOpened: "공개됨",
       hostHintLocked: "아직 안 열림",
       keysChip: n => `핵심 ${n}개`,
       zoom: "크게 보기",
-      hintEarly: n => `힌트 ${n} 바로 보기`,
-      hintRule: n => `힌트는 질문 ${n}개마다 자동으로 열립니다. 미리 열면 등급 계산에 반영됩니다.`,
       nextHintIn: n => `다음 힌트까지 질문 ${n}개`,
       allHintsOpen: "힌트 모두 공개",
       clueNew: "새 힌트가 열렸습니다",
       clueAuto: n => `질문 ${n}개를 채워 자동으로 열렸습니다.`,
-      clueManual: "미리 연 힌트입니다. 등급 계산에 반영됩니다.",
+      clueManual: "긴급 힌트: 벌점 10문이 더해졌습니다.",
       cluePrev: "이전 힌트",
       clueNext: "다음 힌트",
       hintAutoTag: n => `질문 ${n}개로 공개`,
-      hintManualTag: "미리 공개",
+      hintManualTag: "긴급 · +10문",
       tagline: "예, 아니오로만 묻고 진실을 밝히세요.",
       steps: ["사건을 소리 내어 읽어 줍니다.", "'예/아니오'로 답할 수 있는 질문을 합니다.", "가능한 한 적은 질문으로 사건을 풉니다."],
       mysteries: "일반 추리",
@@ -748,7 +883,6 @@ h1, h2, h3, h4 { font-weight: 700; }
       stampLabel: "판정 도장",
       undo: "마지막 판정 취소",
       noRecord: "(질문 기록 없음)",
-      questions: "질문",
       hints: "힌트",
       hintBtn: n => `힌트 ${n}`,
       solve: "사건 풀기",
@@ -826,7 +960,7 @@ h1, h2, h3, h4 { font-weight: 700; }
   const RELAY_PASS_KEY = "caseRoomRelayPass";
   const relay = { url: recall(RELAY_URL_KEY), pass: recall(RELAY_PASS_KEY) };
   const relayReady = !hasClaude && !!(relay.url && relay.pass);
-  const state = { lang: initialLang(), mode: initialMode(), view: "home", caseId: null, games: {} };
+  const state = { lang: initialLang(), mode: initialMode(), view: "home", caseId: null, games: {}, play: initialPlay(), teams: initialTeams() };
   // source: "claude" (inside Claude), "relay" (Cloudflare Workers AI through the relay server), "" (host only)
   const ai = {
     status: hasClaude ? "connecting" : relayReady ? "ready" : "off",
@@ -867,6 +1001,21 @@ h1, h2, h3, h4 { font-weight: 700; }
     } catch (e) { /* storage unavailable */ }
     return "ai";
   }
+  // Solo play or a team battle on one screen; team names and count are kept on this device.
+  function initialPlay() {
+    try { if (localStorage.getItem("caseRoomPlay") === "team") return "team"; } catch (e) { /* storage unavailable */ }
+    return "solo";
+  }
+  function initialTeams() {
+    const t = { n: 2, names: ["", "", "", ""], wins: [0, 0, 0, 0] };
+    try {
+      const saved = JSON.parse(localStorage.getItem("caseRoomTeams") || "null");
+      if (saved && [2, 3, 4].includes(saved.n)) t.n = saved.n;
+      if (saved && Array.isArray(saved.names)) t.names = [0, 1, 2, 3].map(i => typeof saved.names[i] === "string" ? saved.names[i].slice(0, 12) : "");
+    } catch (e) { /* storage unavailable */ }
+    return t;
+  }
+  function saveTeams() { remember("caseRoomTeams", JSON.stringify({ n: state.teams.n, names: state.teams.names })); }
   function remember(key, value) {
     try { localStorage.setItem(key, value); } catch (e) { /* storage unavailable */ }
   }
@@ -878,17 +1027,27 @@ h1, h2, h3, h4 { font-weight: 700; }
   let archiveOpen = true;   // closing screen: clue archive
   let cpLogOpen = false;    // closing screen: question record
   let hostGuideOpen = true; // host screen: how to judge
+  let teamSetupOpen = false; // home: team names and count
+  let soundOn = (() => { try { return localStorage.getItem("caseRoomSound") !== "off"; } catch (e) { return true; } })();
+  const TEAM_COLORS = ["#f0b44c", "#5aa9ff", "#ff7ab6", "#a3d65c"];
   const L = obj => (obj && (obj[state.lang] ?? obj.en)) || "";
   const esc = s => String(s).replace(/[&<>"']/g, ch => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[ch]);
   const cur = () => CASES.find(c => c.id === state.caseId);
   const effMode = () => (state.mode === "host" || ai.status === "off" || ai.status === "blocked") ? "host" : "ai";
 
   function game(id) {
-    if (!state.games[id]) state.games[id] = { log: [], hints: 0, hintSrc: [], attempts: 0, status: "open", lastCheck: null };
+    if (!state.games[id]) {
+      const g = { log: [], hints: 0, hintSrc: [], attempts: 0, status: "open", lastCheck: null };
+      if (state.play === "team") { g.team = state.teams.n; g.turn = 0; g.hintBy = []; }
+      state.games[id] = g;
+    }
     return state.games[id];
   }
+  const isTeam = g => !!(g && g.team);
+  const teamName = i => (state.teams.names[i] || "").trim() || u().teamDefault(i);
+  const teamColor = i => TEAM_COLORS[i] || TEAM_COLORS[0];
   const counted = g => g.log.filter(x => x.v !== "INVALID").length;
-  const rankIndex = (q, h) => { const s = q + 5 * h; return s <= 10 ? 0 : s <= 20 ? 1 : s <= 35 ? 2 : 3; };
+  const rankIndex = s => s <= 10 ? 0 : s <= 20 ? 1 : s <= 35 ? 2 : 3;
   const teaser = c => { const s = L(c.setup); const m = s.match(/^.+?[.!?](?=\s|$)/); return m ? m[0] : s; };
 
   // Cloudflare refills the free AI allowance at 00:00 UTC; show that moment in local time.
@@ -1023,6 +1182,8 @@ h1, h2, h3, h4 { font-weight: 700; }
   const ICON_LENS = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21"/></svg>';
   const ICON_MARK = '<svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><rect x="1.5" y="1.5" width="25" height="25" rx="7"/><circle cx="12.5" cy="12.5" r="5"/><path d="M16.3 16.3 20.5 20.5"/></svg>';
   const ICON_ZOOM = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6M10 20H4v-6M20 4l-7 7M4 20l7-7"/></svg>';
+  const ICON_SOUND_ON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9.5v5h3.5L12 18.5v-13L7.5 9.5z"/><path d="M15.5 9a4 4 0 0 1 0 6M18 6.5a7.5 7.5 0 0 1 0 11"/></svg>';
+  const ICON_SOUND_OFF = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9.5v5h3.5L12 18.5v-13L7.5 9.5z"/><path d="m16 9.5 5 5M21 9.5l-5 5"/></svg>';
   const ICON_CLOSE = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>';
 
   function pic(name, alt, lazy) {
@@ -1126,6 +1287,7 @@ h1, h2, h3, h4 { font-weight: 700; }
         ${mode}
         ${present}
         ${connect}
+        ${HOST_VIEW ? "" : `<button type="button" class="icon-btn" data-act="sound" aria-pressed="${soundOn}" title="${esc(soundOn ? t.soundOnLabel : t.soundOffLabel)}" aria-label="${esc(soundOn ? t.soundOnLabel : t.soundOffLabel)}">${soundOn ? ICON_SOUND_ON : ICON_SOUND_OFF}</button>`}
         <div class="seg" role="group" aria-label="Language">
           <button type="button" data-act="lang" data-lang="ko" aria-pressed="${state.lang === "ko"}">한국어</button>
           <button type="button" data-act="lang" data-lang="en" aria-pressed="${state.lang === "en"}">English</button>
@@ -1194,6 +1356,7 @@ h1, h2, h3, h4 { font-weight: 700; }
       </section>`;
     return `<main>
       ${intro}
+      ${casesStatus === "ready" ? playDock(t) : ""}
       ${casesStatus === "ready"
         ? `${shelf("mystery", t.mysteries, t.mysteriesNote, ["YES", "NO", "IRRELEVANT"])}
       ${shelf("bible", t.bible, t.bibleNote, ["YES", "NO", "NOT_STATED"])}`
@@ -1203,13 +1366,40 @@ h1, h2, h3, h4 { font-weight: 700; }
     </main>`;
   }
 
+  // Solo or team battle, chosen before opening a case. Stays at the bottom of the screen.
+  function playDock(t) {
+    const team = state.play === "team";
+    const n = state.teams.n;
+    const range = Array.from({ length: n }, (_, i) => i);
+    const chips = range.map(i => `<span class="tchip" style="--tc:${teamColor(i)}"><i></i>${esc(teamName(i))}<b>${esc(t.teamWinsShort(state.teams.wins[i] || 0))}</b></span>`).join("");
+    const setup = team && teamSetupOpen ? `<div class="panel team-setup" id="team-setup">
+        <div class="ts-row"><span class="eyebrow">${esc(t.teamCount)}</span>
+          <div class="seg" role="group" aria-label="${esc(t.teamCount)}">${[2, 3, 4].map(k => `<button type="button" data-act="team-n" data-n="${k}" aria-pressed="${n === k}">${k}</button>`).join("")}</div></div>
+        <div class="ts-names">${range.map(i => `<label class="ts-name" style="--tc:${teamColor(i)}"><i></i><input id="team-name-${i}" type="text" maxlength="12" autocomplete="off" value="${esc(state.teams.names[i] || "")}" placeholder="${esc(t.teamDefault(i))}" aria-label="${esc(t.teamNameLabel(i + 1))}"></label>`).join("")}</div>
+        <div class="actions"><button type="button" class="btn btn-small" data-act="team-reset">${esc(t.teamResetScore)}</button><button type="button" class="btn btn-small btn-primary" data-act="team-setup">${esc(t.close)}</button></div>
+      </div>` : "";
+    return `<div class="play-dock">
+      ${setup}
+      <div class="play-bar">
+        <div class="seg" role="group" aria-label="${esc(t.playLabel)}">
+          <button type="button" data-act="play" data-play="solo" aria-pressed="${!team}">${esc(t.playSolo)}</button>
+          <button type="button" data-act="play" data-play="team" aria-pressed="${team}">${esc(t.playTeam)}</button>
+        </div>
+        ${team
+          ? `<div class="tchips">${chips}</div><button type="button" class="btn btn-small" data-act="team-setup" aria-expanded="${teamSetupOpen}" aria-controls="team-setup">${esc(t.teamSetup)}</button>`
+          : `<p class="fineprint">${esc(t.playSoloNote)}</p>`}
+      </div>
+    </div>`;
+  }
+
   // Question record, shared by the case screen and the closing screen.
   function transcriptList(g, t) {
     let n = 0;
     const rows = g.log.map(x => ({ x, num: x.v === "INVALID" ? "–" : String(++n).padStart(2, "0") })).reverse();
     return rows.length ? `<ul class="transcript">${rows.map(({ x, num }) => {
       const V = VERDICTS[x.v];
-      return `<li><span class="tn">Q${esc(num)}</span>${x.q ? `<span class="tq">${esc(x.q)}</span>` : `<span class="tq muted">${esc(t.noRecord)}</span>`}<span class="vchip ${V.cls}">${esc(V[state.lang])}</span>${x.note ? `<span class="tnote">${esc(x.note)}</span>` : ""}</li>`;
+      const who = typeof x.t === "number" ? `<span class="tteam" style="--tc:${teamColor(x.t)}">${esc(teamName(x.t))}</span>` : "";
+      return `<li><span class="tn">Q${esc(num)}</span>${x.q ? `<span class="tq">${who}${esc(x.q)}</span>` : `<span class="tq muted">${who}${esc(t.noRecord)}</span>`}<span class="vchip ${V.cls}">${esc(V[state.lang])}</span>${x.note ? `<span class="tnote">${esc(x.note)}</span>` : ""}</li>`;
     }).join("")}</ul>` : `<p class="empty">${esc(t.noQuestions)}</p>`;
   }
 
@@ -1268,24 +1458,41 @@ h1, h2, h3, h4 { font-weight: 700; }
   }
 
   // The closing screen: one centered column, like a case file that has just been closed.
+  // Team battle result: each team's questions and penalties, the winner, and the wins so far.
+  function teamResult(c, g, t) {
+    const rows = teamStats(g);
+    const w = g.status === "solved" && typeof g.winner === "number" ? g.winner : -1;
+    const series = Array.from({ length: state.teams.n }, (_, i) => `${teamName(i)} ${t.teamWinsShort(state.teams.wins[i] || 0)}`).join(" · ");
+    return `<section class="cp-score cp-teams" aria-label="${esc(t.cpScoreLabel)}">
+        <div class="cp-case"><span class="fileno">${esc(tagFor(c))}</span>${dots(c)}<strong>${esc(L(c.title))}</strong><span class="cp-hints">${esc(t.cpHints(g.hints, g.hints - manualHints(g), manualHints(g), penaltyOf(g)))}</span></div>
+        <table class="team-table">
+          <thead><tr><th scope="col">${esc(t.teamColName)}</th><th scope="col">${esc(t.teamColQ)}</th><th scope="col">${esc(t.teamColPen)}</th><th scope="col">${esc(t.teamColTotal)}</th></tr></thead>
+          <tbody>${rows.map((r, i) => `<tr class="${i === w ? "win" : ""}" style="--tc:${teamColor(i)}"><th scope="row"><i></i>${esc(teamName(i))}${i === w ? ` <span class="win-tag">${esc(t.winnerTag)}</span>` : ""}</th><td>${r.q}</td><td>${r.pen}</td><td><b>${r.total}</b></td></tr>`).join("")}</tbody>
+        </table>
+        <p class="cp-series"><span class="eyebrow">${esc(t.teamSeries)}</span> ${esc(series)}</p>
+      </section>`;
+  }
+
   function closingView(c, g, t) {
     const bible = c.kind === "bible";
     const solved = g.status === "solved";
-    const q = counted(g);
+    const q = totalOf(g);
     const manual = manualHints(g);
+    const team = isTeam(g);
+    const winner = team && solved && typeof g.winner === "number" ? g.winner : -1;
     const story = paragraphs(L(c.truth)).map(p => `<p>${esc(p)}</p>`).join("");
     return `<main class="closing-page">
       <button type="button" class="back" data-act="home">← ${esc(t.allCases)}</button>
       <header class="cp-head${freshStamp ? " fresh" : ""}">
         <p class="cp-kicker">${solved ? "CASE CLOSED" : "FILE OPENED"}</p>
-        <h2 class="cp-title">${esc(solved ? t.closedSolved : t.closedRevealed)}</h2>
-        <p class="cp-sub">${esc(solved ? t.cpSubSolved : t.cpSubRevealed)}</p>
+        <h2 class="cp-title"${winner >= 0 ? ` style="--tc:${teamColor(winner)}"` : ""}>${esc(winner >= 0 ? t.teamWins(teamName(winner)) : solved ? t.closedSolved : t.closedRevealed)}</h2>
+        <p class="cp-sub">${esc(winner >= 0 ? t.teamSub : solved ? t.cpSubSolved : t.cpSubRevealed)}</p>
       </header>
-      <section class="cp-score" aria-label="${esc(t.cpScoreLabel)}">
-        <div class="cp-rank"><span class="eyebrow">${esc(t.cpRankLabel)}</span>${solved ? `<strong>${esc(t.rank[rankIndex(q, manual)])}</strong>` : `<strong class="muted">${esc(t.cpNoRank)}</strong>`}</div>
-        <div class="cp-case"><span class="fileno">${esc(tagFor(c))}</span>${dots(c)}<strong>${esc(L(c.title))}</strong><span class="cp-hints">${esc(t.cpHints(g.hints, g.hints - manual, manual))}</span></div>
+      ${team ? teamResult(c, g, t) : `<section class="cp-score" aria-label="${esc(t.cpScoreLabel)}">
+        <div class="cp-rank"><span class="eyebrow">${esc(t.cpRankLabel)}</span>${solved ? `<strong>${esc(t.rank[rankIndex(q)])}</strong>` : `<strong class="muted">${esc(t.cpNoRank)}</strong>`}</div>
+        <div class="cp-case"><span class="fileno">${esc(tagFor(c))}</span>${dots(c)}<strong>${esc(L(c.title))}</strong><span class="cp-hints">${esc(t.cpHints(g.hints, g.hints - manual, manual, penaltyOf(g)))}</span></div>
         <div class="cp-count"><b>${q}</b><span>${esc(t.cpQuestionsUnit)}</span></div>
-      </section>
+      </section>`}
       <section class="cp-truth" aria-labelledby="cp-truth-h">
         <p id="cp-truth-h" class="eyebrow">${esc(t.cpTruthLabel)}</p>
         ${CAN_IMAGES ? media(`${c.id}-truth`, `${L(c.title)} · ${t.truthPicTitle}`, { cls: "cp-media", zoom: true }) : ""}
@@ -1296,7 +1503,7 @@ h1, h2, h3, h4 { font-weight: 700; }
       </section>
       ${clueArchive(c, g, t)}
       <section class="cp-log">
-        <button type="button" class="arch-toggle" data-act="cp-log" aria-expanded="${cpLogOpen}">${esc(t.cpLogTitle(q))} ${cpLogOpen ? "▴" : "▾"}</button>
+        <button type="button" class="arch-toggle" data-act="cp-log" aria-expanded="${cpLogOpen}">${esc(t.cpLogTitle(counted(g)))} ${cpLogOpen ? "▴" : "▾"}</button>
         ${cpLogOpen ? transcriptList(g, t) : ""}
       </section>
       <div class="cp-actions">
@@ -1325,7 +1532,6 @@ h1, h2, h3, h4 { font-weight: 700; }
       return `<li class="hhint${shown ? " shown" : ""}">
           <span class="eyebrow">${esc(t.hintBtn(i + 1))} · ${esc(shown ? t.hostHintOpened : t.hostHintLocked)}</span>
           <span>${esc(L(h))}</span>
-          ${!shown && i === g.hints ? `<button type="button" class="btn btn-small" data-act="hint">${esc(t.hostHintOpen(i + 1))}</button>` : ""}
         </li>`;
     }).join("");
     return `<div class="host-notes">
@@ -1381,8 +1587,19 @@ h1, h2, h3, h4 { font-weight: 700; }
           ${CAN_IMAGES ? media(`${c.id}-hint${i + 1}`, `${L(c.title)} · ${t.hintBtn(i + 1)}`, { el: "span", cls: "hint-media" }) : ""}
         </button>`;
     }).join("");
+    const team = isTeam(g);
     let panel = "";
-    if (confirmAct) {
+    if (confirmAct === "solved" && team) {
+      // A team battle asks which team solved it; the team on turn comes first.
+      const order = Array.from({ length: g.team }, (_, k) => (g.turn + k) % g.team);
+      panel = `<div class="panel" role="group">
+          <p class="confirm-q">${esc(t.solvedByQ)}</p>
+          <div class="actions">
+            ${order.map(i => `<button type="button" class="btn team-btn${i === g.turn ? " on" : ""}" style="--tc:${teamColor(i)}" data-act="solved-by" data-t="${i}"><i></i>${esc(teamName(i))}</button>`).join("")}
+            <button type="button" class="btn" data-act="confirm-no">${esc(t.keepGoing)}</button>
+          </div>
+        </div>`;
+    } else if (confirmAct === "solved" || confirmAct === "reveal") {
       const isReveal = confirmAct === "reveal";
       panel = `<div class="panel warn" role="group">
           <p class="confirm-q">${esc(isReveal ? t.revealConfirm : t.solvedConfirm)}</p>
@@ -1421,15 +1638,13 @@ h1, h2, h3, h4 { font-weight: 700; }
           <div class="actions"><button type="button" class="btn" data-act="notes-close">${esc(t.close)}</button></div>
         </div>`;
     }
-    const hintBtn = !HOST_VIEW && g.hints < c.hints.length
-      ? `<button type="button" class="btn" data-act="hint">${esc(t.hintEarly(g.hints + 1))}</button>` : "";
     const notesBtn = HOST_VIEW || sync.peer ? ""
       : `<button type="button" class="btn" data-act="notes" aria-expanded="${showNotes}">${esc(t.notesBtn)}</button>`;
     const modeBtns = mode === "ai"
       ? (showSolve ? "" : `<button type="button" class="btn" data-act="solve-open" ${aiOk ? "" : "disabled"}>${esc(t.solve)}</button>`)
       : `<button type="button" class="btn" data-act="solved">${esc(t.solvedBtn)}</button>${notesBtn}`;
-    const actions = confirmAct ? "" : `<div class="actions">${hintBtn}${modeBtns}<button type="button" class="btn" data-act="reveal">${esc(t.reveal)}</button></div>
-        ${!HOST_VIEW && g.hints < c.hints.length ? `<p class="fineprint">${esc(t.hintRule(HINT_EVERY))}</p>` : ""}`;
+    const actions = confirmAct === "solved" || confirmAct === "reveal" ? ""
+      : `<div class="actions">${modeBtns}<button type="button" class="btn" data-act="reveal">${esc(t.reveal)}</button></div>`;
     const tools = `<section class="tools b-tools">${actions}${panel}${hints}${HOST_VIEW ? hostNotes(c, g, t) : ""}</section>`;
 
     const last = g.log[g.log.length - 1];
@@ -1439,6 +1654,7 @@ h1, h2, h3, h4 { font-weight: 700; }
     } else if (last) {
       const V = VERDICTS[last.v];
       stage = `<div class="stage" aria-live="polite">
+          ${typeof last.t === "number" ? `<span class="stage-team" style="--tc:${teamColor(last.t)}">${esc(teamName(last.t))}</span>` : ""}
           ${last.q ? `<p class="stage-q">“${esc(last.q)}”</p>` : ""}
           <span class="verdict ${V.cls}${V.long ? " long" : ""}${freshStamp ? " fresh" : ""}">${esc(V[state.lang])}</span>
           ${last.note ? `<p class="stage-note">${esc(last.note)}</p>` : ""}
@@ -1447,10 +1663,37 @@ h1, h2, h3, h4 { font-weight: 700; }
       stage = `<div class="stage"><p class="stage-empty">${esc(t.stageEmpty)}</p></div>`;
     }
     const notice = ai.noticeKey ? `<p class="notice" role="status">${esc(errText(t, ai.noticeKey))}</p>` : "";
+    const pen = penaltyOf(g);
+    const allOpen = g.hints >= c.hints.length;
+    // The meter runs from the question where the last hint opened to the question where the next one opens.
+    const end = HINT_EVERY * (g.hints + 1);
+    const lastAt = g.hints && Array.isArray(g.hintAt) && typeof g.hintAt[g.hints - 1] === "number" ? g.hintAt[g.hints - 1] : HINT_EVERY * g.hints;
+    const start = Math.min(lastAt, HINT_EVERY * g.hints);
+    const span = Math.max(1, end - start);
+    const done = allOpen ? span : Math.max(0, Math.min(span, q - start));
+    const hintConfirm = confirmAct === "hint" ? `<div class="panel warn hint-confirm" role="group">
+          <p class="confirm-q">${esc(team ? t.emergencyConfirmTeam(teamName(g.turn)) : t.emergencyConfirm)}</p>
+          <div class="actions">
+            <button type="button" class="btn btn-primary" data-act="hint-yes">${esc(t.emergencyYes)}</button>
+            <button type="button" class="btn" data-act="confirm-no">${esc(t.keepGoing)}</button>
+          </div>
+        </div>` : "";
+    const teamStrip = team ? `<div class="team-strip">
+          <div class="turn-now" style="--tc:${teamColor(g.turn)}"><span>${esc(t.turnNow)}</span><b>${esc(teamName(g.turn))}</b>
+            <button type="button" class="btn btn-small" data-act="pass">${esc(t.passTurn)}</button></div>
+          <ul class="team-stats">${teamStats(g).map((r, i) => `<li class="${i === g.turn ? "on" : ""}" style="--tc:${teamColor(i)}"><i></i><span>${esc(teamName(i))}</span><b>${r.total}</b></li>`).join("")}</ul>
+        </div>` : "";
     const deskHead = `<div class="desk-head">
-          <div class="count-big"><b>${q}</b><span>${esc(t.questions)}</span></div>
-          <div class="count-small"><span>${esc(t.hints)} <b>${g.hints}</b> / ${c.hints.length}</span><span class="next-hint">${esc(g.hints < c.hints.length ? t.nextHintIn(Math.max(0, HINT_EVERY * (g.hints + 1) - q)) : t.allHintsOpen)}</span></div>
-        </div>`;
+          <div class="count-big"><b>${q + pen}</b><span>${esc(t.totalLabel)}</span>${pen ? `<em>${esc(t.totalBreak(q, pen))}</em>` : ""}</div>
+          <div class="count-small"><span>${esc(t.hints)} <b>${g.hints}</b> / ${c.hints.length}</span></div>
+        </div>
+        <div class="hint-meter">
+          <div class="hm-top"><span class="next-hint">${esc(allOpen ? t.allHintsOpen : t.nextHintIn(Math.max(0, HINT_EVERY * (g.hints + 1) - q)))}</span>
+            ${allOpen || confirmAct === "hint" ? "" : `<button type="button" class="btn btn-small btn-emergency" data-act="hint">${esc(t.emergencyBtn)}</button>`}</div>
+          <div class="hm-bar" role="progressbar" aria-label="${esc(t.hintMeterLabel)}" aria-valuemin="0" aria-valuemax="${span}" aria-valuenow="${done}"><i style="width:${Math.round((done / span) * 100)}%"></i></div>
+        </div>
+        ${hintConfirm}
+        ${teamStrip}`;
     let ask;
     if (mode === "ai") {
       ask = `<section class="desk b-ask">
@@ -1527,19 +1770,66 @@ h1, h2, h3, h4 { font-weight: 700; }
 
   /* ---------- Hints: one opens every HINT_EVERY questions, or early by hand ---------- */
   const HINT_EVERY = 15;
-  // Hints opened early by hand count toward the rank; hints opened automatically do not.
+  const HINT_PENALTY = 10;
+  // A hint opened early by hand is an emergency hint: it adds HINT_PENALTY to the count.
   function manualHints(g) {
     const src = Array.isArray(g.hintSrc) ? g.hintSrc : [];
     let n = 0;
     for (let i = 0; i < g.hints; i++) if (src[i] !== "auto") n++;
     return n;
   }
+  const penaltyOf = g => HINT_PENALTY * manualHints(g);
+  const totalOf = g => counted(g) + penaltyOf(g);
+  // Per team: questions asked on its turns and the penalties for emergency hints it opened.
+  function teamStats(g) {
+    const n = g.team || 0;
+    const rows = Array.from({ length: n }, () => ({ q: 0, pen: 0, total: 0 }));
+    for (const x of g.log) if (x.v !== "INVALID" && typeof x.t === "number" && rows[x.t]) rows[x.t].q++;
+    const src = g.hintSrc || [], by = g.hintBy || [];
+    for (let i = 0; i < g.hints; i++) if (src[i] !== "auto" && typeof by[i] === "number" && rows[by[i]]) rows[by[i]].pen += HINT_PENALTY;
+    for (const r of rows) r.total = r.q + r.pen;
+    return rows;
+  }
   function openHint(c, g, src) {
     if (!c || !g || g.status !== "open" || g.hints >= c.hints.length) return;
     if (!Array.isArray(g.hintSrc)) g.hintSrc = [];
     g.hintSrc[g.hints] = src;
+    if (!Array.isArray(g.hintAt)) g.hintAt = [];
+    g.hintAt[g.hints] = counted(g);
+    if (isTeam(g)) { if (!Array.isArray(g.hintBy)) g.hintBy = []; g.hintBy[g.hints] = src === "auto" ? null : g.turn; }
     g.hints += 1;
     if (!HOST_VIEW) showClue(g.hints - 1, true);
+  }
+  // In a team battle the turn moves on after every counted answer.
+  function nextTurn(g) { if (isTeam(g)) g.turn = ((g.turn || 0) + 1) % g.team; }
+
+  /* ---------- Hint sound ---------- */
+  let audioCtx = null;
+  function ensureAudio() {
+    try {
+      if (!audioCtx) { const AC = window.AudioContext || window.webkitAudioContext; if (!AC) return null; audioCtx = new AC(); }
+      if (audioCtx.state === "suspended") audioCtx.resume();
+      return audioCtx;
+    } catch (e) { return null; }
+  }
+  // Browsers only allow sound after someone has touched the page, so wake the sound up on the first touch.
+  document.addEventListener("pointerdown", () => { if (soundOn && !HOST_VIEW) ensureAudio(); }, { passive: true });
+  function chime() {
+    if (HOST_VIEW || !soundOn) return;
+    const ctx = ensureAudio();
+    if (!ctx) return;
+    const start = ctx.currentTime + 0.02;
+    [0, 0.62].forEach(round => [[880, 0], [1174.66, 0.12], [1567.98, 0.24]].forEach(([f, dt]) => {
+      const o = ctx.createOscillator(), v = ctx.createGain(), at = start + round + dt;
+      o.type = "sine";
+      o.frequency.value = f;
+      v.gain.setValueAtTime(0.0001, at);
+      v.gain.exponentialRampToValueAtTime(0.22, at + 0.02);
+      v.gain.exponentialRampToValueAtTime(0.0001, at + 0.45);
+      o.connect(v).connect(ctx.destination);
+      o.start(at);
+      o.stop(at + 0.5);
+    }));
   }
   function autoHint(c, g) {
     if (g.status === "open" && g.hints < c.hints.length && counted(g) >= HINT_EVERY * (g.hints + 1)) openHint(c, g, "auto");
@@ -1550,6 +1840,7 @@ h1, h2, h3, h4 { font-weight: 700; }
   let clue = null;          // { i: hint index, fresh: true right after it opened }
   let clueReturn = null;
   function showClue(i, fresh) {
+    if (fresh) chime();
     if (!clueBox) return;
     if (!clue) clueReturn = document.activeElement;
     clue = { i, fresh };
@@ -1749,7 +2040,10 @@ h1, h2, h3, h4 { font-weight: 700; }
       if (c.kind === "mystery" && v === "NOT_STATED") v = "IRRELEVANT";
       if (!VERDICTS[v]) throw { code: "invalid_json" };
       const note = v === "INVALID" && res && typeof res.note === "string" ? res.note.trim().slice(0, 160) : "";
-      g.log.push({ q: text, v, note });
+      const entry = { q: text, v, note };
+      if (isTeam(g)) entry.t = g.turn;
+      g.log.push(entry);
+      if (v !== "INVALID") nextTurn(g);
       const qEl = document.getElementById("q");
       if (qEl && qEl.value.trim() === text) qEl.value = "";
       freshStamp = true;
@@ -1784,7 +2078,13 @@ h1, h2, h3, h4 { font-weight: 700; }
       }
       g.attempts += 1;
       g.lastCheck = { hits, feedback: res && typeof res.feedback === "string" ? res.feedback.trim().slice(0, 240) : "" };
-      if (all) { g.status = "solved"; resetPanels(); freshStamp = true; }
+      if (all) {
+        g.status = "solved"; resetPanels(); freshStamp = true;
+        // In a team battle the team on turn gave the answer.
+        if (isTeam(g)) { g.winner = g.turn; state.teams.wins[g.turn] = (state.teams.wins[g.turn] || 0) + 1; }
+      } else if (isTeam(g)) {
+        nextTurn(g);
+      }
     } catch (e) {
       handleError(e);
     } finally {
@@ -1848,7 +2148,40 @@ h1, h2, h3, h4 { font-weight: 700; }
       case "cp-log": cpLogOpen = !cpLogOpen; render(); break;
       case "host-guide": hostGuideOpen = !hostGuideOpen; render(); break;
       case "hint":
-        if (g && g.hints < c.hints.length) { openHint(c, g, "manual"); render(); }
+        if (g && g.status === "open" && g.hints < c.hints.length) { confirmAct = "hint"; showNotes = false; showSolve = false; render(); }
+        break;
+      case "hint-yes":
+        if (g && confirmAct === "hint") { confirmAct = null; openHint(c, g, "manual"); render(); }
+        break;
+      case "pass":
+        if (g && isTeam(g) && g.status === "open") { nextTurn(g); render(); }
+        break;
+      case "solved-by":
+        if (g && isTeam(g) && confirmAct === "solved") {
+          const w = Number(b.dataset.t);
+          if (w >= 0 && w < g.team) {
+            g.status = "solved"; g.winner = w;
+            state.teams.wins[w] = (state.teams.wins[w] || 0) + 1;
+            resetPanels(); freshStamp = true; render(); scrollToClosing();
+          }
+        }
+        break;
+      case "play":
+        if (b.dataset.play !== state.play && (b.dataset.play === "solo" || b.dataset.play === "team")) {
+          state.play = b.dataset.play; remember("caseRoomPlay", state.play);
+          teamSetupOpen = state.play === "team";
+          render();
+        }
+        break;
+      case "team-setup": teamSetupOpen = !teamSetupOpen; render(); break;
+      case "team-n":
+        if ([2, 3, 4].includes(Number(b.dataset.n))) { state.teams.n = Number(b.dataset.n); saveTeams(); render(); }
+        break;
+      case "team-reset": state.teams.wins = [0, 0, 0, 0]; render(); break;
+      case "sound":
+        soundOn = !soundOn; remember("caseRoomSound", soundOn ? "on" : "off");
+        render();
+        if (soundOn) chime();
         break;
       case "clue":
         if (g && g.hints > 0) showClue(Math.max(0, Number(b.dataset.i) || 0), false);
@@ -1857,15 +2190,22 @@ h1, h2, h3, h4 { font-weight: 700; }
         if (g && g.status === "open" && VERDICTS[b.dataset.v]) {
           const memo = document.getElementById("memo");
           const text = memo ? memo.value.trim().slice(0, 200) : "";
-          g.log.push({ q: text, v: b.dataset.v, note: "" });
+          const entry = { q: text, v: b.dataset.v, note: "" };
+          if (isTeam(g)) entry.t = g.turn;
+          g.log.push(entry);
           if (memo) memo.value = "";
           freshStamp = true;
+          nextTurn(g);
           autoHint(c, g);
           render();
         }
         break;
       case "undo":
-        if (g && g.log.length) { g.log.pop(); render(); }
+        if (g && g.log.length) {
+          const gone = g.log.pop();
+          if (isTeam(g) && typeof gone.t === "number") g.turn = gone.t;
+          render();
+        }
         break;
       case "notes": showNotes = !showNotes; confirmAct = null; render(); break;
       case "notes-close": showNotes = false; render(); break;
@@ -1890,6 +2230,14 @@ h1, h2, h3, h4 { font-weight: 700; }
     }
   });
 
+  app.addEventListener("input", e => {
+    const m = /^team-name-(\d)$/.exec(e.target.id || "");
+    if (m) state.teams.names[Number(m[1])] = e.target.value.slice(0, 12);
+  });
+  app.addEventListener("change", e => {
+    if (/^team-name-\d$/.test(e.target.id || "")) { saveTeams(); render(); }
+  });
+
   app.addEventListener("submit", e => {
     e.preventDefault();
     const f = e.target;
@@ -1911,7 +2259,7 @@ h1, h2, h3, h4 { font-weight: 700; }
     if (!sync.ch) return;
     try { sync.ch.postMessage(Object.assign({ from: sync.id, host: HOST_VIEW }, msg)); } catch (e) { /* channel closed */ }
   }
-  const syncSnapshot = () => ({ view: state.view, caseId: state.caseId, games: state.games });
+  const syncSnapshot = () => ({ view: state.view, caseId: state.caseId, games: state.games, play: state.play, teams: state.teams });
   function syncShare(force) {
     if (!sync.ch || sync.applying) return;
     const snap = JSON.stringify(syncSnapshot());
@@ -1925,6 +2273,8 @@ h1, h2, h3, h4 { font-weight: 700; }
     const pg = prevCase && state.games[prevCase];
     const prevHints = pg ? pg.hints : 0, prevLog = pg ? pg.log.length : 0, prevStatus = pg ? pg.status : "open";
     state.games = st.games && typeof st.games === "object" ? st.games : {};
+    if (st.play === "solo" || st.play === "team") state.play = st.play;
+    if (st.teams && [2, 3, 4].includes(st.teams.n) && Array.isArray(st.teams.names) && Array.isArray(st.teams.wins)) state.teams = st.teams;
     const caseOk = st.view === "case" && CASES.some(c => c.id === st.caseId);
     state.view = caseOk ? "case" : "home";
     if (caseOk) state.caseId = st.caseId;
@@ -1982,6 +2332,8 @@ h1, h2, h3, h4 { font-weight: 700; }
     if (data.lang === "ko" || data.lang === "en") state.lang = data.lang;
     if (data.mode === "ai" || data.mode === "host") state.mode = data.mode;
     if (data.games && typeof data.games === "object") state.games = data.games;
+    if (data.play === "solo" || data.play === "team") state.play = data.play;
+    if (data.teams && [2, 3, 4].includes(data.teams.n) && Array.isArray(data.teams.names) && Array.isArray(data.teams.wins)) state.teams = data.teams;
     if (data.view === "case" && CASES.some(c => c.id === data.caseId)) { state.view = "case"; state.caseId = data.caseId; }
     render();
   }
@@ -2010,7 +2362,7 @@ h1, h2, h3, h4 { font-weight: 700; }
   try {
     const hot = window.claude && window.claude.hot;
     if (hot) {
-      if (typeof hot.snapshot === "function") hot.snapshot(() => ({ lang: state.lang, mode: state.mode, view: state.view, caseId: state.caseId, games: state.games }));
+      if (typeof hot.snapshot === "function") hot.snapshot(() => ({ lang: state.lang, mode: state.mode, view: state.view, caseId: state.caseId, games: state.games, play: state.play, teams: state.teams }));
       if (typeof hot.ready === "function") hot.ready(restore);
       else if (hot.data) restore(hot.data);
     }

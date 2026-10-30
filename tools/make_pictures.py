@@ -43,14 +43,18 @@ class Stop(Exception):
 def ask_relay(url, passcode, prompt):
     body = json.dumps({"task": "image", "prompt": prompt, "width": 1024, "height": 576,
                        "seed": random.randrange(1, 2**31 - 1)}).encode()
-    req = urllib.request.Request(url, data=body, method="POST",
-                                 headers={"Content-Type": "application/json", "X-Passcode": passcode})
+    # A browser-like User-Agent: Cloudflare can refuse the default "Python-urllib" one.
+    req = urllib.request.Request(url, data=body, method="POST", headers={
+        "Content-Type": "application/json", "Accept": "application/json", "X-Passcode": passcode,
+        "User-Agent": "Mozilla/5.0 (compatible; case-room-pictures/1.0; +https://github.com/youth-LCYG/case-room)"})
     try:
         with urllib.request.urlopen(req, timeout=180) as r:
             return json.loads(r.read().decode("utf-8"))
     except urllib.error.HTTPError as e:
+        raw = ""
         try:
-            info = json.loads(e.read().decode("utf-8"))
+            raw = e.read().decode("utf-8", "replace")
+            info = json.loads(raw)
         except Exception:
             info = {}
         code = info.get("error", "")
@@ -60,7 +64,8 @@ def ask_relay(url, passcode, prompt):
             raise Stop("Today's free Cloudflare AI allowance is used up. The rest will be made on the next run.")
         if code == "not_configured":
             raise Stop("The relay isn't set up (Workers AI binding AI and PASSCODE secret).")
-        return {"_retry": e.code == 503, "_error": f"HTTP {e.code} {code} {info.get('detail', '')}".strip()}
+        detail = info.get("detail", "") or " ".join(raw.split())[:160]
+        return {"_retry": e.code == 503, "_error": f"HTTP {e.code} {code} {detail}".strip()}
     except Exception as e:  # network trouble or timeout
         return {"_retry": True, "_error": str(e)}
 
@@ -85,7 +90,7 @@ def main():
         print("::warning::RELAY_URL and RELAY_PASS secrets are not set, so no pictures were made.")
         return 0
     IMAGES.mkdir(exist_ok=True)
-    made, failed = [], []
+    made, failed, errors = [], [], []
     try:
         for name, prompt in todo[:MAX_PER_RUN]:
             for attempt in range(3):
@@ -98,6 +103,7 @@ def main():
                 if "text" in out:
                     raise Stop("The relay answered with text instead of a picture. Paste the newer worker.js into Cloudflare and Deploy.")
                 print(f"{name}: {out.get('_error', 'no picture came back')} (try {attempt + 1}/3)")
+                errors.append(out.get("_error", "no picture came back"))
                 if not out.get("_retry"):
                     break
                 time.sleep(15 * (attempt + 1))
@@ -105,6 +111,8 @@ def main():
                 failed.append(name)
             if name not in made and name not in failed:
                 failed.append(name)
+            if not made and len(failed) >= 3:
+                raise Stop("The first pictures all failed, so the run stopped early. First error: " + (errors[0] if errors else "unknown"))
             time.sleep(2)
     except Stop as s:
         print(f"::warning::{s}")
@@ -114,7 +122,7 @@ def main():
     left = len(todo) - len(made)
     print(f"Made {len(made)} picture(s). {left} still missing.")
     if failed:
-        print("::warning::Couldn't make: " + ", ".join(failed))
+        print("::warning::Couldn't make: " + ", ".join(failed) + (f". First error: {errors[0]}" if errors else ""))
     return 0
 
 

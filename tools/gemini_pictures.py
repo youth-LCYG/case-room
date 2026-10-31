@@ -11,7 +11,7 @@ Spending stays small and bounded:
   - with a prepaid balance, Google itself stops every request when the balance reaches $0.
 A refused or failed picture is reported and skipped, never retried in a loop.
 """
-import base64, io, json, os, sys, time, urllib.error, urllib.request
+import base64, io, json, os, re, sys, time, urllib.error, urllib.request
 from pathlib import Path
 
 from PIL import Image
@@ -26,6 +26,9 @@ KEY = os.environ.get("GEMINI_API_KEY", "").strip()
 MAX_PICTURES = int(os.environ.get("MAX_PICTURES", "40") or 40)
 BUDGET = float(os.environ.get("BUDGET_USD", "4.00") or 4.0)
 ONLY = [s.strip() for s in os.environ.get("ONLY", "").replace("\n", ",").split(",") if s.strip()]
+CHECK_ONLY = os.environ.get("CHECK_ONLY", "").strip().lower() == "true"   # check the key and stop, at no cost
+# Answers that mean every request will fail the same way (no paid access, no balance): stop at once.
+FATAL = re.compile(r"limit: ?0\b|billing|prepa|credit|payment", re.I)
 # Cheapest suitable models first. Prices from ai.google.dev/pricing (paid tier, one 1K picture).
 MODELS = [
     ("gemini-3.1-flash-image-preview", 0.067),
@@ -139,8 +142,11 @@ def main():
         note("error", str(s))
         return 1
     print(f"Model: {model} (${price:.3f} per picture). {len(todo)} picture(s) to make. Budget ${BUDGET:.2f}.")
+    if CHECK_ONLY:
+        note("notice", f"The key works and {model} is available. {len(todo)} picture(s) would be made, about ${len(todo) * price:.2f}. Nothing was made.")
+        return 0
     IMAGES.mkdir(exist_ok=True)
-    spent, made, failed = 0.0, [], []
+    spent, made, failed, errors_in_row = 0.0, [], [], 0
     for i, (name, prompt) in enumerate(todo, 1):
         if spent + price + 0.01 > BUDGET:
             note("warning", f"Stopped before {name}: the next picture could pass the ${BUDGET:.2f} budget (about ${spent:.2f} so far).")
@@ -159,13 +165,21 @@ def main():
         if status == 402:
             note("warning", "Google stopped the requests: the prepaid balance is used up.")
             break
+        if status != 200 and FATAL.search(message(info)):
+            note("error", f"Google won't make pictures with this key yet ({status}): {message(info)}")
+            break
         if status in (401, 403):
             note("error", f"Google refused the API key ({status}): {message(info)}")
             break
         if status != 200:
             failed.append(name)
+            errors_in_row += 1
             note("warning", f"{name}: Google answered {status} {message(info)}")
+            if errors_in_row >= 3:
+                note("error", "Three pictures in a row failed the same way, so the run stopped.")
+                break
             continue
+        errors_in_row = 0
         usage = info.get("usageMetadata") or {}
         cost = price + TEXT_OUT * (usage.get("thoughtsTokenCount") or 0) + TEXT_IN * (usage.get("promptTokenCount") or 0)
         raw = picture_from(info)

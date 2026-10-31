@@ -10,6 +10,10 @@ on:
         description: "Only these pictures, comma-separated (e.g. lights-at-nine-adult-cover). Leave empty for all missing pictures."
         required: false
         default: ""
+      check_only:
+        description: "Only check the key (makes nothing, costs nothing)"
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -36,6 +40,7 @@ jobs:
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           ONLY: ${{ inputs.only }}
+          CHECK_ONLY: ${{ inputs.check_only }}
           MAX_PICTURES: "40"
           BUDGET_USD: "4.00"
         run: python3 tools/gemini_pictures.py

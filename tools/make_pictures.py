@@ -30,6 +30,12 @@ def wanted(data):
                 # Cover and truth pictures are scene paintings; hint pictures are evidence photos.
                 style = st.get(base if slot in ("cover", "truth") else base + "h", "")
                 yield f"{c['id']}-{slot}", f"{p['scene']}\n\n{style}".strip()
+        # A college version's own pictures (a slot name instead of a picture reuses the youth one).
+        for slot in ("cover", "hint1", "hint2", "truth"):
+            p = ((c.get("adult") or {}).get("pictures") or {}).get(slot)
+            if isinstance(p, dict) and p.get("scene"):
+                style = st.get(base if slot in ("cover", "truth") else base + "h", "")
+                yield f"{c['id']}-adult-{slot}", f"{p['scene']}\n\n{style}".strip()
 
 
 def have(name):

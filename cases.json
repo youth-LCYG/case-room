@@ -87,6 +87,90 @@
      "scene": "A smiling teacher at her desk holding a sheet of paper close to a glowing desk lamp, faint brown squiggles appearing on the warmed paper (not readable), with half a lemon and a cotton swab on the desk; warm, cheerful classroom light.",
      "check": "읽을 수 있는 글자가 보이면 안 됩니다."
     }
+   },
+   "adult": {
+    "level": 2,
+    "warn": {
+     "en": "Crime (bribery)",
+     "ko": "범죄(뇌물)"
+    },
+    "title": {
+     "en": "The Blank Exam",
+     "ko": "백지 시험지"
+    },
+    "setup": {
+     "en": "A college student turned in a completely blank exam paper and got a perfect score. A week later, the professor was fired, and the student's name was on the front page of the campus newspaper.",
+     "ko": "한 대학생이 아무것도 쓰지 않은 백지 시험지를 냈는데 만점을 받았습니다. 일주일 뒤 교수는 해고되었고, 그 학생의 이름이 학교 신문 1면에 실렸습니다."
+    },
+    "truth": {
+     "en": "The professor had been secretly selling grades. Students who paid him were told to turn in a blank exam, and he wrote in a perfect score himself. The student had heard rumors about it, and she was a reporter for the campus newspaper. She paid him, recorded the conversation where he explained the deal, kept the payment receipt, and photographed her blank paper before handing it in. When her perfect score was posted, she had her proof. Her story ran on the front page under her name, the university investigated, and the professor was fired.",
+     "ko": "교수는 몰래 성적을 팔고 있었습니다. 돈을 낸 학생에게는 시험지를 백지로 내라고 했고, 교수가 직접 만점을 적어 넣었습니다. 그 학생은 이런 소문을 듣고 취재하던 학교 신문 기자였습니다. 그녀는 교수에게 돈을 내면서 거래를 설명하는 대화를 녹음했고, 송금 기록을 남겼으며, 백지 시험지를 내기 전에 사진으로 찍어 두었습니다. 만점이 발표되자 증거가 다 갖추어졌습니다. 그녀가 쓴 기사가 학교 신문 1면에 실렸고, 학교가 조사에 나서 교수는 해고되었습니다."
+    },
+    "keys": [
+     {
+      "id": "sold",
+      "label": {
+       "en": "Why a blank paper got a perfect score",
+       "ko": "백지가 만점을 받은 이유"
+      },
+      "text": {
+       "en": "The professor sold grades; paying students turned in blank papers and he filled in perfect scores.",
+       "ko": "교수가 성적을 팔았고, 돈을 낸 학생은 백지를 내면 교수가 만점을 적었다."
+      }
+     },
+     {
+      "id": "reporter",
+      "label": {
+       "en": "Who the student was",
+       "ko": "학생의 정체"
+      },
+      "text": {
+       "en": "A campus newspaper reporter investigating the rumors.",
+       "ko": "소문을 취재하던 학교 신문 기자였다."
+      }
+     },
+     {
+      "id": "proof",
+      "label": {
+       "en": "Why the professor was fired",
+       "ko": "교수가 해고된 이유"
+      },
+      "text": {
+       "en": "She paid as evidence and exposed him in a front-page story.",
+       "ko": "증거를 남기려고 돈을 냈고, 1면 기사로 고발했다."
+      }
+     }
+    ],
+    "hints": [
+     {
+      "en": "The blank paper was a signal agreed on in advance.",
+      "ko": "백지는 미리 정해 둔 신호였습니다."
+     },
+     {
+      "en": "Money changed hands before the exam, and the student had a second job on campus.",
+      "ko": "시험 전에 돈이 오갔고, 그 학생은 학교에서 하는 일이 하나 더 있었습니다."
+     }
+    ],
+    "facts": "- The professor secretly sold grades. Students who paid him turned in blank exams, and he wrote in perfect scores himself.\n- The blank paper was the agreed signal of who had paid.\n- The student was a reporter for the campus newspaper who had heard rumors and was investigating.\n- She paid the professor on purpose, to get proof. She did not want the grade for herself.\n- She recorded the conversation where he explained the deal, kept the payment receipt, and photographed her blank paper before turning it in.\n- Her perfect score proved the deal. Her front-page story led the university to investigate, and the professor was fired.\n- She was not punished for paying (NO); the university knew she did it as a reporter. (If asked whether she got to keep the grade: IRRELEVANT.)\n- Nobody died or was hurt. It was not invisible ink, a trick of the paper, or a mistake (NO).\n- The amount of money, the subject, and names are not part of the story (IRRELEVANT).",
+    "factsKo": "- 교수는 몰래 성적을 팔았다. 돈을 낸 학생이 백지 시험지를 내면 교수가 직접 만점을 적어 넣었다.\n- 백지는 누가 돈을 냈는지 알려 주는, 미리 정해 둔 신호였다.\n- 그 학생은 소문을 듣고 취재하던 학교 신문 기자였다.\n- 그녀는 증거를 얻으려고 일부러 돈을 냈다. 자기 성적을 위해서가 아니었다.\n- 거래를 설명하는 교수와의 대화를 녹음했고, 송금 기록을 남겼으며, 백지 시험지를 내기 전에 사진을 찍었다.\n- 그녀의 만점이 거래의 증거가 되었다. 1면 기사가 나가자 학교가 조사했고, 교수는 해고되었다.\n- 그녀는 돈을 낸 일로 처벌받지 않았다(아니오). 학교는 기자로서 한 일임을 알았다. (그 성적을 그대로 받았는지는 상관없음.)\n- 죽거나 다친 사람은 없다. 보이지 않는 잉크나 종이의 속임수, 실수가 아니다(아니오).\n- 돈의 액수, 과목, 이름은 이야기에 나오지 않는다(상관없음).",
+    "pictures": {
+     "cover": {
+      "scene": "A university exam paper lying on a wooden desk in an empty lecture hall, completely blank except for a large red circle and a red star drawn at the top; beside it, a folded campus newspaper with blurred, unreadable columns; afternoon light.",
+      "check": "빈 시험지에 빨간 동그라미와 별만 있는지 봅니다. 신문의 글자는 읽히지 않아야 합니다."
+     },
+     "hint1": {
+      "scene": "Two blank exam papers on a professor's desk, each paper-clipped to a plain white envelope, under a desk lamp; a nameplate turned away.",
+      "check": "봉투가 클립으로 붙은 빈 시험지 두 장인지 봅니다. 글자·숫자가 없어야 합니다."
+     },
+     "hint2": {
+      "scene": "A student reporter's desk at night: a small voice recorder, an open notebook with scribbles too blurred to read, a camera, and a blank lanyard badge, under a lamp.",
+      "check": "녹음기, 수첩, 카메라가 있는 기자 책상인지 봅니다. 글자·숫자가 없어야 합니다."
+     },
+     "truth": {
+      "scene": "A university campus in the morning: students gathered around a newspaper rack, holding up copies of the campus paper with a blurred headline, while in the background a professor carries a cardboard box of belongings out of a stone building.",
+      "check": "신문을 든 학생들과 상자를 들고 나가는 교수가 보이는지 봅니다. 신문 글자는 읽히지 않아야 합니다."
+     }
+    }
    }
   },
   {
@@ -158,6 +242,90 @@
     "truth": {
      "scene": "A sunny Texas front yard in July: a little girl in a summer dress hugging a slightly melting snowman while family and neighbors cheer around her; a pickup truck in the driveway with white ice shavings piled in its bed; joyful.",
      "check": "글자나 간판이 보이면 안 됩니다."
+    }
+   },
+   "adult": {
+    "level": 2,
+    "warn": {
+     "en": "Murder (poisoning)",
+     "ko": "살인(독살)"
+    },
+    "title": {
+     "en": "Poison in the Ice",
+     "ko": "얼음 속의 독"
+    },
+    "setup": {
+     "en": "At a summer party, two friends drank the same iced punch from the same bowl. One gulped her glass down and went off to dance. The other sipped hers slowly while she talked. The one who gulped was fine; the one who sipped died that night.",
+     "ko": "여름 파티에서 두 친구가 같은 그릇에 담긴 같은 아이스 펀치를 마셨습니다. 한 사람은 단숨에 들이켜고 춤을 추러 갔고, 다른 사람은 이야기를 나누며 천천히 마셨습니다. 단숨에 마신 사람은 멀쩡했지만, 천천히 마신 사람은 그날 밤 숨졌습니다."
+    },
+    "truth": {
+     "en": "The poison was in the ice. The killer had frozen poison inside the ice cubes and added them to the punch bowl, so the punch itself was harmless when it was poured. The friend who gulped finished her glass before her ice could melt. The friend who sipped slowly on that hot evening let her ice melt into her drink, and the poison melted with it. The killer knew the victim always nursed one drink all evening.",
+     "ko": "독은 얼음 속에 있었습니다. 범인은 얼음을 얼릴 때 독을 넣어 두었다가 그 얼음을 펀치 그릇에 넣었기 때문에, 펀치 자체는 따를 때만 해도 아무 해가 없었습니다. 단숨에 마신 친구는 얼음이 녹기 전에 잔을 비웠습니다. 더운 저녁에 천천히 마신 친구는 잔 속의 얼음이 녹도록 두었고, 독도 함께 녹아 나왔습니다. 범인은 그녀가 저녁 내내 한 잔을 천천히 마시는 사람이라는 것을 알고 있었습니다."
+    },
+    "keys": [
+     {
+      "id": "ice",
+      "label": {
+       "en": "Where the poison was",
+       "ko": "독이 있던 곳"
+      },
+      "text": {
+       "en": "Frozen inside the ice cubes.",
+       "ko": "얼음 속에 얼려 넣었다."
+      }
+     },
+     {
+      "id": "fast",
+      "label": {
+       "en": "Why the fast drinker lived",
+       "ko": "빨리 마신 사람이 산 이유"
+      },
+      "text": {
+       "en": "She finished before the ice melted.",
+       "ko": "얼음이 녹기 전에 다 마셨다."
+      }
+     },
+     {
+      "id": "slow",
+      "label": {
+       "en": "Why the slow drinker died",
+       "ko": "천천히 마신 사람이 죽은 이유"
+      },
+      "text": {
+       "en": "Her ice melted in the heat and released the poison.",
+       "ko": "더위에 얼음이 녹으며 독이 나왔다."
+      }
+     }
+    ],
+    "hints": [
+     {
+      "en": "The punch itself was safe when it was poured.",
+      "ko": "펀치 자체는 따를 때만 해도 안전했습니다."
+     },
+     {
+      "en": "It was a very hot evening, and something in the glass changed the longer you waited.",
+      "ko": "아주 더운 저녁이었고, 기다릴수록 잔 속의 무언가가 달라졌습니다."
+     }
+    ],
+    "facts": "- It was murder. The killer froze poison inside ice cubes and put them in the punch bowl.\n- The punch itself was not poisoned when it was poured (NO to 'Was the punch poisoned?'). Both friends drank the same punch from the same bowl.\n- The friend who gulped finished her drink before the ice melted, so she swallowed almost no poison. She was fine.\n- The friend who sipped slowly let the ice melt on the hot evening, and the poison melted into her drink. She died that night.\n- The killer knew the victim always nursed one drink all evening. The victim was the target (YES).\n- The two friends were not the killer (NO). The friend who lived was not involved and did not know.\n- The glasses were the same kind; it was not about the glass or a straw (NO). It was not an allergy (NO).\n- Who the killer was, the motive, and the poison's name are not part of the story (IRRELEVANT).",
+    "factsKo": "- 살인이었다. 범인은 얼음을 얼릴 때 독을 넣고, 그 얼음을 펀치 그릇에 넣었다.\n- 펀치 자체는 따를 때 독이 없었다('펀치에 독이 있었나?'에는 아니오). 두 친구는 같은 그릇의 같은 펀치를 마셨다.\n- 단숨에 마신 친구는 얼음이 녹기 전에 다 마셔서 독을 거의 삼키지 않았다. 그녀는 멀쩡했다.\n- 천천히 마신 친구는 더운 저녁에 얼음이 녹도록 두었고, 독이 음료에 녹아 나왔다. 그녀는 그날 밤 숨졌다.\n- 범인은 그녀가 저녁 내내 한 잔을 천천히 마신다는 것을 알았다. 그녀를 노린 것이다(예).\n- 두 친구는 범인이 아니다(아니오). 살아남은 친구는 관련이 없고 몰랐다.\n- 잔은 같은 종류였고, 잔이나 빨대 때문이 아니다(아니오). 알레르기도 아니다(아니오).\n- 범인이 누구인지, 동기, 독의 이름은 이야기에 나오지 않는다(상관없음).",
+    "pictures": {
+     "cover": {
+      "scene": "A summer garden party at dusk under string lights: a glass punch bowl full of red punch and ice cubes on a table, two glasses beside it, one empty and one half-full with melting ice; guests blurred in the background.",
+      "check": "펀치 그릇과 빈 잔, 반쯤 남은 잔이 보이는지 봅니다. 글자·숫자가 없어야 합니다."
+     },
+     "hint1": {
+      "scene": "A ladle resting in a glass punch bowl of red punch beside a stack of clean glasses; everything looks normal and festive.",
+      "check": "평범해 보이는 펀치 그릇인지 봅니다. 글자·숫자가 없어야 합니다."
+     },
+     "hint2": {
+      "scene": "Close-up of a glass of red punch with half-melted ice cubes, beads of condensation running down the glass on a hot evening.",
+      "check": "얼음이 반쯤 녹은 잔인지 봅니다. 글자·숫자가 없어야 합니다."
+     },
+     "truth": {
+      "scene": "A dark kitchen at night: an open freezer glowing, an ice-cube tray whose cubes have a faint cloudy tint inside, a small unlabeled vial beside it, and a gloved hand closing the freezer door; ominous, nothing gruesome.",
+      "check": "얼음 틀과 작은 병, 장갑 낀 손이 보이는지 봅니다. 병에 글자가 없어야 합니다."
+     }
     }
    }
   },
@@ -242,6 +410,90 @@
      "scene": "Night across a wide valley: in a small house on one hillside an elderly father at a lit window raising his hand, and on the opposite hillside his grown daughter at her lit window smiling; a sky full of stars; warm and peaceful.",
      "check": "글자가 보이면 안 됩니다."
     }
+   },
+   "adult": {
+    "level": 2,
+    "warn": {
+     "en": "Death (accident)",
+     "ko": "죽음(사고)"
+    },
+    "title": {
+     "en": "The Night the Lights Went Out",
+     "ko": "불을 끈 밤"
+    },
+    "setup": {
+     "en": "One stormy night, a man turned off all the lights and went to bed. The next morning, he heard the news on the radio and knew that more than a hundred people had died because of him.",
+     "ko": "폭풍이 몰아치던 밤, 한 남자가 불을 모두 끄고 잠자리에 들었습니다. 다음 날 아침 라디오 뉴스를 들은 그는, 자기 때문에 백 명이 넘는 사람이 죽었다는 것을 알았습니다."
+    },
+    "truth": {
+     "en": "The man was a lighthouse keeper. That night, tired and careless, he switched off the lighthouse lamp along with the lights in his room before going to bed. In the storm, a passenger ship coming toward the coast could not see the warning light, struck the rocks, and sank. When he heard the news in the morning, he knew the ship had gone down because his light was dark.",
+     "ko": "남자는 등대지기였습니다. 그날 밤 그는 피곤한 나머지, 자기 방 불과 함께 등대의 불까지 꺼 버리고 잠자리에 들었습니다. 폭풍 속에서 해안으로 다가오던 여객선은 경고 불빛을 보지 못해 암초에 부딪혀 가라앉았습니다. 아침에 뉴스를 들은 그는, 자기가 불을 꺼서 배가 침몰했다는 것을 알았습니다."
+    },
+    "keys": [
+     {
+      "id": "keeper",
+      "label": {
+       "en": "Who he was",
+       "ko": "그의 정체"
+      },
+      "text": {
+       "en": "A lighthouse keeper.",
+       "ko": "등대지기였다."
+      }
+     },
+     {
+      "id": "lamp",
+      "label": {
+       "en": "Which light he turned off",
+       "ko": "끈 불"
+      },
+      "text": {
+       "en": "The lighthouse lamp.",
+       "ko": "등대의 불이었다."
+      }
+     },
+     {
+      "id": "ship",
+      "label": {
+       "en": "What happened",
+       "ko": "무슨 일이 일어났나"
+      },
+      "text": {
+       "en": "A ship could not see the light, hit the rocks, and sank.",
+       "ko": "배가 불빛을 보지 못해 암초에 부딪혀 가라앉았다."
+      }
+     }
+    ],
+    "hints": [
+     {
+      "en": "The lights he turned off were not only for himself.",
+      "ko": "그가 끈 불은 자기만을 위한 불이 아니었습니다."
+     },
+     {
+      "en": "He lived and worked by the sea, on a rocky coast.",
+      "ko": "그는 바위투성이 해안, 바닷가에서 살며 일했습니다."
+     }
+    ],
+    "facts": "- The man was a lighthouse keeper living at the lighthouse.\n- That stormy night, tired and careless, he switched off the lighthouse lamp along with the lights in his room and went to bed.\n- A passenger ship approaching the coast in the storm could not see the warning light, struck the rocks, and sank. More than a hundred people died.\n- He did not mean to cause it (NO to murder). It was a deadly mistake.\n- He learned what had happened from the radio news the next morning.\n- His house lights did not matter; it was the lighthouse light (YES if asked whether the light warned ships).\n- What happened to him afterward is not part of the story (IRRELEVANT). The ship's name and the country are IRRELEVANT.",
+    "factsKo": "- 남자는 등대에서 사는 등대지기였다.\n- 폭풍이 몰아치던 그날 밤, 피곤하고 부주의했던 그는 자기 방 불과 함께 등대의 불까지 끄고 잠자리에 들었다.\n- 폭풍 속에서 해안으로 다가오던 여객선이 경고 불빛을 보지 못해 암초에 부딪혀 가라앉았다. 백 명이 넘게 죽었다.\n- 일부러 그런 것이 아니다(살인이냐고 물으면 아니오). 끔찍한 실수였다.\n- 그는 다음 날 아침 라디오 뉴스로 무슨 일이 있었는지 알았다.\n- 집 안의 불은 상관이 없고, 등대의 불이 문제였다(그 불이 배에게 경고하는 불이었냐고 물으면 예).\n- 그 뒤 그가 어떻게 되었는지는 이야기에 나오지 않는다(상관없음). 배의 이름과 나라도 상관없음.",
+    "pictures": {
+     "cover": {
+      "scene": "A man's hand pulling down a large old-fashioned brass lever switch in a dark stone room at night; rain streaking a small window behind it; ominous and still.",
+      "check": "어두운 방에서 큰 스위치를 내리는 손인지 봅니다. 등대가 보이면 안 됩니다. 글자·숫자가 없어야 합니다."
+     },
+     "hint1": {
+      "scene": "A round stone room with a heavy brass switch panel and thick cables running up a spiral staircase into darkness; a small window streaked with rain.",
+      "check": "둥근 돌방과 위로 이어진 굵은 전선이 보이는지 봅니다. 글자·숫자가 없어야 합니다."
+     },
+     "hint2": {
+      "scene": "A rocky coastline at dawn after a storm: jagged black rocks, broken wooden planks and a red life ring floating in the gray surf.",
+      "check": "폭풍 뒤 바위 해안과 떠다니는 구명환이 보이는지 봅니다. 사람은 없어야 합니다. 글자·숫자가 없어야 합니다."
+     },
+     "truth": {
+      "scene": "A tall lighthouse on a rocky cliff at night in a raging storm, its lamp completely dark; out at sea, the lights of a passenger ship tilting dangerously near the rocks; dramatic and somber, no people visible.",
+      "check": "불이 꺼진 등대와 기울어진 배가 보이는지 봅니다. 글자·숫자가 없어야 합니다."
+     }
+    }
    }
   },
   {
@@ -324,6 +576,90 @@
     "truth": {
      "scene": "A grainy black-and-white night-vision camera view of a cabin kitchen: a man in pajamas, eyes half closed, sits on the floor beside an open snack cooler, munching chips in his sleep; funny and harmless.",
      "check": "글자나 시간 표시가 보이면 안 됩니다."
+    }
+   },
+   "adult": {
+    "level": 3,
+    "warn": {
+     "en": "Death (accident)",
+     "ko": "죽음(사고)"
+    },
+    "title": {
+     "en": "New Shoes",
+     "ko": "새 구두"
+    },
+    "setup": {
+     "en": "A woman bought a new pair of high-heeled shoes, wore them to work that evening, and died there. Nobody had meant to hurt her.",
+     "ko": "한 여자가 새 하이힐을 사서 그날 저녁 신고 출근했다가 일터에서 숨졌습니다. 그녀를 해치려고 한 사람은 아무도 없었습니다."
+    },
+    "truth": {
+     "en": "She was the assistant in a circus knife-throwing act. Every night she stood against a wooden board while her partner threw knives that landed just around her head. After years of practice, he threw by habit at exactly the same spots. Her new shoes had higher heels than her old ones and made her a few centimeters taller. That night, one knife, thrown exactly where it always went, struck her. It was a terrible accident.",
+     "ko": "그녀는 서커스에서 칼 던지기 묘기의 조수였습니다. 매일 밤 나무판 앞에 서면, 짝이 던진 칼이 그녀의 머리 둘레에 아슬아슬하게 꽂혔습니다. 짝은 몇 년 동안 연습한 대로, 늘 같은 자리를 겨누어 던졌습니다. 그런데 새 구두는 예전 구두보다 굽이 높아서 그녀의 키가 몇 센티미터 커져 있었습니다. 그날 밤 늘 던지던 그 자리로 날아간 칼 하나가 그녀에게 꽂혔습니다. 끔찍한 사고였습니다."
+    },
+    "keys": [
+     {
+      "id": "job",
+      "label": {
+       "en": "Her job",
+       "ko": "그녀의 일"
+      },
+      "text": {
+       "en": "She was the assistant in a circus knife-throwing act.",
+       "ko": "서커스 칼 던지기 묘기의 조수였다."
+      }
+     },
+     {
+      "id": "heels",
+      "label": {
+       "en": "What the shoes changed",
+       "ko": "구두가 바꾼 것"
+      },
+      "text": {
+       "en": "The higher heels made her taller.",
+       "ko": "굽이 높아서 키가 커졌다."
+      }
+     },
+     {
+      "id": "knife",
+      "label": {
+       "en": "How she died",
+       "ko": "숨진 방식"
+      },
+      "text": {
+       "en": "A knife thrown at the usual spot hit her.",
+       "ko": "늘 같은 자리로 던진 칼에 맞았다."
+      }
+     }
+    ],
+    "hints": [
+     {
+      "en": "Her job was safe only as long as everything stayed exactly the same.",
+      "ko": "그녀의 일은 모든 것이 늘 똑같을 때만 안전했습니다."
+     },
+     {
+      "en": "Her work was a show, and every night things were thrown toward her.",
+      "ko": "그녀의 일은 공연이었고, 밤마다 무언가가 그녀를 향해 날아왔습니다."
+     }
+    ],
+    "facts": "- She was the assistant in a circus knife-throwing act. Every night she stood against a wooden board while her partner threw knives around her head.\n- After years of practice, her partner threw by habit at exactly the same spots every night.\n- Her new shoes had higher heels than her old ones and made her a few centimeters taller.\n- That night, a knife thrown at the usual spot struck her, and she died.\n- It was an accident. Nobody meant to hurt her (NO to murder). Her partner did not know about the new shoes before the show.\n- She did not trip or fall in the shoes (NO). The shoes were not poisoned or broken (NO).\n- Names, the circus's name, and the city are not part of the story (IRRELEVANT).",
+    "factsKo": "- 그녀는 서커스 칼 던지기 묘기의 조수였다. 매일 밤 나무판 앞에 서면, 짝이 그녀의 머리 둘레로 칼을 던졌다.\n- 짝은 몇 년 동안 연습한 대로, 매일 밤 습관처럼 정확히 같은 자리로 던졌다.\n- 새 구두는 예전 구두보다 굽이 높아서 그녀의 키가 몇 센티미터 커졌다.\n- 그날 밤 늘 던지던 자리로 날아간 칼이 그녀에게 꽂혔고, 그녀는 숨졌다.\n- 사고였다. 아무도 해치려 하지 않았다(살인이냐고 물으면 아니오). 짝은 공연 전에 새 구두에 대해 몰랐다.\n- 구두 때문에 넘어지거나 미끄러진 것이 아니다(아니오). 구두에 독이 있거나 구두가 망가진 것도 아니다(아니오).\n- 이름, 서커스 이름, 도시는 이야기에 나오지 않는다(상관없음).",
+    "pictures": {
+     "cover": {
+      "scene": "A pair of new red high-heeled shoes in an open shoebox with tissue paper, on a backstage dressing table with a mirror ringed by light bulbs; a sparkly costume hanging nearby.",
+      "check": "새 빨간 하이힐과 분장실 거울이 보이는지 봅니다. 글자·숫자가 없어야 합니다."
+     },
+     "hint1": {
+      "scene": "A tall wooden target board with a painted human outline standing alone in a dim circus tent, lit by a single spotlight.",
+      "check": "사람 윤곽이 그려진 나무판인지 봅니다. 칼은 아직 없어야 합니다. 글자·숫자가 없어야 합니다."
+     },
+     "hint2": {
+      "scene": "An open leather case of gleaming throwing knives laid on red velvet under a spotlight.",
+      "check": "던지는 칼이 든 가죽 상자인지 봅니다. 글자·숫자가 없어야 합니다."
+     },
+     "truth": {
+      "scene": "A circus ring at night under a spotlight: an empty wooden target board with knives stuck around a painted outline, one knife set noticeably higher than the outline's head; a single red high-heeled shoe lying on the sawdust in front of it; somber; no person, no blood.",
+      "check": "칼이 꽂힌 빈 나무판과 빨간 구두 한 짝이 보이는지 봅니다. 사람이나 피가 없어야 합니다. 글자·숫자가 없어야 합니다."
+     }
     }
    }
   },
@@ -408,6 +744,81 @@
      "scene": "A boy kneeling on a wet living-room floor, gently lowering two orange goldfish into a cooking pot of water with his cupped hands; pieces of a broken round fishbowl nearby and a curtain blowing at the open window; relief and warmth.",
      "check": "피나 상처, 글자가 보이면 안 됩니다."
     }
+   },
+   "adult": {
+    "level": 1,
+    "warn": {
+     "en": "Death of pets",
+     "ko": "반려동물의 죽음"
+    },
+    "title": {
+     "en": "Romeo and Juliet",
+     "ko": "로미오와 줄리엣"
+    },
+    "setup": {
+     "en": "Romeo and Juliet lay dead on the floor, in a puddle of water surrounded by pieces of broken glass. The window was open. Neither of them had a single wound, and no one else had been in the room.",
+     "ko": "로미오와 줄리엣이 깨진 유리 조각이 흩어진 물웅덩이 한가운데, 바닥에 죽은 채 누워 있었습니다. 창문은 열려 있었고, 둘 다 상처 하나 없었습니다. 그 방에는 다른 사람이 아무도 없었습니다."
+    },
+    "truth": {
+     "en": "Romeo and Juliet were goldfish. Their small round fishbowl sat near the edge of a little table by the window. A strong gust of wind blew in through the open window, the heavy curtain swung and knocked the bowl off the table, and it shattered on the floor. No one was home. Out of the water, the two fish could not breathe, and they died. Nobody killed them; it was an accident.",
+     "ko": "로미오와 줄리엣은 금붕어였습니다. 둘이 살던 작은 어항은 창가의 작은 탁자 끝에 놓여 있었습니다. 열린 창문으로 강한 바람이 불어 들자 무거운 커튼이 크게 흔들리며 어항을 쳤고, 어항은 바닥에 떨어져 깨졌습니다. 집에는 아무도 없었습니다. 물 밖으로 나온 두 금붕어는 숨을 쉬지 못해 죽었습니다. 누가 죽인 것이 아니라 사고였습니다."
+    },
+    "keys": [
+     {
+      "id": "who",
+      "label": {
+       "en": "Who Romeo and Juliet were",
+       "ko": "로미오와 줄리엣의 정체"
+      },
+      "text": {
+       "en": "They were goldfish, not people.",
+       "ko": "사람이 아니라 금붕어였다."
+      }
+     },
+     {
+      "id": "bowl",
+      "label": {
+       "en": "What happened",
+       "ko": "무슨 일이 있었나"
+      },
+      "text": {
+       "en": "The wind swung the curtain, which knocked their fishbowl off the table and broke it.",
+       "ko": "바람에 흔들린 커튼이 어항을 쳐서, 어항이 떨어져 깨졌다."
+      }
+     },
+     {
+      "id": "air",
+      "label": {
+       "en": "Why they died",
+       "ko": "죽은 이유"
+      },
+      "text": {
+       "en": "Out of the water, the fish could not breathe.",
+       "ko": "물 밖으로 나와 숨을 쉬지 못했다."
+      }
+     }
+    ],
+    "hints": [
+     {
+      "en": "Romeo and Juliet are not people.",
+      "ko": "로미오와 줄리엣은 사람이 아닙니다."
+     },
+     {
+      "en": "The broken glass used to hold the water.",
+      "ko": "깨진 유리는 원래 그 물을 담고 있었습니다."
+     }
+    ],
+    "facts": "- Romeo and Juliet are two pet goldfish (named after the Shakespeare characters), kept in a small round glass fishbowl.\n- They are not people, not a couple of humans, and not the characters from the play: answer NO.\n- The bowl stood near the edge of a small table beside the open window.\n- A strong gust of wind came through the window; the heavy curtain swung, knocked the bowl off the table, and it broke on the floor.\n- No one was home. The fish lay in the puddle, could not breathe out of the water, and died.\n- Nobody killed them. No person, cat, or other animal knocked the bowl over: it was the wind. It was an accident.\n- They had no wounds because nothing hit them; they died from being out of the water.\n- The family's names, the time of day, and how old the fish were are not part of the story (IRRELEVANT).",
+    "factsKo": "- 로미오와 줄리엣은 작고 둥근 유리 어항에서 기르던 금붕어 두 마리다(셰익스피어의 인물 이름을 따서 지었다).\n- 사람이 아니고, 사람 연인도 아니고, 희곡 속 인물도 아니다: 아니오라고 답한다.\n- 어항은 열린 창문 옆 작은 탁자의 끝 가까이에 놓여 있었다.\n- 창문으로 강한 바람이 불어 들어 무거운 커튼이 흔들렸고, 커튼이 어항을 쳐서 어항이 바닥에 떨어져 깨졌다.\n- 집에는 아무도 없었다. 금붕어들은 물웅덩이에 누운 채 물 밖에서 숨을 쉬지 못해 죽었다.\n- 아무도 죽이지 않았다. 사람이나 고양이 같은 동물이 어항을 떨어뜨린 것이 아니라 바람 때문이었다. 사고였다.\n- 무엇에 맞은 것이 아니어서 상처가 없었고, 물 밖으로 나와서 죽었다.\n- 가족의 이름, 시간대, 금붕어의 나이는 이야기에 나오지 않는다(상관없음).",
+    "pictures": {
+     "cover": "cover",
+     "hint1": "hint1",
+     "hint2": "hint2",
+     "truth": {
+      "scene": "A quiet, empty living room by an open window: the curtain blowing inward, a broken round fishbowl on the floor in a small puddle, two small orange goldfish lying still on the wet floor among the glass shards; nobody in the room; somber but gentle, nothing gruesome.",
+      "check": "금붕어 두 마리가 깨진 어항 옆 바닥에 가만히 있는지, 사람이 없는지 봅니다. 끔찍하지 않아야 합니다. 글자·숫자가 없어야 합니다."
+     }
+    }
    }
   },
   {
@@ -480,6 +891,90 @@
      "scene": "A family laughing around a board game on a kitchen table at night: a tiny silver car game piece stopped on a space with a small red hotel piece, dice and colorful play money scattered, one player throwing up his hands in mock despair.",
      "check": "게임 상표나 글자, 숫자가 보이면 안 됩니다."
     }
+   },
+   "adult": {
+    "level": 2,
+    "warn": {
+     "en": "Murder",
+     "ko": "살인"
+    },
+    "title": {
+     "en": "One-Way Ticket",
+     "ko": "편도 항공권"
+    },
+    "setup": {
+     "en": "A man came home alone from a trip abroad and told everyone that his wife had died in a fall from a cliff. When the travel agent who had booked their trip heard the news, she immediately called the police.",
+     "ko": "해외여행에서 혼자 돌아온 남자는 아내가 절벽에서 떨어져 숨졌다고 사람들에게 말했습니다. 그 소식을 들은, 여행을 예약해 준 여행사 직원은 곧바로 경찰에 신고했습니다."
+    },
+    "truth": {
+     "en": "When the man booked the trip, he bought a round-trip ticket for himself but only a one-way ticket for his wife. The travel agent remembered it because it was so strange. When she heard that his wife had \"fallen\" and he had come home alone, she realized he had planned all along for his wife not to come back. The police investigated, and he was arrested for murdering his wife.",
+     "ko": "남자는 여행을 예약할 때 자기 표는 왕복으로, 아내의 표는 편도로만 샀습니다. 여행사 직원은 그것이 워낙 이상해서 기억하고 있었습니다. 아내가 '떨어져' 숨졌고 남자가 혼자 돌아왔다는 소식을 듣자, 직원은 그가 처음부터 아내가 돌아오지 않을 것을 알고 계획했다는 것을 깨달았습니다. 경찰이 수사에 나섰고, 남자는 아내를 살해한 혐의로 체포되었습니다."
+    },
+    "keys": [
+     {
+      "id": "tickets",
+      "label": {
+       "en": "The tickets",
+       "ko": "항공권"
+      },
+      "text": {
+       "en": "He bought a round trip for himself and a one-way ticket for his wife.",
+       "ko": "자기 표는 왕복, 아내 표는 편도로 샀다."
+      }
+     },
+     {
+      "id": "agent",
+      "label": {
+       "en": "Why the agent knew",
+       "ko": "직원이 알아챈 이유"
+      },
+      "text": {
+       "en": "She had sold him the tickets and remembered the odd booking.",
+       "ko": "직접 표를 팔았고, 이상한 예약을 기억했다."
+      }
+     },
+     {
+      "id": "plan",
+      "label": {
+       "en": "What it meant",
+       "ko": "그것이 뜻하는 것"
+      },
+      "text": {
+       "en": "He had planned his wife's death before the trip.",
+       "ko": "여행 전부터 아내를 죽일 계획이었다."
+      }
+     }
+    ],
+    "hints": [
+     {
+      "en": "The travel agent had noticed something odd when she sold him the tickets.",
+      "ko": "여행사 직원은 표를 팔 때 이상한 점을 눈치챘습니다."
+     },
+     {
+      "en": "Before the trip, he already knew how many people would be coming home.",
+      "ko": "그는 여행을 떠나기 전부터 몇 명이 돌아올지 알고 있었습니다."
+     }
+    ],
+    "facts": "- When booking the trip, the man bought a round-trip ticket for himself and only a one-way ticket for his wife.\n- The travel agent remembered the odd booking.\n- After the trip, he came home alone and said his wife had died in a fall from a cliff.\n- Hearing this, the agent realized he had planned for his wife not to come back, and called the police.\n- It was murder: he pushed her (YES). It was not an accident and not suicide (NO).\n- The police investigated, and he was arrested.\n- The agent did not see the fall and did not know the couple personally (NO).\n- His motive, the country, and names are not part of the story (IRRELEVANT).",
+    "factsKo": "- 남자는 여행을 예약하면서 자기 표는 왕복으로, 아내의 표는 편도로만 샀다.\n- 여행사 직원은 그 이상한 예약을 기억했다.\n- 여행 뒤 그는 혼자 돌아와 아내가 절벽에서 떨어져 숨졌다고 말했다.\n- 그 말을 들은 직원은 그가 처음부터 아내가 돌아오지 않도록 계획했다는 것을 깨닫고 경찰에 신고했다.\n- 살인이었다: 그가 아내를 밀었다(예). 사고나 자살이 아니다(아니오).\n- 경찰이 수사했고, 그는 체포되었다.\n- 직원은 떨어지는 장면을 보지 않았고, 부부와 개인적으로 아는 사이도 아니다(아니오).\n- 그의 동기, 나라, 이름은 이야기에 나오지 않는다(상관없음).",
+    "pictures": {
+     "cover": {
+      "scene": "A travel agency desk in the evening: a glowing computer screen with blurred, unreadable content, a telephone receiver lifted off its cradle, and a travel brochure showing a seaside cliff; tense mood, no people in focus.",
+      "check": "여행사 책상과 들어 올린 수화기가 보이는지 봅니다. 글자·숫자가 없어야 합니다."
+     },
+     "hint1": {
+      "scene": "Two airline ticket folders side by side on a desk, one noticeably thicker than the other, with nothing readable on them.",
+      "check": "두께가 다른 항공권 봉투 두 개인지 봅니다. 글자·숫자가 없어야 합니다."
+     },
+     "hint2": {
+      "scene": "Two passports on a desk: one tucked into a man's travel wallet with a return boarding pass peeking out, the other lying alone with no boarding pass; nothing readable.",
+      "check": "탑승권이 꽂힌 여권과 없는 여권이 보이는지 봅니다. 글자·숫자가 없어야 합니다."
+     },
+     "truth": {
+      "scene": "A dramatic seaside cliff at sunset: a lone man standing near the edge, looking back over his shoulder with a cold expression; far below, waves crash on the rocks; ominous; nobody falling.",
+      "check": "절벽 끝에 홀로 선 남자인지 봅니다. 떨어지는 사람은 없어야 합니다. 글자·숫자가 없어야 합니다."
+     }
+    }
    }
   },
   {
@@ -551,6 +1046,90 @@
     "truth": {
      "scene": "Inside an apartment elevator on a rainy evening, seen from the side: a very short adult man, only as tall as a ten-year-old child (the top of his head reaches just the middle of a tall button panel), wearing a raincoat, holds a CLOSED, tightly folded umbrella by its handle and stretches it straight up so that its pointed tip presses a button near the top of the panel; the umbrella is closed, not open; rain drips from the folded umbrella onto the floor; button labels blurred and unreadable; warm, friendly, not mocking.",
      "check": "아이만 한 키의 어른이 접은 우산 끝으로 높은 버튼을 누르는지, 우산이 펼쳐져 있지 않은지 봅니다. 버튼 숫자가 읽히면 안 됩니다. 사람을 놀리는 느낌이 들면 안 됩니다."
+    }
+   },
+   "adult": {
+    "level": 2,
+    "warn": {
+     "en": "Death",
+     "ko": "죽음"
+    },
+    "title": {
+     "en": "When the Elevator Stopped",
+     "ko": "엘리베이터가 멈춘 순간"
+    },
+    "setup": {
+     "en": "A man was riding the elevator in his office building when the power went out and the elevator stopped between floors. In the darkness, he knew at once that his wife had died.",
+     "ko": "한 남자가 회사 건물의 엘리베이터를 타고 가다가, 정전으로 엘리베이터가 층 사이에서 멈췄습니다. 어둠 속에서 그는 아내가 숨졌다는 것을 바로 알았습니다."
+    },
+    "truth": {
+     "en": "His wife was very ill and could not breathe on her own. At home she was kept alive by a breathing machine that ran on electricity. Its backup battery had failed the week before, and a new one was arriving the next day. When the whole city lost power, his elevator stopped, and in that moment he knew the machine at home had stopped too.",
+     "ko": "그의 아내는 중병으로 혼자서는 숨을 쉴 수 없었습니다. 집에서 전기로 돌아가는 인공호흡기 덕분에 살아 있었는데, 그 기계의 예비 배터리가 일주일 전에 고장 나 새 배터리가 다음 날 도착할 예정이었습니다. 도시 전체에 정전이 일어나 엘리베이터가 멈추자, 그는 그 순간 집에 있는 기계도 멈췄다는 것을 알았습니다."
+    },
+    "keys": [
+     {
+      "id": "machine",
+      "label": {
+       "en": "His wife's condition",
+       "ko": "아내의 상태"
+      },
+      "text": {
+       "en": "She lived on an electric breathing machine at home.",
+       "ko": "집에서 전기로 돌아가는 인공호흡기로 살고 있었다."
+      }
+     },
+     {
+      "id": "blackout",
+      "label": {
+       "en": "The blackout",
+       "ko": "정전"
+      },
+      "text": {
+       "en": "The whole city lost power, not just his building.",
+       "ko": "그 건물만이 아니라 도시 전체가 정전되었다."
+      }
+     },
+     {
+      "id": "battery",
+      "label": {
+       "en": "Why he knew",
+       "ko": "알아챈 이유"
+      },
+      "text": {
+       "en": "The machine's backup battery was broken, so it stopped too.",
+       "ko": "예비 배터리가 고장 나서 기계도 멈췄다."
+      }
+     }
+    ],
+    "hints": [
+     {
+      "en": "The power went out in a much bigger area than his building.",
+      "ko": "정전은 그 건물만이 아니라 훨씬 넓은 지역에서 일어났습니다."
+     },
+     {
+      "en": "His wife's life depended on a machine at home.",
+      "ko": "아내의 목숨은 집에 있는 기계에 달려 있었습니다."
+     }
+    ],
+    "facts": "- His wife was very ill and could not breathe on her own. At home, an electric breathing machine (ventilator) kept her alive.\n- The machine's backup battery had failed the week before; a new one was arriving the next day.\n- The whole city lost power. His elevator stopped between floors because of the same blackout.\n- When the elevator stopped, he knew the machine at home had stopped too, and that his wife had died.\n- He was right: she died during the blackout (YES).\n- Nobody caused the blackout on purpose (NO to murder). It was not suicide (NO).\n- He was not trapped for long, and he was not hurt (IRRELEVANT details beyond that).\n- Whether anyone else was at home, names, and the city are not part of the story (IRRELEVANT).",
+    "factsKo": "- 아내는 중병으로 혼자 숨을 쉴 수 없었다. 집에서 전기로 돌아가는 인공호흡기가 그녀를 살리고 있었다.\n- 그 기계의 예비 배터리는 일주일 전에 고장 났고, 새 배터리가 다음 날 올 예정이었다.\n- 도시 전체가 정전되었다. 엘리베이터도 같은 정전 때문에 층 사이에 멈췄다.\n- 엘리베이터가 멈추자 그는 집의 기계도 멈췄고 아내가 숨졌다는 것을 알았다.\n- 그의 생각이 맞았다: 아내는 정전 중에 숨졌다(예).\n- 누가 일부러 정전을 일으킨 것이 아니다(살인이냐고 물으면 아니오). 자살도 아니다(아니오).\n- 그는 오래 갇히지 않았고 다치지도 않았다(그 이상은 상관없음).\n- 집에 다른 사람이 있었는지, 이름, 도시는 이야기에 나오지 않는다(상관없음).",
+    "pictures": {
+     "cover": {
+      "scene": "Inside a stalled elevator lit only by a dim red emergency light: a man in a suit standing frozen, staring at the dark button panel with no readable numbers; tense and still.",
+      "check": "멈춘 엘리베이터 안의 남자인지 봅니다. 버튼 숫자가 읽히면 안 됩니다."
+     },
+     "hint1": {
+      "scene": "A city skyline at dusk with whole blocks of office windows going dark at once, as in a citywide blackout.",
+      "check": "도시 전체 불이 꺼지는 장면인지 봅니다. 글자·숫자가 없어야 합니다."
+     },
+     "hint2": {
+      "scene": "A bedside table at home with a medical breathing machine connected by a tube and a power cord, its screen dark; a glass of water beside it; no person.",
+      "check": "꺼진 인공호흡기가 보이는지 봅니다. 사람은 없어야 합니다. 글자·숫자가 없어야 합니다."
+     },
+     "truth": {
+      "scene": "A quiet bedroom at night during a blackout: moonlight through the window falls on a home hospital bed and a breathing machine with a dark screen; on the nightstand, an unopened box with a new battery; no person visible; deeply somber.",
+      "check": "어두운 방의 꺼진 인공호흡기와 뜯지 않은 배터리 상자가 보이는지 봅니다. 사람은 없어야 합니다. 글자·숫자가 없어야 합니다."
+     }
     }
    }
   },
@@ -635,6 +1214,81 @@
      "scene": "Bright desert afternoon: a hot-air balloon rising away over a rocky canyon in the distance, while in the foreground a sunburned man in a plain white undershirt and boxer shorts sits on a sand dune with his arms crossed, grumpily holding a broken match; the sand all around him is smooth and wind-swept with no footprints at all; comic.",
      "check": "지나친 노출이 없어야 합니다. 글자가 보이면 안 됩니다."
     }
+   },
+   "adult": {
+    "level": 2,
+    "warn": {
+     "en": "Death",
+     "ko": "죽음"
+    },
+    "title": {
+     "en": "The Man in the Desert",
+     "ko": "사막의 남자"
+    },
+    "setup": {
+     "en": "A man was found dead in the middle of the desert, wearing nothing but his underwear. In his hand was half of a broken match. There were no footprints anywhere around him.",
+     "ko": "사막 한가운데서 속옷 차림의 남자가 숨진 채 발견되었습니다. 그의 손에는 반쯤 부러진 성냥개비가 쥐어져 있었고, 주변 어디에도 발자국이 없었습니다."
+    },
+    "truth": {
+     "en": "The man had been crossing the desert in a hot-air balloon with several friends. Over the desert the balloon began to sink. To make it lighter they threw out everything they could, even the clothes they were wearing, but it kept going down. If no one got out, they would all crash. They agreed to draw matches: whoever drew the short, broken one would jump. He drew it, and he jumped from high above the sand. The fall killed him, and because he came down from the sky, there were no footprints around him. The lighter balloon stayed up, and his friends survived.",
+     "ko": "남자는 친구 몇 명과 함께 열기구를 타고 사막을 건너던 중이었습니다. 사막 위에서 열기구가 점점 가라앉기 시작했습니다. 그들은 무게를 줄이려고 짐은 물론 입고 있던 옷까지 다 던졌지만, 열기구는 계속 내려갔습니다. 누군가 내리지 않으면 모두 추락할 상황이었습니다. 그들은 성냥개비로 제비를 뽑아, 짧게 부러진 것을 뽑은 사람이 뛰어내리기로 했습니다. 그가 그것을 뽑았고, 높은 곳에서 모래 위로 뛰어내렸습니다. 그는 떨어져서 숨졌고, 하늘에서 떨어졌기 때문에 주변에 발자국이 없었습니다. 가벼워진 열기구는 다시 떠올랐고, 친구들은 살아남았습니다."
+    },
+    "keys": [
+     {
+      "id": "balloon",
+      "label": {
+       "en": "How he got there",
+       "ko": "그곳에 온 방법"
+      },
+      "text": {
+       "en": "He fell from a hot-air balloon.",
+       "ko": "열기구에서 떨어졌다."
+      }
+     },
+     {
+      "id": "clothes",
+      "label": {
+       "en": "Why he had no clothes",
+       "ko": "옷이 없던 이유"
+      },
+      "text": {
+       "en": "Everyone threw their clothes out to make the sinking balloon lighter.",
+       "ko": "가라앉는 열기구를 가볍게 하려고 옷까지 던졌다."
+      }
+     },
+     {
+      "id": "match",
+      "label": {
+       "en": "What the match means",
+       "ko": "성냥의 뜻"
+      },
+      "text": {
+       "en": "They drew matches to decide who would jump, and he drew the short one.",
+       "ko": "누가 뛰어내릴지 성냥으로 제비를 뽑았고, 그가 짧은 것을 뽑았다."
+      }
+     }
+    ],
+    "hints": [
+     {
+      "en": "He didn't walk to the spot where he was found.",
+      "ko": "그는 걸어서 그 자리에 온 것이 아닙니다."
+     },
+     {
+      "en": "The broken match was part of a choice made by a group of people.",
+      "ko": "부러진 성냥은 여러 사람이 무언가를 정할 때 쓰였습니다."
+     }
+    ],
+    "facts": "- The man and several friends were crossing the desert in a hot-air balloon. The exact number of friends is not part of the story (IRRELEVANT).\n- Over the desert, the balloon began to sink. They threw out everything they could to make it lighter, even their clothes, but it kept going down.\n- Someone had to get out or they would all crash. They agreed to draw matches; whoever drew the short, broken match would jump.\n- He drew the short match and jumped from high above the sand, as they had agreed. Nobody pushed him: answer NO to murder.\n- He jumped to keep the agreement and save the others. It was a sacrifice, not suicide out of despair: answer NO to 'Did he kill himself because he wanted to die?'\n- He died from the fall. He did not die of heat, thirst, or hunger: answer NO.\n- There were no footprints because he came down from the sky and never walked on the sand.\n- The broken match in his hand is the one he drew. He still had his underwear on; the rest of his clothes had been thrown out of the balloon.\n- The lighter balloon rose again, and his friends survived.\n- The names, the country, and the date are not part of the story (IRRELEVANT).",
+    "factsKo": "- 남자는 친구 몇 명과 함께 열기구를 타고 사막을 건너고 있었다. 친구가 정확히 몇 명인지는 이야기에 나오지 않는다(상관없음).\n- 사막 위에서 열기구가 가라앉기 시작했다. 무게를 줄이려고 옷까지 다 던졌지만 계속 내려갔다.\n- 누군가 내리지 않으면 모두 추락할 상황이었다. 성냥으로 제비를 뽑아, 짧게 부러진 성냥을 뽑은 사람이 뛰어내리기로 했다.\n- 그가 짧은 성냥을 뽑았고, 약속대로 높은 곳에서 모래 위로 뛰어내렸다. 아무도 그를 밀지 않았다: 살인이냐고 물으면 아니오라고 답한다.\n- 그는 약속을 지키고 다른 사람들을 살리려고 뛰어내렸다. 절망해서 한 자살이 아니라 희생이었다: '죽고 싶어서 스스로 목숨을 끊었나?'에는 아니오라고 답한다.\n- 그는 떨어져서 숨졌다. 더위나 목마름, 굶주림으로 죽은 것이 아니다: 아니오라고 답한다.\n- 하늘에서 떨어졌고 모래 위를 걷지 않았기 때문에 발자국이 없었다.\n- 손에 든 부러진 성냥은 그가 뽑은 제비다. 속옷은 입고 있었고, 나머지 옷은 열기구에서 던졌다.\n- 가벼워진 열기구는 다시 떠올랐고, 친구들은 살아남았다.\n- 이름, 나라, 날짜는 이야기에 나오지 않는다(상관없음).",
+    "pictures": {
+     "cover": "cover",
+     "hint1": "hint1",
+     "hint2": "hint2",
+     "truth": {
+      "scene": "A hot-air balloon basket high above a vast desert at dusk, the balloon sagging and low: several people inside seen as silhouettes, one man holding up a short broken match while the others look away; tense and somber; nobody is falling.",
+      "check": "열기구 안에서 한 사람이 짧은 성냥을 들고 있는지 봅니다. 떨어지는 장면이나 시신은 없어야 합니다. 글자·숫자가 없어야 합니다."
+     }
+    }
    }
   },
   {
@@ -717,6 +1371,81 @@
     "truth": {
      "scene": "A red firefighting helicopter hovering low over a burned-out forest clearing, having just set a big orange water bucket down on the ground; a dripping man in swim trunks and goggles climbs out of the bucket looking utterly confused; smoke far in the distance.",
      "check": "불길 속의 사람이나 다친 모습이 보이면 안 됩니다."
+    }
+   },
+   "adult": {
+    "level": 2,
+    "warn": {
+     "en": "Death",
+     "ko": "죽음"
+    },
+    "title": {
+     "en": "The Swimmer in the Forest",
+     "ko": "숲속의 수영복"
+    },
+    "setup": {
+     "en": "After a huge forest fire was put out, firefighters found a man dead in the middle of the burned forest. He was wearing only swim trunks and goggles. The nearest lake was miles away.",
+     "ko": "거대한 산불이 꺼진 뒤, 소방대원들이 불탄 숲 한가운데서 숨진 남자를 발견했습니다. 그는 수영복과 물안경만 걸치고 있었습니다. 가장 가까운 호수는 몇 킬로미터나 떨어져 있었습니다."
+    },
+    "truth": {
+     "en": "The man had been swimming in that faraway lake. To fight the fire, a firefighting helicopter flew low over the lake and dipped the huge bucket hanging beneath it into the water, and it scooped him up along with the water. No one noticed. The helicopter flew back over the fire and emptied the bucket, and the man fell with the water into the burning forest. The fall killed him.",
+     "ko": "남자는 멀리 있는 그 호수에서 수영을 하고 있었습니다. 불을 끄려고 소방 헬기가 호수 위로 낮게 날아와 아래에 매단 커다란 물통을 물에 담갔고, 남자도 물과 함께 퍼 올려졌습니다. 아무도 그것을 알아채지 못했습니다. 헬기는 불길 위로 돌아가 물통을 비웠고, 남자는 물과 함께 불타는 숲으로 떨어졌습니다. 그는 떨어져서 숨졌습니다."
+    },
+    "keys": [
+     {
+      "id": "swim",
+      "label": {
+       "en": "What he was doing before",
+       "ko": "그 전에 하던 일"
+      },
+      "text": {
+       "en": "He was swimming in the faraway lake.",
+       "ko": "멀리 있는 호수에서 수영하고 있었다."
+      }
+     },
+     {
+      "id": "bucket",
+      "label": {
+       "en": "How he got into the forest",
+       "ko": "숲에 오게 된 방법"
+      },
+      "text": {
+       "en": "A firefighting helicopter scooped him up with its water bucket and dropped him over the fire.",
+       "ko": "소방 헬기의 물통에 물과 함께 퍼 올려져 불 위에 떨어졌다."
+      }
+     },
+     {
+      "id": "fall",
+      "label": {
+       "en": "How he died",
+       "ko": "숨진 이유"
+      },
+      "text": {
+       "en": "He died from the fall.",
+       "ko": "떨어져서 숨졌다."
+      }
+     }
+    ],
+    "hints": [
+     {
+      "en": "He did not walk or run into the forest.",
+      "ko": "그는 걸어서도, 뛰어서도 숲에 들어가지 않았습니다."
+     },
+     {
+      "en": "Think about how such a huge fire is put out, and where all that water comes from.",
+      "ko": "그렇게 큰 산불을 어떻게 끄는지, 그 많은 물은 어디서 오는지 생각해 보세요."
+     }
+    ],
+    "facts": "- The man was swimming in a lake miles from the fire, wearing swim trunks and goggles.\n- A firefighting helicopter flew low over the lake and dipped its huge water bucket into the water. He was scooped up with the water.\n- Nobody saw him go into the bucket. The crew did not know he was there: answer NO to 'Did they do it on purpose?'\n- The helicopter emptied the bucket over the fire, and he fell with the water into the burning forest.\n- He died from the fall. Answer NO to 'Did he burn to death?' and NO to 'Did he drown?'\n- It was an accident, not murder and not suicide.\n- He did not walk, run, or drive into the forest.\n- His name, the lake's name, and the place are not part of the story (IRRELEVANT).",
+    "factsKo": "- 남자는 불에서 몇 킬로미터 떨어진 호수에서 수영복과 물안경 차림으로 수영하고 있었다.\n- 소방 헬기가 호수 위로 낮게 날아와 커다란 물통을 물에 담갔고, 그는 물과 함께 퍼 올려졌다.\n- 그가 물통에 들어가는 것을 아무도 보지 못했다. 헬기 대원들은 몰랐다: '일부러 그랬나?'에는 아니오라고 답한다.\n- 헬기가 불 위에서 물통을 비웠고, 그는 물과 함께 불타는 숲으로 떨어졌다.\n- 그는 떨어져서 숨졌다. '불에 타서 죽었나?', '물에 빠져 죽었나?'에는 아니오라고 답한다.\n- 사고였다. 살인도 자살도 아니다.\n- 그는 숲에 걸어서도, 뛰어서도, 차를 타고도 들어오지 않았다.\n- 그의 이름, 호수의 이름, 장소는 이야기에 나오지 않는다(상관없음).",
+    "pictures": {
+     "cover": "cover",
+     "hint1": "hint1",
+     "hint2": "hint2",
+     "truth": {
+      "scene": "A red firefighting helicopter flying low over a lake, its big orange water bucket on a long cable just lifting out of the water with a heavy splash; within the spilling water a small human silhouette in swim trunks can be made out; on the shore, an empty towel and sandals; dramatic, not gruesome.",
+      "check": "헬기 물통에서 쏟아지는 물속에 사람 실루엣이 보이는지 봅니다. 끔찍하지 않아야 합니다. 글자·숫자가 없어야 합니다."
+     }
     }
    }
   },
@@ -801,6 +1530,81 @@
      "scene": "Night on a tiny deserted island: behind a rock, away from a small campfire, a man secretly opens a hidden emergency box full of canned food, signal flares, and a radio; in the distance his injured friend sleeps by the fire; tense mood.",
      "check": "무기나 글자가 보이면 안 됩니다."
     }
+   },
+   "adult": {
+    "level": 3,
+    "warn": {
+     "en": "Suicide, cannibalism",
+     "ko": "자살, 인육"
+    },
+    "title": {
+     "en": "Sea Turtle Soup",
+     "ko": "바다거북 스프"
+    },
+    "setup": {
+     "en": "A man ordered sea turtle soup at a seaside restaurant. After one spoonful, he put down his spoon and asked the chef, \"Excuse me, is this really sea turtle soup?\" The chef said it was. The man paid, went home, and that night he took his own life.",
+     "ko": "한 남자가 바닷가 식당에서 바다거북 스프를 주문했습니다. 한 숟가락 맛본 그는 숟가락을 내려놓고 요리사에게 \"실례지만, 이게 정말 바다거북 스프입니까?\" 하고 물었습니다. 요리사는 그렇다고 했습니다. 남자는 값을 치르고 집으로 돌아갔고, 그날 밤 스스로 목숨을 끊었습니다."
+    },
+    "truth": {
+     "en": "Years earlier, the man's ship had sunk. He and a few other survivors drifted for days in a lifeboat before reaching a small island, and some of them, his wife among them, did not survive. The man was weak with fever, and the others fed him what they called \"sea turtle soup.\" That soup kept him alive until a passing ship rescued them. Today, tasting real sea turtle soup for the first time, he realized it tasted nothing like the soup on the island. He understood what the others had really fed him: the flesh of those who had died, his own wife among them. Unable to live with it, he ended his life that night.",
+     "ko": "몇 해 전, 남자가 탄 배가 침몰했습니다. 그는 몇몇 생존자와 함께 구명보트를 타고 며칠을 떠돌다 작은 섬에 닿았지만, 그의 아내를 포함해 몇 사람은 끝내 살아남지 못했습니다. 열에 시달려 기운이 없던 남자에게 다른 생존자들은 '바다거북 스프'라며 국을 먹였고, 그 국 덕분에 그는 지나가던 배에 구조될 때까지 살아남았습니다. 오늘 처음으로 진짜 바다거북 스프를 맛본 그는, 섬에서 먹은 국과 맛이 전혀 다르다는 것을 알았습니다. 그때 사람들이 그에게 먹인 것이 사실은 먼저 죽은 사람들의 살, 그 가운데 자기 아내의 살이었다는 것을 깨달은 것입니다. 그 사실을 견디지 못한 그는 그날 밤 스스로 목숨을 끊었습니다."
+    },
+    "keys": [
+     {
+      "id": "past",
+      "label": {
+       "en": "His past",
+       "ko": "그의 과거"
+      },
+      "text": {
+       "en": "Years earlier, he survived a shipwreck and was stranded on an island; his wife died there.",
+       "ko": "몇 해 전 배가 침몰해 섬에 갇혔고, 그때 아내가 죽었다."
+      }
+     },
+     {
+      "id": "soup",
+      "label": {
+       "en": "The island soup",
+       "ko": "섬에서 먹은 국"
+      },
+      "text": {
+       "en": "The \"sea turtle soup\" he was fed on the island was the flesh of the dead, his wife among them.",
+       "ko": "섬에서 먹은 '바다거북 스프'는 죽은 사람들, 그 가운데 아내의 살이었다."
+      }
+     },
+     {
+      "id": "why",
+      "label": {
+       "en": "Why he took his life",
+       "ko": "목숨을 끊은 이유"
+      },
+      "text": {
+       "en": "Tasting real sea turtle soup, he realized the truth and could not live with it.",
+       "ko": "진짜 바다거북 스프를 맛보고 진실을 깨달았고, 견딜 수 없었다."
+      }
+     }
+    ],
+    "hints": [
+     {
+      "en": "This was not the first time someone had told him he was eating sea turtle soup.",
+      "ko": "그가 '바다거북 스프'라는 말을 들으며 무언가를 먹은 것은 이번이 처음이 아니었습니다."
+     },
+     {
+      "en": "Long ago, he was stranded at sea with others, and not everyone survived.",
+      "ko": "오래전 그는 다른 사람들과 함께 바다에서 조난을 당했고, 모두가 살아남지는 못했습니다."
+     }
+    ],
+    "facts": "- Years earlier, the man's ship sank. He and a few survivors drifted for days in a lifeboat, then reached a small island. The exact number of people is not part of the story (IRRELEVANT).\n- Some of them died, including his wife.\n- The man was weak with fever. The others fed him what they called \"sea turtle soup,\" and it kept him alive until a passing ship rescued them.\n- The island soup was really made from the flesh of those who had died, his wife among them. The man did not know this at the time.\n- The others did it to keep him alive, not to hurt him.\n- At the seaside restaurant, the soup really was sea turtle soup (YES). The chef and the restaurant did nothing wrong.\n- Tasting real sea turtle soup for the first time, he realized the island soup had tasted nothing like it, and understood what he had eaten.\n- That night he took his own life. How he did it is not part of the story (IRRELEVANT).\n- Nobody else caused his death: answer NO to murder or poisoning. The soup at the restaurant was not poisoned (NO).\n- His name, the restaurant's name, and the year are not part of the story (IRRELEVANT).",
+    "factsKo": "- 몇 해 전 남자가 탄 배가 침몰했다. 그는 몇몇 생존자와 구명보트로 며칠을 떠돌다 작은 섬에 닿았다. 정확한 인원은 이야기에 나오지 않는다(상관없음).\n- 그 가운데 몇 사람이 죽었고, 그의 아내도 죽었다.\n- 남자는 열에 시달려 기운이 없었다. 다른 사람들이 '바다거북 스프'라며 국을 먹였고, 그 덕분에 그는 지나가던 배에 구조될 때까지 살았다.\n- 섬에서 먹은 국은 사실 먼저 죽은 사람들, 그 가운데 아내의 살로 만든 것이었다. 남자는 그때 그것을 몰랐다.\n- 다른 사람들은 그를 해치려던 것이 아니라 살리려고 그렇게 했다.\n- 바닷가 식당의 스프는 정말 바다거북 스프였다(예). 요리사와 식당은 잘못한 것이 없다.\n- 처음으로 진짜 바다거북 스프를 맛본 그는, 섬에서 먹은 국과 맛이 전혀 다르다는 것을 알고 자기가 먹은 것이 무엇이었는지 깨달았다.\n- 그날 밤 그는 스스로 목숨을 끊었다. 어떤 방법이었는지는 이야기에 나오지 않는다(상관없음).\n- 다른 누가 그를 죽인 것이 아니다: 살인이나 독살이냐고 물으면 아니오라고 답한다. 식당의 스프에 독은 없었다(아니오).\n- 그의 이름, 식당 이름, 연도는 이야기에 나오지 않는다(상관없음).",
+    "pictures": {
+     "cover": "cover",
+     "hint1": "hint1",
+     "hint2": "hint2",
+     "truth": {
+      "scene": "Night on a tiny rocky island: a few exhausted, ragged shipwreck survivors around a small campfire, one of them handing a steaming dented tin bowl to a weak man wrapped in a blanket; their faces in shadow; a wrecked lifeboat on the shore; grim and somber, nothing gruesome, no bodies.",
+      "check": "조난자들이 담요를 두른 남자에게 그릇을 건네는 장면인지 봅니다. 시신이나 끔찍한 것은 없어야 합니다. 글자·숫자가 없어야 합니다."
+     }
+    }
    }
   },
   {
@@ -884,6 +1688,81 @@
      "scene": "A modest apartment kitchen at night: twin boys in pajamas cheering at a table piled with fried chicken, pizza, and a birthday cake with lit candles, their mother laughing beside them; warm and joyful.",
      "check": "글자가 보이면 안 됩니다."
     }
+   },
+   "adult": {
+    "level": 3,
+    "warn": {
+     "en": "Death of a child",
+     "ko": "자녀의 죽음"
+    },
+    "title": {
+     "en": "The Wrong Door",
+     "ko": "잘못 배달된 생일상"
+    },
+    "setup": {
+     "en": "An older couple ordered a birthday feast: fried chicken, pizza, and a cake. It was delivered to the apartment right below theirs. They knew it, but they didn't call the restaurant or knock on their neighbors' door. Instead, they ordered two bowls of black-bean noodles for themselves and smiled all through dinner.",
+     "ko": "한 노부부가 치킨과 피자, 케이크까지 생일상을 주문했습니다. 그런데 그 음식은 바로 아랫집으로 배달되었습니다. 부부는 그 사실을 알고 있었지만, 가게에 전화하지도, 아랫집 문을 두드리지도 않았습니다. 대신 자기들 먹을 짜장면 두 그릇을 시키고, 저녁 내내 싱글벙글 웃었습니다."
+    },
+    "truth": {
+     "en": "The delivery wasn't a mistake. The couple had typed in the downstairs address on purpose. Three years earlier, their only son died in a car accident, and they agreed to donate his organs. His heart went to a young man who had been close to death. Through letters passed along by the donor network, the couple later met him, and he moved into the apartment right below theirs to be near the family that had saved his life. That day was their son's birthday. Every year on that day, the couple sends a birthday feast downstairs to the young man who carries their son's heart, and eats simple noodles themselves, smiling, because their son's heart is still beating just below their floor.",
+     "ko": "배달 실수가 아니었습니다. 부부가 일부러 아랫집 주소를 적어 넣은 것이었습니다. 3년 전 부부의 외아들이 교통사고로 세상을 떠났고, 부부는 아들의 장기를 기증하기로 했습니다. 아들의 심장은 죽음을 눈앞에 두고 있던 한 청년에게 이식되었습니다. 기증 기관을 통해 편지를 주고받다가 부부는 그 청년을 만나게 되었고, 청년은 자기 목숨을 살려 준 가족 곁에 있고 싶어 부부의 바로 아랫집으로 이사를 왔습니다. 그날은 세상을 떠난 아들의 생일이었습니다. 해마다 그날이면 부부는 아들의 심장을 품고 사는 청년에게 생일상을 보내고, 자신들은 소박하게 짜장면을 먹으며 웃습니다. 아들의 심장이 바로 발밑에서 여전히 뛰고 있기 때문입니다."
+    },
+    "keys": [
+     {
+      "id": "purpose",
+      "label": {
+       "en": "Was it a mistake?",
+       "ko": "실수였나"
+      },
+      "text": {
+       "en": "No. The couple sent it downstairs on purpose.",
+       "ko": "아니다. 부부가 일부러 아랫집으로 보냈다."
+      }
+     },
+     {
+      "id": "son",
+      "label": {
+       "en": "Whose birthday it was",
+       "ko": "누구의 생일이었나"
+      },
+      "text": {
+       "en": "Their late son's birthday; he died three years earlier.",
+       "ko": "3년 전 세상을 떠난 아들의 생일이었다."
+      }
+     },
+     {
+      "id": "heart",
+      "label": {
+       "en": "Who lives downstairs",
+       "ko": "아랫집에 사는 사람"
+      },
+      "text": {
+       "en": "The young man who received their son's heart.",
+       "ko": "아들의 심장을 이식받은 청년이다."
+      }
+     }
+    ],
+    "hints": [
+     {
+      "en": "The delivery driver didn't make a mistake.",
+      "ko": "배달 기사는 실수하지 않았습니다."
+     },
+     {
+      "en": "It was the couple's son's birthday, but their son had died three years earlier.",
+      "ko": "그날은 부부의 아들의 생일이었지만, 아들은 3년 전에 세상을 떠났습니다."
+     }
+    ],
+    "facts": "- An older couple ordered a birthday feast (fried chicken, pizza, and a cake) and, on purpose, typed in the address of the apartment directly below theirs. They paid in advance.\n- The delivery driver made no mistake.\n- Three years earlier, their only son died in a car accident. They agreed to donate his organs.\n- His heart was transplanted into a young man who was close to death.\n- Through letters passed along by the organ donor network, the couple later met the young man.\n- The young man moved into the apartment right below the couple's to be near them. They are close, like family.\n- That day was the son's birthday. Every year on it, the couple sends a birthday feast downstairs to the young man.\n- The couple ordered two bowls of black-bean noodles (jajangmyeon) for themselves and smiled, because their son's heart is still beating downstairs.\n- It was not the couple's own birthday and not the young man's birth date (NO), though he celebrates the day with them.\n- Nobody was tricked or harmed. Nothing was stolen. The young man knows who sends the feast (YES).\n- Names, ages, the restaurant, and the city are not part of the story (IRRELEVANT).",
+    "factsKo": "- 노부부는 생일상(치킨, 피자, 케이크)을 주문하면서 일부러 바로 아랫집 주소를 적어 넣었다. 값은 미리 치렀다.\n- 배달 기사는 실수하지 않았다.\n- 3년 전 부부의 외아들이 교통사고로 세상을 떠났다. 부부는 아들의 장기를 기증하기로 했다.\n- 아들의 심장은 죽음을 눈앞에 둔 한 청년에게 이식되었다.\n- 장기 기증 기관을 통해 편지를 주고받다가 부부는 그 청년을 만나게 되었다.\n- 청년은 부부 곁에 있고 싶어 바로 아랫집으로 이사를 왔다. 서로 가족처럼 가깝다.\n- 그날은 아들의 생일이었다. 해마다 그날이면 부부는 아랫집 청년에게 생일상을 보낸다.\n- 부부는 자기들 먹을 짜장면 두 그릇을 시키고 웃었다. 아들의 심장이 아랫집에서 여전히 뛰고 있기 때문이다.\n- 부부 자신의 생일도, 청년이 태어난 날도 아니다(아니오). 다만 청년은 그날을 부부와 함께 기념한다.\n- 속은 사람도, 다친 사람도 없다. 도둑맞은 것도 없다. 청년은 누가 생일상을 보내는지 안다(예).\n- 이름, 나이, 가게, 도시는 이야기에 나오지 않는다(상관없음).",
+    "pictures": {
+     "cover": "cover",
+     "hint1": "hint1",
+     "hint2": "hint2",
+     "truth": {
+      "scene": "An apartment building at night shown in cross-section with two floors: upstairs, an older couple smiling at a simple table with two bowls of black-bean noodles and a framed photo of a young man; downstairs, a young man in a sweater at a table with fried chicken, pizza, and a birthday cake with lit candles, one hand resting over his heart; warm lamplight, gentle and hopeful.",
+      "check": "위층 노부부와 아래층 청년이 함께 보이는지 봅니다. 액자 사진에도 글자·숫자가 없어야 합니다."
+     }
+    }
    }
   },
   {
@@ -966,6 +1845,87 @@
     "truth": {
      "scene": "Evening in a cozy apartment: a father in pajamas and a cardigan opening a study door with open arms as his teenage daughter, still wearing her school backpack, rushes toward him in happy surprise; the mother smiling behind them; warm lamplight; joyful.",
      "check": "글자가 보이면 안 됩니다."
+    }
+   },
+   "adult": {
+    "level": 2,
+    "warn": {
+     "en": "Death of a parent",
+     "ko": "부모의 죽음"
+    },
+    "title": {
+     "en": "Dad's Business Trip",
+     "ko": "아빠의 출장"
+    },
+    "setup": {
+     "en": "During the week of her college entrance exam, a girl was told that her dad was away on a business trip. Every night he texted her: \"Get some sleep. I'm proud of you.\" Yet his car never left the parking lot, and his shoes stayed by the front door. On the evening after the exam, her mother sat her down, holding Dad's phone.",
+     "ko": "대학 입학시험이 있는 주에, 딸은 아빠가 출장을 갔다는 말을 들었습니다. 아빠는 밤마다 \"푹 자. 네가 자랑스럽다.\"라고 문자를 보냈습니다. 그런데 아빠의 차는 주차장에서 한 번도 움직이지 않았고, 아빠의 구두도 현관에 그대로 있었습니다. 시험이 끝난 날 저녁, 엄마는 아빠의 휴대폰을 손에 쥔 채 딸을 앉혔습니다."
+    },
+    "truth": {
+     "en": "There was no business trip. Four days before the exam, late at night while his daughter slept, Dad collapsed with a heart attack and died at the hospital. Mom made the hardest choice of her life. Knowing how much the exam meant to their daughter, and how much her husband had wanted her to do well, she kept his death a secret until the exam was over. She told her daughter that Dad had left early on a business trip, and every night she sent the texts herself from his phone, writing what she knew he would have said. Relatives quietly arranged for the funeral to be held after the exam. On the evening the exam ended, Mom sat her daughter down, Dad's phone in her hand, and told her the truth.",
+     "ko": "출장은 없었습니다. 시험 나흘 전 늦은 밤, 딸이 자는 사이에 아빠는 심장마비로 쓰러졌고 병원에서 세상을 떠났습니다. 엄마는 생애 가장 힘든 결정을 했습니다. 시험이 딸에게 얼마나 중요한지, 남편이 딸이 시험을 잘 보기를 얼마나 바랐는지 알았기에, 시험이 끝날 때까지 남편의 죽음을 숨기기로 한 것입니다. 엄마는 딸에게 아빠가 새벽에 출장을 떠났다고 말했고, 밤마다 아빠의 휴대폰으로 남편이 했을 말을 직접 써서 보냈습니다. 친척들은 장례를 시험 뒤로 미루도록 조용히 도왔습니다. 시험이 끝난 날 저녁, 엄마는 아빠의 휴대폰을 손에 쥔 채 딸을 앉히고 사실을 말했습니다."
+    },
+    "keys": [
+     {
+      "id": "died",
+      "label": {
+       "en": "Where Dad was",
+       "ko": "아빠는 어디 있었나"
+      },
+      "text": {
+       "en": "He had died of a heart attack four days before the exam; there was no trip.",
+       "ko": "시험 나흘 전 심장마비로 세상을 떠났다. 출장은 없었다."
+      }
+     },
+     {
+      "id": "texts",
+      "label": {
+       "en": "Who sent the texts",
+       "ko": "문자를 보낸 사람"
+      },
+      "text": {
+       "en": "Mom sent them from Dad's phone.",
+       "ko": "엄마가 아빠의 휴대폰으로 보냈다."
+      }
+     },
+     {
+      "id": "why",
+      "label": {
+       "en": "Why it was hidden",
+       "ko": "숨긴 이유"
+      },
+      "text": {
+       "en": "So their daughter could take the exam first.",
+       "ko": "딸이 먼저 시험을 치를 수 있게 하려고."
+      }
+     }
+    ],
+    "hints": [
+     {
+      "en": "Dad could not have written those texts.",
+      "ko": "아빠는 그 문자들을 쓸 수 없었습니다."
+     },
+     {
+      "en": "Something happened to Dad the night before the 'trip' began, and Mom chose to protect her daughter's biggest day.",
+      "ko": "'출장'이 시작되기 전날 밤 아빠에게 큰일이 생겼고, 엄마는 딸의 가장 중요한 날을 지키기로 했습니다."
+     }
+    ],
+    "facts": "- There was no business trip.\n- Four days before the exam, late at night while the daughter slept, Dad collapsed with a heart attack and died at the hospital.\n- The daughter slept through that night and never knew Dad had gone to the hospital (NO if asked whether she knew).\n- Mom decided to keep his death secret until the exam was over, because the exam meant so much to their daughter and her husband had wanted her to do well.\n- Mom told the daughter that Dad had left early on a business trip.\n- Every night Mom sent the texts from Dad's phone, writing what she knew he would have said.\n- Relatives quietly arranged for the funeral to be held after the exam.\n- Dad's car and shoes stayed home because he never went anywhere.\n- On the evening the exam ended, Mom told her daughter the truth, holding Dad's phone.\n- Nobody committed a crime, and it was not suicide (NO). Dad was not sick for a long time beforehand; it was sudden.\n- Whether the daughter passed the exam is not part of the story (IRRELEVANT). Names and the city are IRRELEVANT.",
+    "factsKo": "- 출장은 없었다.\n- 시험 나흘 전 늦은 밤, 딸이 자는 사이에 아빠가 심장마비로 쓰러져 병원에서 세상을 떠났다.\n- 딸은 그날 밤 깨지 않았고, 아빠가 병원에 간 줄도 몰랐다(알았냐고 물으면 아니오).\n- 엄마는 시험이 딸에게 얼마나 중요한지, 남편이 딸이 시험을 잘 보기를 얼마나 바랐는지 알았기에, 시험이 끝날 때까지 죽음을 숨기기로 했다.\n- 엄마는 딸에게 아빠가 새벽에 출장을 떠났다고 말했다.\n- 밤마다 엄마가 아빠의 휴대폰으로, 남편이 했을 말을 직접 써서 문자를 보냈다.\n- 친척들은 장례를 시험 뒤로 미루도록 조용히 도왔다.\n- 아빠는 어디에도 가지 않았기 때문에 차와 구두가 집에 그대로 있었다.\n- 시험이 끝난 날 저녁, 엄마는 아빠의 휴대폰을 쥔 채 딸에게 사실을 말했다.\n- 범죄는 없었고, 자살도 아니다(아니오). 아빠가 오래 앓던 것이 아니라 갑작스러운 일이었다.\n- 딸이 시험에 붙었는지는 이야기에 나오지 않는다(상관없음). 이름과 도시도 상관없음.",
+    "pictures": {
+     "cover": "hint1",
+     "hint1": {
+      "scene": "Close-up of a woman's hands holding a man's smartphone at night, the screen glowing softly with a blurred, unreadable message; a wedding ring on her finger; dim kitchen in the background.",
+      "check": "여자의 손에 든 남자 휴대폰이 보이는지 봅니다. 화면 글자는 읽히지 않아야 합니다."
+     },
+     "hint2": {
+      "scene": "A wet apartment parking lot late at night, the red and white flashing lights of an ambulance reflected in the puddles; an apartment entrance with its lights on; no people in focus.",
+      "check": "밤 주차장에 구급차 불빛이 비치는지 봅니다. 글자·숫자가 없어야 합니다."
+     },
+     "truth": {
+      "scene": "Evening in a dim living room: a mother sitting close beside her teenage daughter on a sofa, holding her hands; on the coffee table, a man's smartphone and a framed family photo; the daughter's school bag on the floor; soft lamplight, grief and tenderness, faces partly in shadow.",
+      "check": "엄마가 딸의 손을 잡고 앉은 장면인지 봅니다. 액자 사진에도 글자·숫자가 없어야 합니다."
+     }
     }
    }
   },

@@ -36,6 +36,62 @@ def visible_texts(c):
     for i, h in enumerate(c.get("hints", [])):
         yield f"hints[{i}]", h
 
+SLOTS = ("cover", "hint1", "hint2", "truth")
+
+def check_story(c, w):
+    """The parts every telling of a case needs: key points, two hints, judging notes."""
+    keys = c.get("keys", [])
+    if not 2 <= len(keys) <= 5: err(f"{w} keys: need 2 to 5 key points")
+    kids = set()
+    for i, k in enumerate(keys):
+        if not k.get("id"): err(f"{w} keys[{i}].id: missing")
+        if k.get("id") in kids: err(f"{w} keys[{i}].id repeats")
+        kids.add(k.get("id"))
+        bilingual(k.get("label"), f"{w} keys[{i}].label")
+        bilingual(k.get("text"), f"{w} keys[{i}].text")
+    hints = c.get("hints", [])
+    if len(hints) != 2: err(f"{w} hints: need exactly 2")
+    for i, h in enumerate(hints): bilingual(h, f"{w} hints[{i}]")
+    if not isinstance(c.get("facts"), str) or len(c.get("facts", "")) < 80:
+        err(f"{w} facts: missing or too short")
+    # Korean judging notes for the host screen. Optional: the English is shown when they are missing.
+    for en_key, ko_key in (("facts", "factsKo"), ("notStated", "notStatedKo")):
+        if en_key not in c:
+            continue
+        if ko_key not in c:
+            warn(f"{w} {ko_key}: missing, so the host screen shows the English {en_key}")
+            continue
+        ko, en = c[ko_key], c.get(en_key)
+        if not isinstance(ko, str) or not ko.strip():
+            err(f"{w} {ko_key}: empty")
+        elif isinstance(en, str) and ko.count("\n") != en.count("\n"):
+            warn(f"{w} {ko_key}: {ko.count(chr(10)) + 1} lines but {en_key} has {en.count(chr(10)) + 1}; check that they match")
+
+def check_adult(c, w):
+    """College version of a mystery: a second telling, shown only with the college link (?group=college)."""
+    a = c.get("adult")
+    w = f"{w} adult"
+    if c.get("kind") != "mystery": err(f"{w}: only mysteries can have a college version")
+    if not isinstance(a, dict):
+        err(f"{w}: must be an object"); return
+    if a.get("level") not in (1, 2, 3): err(f"{w} level: must be 1, 2 or 3")
+    bilingual(a.get("warn"), f"{w} warn", 40)
+    bilingual(a.get("title"), f"{w} title", 60)
+    bilingual(a.get("setup"), f"{w} setup", 700)
+    bilingual(a.get("truth"), f"{w} truth")
+    check_story(a, w)
+    pics = a.get("pictures", {})
+    if not isinstance(pics, dict):
+        err(f"{w} pictures: must be an object"); return
+    for slot in SLOTS:
+        p = pics.get(slot)
+        if p is None or (isinstance(p, str) and p in SLOTS):
+            continue  # the youth picture is used
+        if isinstance(p, str):
+            err(f"{w} pictures.{slot}: \"{p}\" is not a picture slot (use cover, hint1, hint2 or truth)")
+        elif not isinstance(p, dict) or not p.get("scene") or not p.get("check"):
+            err(f"{w} pictures.{slot}: a new picture needs scene and check")
+
 try:
     data = json.load(open(path, encoding="utf-8"))
 except Exception as e:
@@ -70,34 +126,11 @@ for n, c in enumerate(cases):
     bilingual(c.get("title"), f"{w} title", 60)
     bilingual(c.get("setup"), f"{w} setup", 700)
     bilingual(c.get("truth"), f"{w} truth")
-    keys = c.get("keys", [])
-    if not 2 <= len(keys) <= 5: err(f"{w} keys: need 2 to 5 key points")
-    kids = set()
-    for i, k in enumerate(keys):
-        if not k.get("id"): err(f"{w} keys[{i}].id: missing")
-        if k.get("id") in kids: err(f"{w} keys[{i}].id repeats")
-        kids.add(k.get("id"))
-        bilingual(k.get("label"), f"{w} keys[{i}].label")
-        bilingual(k.get("text"), f"{w} keys[{i}].text")
-    hints = c.get("hints", [])
-    if len(hints) != 2: err(f"{w} hints: need exactly 2")
-    for i, h in enumerate(hints): bilingual(h, f"{w} hints[{i}]")
-    if not isinstance(c.get("facts"), str) or len(c.get("facts", "")) < 80:
-        err(f"{w} facts: missing or too short")
-    # Korean judging notes for the host screen. Optional: the English is shown when they are missing.
-    for en_key, ko_key in (("facts", "factsKo"), ("notStated", "notStatedKo")):
-        if en_key not in c:
-            continue
-        if ko_key not in c:
-            warn(f"{w} {ko_key}: missing, so the host screen shows the English {en_key}")
-            continue
-        ko, en = c[ko_key], c.get(en_key)
-        if not isinstance(ko, str) or not ko.strip():
-            err(f"{w} {ko_key}: empty")
-        elif isinstance(en, str) and ko.count("\n") != en.count("\n"):
-            warn(f"{w} {ko_key}: {ko.count(chr(10)) + 1} lines but {en_key} has {en.count(chr(10)) + 1}; check that they match")
+    check_story(c, w)
+    if "adult" in c:
+        check_adult(c, w)
     pics = c.get("pictures", {})
-    for slot in ("cover", "hint1", "hint2", "truth"):
+    for slot in SLOTS:
         p = pics.get(slot, {})
         if not p.get("scene"): err(f"{w} pictures.{slot}.scene: missing")
         if not p.get("check"): err(f"{w} pictures.{slot}.check: missing")
@@ -109,7 +142,7 @@ for n, c in enumerate(cases):
         for i, s in enumerate(sil): bilingual(s, f"{w} silent[{i}]")
         if not isinstance(c.get("notStated"), str) or not c["notStated"].strip():
             err(f"{w} notStated: missing")
-    # Death, suicide and violence stay out of what players see.
+    # Death, suicide and violence stay out of what players see (the college versions are exempt).
     for where, obj in visible_texts(c):
         for lang, rx in (("en", BANNED_EN), ("ko", BANNED_KO)):
             m = rx.search((obj or {}).get(lang, "") if isinstance(obj, dict) else "")
@@ -117,7 +150,8 @@ for n, c in enumerate(cases):
                 msg = f"{w} {where}.{lang}: contains \"{m.group(0)}\""
                 (err if kind == "mystery" else warn)(msg)
 
-print(f"{len(cases)} cases checked ({sum(c.get('kind')=='mystery' for c in cases)} mysteries, {sum(c.get('kind')=='bible' for c in cases)} Bible), limit {cap}.")
+print(f"{len(cases)} cases checked ({sum(c.get('kind')=='mystery' for c in cases)} mysteries, {sum(c.get('kind')=='bible' for c in cases)} Bible, "
+      f"{sum('adult' in c for c in cases)} college versions), limit {cap}.")
 for m in warnings: print("note:", m)
 for m in errors: print("FIX:", m)
 print("OK" if not errors else f"{len(errors)} problem(s) to fix.")

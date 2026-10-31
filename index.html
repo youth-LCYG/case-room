@@ -1189,11 +1189,12 @@ a.btn { text-decoration: none; }
   const RELAY_PASS_KEY = "caseRoomRelayPass";
   const relay = { url: recall(RELAY_URL_KEY), pass: recall(RELAY_PASS_KEY) };
   const relayReady = !hasClaude && !!(relay.url && relay.pass);
-  // Only the college group's link (?group=college) offers the college versions of the mysteries, with a switch
-  // back to the youth stories. Every other link shows the youth stories only, even on a device that used the college link.
-  const GROUP = !hasClaude && /[?&]group=college(&|$)/i.test(location.search) ? "college" : "youth";
+  // Which stories the mysteries shelf shows: the college versions first, or the youth stories.
+  // A device keeps the last choice; the college link (?group=college) always opens on the college versions.
+  // The Claude version carries the youth stories only.
   function initialAudience() {
-    if (GROUP !== "college") return "youth";
+    if (hasClaude) return "youth";
+    if (/[?&]group=college(&|$)/i.test(location.search)) return "adult";
     return recall("caseRoomAudience") === "youth" ? "youth" : "adult";
   }
   const state = { lang: initialLang(), mode: initialMode(), view: "home", caseId: null, games: {}, play: initialPlay(), teams: initialTeams(), room: null, audience: initialAudience() };
@@ -1574,7 +1575,7 @@ a.btn { text-decoration: none; }
     // The players' screen offers to open the host screen while the host judges.
     const present = !CAN_PRESENT || HOST_VIEW || remoteRole() || effMode() !== "host" ? ""
       : sync.peer ? `<span class="mode-chip" data-s="linked"><i></i>${esc(t.hostLinked)}</span>`
-      : `<a class="btn btn-small" href="${GROUP === "college" ? "?host&group=college" : "?host"}" target="caseRoomHost" data-act="host-open">${esc(t.hostOpen)}</a>`;
+      : `<a class="btn btn-small" href="?host" target="caseRoomHost" data-act="host-open">${esc(t.hostOpen)}</a>`;
     return `${HOST_VIEW ? `<p class="host-banner" role="note">${esc(t.hostBanner)}</p>` : ""}<header class="top">
       <h1><button type="button" class="brand" data-act="home">${ICON_MARK}<span>${esc(t.brand)}</span></button></h1>
       <div class="controls">
@@ -1626,7 +1627,7 @@ a.btn { text-decoration: none; }
           ${warnChip(c)}
         </span>
       </button>`;
-    const audience = GROUP === "college" && hasAdult() ? `<div class="audience">
+    const audience = hasAdult() ? `<div class="audience">
             <span class="eyebrow">${esc(t.audienceLabel)}</span>
             <div class="seg" role="group" aria-label="${esc(t.audienceLabel)}">
               <button type="button" data-act="audience" data-a="youth" aria-pressed="${state.audience !== "adult"}">${esc(t.audienceYouth)}</button>
@@ -2712,7 +2713,7 @@ a.btn { text-decoration: none; }
         }
         break;
       case "audience": {
-        const a = b.dataset.a === "adult" && GROUP === "college" ? "adult" : "youth";
+        const a = b.dataset.a === "adult" && hasAdult() ? "adult" : "youth";
         if (a !== state.audience) { state.audience = a; remember("caseRoomAudience", a); applyAudience(); render(); }
         break;
       }

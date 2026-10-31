@@ -55,5 +55,5 @@ jobs:
             sleep 5
           done
           echo "::notice::$url answers: ${out:-nothing}"
-          code=$(curl -s -o /dev/null -w '%{http_code}' --max-time 10 -X POST -H 'Origin: https://youth-lcyg.github.io' "$url/rooms" || true)
-          echo "::notice::Creating a test room from the game's address: HTTP $code"
+          python3 -m pip install --quiet websockets
+          python3 rooms/smoke_test.py "$url" https://youth-lcyg.github.io

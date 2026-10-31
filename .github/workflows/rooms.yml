@@ -33,9 +33,27 @@ jobs:
         uses: actions/checkout@v6
 
       - name: Deploy to Cloudflare
+        id: deploy
         if: env.READY == 'true'
         uses: cloudflare/wrangler-action@v4
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           workingDirectory: rooms
+
+      # Shows where the server went and whether it answers, as notes on the run.
+      - name: Check the server
+        if: env.READY == 'true'
+        env:
+          DEPLOYED_URL: ${{ steps.deploy.outputs.deployment-url }}
+        run: |
+          echo "::notice::Deployed to: ${DEPLOYED_URL:-unknown}"
+          url="https://case-room-rooms.youth-bf0.workers.dev"
+          for i in 1 2 3 4 5 6; do
+            out=$(curl -sS --max-time 10 "$url/" || true)
+            case "$out" in *case-room-rooms*) break ;; esac
+            sleep 5
+          done
+          echo "::notice::$url answers: ${out:-nothing}"
+          code=$(curl -s -o /dev/null -w '%{http_code}' --max-time 10 -X POST -H 'Origin: https://youth-lcyg.github.io' "$url/rooms" || true)
+          echo "::notice::Creating a test room from the game's address: HTTP $code"

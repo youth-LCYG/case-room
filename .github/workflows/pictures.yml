@@ -1,14 +1,10 @@
-# When cases.json changes, make any pictures it lists that images/ doesn't have yet.
-# It also checks once a day, so pictures left over when the free Cloudflare allowance ran out get made the next day.
+# Makes any pictures that cases.json lists and images/ doesn't have yet, with Cloudflare Workers AI.
+# Manual only (Actions tab > Make pictures > Run workflow): pictures are normally made by hand in the Gemini app,
+# so that picture making never uses up the free daily AI allowance that the game's AI judge needs.
 # Needs two repository secrets: RELAY_URL and RELAY_PASS (Settings > Secrets and variables > Actions).
 name: Make pictures
 
 on:
-  push:
-    paths:
-      - "cases.json"
-  schedule:
-    - cron: "17 9 * * *"
   workflow_dispatch:
 
 permissions:

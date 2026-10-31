@@ -14,7 +14,7 @@
 | `images/` | 그림. 이름은 `<사건 id>-cover.jpg`, `-hint1.jpg`, `-hint2.jpg`, `-truth.jpg`(사건 종결 화면의 진상 그림), 홈 그림은 `hero.jpg`. 게임은 `.jpg`를 먼저 찾고, 없으면 `.png`를 찾습니다. |
 | `make-pictures.html` | 그림을 손으로 다시 만드는 페이지(브라우저에서 Cloudflare 중계 서버 사용). |
 | `tools/validate.py` | `cases.json` 검사. 올리기 전에 `python3 tools/validate.py`를 실행합니다. |
-| `tools/make_pictures.py`, `.github/workflows/pictures.yml` | `cases.json`이 바뀌면 GitHub가 빠진 그림을 Cloudflare로 만들어 `images/`에 올립니다. 무료 사용량이 모자라 일부만 만들어지면 다음 날 새벽에 이어서 만듭니다. 저장소 비밀값 `RELAY_URL`, `RELAY_PASS`가 필요합니다. |
+| `tools/make_pictures.py`, `.github/workflows/pictures.yml` | 빠진 그림을 Cloudflare로 만드는 작업. 이제는 Actions 탭에서 손으로 실행할 때만 돕니다(그림이 AI 판정과 같은 무료 사용량을 쓰기 때문). 저장소 비밀값 `RELAY_URL`, `RELAY_PASS`가 필요합니다. |
 | `worker.js` | Cloudflare 중계 서버 코드의 보관본. 실제 서버는 Cloudflare에서 따로 배포합니다. |
 
 Claude 안에서 돌아가는 버전(아티팩트)은 별개라서, 여기를 고쳐도 자동으로 바뀌지 않습니다.
@@ -99,5 +99,5 @@ AI 없이 진행자가 판정할 때 쓰는 화면입니다. 주소 끝에 `?hos
 
 1. `cases.json`의 `cases`에 사건을 넣습니다(같은 종류의 맨 뒤). factsKo(성경 사건은 notStatedKo도)를 함께 씁니다.
 2. `python3 tools/validate.py`가 OK인지 확인합니다.
-3. 커밋하고 올립니다. GitHub의 Actions 탭에서 Make pictures가 돌아가며 그림을 만들어 붙입니다. 몇 분 뒤 사이트에 반영됩니다.
-4. 그림이 마음에 들지 않으면 그 그림 파일을 지우고 Actions에서 Make pictures를 다시 실행하거나, `make-pictures.html`에서 다시 만듭니다.
+3. 커밋하고 올립니다. 몇 분 뒤 사이트에 반영됩니다.
+4. 그림은 Gemini 앱에서 그림 설명 목록(각 그림의 `scene` + `pictureStyles` 문구)으로 만들어 `images/`에 정해진 파일 이름으로 올립니다. 그림이 없는 동안 게임은 빈 자리 표시를 보여 줍니다. 급하면 Actions에서 Make pictures를 손으로 실행할 수 있지만, AI 판정이 쓸 무료 사용량을 함께 씁니다.

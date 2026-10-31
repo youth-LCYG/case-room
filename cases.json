@@ -163,8 +163,8 @@
       "check": "봉투가 클립으로 붙은 빈 시험지 두 장인지 봅니다. 글자·숫자가 없어야 합니다."
      },
      "hint2": {
-      "scene": "A student reporter's desk at night: a small voice recorder, an open notebook with scribbles too blurred to read, a camera, and a blank lanyard badge, under a lamp.",
-      "check": "녹음기, 수첩, 카메라가 있는 기자 책상인지 봅니다. 글자·숫자가 없어야 합니다."
+      "scene": "A student reporter's desk at night: a small plain black voice recorder, an open notebook with scribbles too blurred to read, a plain camera with no brand name, logo or lettering anywhere on it, and a blank lanyard badge, under a lamp.",
+      "check": "녹음기, 수첩, 카메라가 있는 기자 책상인지 봅니다. 카메라와 녹음기에 상표 글자가 없어야 합니다. 글자·숫자가 없어야 합니다."
      },
      "truth": {
       "scene": "A university campus in the morning: students gathered around a newspaper rack, holding up copies of the campus paper with a blurred headline, while in the background a professor carries a cardboard box of belongings out of a stone building.",
@@ -815,8 +815,8 @@
      "hint1": "hint1",
      "hint2": "hint2",
      "truth": {
-      "scene": "A quiet, empty living room by an open window: the curtain blowing inward, a broken round fishbowl on the floor in a small puddle, two small orange goldfish lying still on the wet floor among the glass shards; nobody in the room; somber but gentle, nothing gruesome.",
-      "check": "금붕어 두 마리가 깨진 어항 옆 바닥에 가만히 있는지, 사람이 없는지 봅니다. 끔찍하지 않아야 합니다. 글자·숫자가 없어야 합니다."
+      "scene": "A quiet, empty living room by an open window, the curtain blowing inward. In the foreground, clearly visible and in sharp focus: a broken round fishbowl in a small puddle on the wooden floor, glass shards around it, and two small bright-orange goldfish lying still on the wet floor right next to it. Nobody in the room; somber but gentle, nothing gruesome.",
+      "check": "앞쪽에 깨진 어항과 금붕어 두 마리가 또렷이 보이는지, 사람이 없는지 봅니다. 끔찍하지 않아야 합니다. 글자·숫자가 없어야 합니다."
      }
     }
    }
@@ -1044,8 +1044,8 @@
      "check": "사람이 보이면 안 됩니다."
     },
     "truth": {
-     "scene": "Inside an apartment elevator on a rainy evening, seen from the side: a very short adult man, only as tall as a ten-year-old child (the top of his head reaches just the middle of a tall button panel), wearing a raincoat, holds a CLOSED, tightly folded umbrella by its handle and stretches it straight up so that its pointed tip presses a button near the top of the panel; the umbrella is closed, not open; rain drips from the folded umbrella onto the floor; button labels blurred and unreadable; warm, friendly, not mocking.",
-     "check": "아이만 한 키의 어른이 접은 우산 끝으로 높은 버튼을 누르는지, 우산이 펼쳐져 있지 않은지 봅니다. 버튼 숫자가 읽히면 안 됩니다. 사람을 놀리는 느낌이 들면 안 됩니다."
+     "scene": "Inside an apartment elevator on a rainy evening, seen from the side: a very short adult man, only as tall as a ten-year-old child (the top of his head reaches just the middle of a tall button panel), wearing a raincoat, holds a single CLOSED, tightly folded umbrella by its handle and stretches it straight up so that its pointed tip presses a button near the top of the panel. There is only one umbrella in the picture, and it is closed, not open. A few raindrops drip from it onto the floor; button labels blurred and unreadable; warm, friendly, not mocking.",
+     "check": "아이만 한 키의 어른이 접은 우산 끝으로 높은 버튼을 누르는지, 우산이 펼쳐져 있지 않은지 봅니다. 버튼 숫자가 읽히면 안 됩니다. 사람을 놀리는 느낌이 들면 안 됩니다. 우산은 한 개만 있어야 합니다."
     }
    },
    "adult": {
@@ -1443,8 +1443,8 @@
      "hint1": "hint1",
      "hint2": "hint2",
      "truth": {
-      "scene": "A red firefighting helicopter flying low over a lake, its big orange water bucket on a long cable just lifting out of the water with a heavy splash; within the spilling water a small human silhouette in swim trunks can be made out; on the shore, an empty towel and sandals; dramatic, not gruesome.",
-      "check": "헬기 물통에서 쏟아지는 물속에 사람 실루엣이 보이는지 봅니다. 끔찍하지 않아야 합니다. 글자·숫자가 없어야 합니다."
+      "scene": "A red firefighting helicopter flying low over a lake, its big orange water bucket on a long cable just lifting out of the water with a heavy splash. In the water spilling over the bucket's rim, a man in swim trunks and goggles is clearly visible, small but recognizable, being scooped up with the water, arms flailing in surprise. On a small dock, an empty towel and sandals. Dramatic, not gruesome.",
+      "check": "헬기 물통에 퍼 올려지는 수영복 차림의 남자가 또렷이 보이는지 봅니다. 끔찍하지 않아야 합니다. 글자·숫자가 없어야 합니다."
      }
     }
    }
@@ -1919,8 +1919,8 @@
       "check": "남자 휴대폰과 여자 안경, 찻잔이 있는지 봅니다. 화면 글자는 읽히지 않아야 합니다."
      },
      "hint2": {
-      "scene": "A small clear plastic bag holding a man's wristwatch and wedding ring, the kind a hospital hands back to a family, next to a teenager's exam admission ticket with nothing readable on it.",
-      "check": "남자 시계와 반지가 든 작은 비닐봉지, 수험표가 있는지 봅니다. 글자·숫자가 없어야 합니다."
+      "scene": "A small clear plastic bag holding a man's wristwatch and wedding ring, the kind a hospital hands back to a family, lying next to two sharpened pencils, an eraser and a stack of school exam workbooks with plain, blank covers. No writing or printing anywhere.",
+      "check": "남자 시계와 반지가 든 작은 비닐봉지, 연필과 문제집이 있는지 봅니다. 문제집 표지를 포함해 글자·숫자가 없어야 합니다."
      },
      "truth": {
       "scene": "Evening in a dim living room: a mother sitting close beside her teenage daughter on a sofa, holding her hands; on the coffee table, a man's smartphone and a framed family photo; the daughter's school bag on the floor; soft lamplight, grief and tenderness, faces partly in shadow.",

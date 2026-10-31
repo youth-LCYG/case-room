@@ -482,12 +482,12 @@
       "check": "어두운 방에서 큰 스위치를 내리는 손인지 봅니다. 등대가 보이면 안 됩니다. 글자·숫자가 없어야 합니다."
      },
      "hint1": {
-      "scene": "A round stone room with a heavy brass switch panel and thick cables running up a spiral staircase into darkness; a small window streaked with rain.",
-      "check": "둥근 돌방과 위로 이어진 굵은 전선이 보이는지 봅니다. 글자·숫자가 없어야 합니다."
+      "scene": "A heavy old-fashioned brass lever switch on a small wooden mounting board, pulled down to the off position, beside a coil of thick black cable and a large curved piece of ribbed glass lens from a huge lamp.",
+      "check": "내려진 큰 스위치, 굵은 전선, 큰 램프 유리 조각이 있는지 봅니다. 등대가 보이면 안 됩니다. 글자·숫자가 없어야 합니다."
      },
      "hint2": {
-      "scene": "A rocky coastline at dawn after a storm: jagged black rocks, broken wooden planks and a red life ring floating in the gray surf.",
-      "check": "폭풍 뒤 바위 해안과 떠다니는 구명환이 보이는지 봅니다. 사람은 없어야 합니다. 글자·숫자가 없어야 합니다."
+      "scene": "A few wet, jagged black sea rocks, a tangle of seaweed, and a weathered red-and-white life ring.",
+      "check": "젖은 바위, 해초, 구명환이 있는지 봅니다. 사람은 없어야 합니다. 글자·숫자가 없어야 합니다."
      },
      "truth": {
       "scene": "A tall lighthouse on a rocky cliff at night in a raging storm, its lamp completely dark; out at sea, the lights of a passenger ship tilting dangerously near the rocks; dramatic and somber, no people visible.",
@@ -649,12 +649,12 @@
       "check": "새 빨간 하이힐과 분장실 거울이 보이는지 봅니다. 글자·숫자가 없어야 합니다."
      },
      "hint1": {
-      "scene": "A tall wooden target board with a painted human outline standing alone in a dim circus tent, lit by a single spotlight.",
-      "check": "사람 윤곽이 그려진 나무판인지 봅니다. 칼은 아직 없어야 합니다. 글자·숫자가 없어야 합니다."
+      "scene": "A pair of worn, flat performer's shoes placed exactly on two chalk marks, with a carpenter's spirit level lying beside them.",
+      "check": "분필 표시 위에 놓인 낡은 납작한 구두와 수평계가 있는지 봅니다. 글자·숫자가 없어야 합니다."
      },
      "hint2": {
-      "scene": "An open leather case of gleaming throwing knives laid on red velvet under a spotlight.",
-      "check": "던지는 칼이 든 가죽 상자인지 봅니다. 글자·숫자가 없어야 합니다."
+      "scene": "An open leather case of gleaming throwing knives lined with red velvet, beside a sequined performer's glove.",
+      "check": "던지는 칼이 든 가죽 상자와 반짝이 장갑이 있는지 봅니다. 피가 없어야 합니다. 글자·숫자가 없어야 합니다."
      },
      "truth": {
       "scene": "A circus ring at night under a spotlight: an empty wooden target board with knives stuck around a painted outline, one knife set noticeably higher than the outline's head; a single red high-heeled shoe lying on the sawdust in front of it; somber; no person, no blood.",
@@ -1119,12 +1119,12 @@
       "check": "멈춘 엘리베이터 안의 남자인지 봅니다. 버튼 숫자가 읽히면 안 됩니다."
      },
      "hint1": {
-      "scene": "A city skyline at dusk with whole blocks of office windows going dark at once, as in a citywide blackout.",
-      "check": "도시 전체 불이 꺼지는 장면인지 봅니다. 글자·숫자가 없어야 합니다."
+      "scene": "A city map with no readable labels, a large part of it shaded dark gray, with a switched-on flashlight and a burned-down candle lying on top of it.",
+      "check": "넓은 부분이 어둡게 칠해진 지도와 손전등, 다 탄 초가 있는지 봅니다. 지도에 글자가 없어야 합니다."
      },
      "hint2": {
-      "scene": "A bedside table at home with a medical breathing machine connected by a tube and a power cord, its screen dark; a glass of water beside it; no person.",
-      "check": "꺼진 인공호흡기가 보이는지 봅니다. 사람은 없어야 합니다. 글자·숫자가 없어야 합니다."
+      "scene": "A clear medical breathing mask with coiled tubing, an unplugged power cord, and a small medical battery pack with a red warning light.",
+      "check": "호흡기 마스크, 뽑힌 전원선, 배터리가 있는지 봅니다. 사람은 없어야 합니다. 글자·숫자가 없어야 합니다."
      },
      "truth": {
       "scene": "A quiet bedroom at night during a blackout: moonlight through the window falls on a home hospital bed and a breathing machine with a dark screen; on the nightstand, an unopened box with a new battery; no person visible; deeply somber.",
@@ -1915,12 +1915,12 @@
     "pictures": {
      "cover": "hint1",
      "hint1": {
-      "scene": "Close-up of a woman's hands holding a man's smartphone at night, the screen glowing softly with a blurred, unreadable message; a wedding ring on her finger; dim kitchen in the background.",
-      "check": "여자의 손에 든 남자 휴대폰이 보이는지 봅니다. 화면 글자는 읽히지 않아야 합니다."
+      "scene": "A man's smartphone lying next to a woman's reading glasses and a cup of tea, its screen glowing with a blurred, unreadable text message being typed.",
+      "check": "남자 휴대폰과 여자 안경, 찻잔이 있는지 봅니다. 화면 글자는 읽히지 않아야 합니다."
      },
      "hint2": {
-      "scene": "A wet apartment parking lot late at night, the red and white flashing lights of an ambulance reflected in the puddles; an apartment entrance with its lights on; no people in focus.",
-      "check": "밤 주차장에 구급차 불빛이 비치는지 봅니다. 글자·숫자가 없어야 합니다."
+      "scene": "A small clear plastic bag holding a man's wristwatch and wedding ring, the kind a hospital hands back to a family, next to a teenager's exam admission ticket with nothing readable on it.",
+      "check": "남자 시계와 반지가 든 작은 비닐봉지, 수험표가 있는지 봅니다. 글자·숫자가 없어야 합니다."
      },
      "truth": {
       "scene": "Evening in a dim living room: a mother sitting close beside her teenage daughter on a sofa, holding her hands; on the coffee table, a man's smartphone and a framed family photo; the daughter's school bag on the floor; soft lamplight, grief and tenderness, faces partly in shadow.",

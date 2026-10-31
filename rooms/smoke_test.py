@@ -5,12 +5,14 @@ import asyncio, json, sys, urllib.request
 import websockets
 
 URL, ORIGIN = sys.argv[1].rstrip("/"), sys.argv[2]
+# Cloudflare turns away Python's default User-Agent, so use a browser-like one (as the picture job does).
+UA = "Mozilla/5.0 (compatible; case-room-smoke/1.0; +https://github.com/youth-LCYG/case-room)"
 
 def note(msg):
     print(f"::notice::{msg}", flush=True)
 
 async def main():
-    req = urllib.request.Request(f"{URL}/rooms", method="POST", headers={"Origin": ORIGIN})
+    req = urllib.request.Request(f"{URL}/rooms", method="POST", headers={"Origin": ORIGIN, "User-Agent": UA})
     with urllib.request.urlopen(req, timeout=15) as r:
         room = json.load(r)
     code, token = room["code"], room["token"]
@@ -22,9 +24,9 @@ async def main():
             if m.get("type") == want:
                 return m
 
-    async with websockets.connect(f"{ws_url}?role=owner&token={token}", origin=ORIGIN) as owner:
+    async with websockets.connect(f"{ws_url}?role=owner&token={token}", origin=ORIGIN, user_agent_header=UA) as owner:
         await recv(owner, "presence")
-        async with websockets.connect(f"{ws_url}?role=player&pid=smoke&name=test", origin=ORIGIN) as player:
+        async with websockets.connect(f"{ws_url}?role=player&pid=smoke&name=test", origin=ORIGIN, user_agent_header=UA) as player:
             joined = await recv(owner, "presence")
             assert any(p["pid"] == "smoke" for p in joined["players"]), joined
             await owner.send(json.dumps({"type": "state", "state": {"view": "home", "room": {"code": code}}}))

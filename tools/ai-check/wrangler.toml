@@ -1,0 +1,8 @@
+# Temporary Worker for .github/workflows/ai-check.yml (deleted again at the end of the run).
+name = "case-room-aicheck"
+main = "worker.js"
+compatibility_date = "2026-06-01"
+workers_dev = true
+
+[ai]
+binding = "AI"

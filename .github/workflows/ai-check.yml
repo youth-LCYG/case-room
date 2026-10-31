@@ -1,0 +1,52 @@
+name: Check AI allowance
+
+# Puts up a small temporary Worker, asks the judging model for one word, reports what Cloudflare
+# says (as a note on the run), and removes the Worker again. Run it from the Actions tab.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      CI: "true"
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Make a one-time key
+        run: |
+          key=$(openssl rand -hex 16)
+          echo "::add-mask::$key"
+          echo "CHECK_KEY=$key" >> "$GITHUB_ENV"
+
+      - name: Put up the check Worker
+        uses: cloudflare/wrangler-action@v4
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          workingDirectory: tools/ai-check
+          command: deploy --var CHECK_KEY:${{ env.CHECK_KEY }}
+
+      - name: Ask the AI
+        run: |
+          url="https://case-room-aicheck.youth-bf0.workers.dev/?key=$CHECK_KEY"
+          for i in 1 2 3 4 5 6 7 8; do
+            out=$(curl -sS --max-time 60 -A "Mozilla/5.0 (compatible; case-room-aicheck/1.0)" "$url" || true)
+            case "$out" in *'"ok"'*) break ;; esac
+            sleep 5
+          done
+          echo "::notice::Cloudflare AI says: ${out:-no answer}"
+          date -u +"::notice::Checked at %Y-%m-%d %H:%M UTC"
+
+      - name: Take the check Worker down
+        if: always()
+        uses: cloudflare/wrangler-action@v4
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          workingDirectory: tools/ai-check
+          command: delete case-room-aicheck --force

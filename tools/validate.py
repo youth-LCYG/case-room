@@ -75,7 +75,6 @@ def check_adult(c, w):
     if not isinstance(a, dict):
         err(f"{w}: must be an object"); return
     if a.get("level") not in (1, 2, 3): err(f"{w} level: must be 1, 2 or 3")
-    bilingual(a.get("warn"), f"{w} warn", 40)
     bilingual(a.get("title"), f"{w} title", 60)
     bilingual(a.get("setup"), f"{w} setup", 700)
     bilingual(a.get("truth"), f"{w} truth")

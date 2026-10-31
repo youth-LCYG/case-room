@@ -90,10 +90,6 @@
    },
    "adult": {
     "level": 2,
-    "warn": {
-     "en": "Crime (bribery)",
-     "ko": "범죄(뇌물)"
-    },
     "title": {
      "en": "The Blank Exam",
      "ko": "백지 시험지"
@@ -246,10 +242,6 @@
    },
    "adult": {
     "level": 2,
-    "warn": {
-     "en": "Murder (poisoning)",
-     "ko": "살인(독살)"
-    },
     "title": {
      "en": "Poison in the Ice",
      "ko": "얼음 속의 독"
@@ -413,10 +405,6 @@
    },
    "adult": {
     "level": 2,
-    "warn": {
-     "en": "Death (accident)",
-     "ko": "죽음(사고)"
-    },
     "title": {
      "en": "The Night the Lights Went Out",
      "ko": "불을 끈 밤"
@@ -580,10 +568,6 @@
    },
    "adult": {
     "level": 3,
-    "warn": {
-     "en": "Death (accident)",
-     "ko": "죽음(사고)"
-    },
     "title": {
      "en": "New Shoes",
      "ko": "새 구두"
@@ -747,10 +731,6 @@
    },
    "adult": {
     "level": 1,
-    "warn": {
-     "en": "Death of pets",
-     "ko": "반려동물의 죽음"
-    },
     "title": {
      "en": "Romeo and Juliet",
      "ko": "로미오와 줄리엣"
@@ -894,10 +874,6 @@
    },
    "adult": {
     "level": 2,
-    "warn": {
-     "en": "Murder",
-     "ko": "살인"
-    },
     "title": {
      "en": "One-Way Ticket",
      "ko": "편도 항공권"
@@ -1050,10 +1026,6 @@
    },
    "adult": {
     "level": 2,
-    "warn": {
-     "en": "Death",
-     "ko": "죽음"
-    },
     "title": {
      "en": "When the Elevator Stopped",
      "ko": "엘리베이터가 멈춘 순간"
@@ -1217,10 +1189,6 @@
    },
    "adult": {
     "level": 2,
-    "warn": {
-     "en": "Death",
-     "ko": "죽음"
-    },
     "title": {
      "en": "The Man in the Desert",
      "ko": "사막의 남자"
@@ -1375,10 +1343,6 @@
    },
    "adult": {
     "level": 2,
-    "warn": {
-     "en": "Death",
-     "ko": "죽음"
-    },
     "title": {
      "en": "The Swimmer in the Forest",
      "ko": "숲속의 수영복"
@@ -1533,10 +1497,6 @@
    },
    "adult": {
     "level": 3,
-    "warn": {
-     "en": "Suicide, cannibalism",
-     "ko": "자살, 인육"
-    },
     "title": {
      "en": "Sea Turtle Soup",
      "ko": "바다거북 스프"
@@ -1691,10 +1651,6 @@
    },
    "adult": {
     "level": 3,
-    "warn": {
-     "en": "Death of a child",
-     "ko": "자녀의 죽음"
-    },
     "title": {
      "en": "The Wrong Door",
      "ko": "잘못 배달된 생일상"
@@ -1849,10 +1805,6 @@
    },
    "adult": {
     "level": 2,
-    "warn": {
-     "en": "Death of a parent",
-     "ko": "부모의 죽음"
-    },
     "title": {
      "en": "Dad's Business Trip",
      "ko": "아빠의 출장"

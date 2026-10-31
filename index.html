@@ -199,15 +199,8 @@ a.btn { text-decoration: none; }
   font-size: 0.88rem; line-height: 1.5; color: var(--ink-2);
 }
 .cc-meta { display: flex; align-items: center; gap: 0.6rem; margin-top: 0.15rem; }
-/* College versions: the youth / college switch and the content note */
+/* College versions: the youth / college switch */
 .audience { display: flex; flex-wrap: wrap; align-items: center; gap: 0.45rem 0.7rem; margin-top: 0.6rem; }
-.warn-chip {
-  display: inline-flex; align-items: center; gap: 0.35rem; justify-self: start; max-width: 100%;
-  font-size: 0.76rem; font-weight: 600; line-height: 1.4; color: var(--no);
-  border: 1px solid color-mix(in srgb, var(--no) 40%, transparent); background: color-mix(in srgb, var(--no) 9%, transparent);
-  border-radius: 6px; padding: 0.1rem 0.5rem;
-}
-.warn-chip svg { width: 0.85rem; height: 0.85rem; flex: none; }
 
 /* Settings */
 .settings { margin-top: 1rem; max-width: 40rem; }
@@ -824,11 +817,10 @@ a.btn { text-decoration: none; }
       steps: ["Read the case aloud.", "Ask questions that can be answered yes or no.", "Solve it with as few questions as you can."],
       mysteries: "Mysteries",
       mysteriesNote: "New mysteries and classic lateral-thinking puzzles.",
-      mysteriesNoteAdult: "The college versions include death, suicide and crime. Each case carries a content note.",
+      mysteriesNoteAdult: "College versions: the original stories.",
       audienceLabel: "Stories",
       audienceYouth: "Youth",
       audienceAdult: "College",
-      warnLabel: "Content note",
       bible: "Bible Files",
       bibleNote: "Answers come only from what the passage says.",
       count: n => `${n} cases`,
@@ -1077,11 +1069,10 @@ a.btn { text-decoration: none; }
       steps: ["사건을 소리 내어 읽어 줍니다.", "'예/아니오'로 답할 수 있는 질문을 합니다.", "가능한 한 적은 질문으로 사건을 풉니다."],
       mysteries: "일반 추리",
       mysteriesNote: "새로 쓴 미스터리와 고전 바다거북스프 문제입니다.",
-      mysteriesNoteAdult: "대학청년부판 이야기에는 죽음, 자살, 범죄가 나옵니다. 사건마다 주의 표시가 붙어 있습니다.",
+      mysteriesNoteAdult: "대학청년부용 원작 이야기입니다.",
       audienceLabel: "이야기",
       audienceYouth: "청소년부",
       audienceAdult: "대학청년부",
-      warnLabel: "주의",
       bible: "성경 사건",
       bibleNote: "대답은 본문이 말하는 것만 근거로 합니다.",
       count: n => `${n}건`,
@@ -1470,7 +1461,6 @@ a.btn { text-decoration: none; }
   const ICON_ZOOM = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6M10 20H4v-6M20 4l-7 7M4 20l7-7"/></svg>';
   const ICON_SOUND_ON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9.5v5h3.5L12 18.5v-13L7.5 9.5z"/><path d="M15.5 9a4 4 0 0 1 0 6M18 6.5a7.5 7.5 0 0 1 0 11"/></svg>';
   const ICON_SOUND_OFF = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9.5v5h3.5L12 18.5v-13L7.5 9.5z"/><path d="m16 9.5 5 5M21 9.5l-5 5"/></svg>';
-  const ICON_WARN = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.8 2.8 19.6h18.4z"/><path d="M12 9.6v4.6M12 16.9v.01"/></svg>';
   const ICON_CLOSE = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>';
 
   function pic(name, alt, lazy) {
@@ -1531,9 +1521,6 @@ a.btn { text-decoration: none; }
   function chip(v) {
     const V = VERDICTS[v];
     return `<span class="vchip ${V.cls}">${esc(V[state.lang])}</span>`;
-  }
-  function warnChip(c) {
-    return c.warn ? `<span class="warn-chip">${ICON_WARN}<span>${esc(u().warnLabel)} · ${esc(L(c.warn))}</span></span>` : "";
   }
   function dots(c) {
     return `<span class="dots" role="img" aria-label="${esc(u().level[c.level - 1])}">${[1, 2, 3].map(n => `<i class="${n <= c.level ? "on" : ""}"></i>`).join("")}</span>`;
@@ -1624,7 +1611,6 @@ a.btn { text-decoration: none; }
           <span class="cc-title">${esc(L(c.title))}</span>
           <span class="cc-teaser">${esc(teaser(c))}</span>
           <span class="cc-meta">${dots(c)}<span class="keys-chip">${esc(t.keysChip(c.keys.length))}</span></span>
-          ${warnChip(c)}
         </span>
       </button>`;
     const audience = hasAdult() ? `<div class="audience">
@@ -1815,7 +1801,7 @@ a.btn { text-decoration: none; }
       <article class="scene">
         ${media(picOf(c, "cover"), L(c.title), { zoom: true, big: bigFor(c) })}
         <div class="scene-body">
-          <div class="fileline"><span class="fileno">${esc(tagFor(c))}</span>${dots(c)}${warnChip(c)}</div>
+          <div class="fileline"><span class="fileno">${esc(tagFor(c))}</span>${dots(c)}</div>
           <h2 class="pv-title">${esc(L(c.title))}</h2>
           <p class="setup">${esc(L(c.setup))}</p>
         </div>
@@ -2258,7 +2244,7 @@ a.btn { text-decoration: none; }
     return `<main>
       <div class="case-head">
         ${viewOnly ? "" : `<button type="button" class="back" data-act="home">← ${esc(t.allCases)}</button>`}
-        <div class="fileline"><span class="fileno">${esc(tagFor(c))}</span>${dots(c)}${warnChip(c)}</div>
+        <div class="fileline"><span class="fileno">${esc(tagFor(c))}</span>${dots(c)}</div>
         <h2 class="case-title">${esc(L(c.title))}</h2>
       </div>
       ${state.room ? roomBar(t, false) : ""}

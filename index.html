@@ -367,6 +367,13 @@ a.btn { text-decoration: none; }
 .cp-setup { display: grid; gap: 0.35rem; background: var(--field); border: 1px solid var(--line); border-radius: 12px; padding: 0.9rem 1.1rem; }
 .cp-setup p:last-child { color: var(--ink-2); line-height: 1.65; }
 .cp-story { display: grid; gap: 0.9rem; font-size: 1.12rem; line-height: 1.8; }
+.truth-story { display: grid; gap: 0.6rem; }
+.cp-story p.talk, p.truth.talk {
+  margin-left: 0.2rem; padding: 0.15rem 0 0.15rem 0.95rem;
+  border-left: 3px solid color-mix(in srgb, var(--accent) 60%, transparent); color: #f3e6c4;
+}
+.cp-story p.talk + p.talk { margin-top: -0.45rem; }
+.hn-block p.truth.talk + p.truth.talk, .truth-story p.talk + p.talk { margin-top: -0.25rem; }
 .cp-bible { display: grid; gap: 0.5rem; padding-top: 1rem; border-top: 1px solid var(--line); }
 .kchips { display: flex; flex-wrap: wrap; gap: 0.45rem; margin-top: 0.45rem; }
 .kchip {
@@ -1333,8 +1340,9 @@ a.btn { text-decoration: none; }
   const joinPrefill = (() => { try { return (new URLSearchParams(location.search).get("join") || "").toUpperCase().replace(/[^A-Z0-9]/g, "").slice(0, 4); } catch (e) { return ""; } })();
   const L = obj => (obj && (obj[state.lang] ?? obj.en)) || "";
   const esc = s => String(s).replace(/[&<>"']/g, ch => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[ch]);
-  // A mystery can carry a college version ("adult" in cases.json). BASE keeps the cases as loaded,
-  // CASES is what the shelves show for the chosen stories, and ALL finds any case or version by its id.
+  // A mystery can carry a college version ("adult" in cases.json), and a case marked "only": "adult" is a
+  // college story with no youth telling. BASE keeps the cases as loaded, CASES is what the shelves show
+  // for the chosen stories, and ALL finds any case or version by its id.
   const BASE = [];
   const ALL = new Map();
   function variantOf(c) {
@@ -1344,9 +1352,11 @@ a.btn { text-decoration: none; }
     delete v.adult;
     return v;
   }
+  const collegeOnly = c => !!c && c.only === "adult";
   function applyAudience() {
     const adult = state.audience === "adult";
-    CASES.splice(0, CASES.length, ...BASE.map(c => (adult && ALL.get(`${c.id}--adult`)) || c));
+    const shown = BASE.filter(c => !collegeOnly(c)).concat(adult ? BASE.filter(collegeOnly) : []);
+    CASES.splice(0, CASES.length, ...shown.map(c => (adult && ALL.get(`${c.id}--adult`)) || c));
   }
   function indexCases(list) {
     BASE.splice(0, BASE.length, ...list);
@@ -1360,7 +1370,7 @@ a.btn { text-decoration: none; }
   }
   if (CASES.length) indexCases(CASES.slice());
   const hasCase = id => typeof id === "string" && ALL.has(id);
-  const hasAdult = () => BASE.some(c => ALL.has(`${c.id}--adult`));
+  const hasAdult = () => BASE.some(c => collegeOnly(c) || ALL.has(`${c.id}--adult`));
   const cur = () => ALL.get(state.caseId);
   const effMode = () => (state.mode === "host" || ai.status === "off" || ai.status === "blocked") ? "host" : "ai";
 
@@ -1567,10 +1577,14 @@ a.btn { text-decoration: none; }
     if (box) box.classList.remove("has-img");
   }, true);
 
-  // Cases are numbered by their place on each shelf. A Bible case shows its passage only after it is closed.
+  // Cases are numbered by their place on each shelf; a college version keeps its youth number, and
+  // college-only cases come after the shared ones. A Bible case shows its passage only after it is closed.
   const caseNo = c => {
     const b = (c.baseId && ALL.get(c.baseId)) || c;
-    return String(BASE.filter(k => k.kind === b.kind).indexOf(b) + 1).padStart(2, "0");
+    const same = BASE.filter(k => k.kind === b.kind);
+    const shared = same.filter(k => !collegeOnly(k));
+    const n = collegeOnly(b) ? shared.length + same.filter(collegeOnly).indexOf(b) : shared.indexOf(b);
+    return String(n + 1).padStart(2, "0");
   };
   const tagFor = c => c.kind === "bible" ? u().bibleTag(caseNo(c)) : `Case ${caseNo(c)}`;
   const bigFor = c => caseNo(c);
@@ -1594,7 +1608,7 @@ a.btn { text-decoration: none; }
   function truthBlock(c, t, Tag) {
     const bible = c.kind === "bible";
     return `<${Tag}>${esc(t.truthTitle)}</${Tag}>
-      <p class="truth">${esc(L(c.truth))}</p>
+      <div class="truth-story">${storyHtml(L(c.truth), "truth")}</div>
       <${Tag}>${esc(t.keysTitle)}</${Tag}>
       <ul class="keylist">${c.keys.map(k => `<li><strong>${esc(L(k.label))}.</strong> ${esc(L(k.text))}</li>`).join("")}</ul>
       ${bible ? `<${Tag}>${esc(t.silentTitle)}</${Tag}>
@@ -1929,6 +1943,20 @@ a.btn { text-decoration: none; }
     }).join("")}</ul>` : `<p class="empty">${esc(t.noQuestions)}</p>`;
   }
 
+  // A truth written with line breaks keeps the writer's paragraphs, and a line that opens with a quotation
+  // mark is shown as dialogue. A truth written as one block falls back to two sentences per paragraph.
+  function storyParas(text) {
+    const s = String(text || "").trim();
+    if (!s.includes("\n")) return paragraphs(s).map(p => ({ text: p, talk: false }));
+    return s.split(/\n+/).map(x => x.trim()).filter(Boolean).map(x => ({ text: x, talk: /^["“„「『]/.test(x) }));
+  }
+  function storyHtml(text, cls) {
+    return storyParas(text).map(p => {
+      const k = [cls, p.talk ? "talk" : ""].filter(Boolean).join(" ");
+      return `<p${k ? ` class="${k}"` : ""}>${esc(p.text)}</p>`;
+    }).join("");
+  }
+
   // Two sentences per paragraph, so the whole story reads like a story. A quotation is never split.
   function paragraphs(text) {
     const s = String(text || "");
@@ -2006,7 +2034,7 @@ a.btn { text-decoration: none; }
     const manual = manualHints(g);
     const team = isTeam(g);
     const winner = team && solved && typeof g.winner === "number" ? g.winner : -1;
-    const story = paragraphs(L(c.truth)).map(p => `<p>${esc(p)}</p>`).join("");
+    const story = storyHtml(L(c.truth));
     const remote = remoteRole();
     return `<main class="closing-page">
       ${remote ? "" : `<button type="button" class="back" data-act="home">← ${esc(t.allCases)}</button>`}
@@ -2066,7 +2094,7 @@ a.btn { text-decoration: none; }
           <button type="button" class="arch-toggle" data-act="host-guide" aria-expanded="${hostGuideOpen}">${esc(t.hostGuideTitle)} ${hostGuideOpen ? "▴" : "▾"}</button>
           ${hostGuideOpen ? `<ol>${t.hostGuide(HINT_EVERY).map(x => `<li>${esc(x)}</li>`).join("")}</ol>` : ""}
         </div>
-        <div class="hn-block"><h3 class="eyebrow">${esc(t.hostTruthTitle)}</h3>${paragraphs(L(c.truth)).map(p => `<p class="truth">${esc(p)}</p>`).join("")}</div>
+        <div class="hn-block"><h3 class="eyebrow">${esc(t.hostTruthTitle)}</h3>${storyHtml(L(c.truth), "truth")}</div>
         <div class="hn-block"><h3 class="eyebrow">${esc(t.hostKeysTitle)}</h3><ul class="hkeys">${keys}</ul></div>
         <div class="hn-block"><h3 class="eyebrow">${esc(t.hostFactsTitle)}</h3><ul class="hfacts">${facts.map(f => `<li>${esc(f)}</li>`).join("")}</ul></div>
         ${bible ? `<div class="hn-block"><h3 class="eyebrow">${esc(t.hostNotStatedTitle)}</h3><ul class="hfacts">${notStated.map(f => `<li>${esc(f)}</li>`).join("")}</ul>

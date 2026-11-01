@@ -177,7 +177,8 @@ h1 { font-family: var(--font-display); font-size: clamp(1.8rem, 3.6vw, 2.4rem); 
         const p = (c.pictures || {})[slot];
         if (!p || !p.scene) continue;
         const style = st[slot === "cover" || slot === "truth" ? base : base + "h"] || "";
-        items.push({ name: `${c.id}-${slot}`, group: c.kind, title: `${(c.title || {}).ko || c.id} · ${LABEL[slot]}`, check: p.check || "", prompt: `${p.scene}\n\n${style}`.trim() });
+        const only = c.only === "adult";   // a college-only case is listed with the college pictures
+        items.push({ name: `${c.id}-${slot}`, group: only ? "adult" : c.kind, title: `${(c.title || {}).ko || c.id}${only ? " (대학청년부)" : ""} · ${LABEL[slot]}`, check: p.check || "", prompt: `${p.scene}\n\n${style}`.trim() });
       }
       // A college version's own pictures. A slot name instead of a picture reuses the youth one.
       const a = c.adult || {};

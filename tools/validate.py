@@ -38,6 +38,15 @@ def visible_texts(c):
 
 SLOTS = ("cover", "hint1", "hint2", "truth")
 
+def check_truth_lines(obj, where):
+    """A truth may be written in paragraphs, one per line; English and Korean should then match line for line."""
+    if not isinstance(obj, dict): return
+    en, ko = str(obj.get("en", "")).strip(), str(obj.get("ko", "")).strip()
+    if "\n" not in en and "\n" not in ko: return
+    ne, nk = len([x for x in en.split("\n") if x.strip()]), len([x for x in ko.split("\n") if x.strip()])
+    if ne != nk:
+        warn(f"{where}: {ne} paragraphs in English but {nk} in Korean; keep them line for line")
+
 def check_story(c, w):
     """The parts every telling of a case needs: key points, two hints, judging notes."""
     keys = c.get("keys", [])
@@ -78,6 +87,7 @@ def check_adult(c, w):
     bilingual(a.get("title"), f"{w} title", 60)
     bilingual(a.get("setup"), f"{w} setup", 700)
     bilingual(a.get("truth"), f"{w} truth")
+    check_truth_lines(a.get("truth"), f"{w} truth")
     check_story(a, w)
     pics = a.get("pictures", {})
     if not isinstance(pics, dict):
@@ -125,7 +135,13 @@ for n, c in enumerate(cases):
     bilingual(c.get("title"), f"{w} title", 60)
     bilingual(c.get("setup"), f"{w} setup", 700)
     bilingual(c.get("truth"), f"{w} truth")
+    check_truth_lines(c.get("truth"), f"{w} truth")
     check_story(c, w)
+    only = c.get("only")
+    if only is not None:
+        if only != "adult": err(f"{w} only: the only value allowed is \"adult\" (a college-only story)")
+        if kind != "mystery": err(f"{w} only: only mysteries can be college-only")
+        if "adult" in c: err(f"{w} only: a college-only case is already the college story; remove its \"adult\" part")
     if "adult" in c:
         check_adult(c, w)
     pics = c.get("pictures", {})
@@ -141,8 +157,8 @@ for n, c in enumerate(cases):
         for i, s in enumerate(sil): bilingual(s, f"{w} silent[{i}]")
         if not isinstance(c.get("notStated"), str) or not c["notStated"].strip():
             err(f"{w} notStated: missing")
-    # Death, suicide and violence stay out of what players see (the college versions are exempt).
-    for where, obj in visible_texts(c):
+    # Death, suicide and violence stay out of what players see (college versions and college-only cases are exempt).
+    for where, obj in (visible_texts(c) if only != "adult" else ()):
         for lang, rx in (("en", BANNED_EN), ("ko", BANNED_KO)):
             m = rx.search((obj or {}).get(lang, "") if isinstance(obj, dict) else "")
             if m:
@@ -150,7 +166,7 @@ for n, c in enumerate(cases):
                 (err if kind == "mystery" else warn)(msg)
 
 print(f"{len(cases)} cases checked ({sum(c.get('kind')=='mystery' for c in cases)} mysteries, {sum(c.get('kind')=='bible' for c in cases)} Bible, "
-      f"{sum('adult' in c for c in cases)} college versions), limit {cap}.")
+      f"{sum('adult' in c for c in cases)} college versions, {sum(c.get('only') == 'adult' for c in cases)} college-only), limit {cap}.")
 for m in warnings: print("note:", m)
 for m in errors: print("FIX:", m)
 print("OK" if not errors else f"{len(errors)} problem(s) to fix.")

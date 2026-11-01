@@ -236,13 +236,6 @@ a.btn { text-decoration: none; }
 .scene > .media { border-bottom: 1px solid var(--line); }
 .scene-body { display: grid; gap: 0.9rem; padding: 1.1rem 1.3rem 1.3rem; }
 .setup { font-size: 1.3rem; line-height: 1.72; font-weight: 500; max-width: 62ch; }
-.goal {
-  display: grid; gap: 0.3rem; padding: 0.75rem 0.95rem; border-radius: 0 10px 10px 0;
-  border-left: 3px solid var(--accent); background: color-mix(in srgb, var(--accent) 7%, transparent);
-}
-.goal-q { font-weight: 700; font-size: 1.06rem; line-height: 1.5; color: var(--ink); }
-.goal-rule { font-size: 0.85rem; line-height: 1.5; color: var(--ink-2); }
-.cp-setup .goal { margin-top: 0.5rem; }
 .scene-meta { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.5rem 1rem; }
 
 .tools { display: grid; gap: 0.9rem; }
@@ -418,7 +411,7 @@ a.btn { text-decoration: none; }
 .cp-media { border-radius: 12px; border: 1px solid var(--line); }
 .cp-media:not(.has-img) { display: none; }
 .cp-setup { display: grid; gap: 0.35rem; background: var(--field); border: 1px solid var(--line); border-radius: 12px; padding: 0.9rem 1.1rem; }
-.cp-setup-text { color: var(--ink-2); line-height: 1.65; }
+.cp-setup p:last-child { color: var(--ink-2); line-height: 1.65; }
 .cp-story { display: grid; gap: 0.9rem; font-size: 1.12rem; line-height: 1.8; }
 .truth-story { display: grid; gap: 0.6rem; }
 .cp-story p.talk, p.truth.talk {
@@ -941,7 +934,7 @@ a.btn { text-decoration: none; }
       hintAutoTag: n => `Opened at ${n} questions`,
       hintManualTag: "Emergency · +10",
       tagline: "Yes-or-no questions only. Find the truth.",
-      steps: ["Read the case aloud.", "Ask questions that can be answered yes or no.", "Solve it with as few questions as you can."],
+      steps: ["Read the case aloud.", "Ask questions that can be answered yes or no.", "Solve it with as few questions as you can.", "Work out who did what, how, and why, and the case is solved."],
       mysteries: "Mysteries",
       mysteriesNote: "New mysteries and classic lateral-thinking puzzles.",
       mysteriesNoteAdult: "College versions: the original stories.",
@@ -962,8 +955,6 @@ a.btn { text-decoration: none; }
       aiConnecting: "Connecting AI judge",
       allCases: "All cases",
       statement: "The case",
-      goalTitle: "The question",
-      goalRule: n => `To solve it: explain what happened and why, covering all ${n} key points.`,
       askLabel: "Your question",
       askPlaceholder: "Was anyone hurt?",
       ask: "Ask",
@@ -1193,7 +1184,7 @@ a.btn { text-decoration: none; }
       hintAutoTag: n => `질문 ${n}개로 공개`,
       hintManualTag: "긴급 · +10문",
       tagline: "예, 아니오로만 묻고 진실을 밝히세요.",
-      steps: ["사건을 소리 내어 읽어 줍니다.", "'예/아니오'로 답할 수 있는 질문을 합니다.", "가능한 한 적은 질문으로 사건을 풉니다."],
+      steps: ["사건을 소리 내어 읽어 줍니다.", "'예/아니오'로 답할 수 있는 질문을 합니다.", "가능한 한 적은 질문으로 사건을 풉니다.", "누가, 무엇을, 어떻게, 왜 했는지 맞히면 사건 해결입니다."],
       mysteries: "일반 추리",
       mysteriesNote: "새로 쓴 미스터리와 고전 바다거북스프 문제입니다.",
       mysteriesNoteAdult: "대학청년부용 원작 이야기입니다.",
@@ -1214,8 +1205,6 @@ a.btn { text-decoration: none; }
       aiConnecting: "AI 판정 연결 중",
       allCases: "사건 목록",
       statement: "사건 개요",
-      goalTitle: "풀어야 할 질문",
-      goalRule: n => `정답 조건: 사건 경위(무슨 일이 있었고 왜 그렇게 됐는지)를 설명하고, 핵심 ${n}가지를 모두 맞히기`,
       askLabel: "질문",
       askPlaceholder: "다친 사람이 있나요?",
       ask: "질문하기",
@@ -1519,7 +1508,6 @@ a.btn { text-decoration: none; }
       "You check a player's proposed solution in a yes/no deduction game.",
       "",
       `SETUP: ${c.setup.en}`,
-      ...(c.goal && c.goal.en ? [`QUESTION THE PLAYERS MUST ANSWER: ${c.goal.en}`] : []),
       `TRUTH: ${c.truth.en}`,
       `FACTS:\n${c.facts}`,
       "",
@@ -1946,7 +1934,6 @@ a.btn { text-decoration: none; }
           <div class="fileline"><span class="fileno">${esc(tagFor(c))}</span>${dots(c)}</div>
           <h2 class="pv-title">${esc(L(c.title))}</h2>
           <p class="setup">${esc(L(c.setup))}</p>
-          ${goalHtml(c, t, true)}
         </div>
       </article>
       ${turn}
@@ -2124,7 +2111,7 @@ a.btn { text-decoration: none; }
       <section class="cp-truth" aria-labelledby="cp-truth-h">
         <p id="cp-truth-h" class="eyebrow">${esc(t.cpTruthLabel)}</p>
         ${CAN_IMAGES ? media(picOf(c, "truth"), `${L(c.title)} · ${t.truthPicTitle}`, { cls: "cp-media", zoom: true }) : ""}
-        <div class="cp-setup"><p class="eyebrow">${esc(t.statement)}</p><p class="cp-setup-text">${esc(L(c.setup))}</p>${goalHtml(c, t, false)}</div>
+        <div class="cp-setup"><p class="eyebrow">${esc(t.statement)}</p><p>${esc(L(c.setup))}</p></div>
         ${keyChips(c, g, t)}
         <div class="cp-story">${story}</div>
         ${bible ? `<div class="cp-bible"><h3 class="eyebrow">${esc(t.silentTitle)}</h3><ul class="silentlist">${c.silent.map(x => `<li>${esc(L(x))}</li>`).join("")}</ul><p class="readit">${esc(t.readIt)}: <strong>${esc(L(c.ref))}</strong></p></div>` : ""}
@@ -2185,16 +2172,6 @@ a.btn { text-decoration: none; }
     return { flash: ` flash flash-${VERDICTS[last.v].cls.slice(2)}`, bump: last.v !== "INVALID" };
   }
   const countNum = (n, bump) => `<span class="cbox"><b${bump ? ' class="roll"' : ""}>${n}</b>${bump ? '<i class="plus1" aria-hidden="true">+1</i>' : ""}</span>`;
-
-  // What the players have to explain: the case's question and what counts as solving it.
-  function goalHtml(c, t, rule) {
-    const q = L(c.goal);
-    if (!q && !rule) return "";
-    return `<div class="goal">
-        ${q ? `<p class="eyebrow">${esc(t.goalTitle)}</p><p class="goal-q">${esc(q)}</p>` : ""}
-        ${rule ? `<p class="goal-rule">${esc(t.goalRule(c.keys.length))}</p>` : ""}
-      </div>`;
-  }
 
   // The latest question and its answer, large.
   function stageHtml(g, t) {
@@ -2279,7 +2256,6 @@ a.btn { text-decoration: none; }
       <div class="scene-body">
         <p class="eyebrow">${esc(t.hostSetupTitle)}</p>
         <p class="setup">${esc(L(c.setup))}</p>
-        ${goalHtml(c, t, true)}
       </div>
     </article>`
       : `<article class="scene b-scene">
@@ -2287,7 +2263,6 @@ a.btn { text-decoration: none; }
       <div class="scene-body">
         <p class="eyebrow">${esc(t.statement)}</p>
         <p class="setup">${esc(L(c.setup))}</p>
-        ${goalHtml(c, t, true)}
         <div class="scene-meta">
           <div class="answer-set"><span class="eyebrow">${esc(t.answersLabel)}</span>${["YES", "NO", third].map(chip).join("")}</div>
           <span class="keys-chip">${esc(t.keysChip(c.keys.length))}</span>

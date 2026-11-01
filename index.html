@@ -72,6 +72,8 @@ h1, h2, h3, h4 { font-weight: 700; }
 }
 .brand svg { width: 1.55rem; height: 1.55rem; color: var(--accent); flex: none; }
 .controls { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem 0.75rem; }
+.ctl-status, .ctl-quick { display: contents; }
+.lang-short { display: none; }
 .seg { display: inline-flex; padding: 3px; gap: 2px; background: var(--field); border: 1px solid var(--line-strong); border-radius: 9px; }
 .seg button {
   border: 0; background: transparent; color: var(--ink-2); padding: 0.3rem 0.7rem; border-radius: 6px;
@@ -633,6 +635,68 @@ a.btn { text-decoration: none; }
 .pv-solve { display: grid; gap: 0.5rem; }
 .pv-solve textarea { min-height: 7rem; resize: vertical; line-height: 1.55; }
 .pv-players { display: grid; gap: 0.5rem; }
+
+/* Phones: the name and quick controls on one line, a short intro, the play choice in the page,
+   two cards per row, and a tighter case page so the answer stamps come sooner. */
+@media (hover: none) {
+  .case-card .media img { filter: none; }
+}
+@media (max-width: 600px) {
+  .top { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 0.55rem 0.6rem; padding-block: 0.7rem 0.75rem; }
+  .top > h1 { min-width: 0; }
+  .top .controls { display: contents; }
+  .ctl-quick { display: flex; align-items: center; gap: 0.4rem; grid-column: 2; grid-row: 1; }
+  .ctl-status { display: flex; flex-wrap: wrap; align-items: center; gap: 0.4rem 0.6rem; grid-column: 1 / -1; grid-row: 2; }
+  .ctl-status:empty { display: none; }
+  .top [data-act="host-open"] { display: none; }
+  .lang-long { display: none; }
+  .lang-short { display: inline; }
+  .ctl-quick .seg button { padding-inline: 0.65rem; }
+  .brand { font-size: 1.12rem; gap: 0.5rem; }
+  .brand svg { width: 1.4rem; height: 1.4rem; }
+
+  .intro { gap: 1rem; padding-block: 1.3rem 0.2rem; }
+  .intro h2 { font-size: 1.7rem; margin-top: 0.4rem; }
+  .rules { margin-top: 0.9rem; gap: 0.3rem; }
+  .rules li { font-size: 0.95rem; grid-template-columns: 1.9rem minmax(0, 1fr); }
+  .hero-media { display: none; }
+
+  .play-dock { position: static; background: none; padding-block: 0; margin-top: 1rem; }
+  .play-dock > .play-bar { order: -1; }
+  .play-bar { padding: 0.55rem; gap: 0.5rem; box-shadow: none; }
+  .play-bar > .seg { display: flex; width: 100%; box-sizing: border-box; }
+  .play-bar > .seg button { flex: 1 1 0; padding-inline: 0.3rem; }
+  .play-bar > .fineprint { padding-inline: 0.25rem; }
+
+  .shelf { padding-block: 1.3rem 0.6rem; }
+  .shelf-head { gap: 0.5rem; margin-bottom: 0.9rem; }
+  .shelf h2 { font-size: 1.45rem; }
+  .shelf-head .answer-set { display: none; }
+  .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.65rem; }
+  .cc-body { gap: 0.3rem; padding: 0.6rem 0.7rem 0.75rem; }
+  .cc-title { font-size: 1rem; line-height: 1.32; }
+  .cc-teaser { display: none; }
+  .cc-meta { flex-wrap: wrap; gap: 0.35rem 0.5rem; }
+  .case-card .media .tag { left: 0.45rem; top: 0.45rem; font-size: 0.62rem; padding: 0.12rem 0.4rem; }
+  .case-card .media .tag.status { left: auto; right: 0.45rem; }
+  .case-card .media .ph b { font-size: 2.2rem; }
+
+  .case-head { gap: 0.35rem; padding-block: 0.8rem 0.9rem; }
+  .case-title { font-size: 1.75rem; }
+  .scene-body { gap: 0.7rem; padding: 0.9rem 1rem 1rem; }
+  .setup { font-size: 1.12rem; line-height: 1.66; }
+  .desk { gap: 0.75rem; padding: 0.95rem 1rem 1rem; }
+  .count-big b { font-size: 2.1rem; }
+  .vbtn { min-height: 3.6rem; }
+  .stage { min-height: 6.5rem; gap: 0.6rem; padding: 0.9rem 0.6rem; }
+  .verdict { font-size: 2rem; }
+  .verdict.long { font-size: 1.5rem; }
+  .log { padding: 0.85rem 1rem 0.4rem; }
+  .pv-turn-title { font-size: 1.4rem; }
+}
+@media (max-width: 340px) {
+  .cards { grid-template-columns: minmax(0, 1fr); }
+}
 
 @media (prefers-reduced-motion: reduce) {
   .verdict.fresh, .cp-head.fresh, .thinking::after, .mode-chip[data-s="connecting"] i, .clue-card { animation: none; }
@@ -1544,7 +1608,9 @@ a.btn { text-decoration: none; }
   function header() {
     const t = u();
     let mode;
-    if (remoteRole()) {
+    if (net.role === "player") {
+      mode = "";   // a player's phone shows the room code in its own bar
+    } else if (remoteRole()) {
       mode = `<span class="mode-chip" data-s="${net.status === "open" ? "linked" : "connecting"}"><i></i>${esc(t.roomCode)} ${esc(net.code)}</span>`;
     } else if (HOST_VIEW) {
       mode = `<span class="mode-chip" data-s="${sync.peer ? "linked" : "alone"}"><i></i>${esc(sync.peer ? t.hostLinkedDisplay : t.hostAlone)}</span>`;
@@ -1566,13 +1632,12 @@ a.btn { text-decoration: none; }
     return `${HOST_VIEW ? `<p class="host-banner" role="note">${esc(t.hostBanner)}</p>` : ""}<header class="top">
       <h1><button type="button" class="brand" data-act="home">${ICON_MARK}<span>${esc(t.brand)}</span></button></h1>
       <div class="controls">
-        ${mode}
-        ${present}
-        ${connect}
-        ${HOST_VIEW ? "" : `<button type="button" class="icon-btn" data-act="sound" aria-pressed="${soundOn}" title="${esc(soundOn ? t.soundOnLabel : t.soundOffLabel)}" aria-label="${esc(soundOn ? t.soundOnLabel : t.soundOffLabel)}">${soundOn ? ICON_SOUND_ON : ICON_SOUND_OFF}</button>`}
-        <div class="seg" role="group" aria-label="Language">
-          <button type="button" data-act="lang" data-lang="ko" aria-pressed="${state.lang === "ko"}">한국어</button>
-          <button type="button" data-act="lang" data-lang="en" aria-pressed="${state.lang === "en"}">English</button>
+        <div class="ctl-status">${mode}${present}${connect}</div>
+        <div class="ctl-quick">${HOST_VIEW ? "" : `<button type="button" class="icon-btn" data-act="sound" aria-pressed="${soundOn}" title="${esc(soundOn ? t.soundOnLabel : t.soundOffLabel)}" aria-label="${esc(soundOn ? t.soundOnLabel : t.soundOffLabel)}">${soundOn ? ICON_SOUND_ON : ICON_SOUND_OFF}</button>`}
+          <div class="seg" role="group" aria-label="Language">
+            <button type="button" data-act="lang" data-lang="ko" aria-pressed="${state.lang === "ko"}" aria-label="한국어"><span class="lang-long" aria-hidden="true">한국어</span><span class="lang-short" aria-hidden="true">한</span></button>
+            <button type="button" data-act="lang" data-lang="en" aria-pressed="${state.lang === "en"}" aria-label="English"><span class="lang-long" aria-hidden="true">English</span><span class="lang-short" aria-hidden="true">EN</span></button>
+          </div>
         </div>
       </div>
     </header>`;
@@ -1767,7 +1832,7 @@ a.btn { text-decoration: none; }
               <button type="button" class="btn" data-act="p-solve-close">${esc(t.cancel)}</button></div>
           </form>`
         : `<form class="pv-ask" data-form="p-ask" autocomplete="off">
-            <input id="p-q" type="text" maxlength="200" placeholder="${esc(t.roomAskPh)}" aria-label="${esc(t.roomAskPh)}">
+            <input id="p-q" type="text" maxlength="200" placeholder="${esc(t.askPlaceholder)}" aria-label="${esc(t.roomAskPh)}">
             <button type="submit" class="btn btn-primary" ${ready ? "" : "disabled"}>${esc(t.roomAskBtn)}</button>
           </form>`;
       const more = confirmAct === "p-hint"

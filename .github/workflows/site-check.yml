@@ -1,0 +1,28 @@
+name: Check the Vercel site (temporary)
+
+# One-off checks for the Vercel copy of the site: the page answers, and the rooms server and the
+# AI judge relay accept requests from its address. Prints only public responses.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Check
+        run: |
+          site="https://lcyg-caseroom.vercel.app"
+          ua="Mozilla/5.0 (compatible; case-room-check/1.0)"
+          code=$(curl -s -o page.html -w "%{http_code}" -A "$ua" "$site/")
+          title=$(grep -o "<title>[^<]*</title>" page.html | head -1)
+          echo "::notice::$site -> HTTP $code $title"
+          code=$(curl -s -o /dev/null -w "%{http_code}" -A "$ua" "$site/cases.json")
+          echo "::notice::$site/cases.json -> HTTP $code"
+          rooms=$(curl -s -D - -o /dev/null -A "$ua" -X OPTIONS -H "Origin: $site" -H "Access-Control-Request-Method: POST" "https://case-room-rooms.youth-bf0.workers.dev/rooms" | tr -d '\r' | grep -i "^access-control-allow-origin" || echo "none")
+          echo "::notice::rooms server allows: $rooms"
+          relay=$(curl -s -D - -o /dev/null -A "$ua" -X OPTIONS -H "Origin: $site" -H "Access-Control-Request-Method: POST" "https://case-room-judge.youth-bf0.workers.dev/" | tr -d '\r' | grep -i "^access-control-allow-origin" || echo "none")
+          echo "::notice::AI judge relay allows: $relay"

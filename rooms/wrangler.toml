@@ -6,7 +6,7 @@ workers_dev = true
 
 [vars]
 # Sites allowed to open rooms (comma-separated).
-ALLOWED_ORIGINS = "https://youth-lcyg.github.io"
+ALLOWED_ORIGINS = "https://youth-lcyg.github.io,https://lcyg-caseroom.vercel.app"
 
 [[durable_objects.bindings]]
 name = "ROOMS"

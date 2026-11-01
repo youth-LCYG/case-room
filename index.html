@@ -1353,9 +1353,10 @@ a.btn { text-decoration: none; }
     return v;
   }
   const collegeOnly = c => !!c && c.only === "adult";
+  // Both shelves follow the order of cases.json; the youth shelf leaves out the college-only cases.
   function applyAudience() {
     const adult = state.audience === "adult";
-    const shown = BASE.filter(c => !collegeOnly(c)).concat(adult ? BASE.filter(collegeOnly) : []);
+    const shown = adult ? BASE : BASE.filter(c => !collegeOnly(c));
     CASES.splice(0, CASES.length, ...shown.map(c => (adult && ALL.get(`${c.id}--adult`)) || c));
   }
   function indexCases(list) {
@@ -1580,13 +1581,14 @@ a.btn { text-decoration: none; }
     if (box) box.classList.remove("has-img");
   }, true);
 
-  // Cases are numbered by their place on each shelf; a college version keeps its youth number, and
-  // college-only cases come after the shared ones. A Bible case shows its passage only after it is closed.
+  // Cases are numbered by their place on the shelf being shown (youth and college shelves count separately).
+  // A Bible case shows its passage only after it is closed.
   const caseNo = c => {
-    const b = (c.baseId && ALL.get(c.baseId)) || c;
-    const same = BASE.filter(k => k.kind === b.kind);
-    const shared = same.filter(k => !collegeOnly(k));
-    const n = collegeOnly(b) ? shared.length + same.filter(collegeOnly).indexOf(b) : shared.indexOf(b);
+    let n = CASES.filter(k => k.kind === c.kind).indexOf(c);
+    if (n < 0) {   // a case opened from the other shelf: its place in cases.json
+      const b = (c.baseId && ALL.get(c.baseId)) || c;
+      n = BASE.filter(k => k.kind === b.kind).indexOf(b);
+    }
     return String(n + 1).padStart(2, "0");
   };
   const tagFor = c => c.kind === "bible" ? u().bibleTag(caseNo(c)) : `Case ${caseNo(c)}`;
@@ -3097,7 +3099,7 @@ a.btn { text-decoration: none; }
   // What everyone else sees: the open case, its game, and the room (players, turn, waiting question).
   function roomSnapshot() {
     const g = state.view === "case" && state.caseId ? state.games[state.caseId] || null : null;
-    return { view: g ? "case" : "home", caseId: g ? state.caseId : null, game: g, room: state.room };
+    return { view: g ? "case" : "home", caseId: g ? state.caseId : null, game: g, room: state.room, audience: state.audience };
   }
   function roomPush(force) {
     if (net.role !== "owner" || net.fresh || !state.room || !net.ws || net.ws.readyState !== 1) return;
@@ -3208,6 +3210,7 @@ a.btn { text-decoration: none; }
     if (!st || typeof st !== "object") return;
     const prev = remoteBefore();
     state.room = st.room && typeof st.room === "object" ? st.room : null;
+    if ((st.audience === "youth" || st.audience === "adult") && st.audience !== state.audience) { state.audience = st.audience; applyAudience(); }
     const caseOk = st.view === "case" && st.game && typeof st.game === "object" && hasCase(st.caseId);
     state.view = caseOk ? "case" : "home";
     if (caseOk) { state.caseId = st.caseId; state.games = { [st.caseId]: st.game }; }

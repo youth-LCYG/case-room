@@ -15,7 +15,7 @@
 | `make-pictures.html` | 그림을 손으로 다시 만드는 페이지(브라우저에서 Cloudflare 중계 서버 사용). |
 | `tools/validate.py` | `cases.json` 검사. 올리기 전에 `python3 tools/validate.py`를 실행합니다. |
 | `tools/make_pictures.py`, `.github/workflows/pictures.yml` | 빠진 그림을 Cloudflare로 만드는 작업. 이제는 Actions 탭에서 손으로 실행할 때만 돕니다(그림이 AI 판정과 같은 무료 사용량을 쓰기 때문). 저장소 비밀값 `RELAY_URL`, `RELAY_PASS`가 필요합니다. |
-| `worker.js` | Cloudflare 중계 서버 코드의 보관본. 실제 서버는 Cloudflare에서 따로 배포합니다. |
+| `worker.js` | Cloudflare 중계 서버(AI 판정) 코드의 보관본. 실제 서버는 Cloudflare에서 따로 배포합니다. 게임에는 주소(`https://case-room-judge.youth-bf0.workers.dev`)가 들어 있어서, 'AI 연결'에서는 암호만 넣습니다. 암호는 그 기기의 그 브라우저에만 저장됩니다. |
 
 Claude 안에서 돌아가는 버전(아티팩트)은 별개라서, 여기를 고쳐도 자동으로 바뀌지 않습니다.
 

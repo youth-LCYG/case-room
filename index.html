@@ -946,16 +946,13 @@ a.btn { text-decoration: none; }
       noQuestions: "No questions yet.",
       connectBtn: "Connect AI",
       settingsTitle: "Connect the AI judge",
-      settingsIntro: "Paste your relay server's address and passcode. They are saved only in this browser on this device.",
-      relayUrlLabel: "Relay server address",
-      relayUrlPh: "https://case-room-judge.your-name.workers.dev",
+      settingsIntro: "Enter the AI judge passcode. It is saved only in this browser on this device, so enter it once on each device or browser.",
       relayPassLabel: "Passcode",
       testSave: "Test and save",
       testing: "Testing the connection",
       disconnect: "Disconnect",
       settingsOk: "Connected. The AI judge now answers questions.",
-      settingsBadUrl: "Enter an address that starts with https://.",
-      settingsMissing: "Enter both the address and the passcode.",
+      settingsMissing: "Enter the passcode.",
       disconnected: "Disconnected. The host judges for now.",
       relayConsent: "Answers come from the AI judge connected to this device (Cloudflare Workers AI, free daily allowance).",
       err: {
@@ -965,9 +962,9 @@ a.btn { text-decoration: none; }
         session: "Your Claude sign-in expired. Sign in again, then ask.",
         refused: "The AI judge couldn't answer that one. Try asking it another way.",
         generic: "No answer came back, and the question wasn't counted. Ask it again.",
-        badPass: "The relay server rejected the passcode. Check it under Connect AI at the top.",
+        badPass: "The passcode didn't match. Enter it again under Connect AI at the top.",
         relayRate: "Today's free AI allowance is used up. It refills at {time}. Until then, switch to Host judges at the top.",
-        relayDown: "Couldn't reach the relay server. Check the internet connection and the server address.",
+        relayDown: "Couldn't reach the AI judge server. Check the internet connection.",
         relayConfig: "The relay server isn't fully set up. In Cloudflare, check the Workers AI binding named AI and the PASSCODE secret."
       }
     },
@@ -1198,16 +1195,13 @@ a.btn { text-decoration: none; }
       noQuestions: "아직 질문이 없습니다.",
       connectBtn: "AI 연결",
       settingsTitle: "AI 판정 연결",
-      settingsIntro: "중계 서버 주소와 암호를 붙여 넣으세요. 이 기기의 이 브라우저에만 저장됩니다.",
-      relayUrlLabel: "중계 서버 주소",
-      relayUrlPh: "https://case-room-judge.이름.workers.dev",
+      settingsIntro: "AI 판정 암호를 넣으세요. 이 기기의 이 브라우저에만 저장되므로, 다른 기기나 다른 브라우저에서는 한 번씩 따로 넣어야 합니다.",
       relayPassLabel: "암호",
       testSave: "연결 확인 후 저장",
       testing: "연결을 확인하는 중",
       disconnect: "연결 해제",
       settingsOk: "연결되었습니다. 이제 AI가 판정합니다.",
-      settingsBadUrl: "https://로 시작하는 주소를 넣어 주세요.",
-      settingsMissing: "주소와 암호를 모두 넣어 주세요.",
+      settingsMissing: "암호를 넣어 주세요.",
       disconnected: "연결을 해제했습니다. 지금은 진행자 판정입니다.",
       relayConsent: "답변은 이 기기에 연결한 AI 판정관(Cloudflare Workers AI 무료 사용량)이 합니다.",
       err: {
@@ -1217,9 +1211,9 @@ a.btn { text-decoration: none; }
         session: "Claude 로그인이 만료되었습니다. 다시 로그인한 뒤 질문해 주세요.",
         refused: "AI 판정관이 이 질문에는 답하지 못했습니다. 다른 표현으로 물어봐 주세요.",
         generic: "판정을 받지 못했고, 질문 수에도 넣지 않았습니다. 같은 질문을 다시 해 주세요.",
-        badPass: "중계 서버가 암호를 거부했습니다. 위의 'AI 연결'에서 암호를 확인해 주세요.",
+        badPass: "암호가 맞지 않습니다. 위의 'AI 연결'에서 암호를 다시 넣어 주세요.",
         relayRate: "오늘 쓸 수 있는 무료 AI 사용량을 다 썼습니다. {time}에 다시 채워집니다. 그때까지는 위에서 '진행자 판정'으로 바꿔 주세요.",
-        relayDown: "중계 서버에 연결하지 못했습니다. 인터넷 연결과 서버 주소를 확인해 주세요.",
+        relayDown: "AI 판정 서버에 연결하지 못했습니다. 인터넷 연결을 확인해 주세요.",
         relayConfig: "중계 서버 설정이 끝나지 않았습니다. Cloudflare에서 Workers AI 바인딩(이름 AI)과 PASSCODE 비밀값을 확인해 주세요."
       }
     }
@@ -1242,7 +1236,9 @@ a.btn { text-decoration: none; }
   const CAN_ROOMS = !hasClaude && typeof WebSocket === "function" && typeof fetch === "function";
   const RELAY_URL_KEY = "caseRoomRelayUrl";
   const RELAY_PASS_KEY = "caseRoomRelayPass";
-  const relay = { url: recall(RELAY_URL_KEY), pass: recall(RELAY_PASS_KEY) };
+  // The AI judge's relay on Cloudflare (relay code: worker.js). A device only needs the passcode.
+  const RELAY_DEFAULT = "https://case-room-judge.youth-bf0.workers.dev";
+  const relay = { url: recall(RELAY_URL_KEY) || RELAY_DEFAULT, pass: recall(RELAY_PASS_KEY) };
   const relayReady = !hasClaude && !!(relay.url && relay.pass);
   // Which stories the mysteries shelf shows: the college versions first, or the youth stories.
   // A device keeps the last choice; the college link (?group=college) always opens on the college versions.
@@ -1654,13 +1650,11 @@ a.btn { text-decoration: none; }
       <h2 id="settings-h" class="settings-title">${esc(t.settingsTitle)}</h2>
       <p class="fineprint">${esc(t.settingsIntro)}</p>
       <form class="settings-form" data-form="settings" autocomplete="off">
-        <label for="relay-url">${esc(t.relayUrlLabel)}</label>
-        <input id="relay-url" type="url" inputmode="url" spellcheck="false" placeholder="${esc(t.relayUrlPh)}">
         <label for="relay-pass">${esc(t.relayPassLabel)}</label>
         <input id="relay-pass" type="password" autocomplete="off">
         <div class="actions">
           <button type="submit" class="btn btn-primary" ${testing ? "disabled" : ""}>${esc(testing ? t.testing : t.testSave)}</button>
-          ${relay.url ? `<button type="button" class="btn btn-danger" data-act="disconnect" ${testing ? "disabled" : ""}>${esc(t.disconnect)}</button>` : ""}
+          ${relay.pass ? `<button type="button" class="btn btn-danger" data-act="disconnect" ${testing ? "disabled" : ""}>${esc(t.disconnect)}</button>` : ""}
           <button type="button" class="btn" data-act="settings-close">${esc(t.close)}</button>
         </div>
       </form>
@@ -2471,7 +2465,7 @@ a.btn { text-decoration: none; }
     if (target) target.focus({ preventScroll: true });
   });
 
-  const KEEP = ["q", "sol", "memo", "relay-url", "relay-pass", "join-code", "join-name", "p-q", "p-sol"];
+  const KEEP = ["q", "sol", "memo", "relay-pass", "join-code", "join-name", "p-q", "p-sol"];
   function render() {
     const active = document.activeElement ? document.activeElement.id : "";
     const kept = {};
@@ -2494,7 +2488,7 @@ a.btn { text-decoration: none; }
     for (const id of ["q", "sol", "memo", "p-q", "p-sol"]) { const el = document.getElementById(id); if (el) el.value = ""; }
   }
   function clearSettingsInputs() {
-    for (const id of ["relay-url", "relay-pass"]) { const el = document.getElementById(id); if (el) el.value = ""; }
+    for (const id of ["relay-pass"]) { const el = document.getElementById(id); if (el) el.value = ""; }
   }
   function resetPanels() {
     showSolve = false;
@@ -2561,10 +2555,9 @@ a.btn { text-decoration: none; }
 
   async function saveRelay() {
     if (testing) return;
-    const url = ((document.getElementById("relay-url") || {}).value || "").trim();
+    const url = recall(RELAY_URL_KEY) || RELAY_DEFAULT;
     const pass = ((document.getElementById("relay-pass") || {}).value || "").trim();
-    if (!url || !pass) { settingsMsg = { key: "settingsMissing", ok: false }; render(); return; }
-    if (!/^https:\/\/\S+$/i.test(url)) { settingsMsg = { key: "settingsBadUrl", ok: false }; render(); return; }
+    if (!pass) { settingsMsg = { key: "settingsMissing", ok: false }; render(); return; }
     const before = { url: relay.url, pass: relay.pass, source: ai.source, status: ai.status };
     relay.url = url;
     relay.pass = pass;
@@ -2575,7 +2568,6 @@ a.btn { text-decoration: none; }
     try {
       const r = await aiJSON('Reply with only this JSON and nothing else: {"ok":true}', "judge");
       if (!r || r.ok !== true) throw { code: "invalid_json" };
-      remember(RELAY_URL_KEY, url);
       remember(RELAY_PASS_KEY, pass);
       ai.status = "ready";
       ai.noticeKey = "";
@@ -2597,7 +2589,7 @@ a.btn { text-decoration: none; }
   function disconnectRelay() {
     forget(RELAY_URL_KEY);
     forget(RELAY_PASS_KEY);
-    relay.url = "";
+    relay.url = RELAY_DEFAULT;
     relay.pass = "";
     ai.source = "";
     ai.status = "off";
@@ -2714,12 +2706,10 @@ a.btn { text-decoration: none; }
         settingsMsg = null;
         render();
         if (showSettings) {
-          const urlEl = document.getElementById("relay-url");
           const passEl = document.getElementById("relay-pass");
-          if (urlEl && !urlEl.value) urlEl.value = relay.url;
           if (passEl && !passEl.value) passEl.value = relay.pass;
           window.scrollTo(0, 0);
-          if (urlEl) urlEl.focus({ preventScroll: true });
+          if (passEl) passEl.focus({ preventScroll: true });
         }
         break;
       case "settings-close": showSettings = false; settingsMsg = null; clearSettingsInputs(); render(); break;

@@ -48,7 +48,11 @@ def check_truth_lines(obj, where):
         warn(f"{where}: {ne} paragraphs in English but {nk} in Korean; keep them line for line")
 
 def check_story(c, w):
-    """The parts every telling of a case needs: key points, two hints, judging notes."""
+    """The parts every telling of a case needs: the question, key points, two hints, judging notes."""
+    if "goal" in c:
+        bilingual(c.get("goal"), f"{w} goal", 300)
+    else:
+        warn(f"{w} goal: missing (the question the players must answer, shown under the setup)")
     keys = c.get("keys", [])
     if not 2 <= len(keys) <= 5: err(f"{w} keys: need 2 to 5 key points")
     kids = set()

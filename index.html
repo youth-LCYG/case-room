@@ -306,11 +306,47 @@ a.btn { text-decoration: none; }
   border: 2px solid color-mix(in srgb, var(--c) 55%, transparent); background: color-mix(in srgb, var(--c) 10%, transparent);
 }
 .verdict.long { font-size: clamp(1.6rem, 3vw, 2.5rem); }
-.verdict.fresh { animation: pop 0.28s cubic-bezier(0.2, 0.8, 0.3, 1.2) both; }
+/* The verdict stamps down: big and blurred, then sharp, with one small rebound. */
+.verdict.fresh { animation: slam 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both; }
+@keyframes slam {
+  0% { opacity: 0; transform: scale(1.8) rotate(-6deg); filter: blur(6px); }
+  22% { opacity: 1; transform: scale(0.94) rotate(0deg); filter: blur(0); }
+  32% { transform: scale(1); }
+  56% { transform: scale(1.07); }
+  76%, 100% { opacity: 1; transform: scale(1); filter: none; }
+}
 @keyframes pop { from { transform: scale(0.86); opacity: 0; } to { transform: scale(1); opacity: 1; } }
-.thinking { color: var(--ink-2); font-size: 1.2rem; }
-.thinking::after { content: "▍"; margin-left: 0.15rem; animation: blink 1s steps(1) infinite; }
-@keyframes blink { 50% { opacity: 0; } }
+/* While the AI judges: a live dot and a few short lines in turn. */
+.thinking { display: inline-flex; align-items: center; gap: 0.55rem; color: var(--ink-2); font-size: 1.2rem; }
+.live-dot { width: 0.55rem; height: 0.55rem; border-radius: 50%; background: var(--no); animation: live 1.2s ease-out infinite; }
+@keyframes live { from { box-shadow: 0 0 0 0 color-mix(in srgb, var(--no) 60%, transparent); } to { box-shadow: 0 0 0 0.65rem transparent; } }
+.think-lines { display: grid; justify-items: center; min-height: 1.4em; font-size: 0.92rem; color: var(--ink-3); }
+.think-lines span { grid-area: 1 / 1; opacity: 0; animation: think-line 4.2s infinite; }
+.think-lines span:nth-child(2) { animation-delay: 1.4s; }
+.think-lines span:nth-child(3) { animation-delay: 2.8s; }
+@keyframes think-line { 0% { opacity: 0; transform: translateY(3px); } 8%, 28% { opacity: 0.9; transform: none; } 34%, 100% { opacity: 0; transform: none; } }
+/* Right after an answer: the desk flashes in the verdict's colour, the count ticks up, the meter grows. */
+.flash-yes { --flash: var(--yes); }
+.flash-no { --flash: var(--no); }
+.flash-meh { --flash: var(--meh); }
+.flash-silent { --flash: var(--silent); }
+.flash-rephrase { --flash: var(--rephrase); }
+.desk.flash { animation: desk-flash 0.85s ease-out both; }
+@keyframes desk-flash {
+  0%, 14% { border-color: var(--flash); box-shadow: 0 0 0 1px var(--flash), 0 0 36px -6px color-mix(in srgb, var(--flash) 65%, transparent), inset 0 0 44px -14px color-mix(in srgb, var(--flash) 50%, transparent); }
+  100% { border-color: var(--line); box-shadow: 0 0 0 0 transparent, 0 0 0 0 transparent, inset 0 0 0 0 transparent; }
+}
+.cbox { position: relative; display: inline-flex; align-items: baseline; }
+.count-big .roll { display: inline-block; animation: roll 0.45s cubic-bezier(0.2, 0.8, 0.3, 1.15) both; }
+@keyframes roll { from { opacity: 0; transform: translateY(-0.45em); } to { opacity: 1; transform: none; } }
+.plus1 {
+  position: absolute; left: 100%; top: -0.1em; margin-left: 0.2rem; pointer-events: none;
+  font-style: normal; font-weight: 800; font-size: 0.95rem; color: var(--flash, var(--accent));
+  animation: plus1 1.2s ease-out both;
+}
+@keyframes plus1 { 0% { opacity: 0; transform: translateY(6px) scale(0.7); } 18% { opacity: 1; transform: translateY(0) scale(1.15); } 65% { opacity: 1; transform: translateY(-6px) scale(1); } 100% { opacity: 0; transform: translateY(-11px); } }
+.hm-bar i.grow { animation: grow 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) both; }
+@keyframes grow { from { width: var(--from); } }
 
 .log { display: grid; gap: 0.5rem; background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 1rem 1.2rem 0.5rem; }
 .log-head { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; }
@@ -324,6 +360,16 @@ a.btn { text-decoration: none; }
 .tq.muted { color: var(--ink-3); }
 .tnote { grid-column: 2 / -1; font-size: 0.85rem; color: var(--rephrase); }
 .empty { color: var(--ink-3); padding: 0.2rem 0 0.8rem; }
+.transcript li.fresh { animation: row-in 0.6s ease-out both; }
+@keyframes row-in { from { opacity: 0; transform: translateY(-6px); background: color-mix(in srgb, var(--accent) 12%, transparent); } to { opacity: 1; transform: none; background: transparent; } }
+.transcript li.fresh .vchip { animation: chip-in 0.45s 0.15s cubic-bezier(0.2, 0.8, 0.3, 1.3) both; }
+@keyframes chip-in { from { opacity: 0; transform: scale(0.5); } to { opacity: 1; transform: none; } }
+.pending-row .tq { color: var(--ink-2); }
+.v-wait { --c: var(--ink-2); gap: 3px; min-height: 1.5em; }
+.v-wait i { width: 0.3rem; height: 0.3rem; border-radius: 50%; background: currentColor; animation: wait-dot 1.1s ease-in-out infinite; }
+.v-wait i:nth-child(2) { animation-delay: 0.15s; }
+.v-wait i:nth-child(3) { animation-delay: 0.3s; }
+@keyframes wait-dot { 0%, 70%, 100% { opacity: 0.25; transform: none; } 35% { opacity: 1; transform: translateY(-2px); } }
 @media (max-width: 560px) {
   .transcript li { grid-template-columns: 2.4rem minmax(0, 1fr); }
   .transcript .vchip { grid-column: 2; justify-self: start; }
@@ -706,7 +752,10 @@ a.btn { text-decoration: none; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .verdict.fresh, .cp-head.fresh, .thinking::after, .mode-chip[data-s="connecting"] i, .clue-card { animation: none; }
+  .verdict.fresh, .cp-head.fresh, .mode-chip[data-s="connecting"] i, .clue-card { animation: none; }
+  .desk.flash, .count-big .roll, .hm-bar i.grow, .transcript li.fresh, .transcript li.fresh .vchip, .live-dot, .v-wait i, .think-lines span { animation: none; }
+  .plus1 { display: none; }
+  .think-lines span:first-child { opacity: 0.9; }
   .case-card, .media img, .vbtn, .btn, .hm-bar i { transition: none; }
   .case-card:hover, .case-card:hover .media img { transform: none; }
 }
@@ -910,6 +959,7 @@ a.btn { text-decoration: none; }
       askPlaceholder: "Was anyone hurt?",
       ask: "Ask",
       thinking: "Judging",
+      thinkLines: ["Leafing through the record…", "Checking it against the facts…", "Double-checking…"],
       stageEmpty: "The answer to each question appears here.",
       consent: "The first question opens a prompt to allow AI use. Answers use this Claude account.",
       notCounted: "Questions marked REPHRASE are not counted.",
@@ -1159,6 +1209,7 @@ a.btn { text-decoration: none; }
       askPlaceholder: "다친 사람이 있나요?",
       ask: "질문하기",
       thinking: "판정 중",
+      thinkLines: ["기록을 넘겨 보는 중…", "사실과 대조하는 중…", "다시 한번 확인하는 중…"],
       stageEmpty: "질문마다 판정이 여기에 나타납니다.",
       consent: "첫 질문 때 AI 사용 허용 창이 뜹니다. 답변은 이 계정의 Claude 사용량을 씁니다.",
       notCounted: "'다시 질문' 판정은 질문 수에 넣지 않습니다.",
@@ -1874,6 +1925,7 @@ a.btn { text-decoration: none; }
         <span class="htext">${esc(L(h))}</span>
       </button>`).join("");
     const pen = penaltyOf(g), q = counted(g);
+    const fx = answerFx(g);
     return `<main class="pv">
       ${head}
       <article class="scene">
@@ -1886,16 +1938,16 @@ a.btn { text-decoration: none; }
       </article>
       ${turn}
       ${lastNo}
-      <section class="desk">
+      <section class="desk${fx.flash}">
         <div class="desk-head">
-          <div class="count-big"><b>${q + pen}</b><span>${esc(t.totalLabel)}</span>${pen ? `<em>${esc(t.totalBreak(q, pen))}</em>` : ""}</div>
+          <div class="count-big">${countNum(q + pen, fx.bump)}<span>${esc(t.totalLabel)}</span>${pen ? `<em>${esc(t.totalBreak(q, pen))}</em>` : ""}</div>
           <div class="count-small"><span>${esc(t.hints)} <b>${g.hints}</b> / ${c.hints.length}</span></div>
         </div>
-        ${hintMeter(c, g, t, "")}
+        ${hintMeter(c, g, t, "", fx.bump)}
         ${stageHtml(g, t)}
       </section>
       ${hints ? `<section class="tools">${hints}</section>` : ""}
-      <section class="log" aria-labelledby="log-h"><div class="log-head"><h3 id="log-h" class="eyebrow">${esc(t.transcript)}</h3></div>${transcriptList(g, t)}</section>
+      <section class="log" aria-labelledby="log-h"><div class="log-head"><h3 id="log-h" class="eyebrow">${esc(t.transcript)}</h3></div>${transcriptList(g, t, true)}</section>
       ${roster}
     </main>`;
   }
@@ -1937,14 +1989,17 @@ a.btn { text-decoration: none; }
   }
 
   // Question record, shared by the case screen and the closing screen.
-  function transcriptList(g, t) {
+  function transcriptList(g, t, live) {
     let n = 0;
     const rows = g.log.map(x => ({ x, num: x.v === "INVALID" ? "–" : String(++n).padStart(2, "0") })).reverse();
-    return rows.length ? `<ul class="transcript">${rows.map(({ x, num }) => {
+    const waiting = live && busy === "ask" && pendingQ
+      ? `<li class="pending-row"><span class="tn">Q${String(counted(g) + 1).padStart(2, "0")}</span><span class="tq">${esc(pendingQ)}</span><span class="vchip v-wait" role="img" aria-label="${esc(t.thinking)}"><i></i><i></i><i></i></span></li>` : "";
+    const newest = live && freshStamp && !waiting;
+    return rows.length || waiting ? `<ul class="transcript">${waiting}${rows.map(({ x, num }, k) => {
       const V = VERDICTS[x.v];
       const who = typeof x.t === "number" ? `<span class="tteam" style="--tc:${teamColor(x.t)}">${esc(teamName(x.t))}</span>`
         : x.n ? `<span class="tteam" style="--tc:var(--ink-2)">${esc(x.n)}</span>` : "";
-      return `<li><span class="tn">Q${esc(num)}</span>${x.q ? `<span class="tq">${who}${esc(x.q)}</span>` : `<span class="tq muted">${who}${esc(t.noRecord)}</span>`}<span class="vchip ${V.cls}">${esc(V[state.lang])}</span>${x.note ? `<span class="tnote">${esc(x.note)}</span>` : ""}</li>`;
+      return `<li${newest && k === 0 ? ' class="fresh"' : ""}><span class="tn">Q${esc(num)}</span>${x.q ? `<span class="tq">${who}${esc(x.q)}</span>` : `<span class="tq muted">${who}${esc(t.noRecord)}</span>`}<span class="vchip ${V.cls}">${esc(V[state.lang])}</span>${x.note ? `<span class="tnote">${esc(x.note)}</span>` : ""}</li>`;
     }).join("")}</ul>` : `<p class="empty">${esc(t.noQuestions)}</p>`;
   }
 
@@ -2109,11 +2164,22 @@ a.btn { text-decoration: none; }
       </div>`;
   }
 
+  // Answer effects (only on the render right after an answer lands): the desk flashes in the verdict's colour,
+  // the count ticks up with a "+1", and the hint meter grows from where it was.
+  function answerFx(g) {
+    const last = g.log[g.log.length - 1];
+    if (!freshStamp || !last || !VERDICTS[last.v]) return { flash: "", bump: false };
+    return { flash: ` flash flash-${VERDICTS[last.v].cls.slice(2)}`, bump: last.v !== "INVALID" };
+  }
+  const countNum = (n, bump) => `<span class="cbox"><b${bump ? ' class="roll"' : ""}>${n}</b>${bump ? '<i class="plus1" aria-hidden="true">+1</i>' : ""}</span>`;
+
   // The latest question and its answer, large.
   function stageHtml(g, t) {
     const last = g.log[g.log.length - 1];
     if (busy === "ask") {
-      return `<div class="stage" aria-live="polite"><p class="stage-q">“${esc(pendingQ)}”</p><span class="thinking">${esc(t.thinking)}</span></div>`;
+      return `<div class="stage" aria-live="polite"><p class="stage-q">“${esc(pendingQ)}”</p>
+        <span class="thinking"><i class="live-dot" aria-hidden="true"></i>${esc(t.thinking)}</span>
+        <span class="think-lines" aria-hidden="true">${t.thinkLines.map(x => `<span>${esc(x)}</span>`).join("")}</span></div>`;
     }
     if (!last) return `<div class="stage"><p class="stage-empty">${esc(t.stageEmpty)}</p></div>`;
     const V = VERDICTS[last.v];
@@ -2127,7 +2193,7 @@ a.btn { text-decoration: none; }
   }
 
   // How far it is to the next automatic hint, with the emergency hint button.
-  function hintMeter(c, g, t, act) {
+  function hintMeter(c, g, t, act, bump) {
     const q = counted(g);
     const allOpen = g.hints >= c.hints.length;
     // The meter runs from the question where the last hint opened to the question where the next one opens.
@@ -2139,7 +2205,7 @@ a.btn { text-decoration: none; }
     return `<div class="hint-meter">
         <div class="hm-top"><span class="next-hint">${esc(allOpen ? t.allHintsOpen : t.nextHintIn(Math.max(0, end - q)))}</span>
           ${!act || allOpen ? "" : `<button type="button" class="btn btn-small btn-emergency" data-act="${act}">${esc(t.emergencyBtn)}</button>`}</div>
-        <div class="hm-bar" role="progressbar" aria-label="${esc(t.hintMeterLabel)}" aria-valuemin="0" aria-valuemax="${span}" aria-valuenow="${done}"><i style="width:${Math.round((done / span) * 100)}%"></i></div>
+        <div class="hm-bar" role="progressbar" aria-label="${esc(t.hintMeterLabel)}" aria-valuemin="0" aria-valuemax="${span}" aria-valuenow="${done}"><i${bump && !allOpen && done > 0 ? ` class="grow" style="--from:${Math.round(((done - 1) / span) * 100)}%;width:${Math.round((done / span) * 100)}%"` : ` style="width:${Math.round((done / span) * 100)}%"`}></i></div>
       </div>`;
   }
 
@@ -2288,18 +2354,19 @@ a.btn { text-decoration: none; }
             <button type="button" class="btn btn-small" data-act="pass">${esc(t.passTurn)}</button></div>
           <ul class="team-stats">${teamStats(g).map((r, i) => `<li class="${i === g.turn ? "on" : ""}" style="--tc:${teamColor(i)}"><i></i><span>${esc(teamName(i))}</span><b>${r.total}</b></li>`).join("")}</ul>
         </div>` : "";
+    const fx = answerFx(g);
     const deskHead = `<div class="desk-head">
-          <div class="count-big"><b>${q + pen}</b><span>${esc(t.totalLabel)}</span>${pen ? `<em>${esc(t.totalBreak(q, pen))}</em>` : ""}</div>
+          <div class="count-big">${countNum(q + pen, fx.bump)}<span>${esc(t.totalLabel)}</span>${pen ? `<em>${esc(t.totalBreak(q, pen))}</em>` : ""}</div>
           <div class="count-small"><span>${esc(t.hints)} <b>${g.hints}</b> / ${c.hints.length}</span></div>
         </div>
-        ${hintMeter(c, g, t, viewOnly || confirmAct === "hint" ? "" : "hint")}
+        ${hintMeter(c, g, t, viewOnly || confirmAct === "hint" ? "" : "hint", fx.bump)}
         ${hintConfirm}
         ${state.room ? roomStrip(c, g, t, viewOnly) : teamStrip}`;
     let ask;
     if (viewOnly) {
-      ask = `<section class="desk b-ask">${deskHead}${stage}</section>`;
+      ask = `<section class="desk b-ask${fx.flash}">${deskHead}${stage}</section>`;
     } else if (mode === "ai") {
-      ask = `<section class="desk b-ask">
+      ask = `<section class="desk b-ask${fx.flash}">
           ${deskHead}
           <form class="ask" data-form="ask" autocomplete="off">
             <input id="q" type="text" maxlength="200" placeholder="${esc(t.askPlaceholder)}" aria-label="${esc(t.askLabel)}" ${aiOk ? "" : "disabled"}>
@@ -2310,7 +2377,7 @@ a.btn { text-decoration: none; }
           ${stage}
         </section>`;
     } else {
-      ask = `<section class="desk b-ask">
+      ask = `<section class="desk b-ask${fx.flash}">
           ${deskHead}
           <input id="memo" class="memo" type="text" maxlength="200" placeholder="${esc(t.memoPlaceholder)}" aria-label="${esc(t.memoLabel)}">
           <div class="vpad" role="group" aria-label="${esc(t.stampLabel)}">
@@ -2330,7 +2397,7 @@ a.btn { text-decoration: none; }
 
     const log = `<section class="log b-log" aria-labelledby="log-h">
       <div class="log-head"><h3 id="log-h" class="eyebrow">${esc(t.transcript)}</h3></div>
-      ${transcriptList(g, t)}
+      ${transcriptList(g, t, true)}
     </section>`;
 
     return `<main>

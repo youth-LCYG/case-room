@@ -1,6 +1,6 @@
 # 사건 수사실: 사건 추가·수정 안내
 
-- 사이트: https://youth-lcyg.github.io/case-room/
+- 사이트: https://lcyg-caseroom.vercel.app/ (Vercel) · https://youth-lcyg.github.io/case-room/ (GitHub Pages). 저장소에 올리면 두 곳 모두 몇 분 안에 바뀝니다.
 - 저장소: https://github.com/youth-LCYG/case-room
 
 새 사건은 `cases.json` 하나만 고쳐서 올리면 됩니다. 게임과 그림 페이지가 둘 다 이 파일을 읽습니다.

@@ -1424,16 +1424,19 @@ a.btn { text-decoration: none; }
     }
     parts.push("",
       "VERDICTS:",
-      `YES = the question is true according to the ${bible ? "text" : "facts"}.`,
-      `NO = the question is false according to the ${bible ? "text" : "facts"}.`,
+      `YES = the ${bible ? "text" : "facts"} state it or clearly imply it.`,
+      `NO = the ${bible ? "text" : "facts"} state or clearly imply the opposite.`,
       bible
         ? "NOT_STATED = the text does not say, even if tradition or common sense suggests an answer."
-        : "IRRELEVANT = the facts do not settle it, and it does not matter for solving the case.",
+        : "IRRELEVANT = the facts do not settle it (it is not part of the story, or it does not matter). Never guess YES or NO for a detail the facts leave open.",
       `INVALID = it cannot be answered with yes or no, it asks two separate things at once, it asks you to explain or reveal the answer, or it is not a real question. Only for INVALID, write a short reason in ${langName} (at most 12 words) in "note".`,
       "",
       "RULES:",
       "- Judge only the NEW question. Use earlier questions only to understand words like \"he\" or \"that\".",
-      "- Accept loose wording, synonyms, typos, and either Korean or English.",
+      "- Accept loose wording, typos, and either Korean or English, as long as the question means the same thing as the facts.",
+      "- A more general word still matches; a different specific kind does not. If the facts say \"sea turtle\", then \"a turtle\" or \"an animal\" is YES, but a soft-shelled turtle (자라), a snapping turtle or a tortoise is NO. Take the same care with kinds of people, animals, objects, places, times and numbers.",
+      "- When the facts say what something was (eye surgery, a small plane, a lion) and the question puts something else in its place (ear surgery, a helicopter, a tiger), answer NO, not IRRELEVANT.",
+      "- Before you answer, check every specific detail in the question (who, what kind, where, when, how many) against the facts.",
       "- If a single claim is partly false, answer NO.",
       "- Never add hints or explanations. \"note\" must be \"\" unless the verdict is INVALID.",
       "",

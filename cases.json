@@ -641,12 +641,12 @@
     "ko": "물 한 잔"
    },
    "setup": {
-    "en": "A boy rushed into a small café and asked the barista for a glass of water. Instead of pouring one, she grabbed a balloon from the party decorations, held it right behind his head, and popped it. The boy jumped, then grinned and said, “Thank you so much!” He left without drinking a single drop.",
-    "ko": "한 남자아이가 작은 카페로 뛰어 들어와 직원에게 물 한 잔을 달라고 했습니다. 그런데 직원은 물을 따라 주는 대신 파티 장식용 풍선 하나를 집어 아이의 머리 바로 뒤에 대고 펑 터뜨렸습니다. 아이는 펄쩍 뛰더니 활짝 웃으며 “정말 고맙습니다!” 하고 말했습니다. 그리고 물은 한 모금도 마시지 않고 나갔습니다."
+    "en": "A boy rushed into a small café and asked the barista for a glass of water. Instead of pouring one, she slammed her hand on the counter and shouted, “You're the kid who broke our window yesterday and ran off!” The boy jumped, then grinned and said, “Thank you so much!” He left without drinking a single drop.",
+    "ko": "한 남자아이가 작은 카페로 뛰어 들어와 직원에게 물 한 잔을 달라고 했습니다. 그런데 직원은 물을 따라 주는 대신 계산대를 쾅 내리치며 “너 어제 우리 가게 유리창 깨고 도망간 애지!” 하고 소리쳤습니다. 아이는 펄쩍 뛰더니 활짝 웃으며 “정말 고맙습니다!” 하고 말했습니다. 그리고 물은 한 모금도 마시지 않고 나갔습니다."
    },
    "truth": {
-    "en": "On the afternoon of his school concert, a boy was supposed to sing the opening solo. Twenty minutes before it began, he still couldn't stop hiccuping, and it had been going on for half an hour.\nHe had tried everything he knew: holding his breath, breathing into a paper bag, even swallowing a spoonful of sugar. Then he remembered his grandmother's cure, a glass of water sipped very slowly, and he ran into the little café across the street from his school.\n“Could I— hic!— have a glass of— hic!— water, please?” he gasped.\nThe barista heard the hiccups between his words and noticed his concert bow tie. She knew a faster cure than water: a sudden fright. She pulled a balloon off the decorations for a birthday party later that day, stepped around the counter, held it right behind his head, and popped it.\nThe boy jumped so high that he almost knocked over a chair. Then he stood very still and waited, but no hiccup came.\n“They're gone! Thank you so much!” he said with a huge grin.\nHe didn't need the water anymore, and there was no time to waste. He dashed back to school and sang his solo without a single hiccup.",
-    "ko": "학교 음악회가 있던 날 오후, 한 남자아이가 첫 순서로 독창을 하기로 되어 있었습니다. 그런데 공연 20분 전까지도 딸꾹질이 멈추지 않았고, 벌써 30분째였습니다.\n아이는 아는 방법을 모두 써 보았습니다. 숨을 꾹 참아 보고, 종이봉투에 대고 숨을 쉬어 보고, 설탕을 한 숟가락 삼켜 보기까지 했습니다. 그러다 할머니가 알려 주신 방법, 물 한 잔을 아주 천천히 조금씩 마시는 방법이 떠올라 학교 건너편의 작은 카페로 뛰어 들어갔습니다.\n“저기요, 물 한— 딸꾹!— 잔만— 딸꾹!— 주실 수 있어요?” 아이가 숨을 몰아쉬며 말했습니다.\n직원은 아이의 말 사이사이에 끼어드는 딸꾹질 소리를 듣고, 아이가 맨 음악회용 나비넥타이도 보았습니다. 직원은 물보다 빠른 방법을 알고 있었습니다. 바로 깜짝 놀라게 하는 것이었습니다. 직원은 그날 늦게 열릴 생일 파티를 위해 걸어 둔 풍선 하나를 떼어 계산대를 돌아 나오더니, 아이 머리 바로 뒤에 대고 펑 터뜨렸습니다.\n아이는 의자를 넘어뜨릴 뻔할 만큼 펄쩍 뛰었습니다. 그러고는 가만히 서서 기다렸지만, 딸꾹질은 다시 나오지 않았습니다.\n“멈췄어요! 정말 고맙습니다!” 아이가 활짝 웃으며 말했습니다.\n이제 물은 필요 없었고, 꾸물거릴 시간도 없었습니다. 아이는 학교로 달려가 딸꾹질 한 번 없이 독창을 해냈습니다."
+    "en": "On the afternoon of his school concert, a boy was supposed to sing the opening solo. Twenty minutes before it began, he still couldn't stop hiccuping, and it had been going on for half an hour.\nHe had tried everything he knew: holding his breath, breathing into a paper bag, even swallowing a spoonful of sugar. Then he remembered his grandmother's cure, a glass of water sipped very slowly, and he ran into the little café across the street from his school.\n“Could I— hic!— have a glass of— hic!— water, please?” he gasped.\nThe barista heard the hiccups between his words and noticed his concert bow tie. She knew a faster cure than water: a sudden fright. She put on her fiercest face and slammed her hand on the counter.\n“You're the kid who broke our window yesterday and ran off!” she shouted.\nThe boy jumped so high that he almost knocked over a chair. Then he stood very still and waited, but no hiccup came. The barista burst out laughing and told him she had only said it to give him a fright.\n“They're gone! Thank you so much!” he said with a huge grin.\nHe didn't need the water anymore, and there was no time to waste. He dashed back to school and sang his solo without a single hiccup.",
+    "ko": "학교 음악회가 있던 날 오후, 한 남자아이가 첫 순서로 독창을 하기로 되어 있었습니다. 그런데 공연 20분 전까지도 딸꾹질이 멈추지 않았고, 벌써 30분째였습니다.\n아이는 아는 방법을 모두 써 보았습니다. 숨을 꾹 참아 보고, 종이봉투에 대고 숨을 쉬어 보고, 설탕을 한 숟가락 삼켜 보기까지 했습니다. 그러다 할머니가 알려 주신 방법, 물 한 잔을 아주 천천히 조금씩 마시는 방법이 떠올라 학교 건너편의 작은 카페로 뛰어 들어갔습니다.\n“저기요, 물 한— 딸꾹!— 잔만— 딸꾹!— 주실 수 있어요?” 아이가 숨을 몰아쉬며 말했습니다.\n직원은 아이의 말 사이사이에 끼어드는 딸꾹질 소리를 듣고, 아이가 맨 음악회용 나비넥타이도 보았습니다. 직원은 물보다 빠른 방법을 알고 있었습니다. 바로 깜짝 놀라게 하는 것이었습니다. 직원은 있는 대로 무서운 얼굴을 하고 계산대를 쾅 내리쳤습니다.\n“너 어제 우리 가게 유리창 깨고 도망간 애지!” 직원이 소리쳤습니다.\n아이는 의자를 넘어뜨릴 뻔할 만큼 펄쩍 뛰었습니다. 그러고는 가만히 서서 기다렸지만, 딸꾹질은 다시 나오지 않았습니다. 직원은 웃음을 터뜨리며, 놀라게 하려고 한 말이라고 했습니다.\n“멈췄어요! 정말 고맙습니다!” 아이가 활짝 웃으며 말했습니다.\n이제 물은 필요 없었고, 꾸물거릴 시간도 없었습니다. 아이는 학교로 달려가 딸꾹질 한 번 없이 독창을 해냈습니다."
    },
    "keys": [
     {
@@ -663,12 +663,12 @@
     {
      "id": "scare",
      "label": {
-      "en": "Why she popped the balloon",
-      "ko": "풍선을 터뜨린 이유"
+      "en": "Why she shouted",
+      "ko": "직원이 소리친 이유"
      },
      "text": {
-      "en": "The barista heard the hiccups and popped the balloon to give him a sudden fright, which stops hiccups.",
-      "ko": "직원은 딸꾹질 소리를 듣고, 깜짝 놀라게 해서 딸꾹질을 멈추려고 풍선을 터뜨렸다."
+      "en": "The barista heard the hiccups and pretended to accuse him to give him a sudden fright, which stops hiccups.",
+      "ko": "직원은 딸꾹질 소리를 듣고, 깜짝 놀라게 해서 딸꾹질을 멈추려고 일부러 누명을 씌우는 척 소리쳤다."
      }
     },
     {
@@ -693,12 +693,12 @@
      "ko": "30분 동안 아이의 몸에서는 아무리 해도 멈출 수 없는 작은 소리가 계속 나고 있었습니다."
     }
    ],
-   "facts": "- A boy was about to sing the opening solo at his school's afternoon concert. He had had the hiccups for about half an hour, and the concert started in twenty minutes.\n- He had already tried holding his breath, breathing into a paper bag, and swallowing a spoonful of sugar. None of it worked.\n- His grandmother's cure was to sip a glass of water very slowly. That is the only reason he ran into the café across the street from his school and asked for water. He was not thirsty.\n- The barista heard the hiccups breaking up his words and saw his concert bow tie. She knew that a sudden fright often stops hiccups, faster than water.\n- The café was decorated with balloons for another child's birthday party later that day; it was not the boy's birthday. She pulled one off, held it right behind his head without warning, and popped it. She didn't explain first, so that it would be a real surprise.\n- The boy jumped, and the shock stopped his hiccups. That is why he said “Thank you so much!” and left without drinking: he no longer needed the water, and he had to hurry back.\n- He made it back in time and sang his solo without a single hiccup.\n- Nobody was hurt. The pop was loud but did not hurt his ears, and nothing in the café broke.\n- The barista was not angry or rude, and it was not a prank: she was helping him. They had never met before.\n- Apart from the hiccups, the boy was healthy. He did not need the water for medicine, a burn, a fire or anything else, and he was not choking.\n- He is not afraid of balloons. There is no crime and no animal in the story.\n- Whether he paid or bought anything is not part of the story (IRRELEVANT).\n- The names of the boy, the barista, the café and the school, and the song he sang, are not part of the story (IRRELEVANT).",
-   "factsKo": "- 한 남자아이가 학교 오후 음악회에서 첫 순서로 독창을 하기로 되어 있었다. 아이는 30분쯤 딸꾹질을 멈추지 못하고 있었고, 음악회는 20분 뒤에 시작될 예정이었다.\n- 아이는 이미 숨 참기, 종이봉투에 대고 숨쉬기, 설탕 한 숟가락 삼키기를 해 보았다. 하나도 효과가 없었다.\n- 할머니가 알려 준 방법은 물 한 잔을 아주 천천히 조금씩 마시는 것이었다. 아이가 학교 건너편 카페에 뛰어 들어가 물을 달라고 한 이유는 그것뿐이다. 목이 마르지는 않았다.\n- 직원은 아이의 말 사이사이에 끼어드는 딸꾹질 소리를 듣고, 음악회용 나비넥타이도 보았다. 갑자기 깜짝 놀라면 딸꾹질이 멈출 때가 많고, 그게 물보다 빠르다는 것을 알고 있었다.\n- 카페는 그날 늦게 열릴 다른 아이의 생일 파티를 위해 풍선으로 꾸며져 있었다. 그 남자아이의 생일은 아니었다. 직원은 풍선 하나를 떼어 예고 없이 아이 머리 바로 뒤에 대고 터뜨렸다. 진짜로 놀라게 하려고 미리 설명하지 않았다.\n- 아이는 펄쩍 뛰었고, 그 충격에 딸꾹질이 멈췄다. 그래서 “정말 고맙습니다!”라고 말하고 물을 마시지 않은 채 나갔다. 물이 더는 필요 없었고, 서둘러 돌아가야 했기 때문이다.\n- 아이는 제때 돌아가 딸꾹질 한 번 없이 독창을 마쳤다.\n- 아무도 다치지 않았다. 풍선 소리는 컸지만 아이의 귀는 괜찮았고, 카페에서 깨진 것도 없다.\n- 직원은 화가 났거나 무례했던 것도, 장난을 친 것도 아니다. 아이를 도와준 것이다. 둘은 처음 보는 사이였다.\n- 딸꾹질 말고는 아이는 건강했다. 약을 먹거나 화상을 식히거나 불을 끄려고 물이 필요했던 것이 아니고, 목에 무엇이 걸린 것도 아니었다.\n- 아이는 풍선을 무서워하지 않는다. 이 이야기에는 범죄도 동물도 나오지 않는다.\n- 돈을 냈는지, 무엇을 샀는지는 이야기에 나오지 않는다(상관없음).\n- 아이, 직원, 카페, 학교의 이름과 아이가 부른 노래는 이야기에 나오지 않는다(상관없음).",
+   "facts": "- A boy was about to sing the opening solo at his school's afternoon concert. He had had the hiccups for about half an hour, and the concert started in twenty minutes.\n- He had already tried holding his breath, breathing into a paper bag, and swallowing a spoonful of sugar. None of it worked.\n- His grandmother's cure was to sip a glass of water very slowly. That is the only reason he ran into the café across the street from his school and asked for water. He was not thirsty.\n- The barista heard the hiccups breaking up his words and saw his concert bow tie. She knew that a sudden fright often stops hiccups, faster than water.\n- Without warning, she put on a fierce face, slammed her hand on the counter and shouted, “You're the kid who broke our window yesterday and ran off!” It wasn't true and she knew it: no window had been broken, and the boy had never been to the café before. She didn't explain first, so that it would be a real surprise.\n- The boy jumped, and the shock stopped his hiccups. The barista laughed and told him she had only said it to give him a fright. That is why he said “Thank you so much!” and left without drinking: he no longer needed the water, and he had to hurry back.\n- He made it back in time and sang his solo without a single hiccup.\n- Nobody was hurt. Slamming the counter didn't break anything, and she never touched the boy.\n- The barista was not really angry, and she did not mistake him for someone else (NO). It was not a prank either: she was helping him. They had never met before.\n- Apart from the hiccups, the boy was healthy. He did not need the water for medicine, a burn, a fire or anything else, and he was not choking.\n- No window was broken, and the boy had done nothing wrong (NO if asked whether he broke a window). There is no crime and no animal in the story.\n- Whether he paid or bought anything is not part of the story (IRRELEVANT).\n- The names of the boy, the barista, the café and the school, and the song he sang, are not part of the story (IRRELEVANT).",
+   "factsKo": "- 한 남자아이가 학교 오후 음악회에서 첫 순서로 독창을 하기로 되어 있었다. 아이는 30분쯤 딸꾹질을 멈추지 못하고 있었고, 음악회는 20분 뒤에 시작될 예정이었다.\n- 아이는 이미 숨 참기, 종이봉투에 대고 숨쉬기, 설탕 한 숟가락 삼키기를 해 보았다. 하나도 효과가 없었다.\n- 할머니가 알려 준 방법은 물 한 잔을 아주 천천히 조금씩 마시는 것이었다. 아이가 학교 건너편 카페에 뛰어 들어가 물을 달라고 한 이유는 그것뿐이다. 목이 마르지는 않았다.\n- 직원은 아이의 말 사이사이에 끼어드는 딸꾹질 소리를 듣고, 음악회용 나비넥타이도 보았다. 갑자기 깜짝 놀라면 딸꾹질이 멈출 때가 많고, 그게 물보다 빠르다는 것을 알고 있었다.\n- 직원은 예고 없이 무서운 얼굴을 하고 계산대를 쾅 내리치며 “너 어제 우리 가게 유리창 깨고 도망간 애지!” 하고 소리쳤다. 사실이 아니라는 것을 직원도 알았다. 깨진 유리창은 없었고, 아이는 그 카페에 처음 와 본 것이었다. 진짜로 놀라게 하려고 미리 설명하지 않았다.\n- 아이는 펄쩍 뛰었고, 그 충격에 딸꾹질이 멈췄다. 직원은 웃음을 터뜨리며 놀라게 하려고 한 말이라고 알려 주었다. 그래서 아이는 “정말 고맙습니다!”라고 말하고 물을 마시지 않은 채 나갔다. 물이 더는 필요 없었고, 서둘러 돌아가야 했기 때문이다.\n- 아이는 제때 돌아가 딸꾹질 한 번 없이 독창을 마쳤다.\n- 아무도 다치지 않았다. 계산대를 내리쳤지만 부서진 것은 없고, 직원은 아이 몸에 손대지 않았다.\n- 직원은 정말 화가 난 것도, 아이를 다른 사람으로 착각한 것도 아니다(아니오). 장난을 친 것도 아니다. 아이를 도와준 것이다. 둘은 처음 보는 사이였다.\n- 딸꾹질 말고는 아이는 건강했다. 약을 먹거나 화상을 식히거나 불을 끄려고 물이 필요했던 것이 아니고, 목에 무엇이 걸린 것도 아니었다.\n- 깨진 유리창은 없고, 아이는 잘못한 것이 없다(유리창을 깼냐고 물으면 아니오). 이 이야기에는 범죄도 동물도 나오지 않는다.\n- 돈을 냈는지, 무엇을 샀는지는 이야기에 나오지 않는다(상관없음).\n- 아이, 직원, 카페, 학교의 이름과 아이가 부른 노래는 이야기에 나오지 않는다(상관없음).",
    "pictures": {
     "cover": {
-     "scene": "A cozy little café on a bright afternoon, decorated with colorful balloons and paper streamers for a birthday party; on the counter, an empty clear glass beside a water pitcher; the front door still swinging open as if someone has just rushed in; cheerful, curious mood.",
-     "check": "사람이 보이면 안 됩니다. 간판, 메뉴판, 숫자 풍선 등 글자나 숫자가 없어야 합니다."
+     "scene": "A cozy little café on a bright afternoon with a large, clean front window; on the counter, an empty clear glass beside a water pitcher; the front door still swinging open as if someone has just rushed in; cheerful, curious mood.",
+     "check": "사람이 보이면 안 됩니다. 풍선이 없어야 합니다. 간판, 메뉴판 등 글자나 숫자가 없어야 합니다."
     },
     "hint1": {
      "scene": "Evidence-photo composition on a wooden café counter: a tall glass filled to the brim with water, completely untouched, beads of condensation on the glass, a folded paper napkin beside it; close-up, nothing else.",
@@ -709,8 +709,8 @@
      "check": "구겨진 갈색 종이봉투와 설탕이 조금 남은 숟가락인지 봅니다. 사람, 글자, 숫자가 없어야 합니다."
     },
     "truth": {
-     "scene": "Inside the cheerful café decorated with birthday balloons and streamers: a boy in a white shirt and black bow tie leaps in surprise with both feet off the floor while bits of a popped red balloon flutter behind his head; a smiling barista in an apron stands just behind him; an untouched glass of water on the counter; bright, funny, warm mood.",
-     "check": "아이가 깜짝 놀라 뛰어오르고 터진 풍선 조각이 보이는 장면인지 봅니다. 아이가 다치거나 겁에 질려 보이면 안 됩니다. 글자·숫자가 없어야 합니다."
+     "scene": "Inside the cozy café: a boy in a white shirt and black bow tie leaps in surprise with both feet off the floor, while behind the counter a barista in an apron, one hand still flat on the counter, breaks from a pretend-stern face into a warm laugh; an untouched glass of water on the counter; bright, funny, warm mood.",
+     "check": "아이가 깜짝 놀라 뛰어오르고, 직원이 계산대에 손을 얹은 채 웃는 장면인지 봅니다. 풍선이 없어야 합니다. 아이가 다치거나 겁에 질려 보이면 안 됩니다. 글자·숫자가 없어야 합니다."
     }
    },
    "adult": {
@@ -1095,165 +1095,86 @@
    }
   },
   {
-   "id": "lights-at-nine",
+   "id": "lights-out",
    "kind": "mystery",
+   "only": "adult",
    "level": 2,
    "added": "2026-10-29",
    "title": {
-    "en": "Lights at Nine",
-    "ko": "아홉 시의 불빛"
+    "en": "The Night the Lights Went Out",
+    "ko": "불을 끈 밤"
    },
    "setup": {
-    "en": "Every night at exactly 9:00, Grace switches off every light in her house for ten seconds, then turns them back on. A minute later, a house far across the valley does the same. Grace and the person in that house never talk on the phone.",
-    "ko": "그레이스는 매일 밤 정각 9시가 되면 집 안의 불을 모두 10초 동안 껐다가 다시 켭니다. 1분쯤 뒤, 골짜기 건너 멀리 있는 집 한 채도 똑같이 합니다. 그레이스와 그 집 사람은 전화 통화를 하지 않습니다."
+    "en": "One stormy night, a man turned off all the lights and went to bed. The next morning, he heard the news on the radio and knew that more than a hundred people had died because of him.",
+    "ko": "폭풍이 몰아치던 밤, 한 남자가 불을 모두 끄고 잠자리에 들었습니다. 다음 날 아침 라디오 뉴스를 들은 그는, 자기 때문에 백 명이 넘는 사람이 죽었다는 것을 알았습니다."
    },
    "truth": {
-    "en": "The house across the valley belonged to Grace's father. He was in his eighties, lived alone, and had become very hard of hearing.\nPhone calls didn't work for him anymore, and he had never learned to text. Grace worried about him every night, alone in that house.\n“It's no use, Grace. I can't hear a word on that thing,” he said one day, pushing the phone away.\nSo years ago, sitting at his kitchen table, they agreed on a signal. From their windows, the two houses could see each other across the valley.\n“At nine o'clock, I'll turn off all my lights for ten seconds. That means, ‘Good night. Are you okay?’ If you're fine, do the same,” Grace said.\n“Nine o'clock, ten seconds. I'll be watching,” her father said with a smile.\nFrom then on, every night at exactly nine, Grace's house went dark for ten seconds, and a minute later her father's lights blinked back. His answer meant, “I'm fine. Good night.”\nIf his lights ever failed to answer, Grace would get in her car and be at his door in ten minutes. So far, he has answered every single night.",
-    "ko": "골짜기 건너편 그 집에는 그레이스의 아버지가 살았습니다. 여든이 넘은 아버지는 혼자 살았고, 귀가 많이 어두워졌습니다.\n이제 아버지에게는 전화 통화가 소용없었고, 문자 보내는 법도 배운 적이 없었습니다. 그레이스는 밤마다 그 집에 혼자 있는 아버지가 걱정이었습니다.\n“소용없다, 그레이스야. 그 전화로는 한마디도 안 들려.” 어느 날 아버지가 전화기를 밀어 놓으며 말했습니다.\n그래서 오래전, 두 사람은 아버지의 부엌 식탁에 마주 앉아 신호를 정했습니다. 두 집은 골짜기를 사이에 두고 창문으로 서로 보였습니다.\n“밤 9시에 제가 우리 집 불을 전부 10초 동안 끌게요. ‘안녕히 주무세요. 괜찮으세요?’라는 뜻이에요. 괜찮으시면 아버지도 똑같이 해 주세요.” 그레이스가 말했습니다.\n“9시에 10초라. 꼭 지켜보고 있으마.” 아버지가 웃으며 대답했습니다.\n그 뒤로 매일 밤 정각 9시면 그레이스의 집이 10초 동안 캄캄해졌고, 1분쯤 뒤 아버지의 집 불빛이 깜빡여 답했습니다. “나는 괜찮다. 잘 자라.”라는 뜻이었습니다.\n아버지 집 불빛이 대답하지 않는 날이 오면, 그레이스는 곧바로 차를 몰아 10분 만에 아버지 집 문 앞에 닿을 것입니다. 지금까지 아버지는 하루도 빠짐없이 대답했습니다."
+    "en": "For years the man had kept the lighthouse on a lonely, rocky stretch of coast. Every evening he switched on the great lamp, and all night its turning beam warned ships away from the rocks.\nThat night a storm hit the coast, and he was worn out after a long day. Half asleep on his feet, he went through the lighthouse turning off every light: the kitchen, the hallway, his own room, and finally the heavy brass switch on the stone wall that ran the great lamp.\n“Enough for one day,” he muttered, and he went to bed.\nOut at sea, a passenger ship was heading for the coast through the wind and rain. Its crew searched the darkness for the lighthouse beam, but the whole coast was black, and the ship struck the rocks and sank.\nIn the morning he switched on the radio over breakfast.\n“Last night, in the storm, a passenger ship struck the rocks off this coast and sank. Survivors say there was no lighthouse light anywhere. More than a hundred people have died,” the announcer said.\nHe looked at the brass switch, still pulled down. The light he had turned off had never been his alone: it was the light the ships trusted, and more than a hundred people had died because of his careless mistake.",
+    "ko": "남자는 여러 해 동안 외딴 바위 해안의 등대를 지켜 왔습니다. 저녁마다 그가 커다란 등대 불을 켜면, 밤새 돌아가는 불빛이 배들에게 암초를 피하라고 알려 주었습니다.\n그날 밤 해안에 폭풍이 몰아쳤고, 그는 긴 하루를 보내고 녹초가 되어 있었습니다. 반쯤 졸면서 그는 등대 안의 불을 하나씩 끄고 다녔습니다. 부엌과 복도, 자기 방의 불을 끄고, 마지막에는 돌벽에 달린 등대 불의 커다란 놋쇠 스위치까지 내렸습니다.\n“오늘은 이만하면 됐다.” 그는 중얼거리며 잠자리에 들었습니다.\n바다에서는 여객선 한 척이 비바람을 뚫고 해안으로 다가오고 있었습니다. 선원들은 어둠 속에서 등대 불빛을 찾았지만 해안은 온통 캄캄했고, 배는 암초에 부딪혀 가라앉았습니다.\n아침에 그는 식탁에서 라디오를 켰습니다.\n“어젯밤 폭풍 속에서 여객선 한 척이 이곳 앞바다 암초에 부딪혀 침몰했습니다. 생존자들은 등대 불빛을 전혀 보지 못했다고 말합니다. 사망자는 백 명이 넘습니다.” 아나운서가 말했습니다.\n그는 아직 내려가 있는 놋쇠 스위치를 바라보았습니다. 그가 끈 것은 자기만을 위한 불이 아니었습니다. 배들이 믿고 의지하던 불이었고, 그의 부주의한 실수 때문에 백 명이 넘는 사람이 죽었습니다."
    },
    "keys": [
     {
-     "id": "signal",
+     "id": "keeper",
      "label": {
-      "en": "What the lights mean",
-      "ko": "불빛의 의미"
+      "en": "Who he was",
+      "ko": "그의 정체"
      },
      "text": {
-      "en": "A signal between the two houses: \"Good night, are you okay?\" and \"I'm fine.\"",
-      "ko": "두 집이 주고받는 신호다. \"괜찮으세요?\"와 \"괜찮다\"."
+      "en": "A lighthouse keeper.",
+      "ko": "등대지기였다."
      }
     },
     {
-     "id": "who",
+     "id": "lamp",
      "label": {
-      "en": "Who lives across the valley",
-      "ko": "건너편에 사는 사람"
+      "en": "Which light he turned off",
+      "ko": "끈 불"
      },
      "text": {
-      "en": "Grace's elderly father, who lives alone.",
-      "ko": "혼자 사는 그레이스의 연로한 아버지."
+      "en": "The lighthouse lamp.",
+      "ko": "등대의 불이었다."
      }
     },
     {
-     "id": "why",
+     "id": "ship",
      "label": {
-      "en": "Why they do it this way",
-      "ko": "이렇게 하는 이유"
+      "en": "What happened",
+      "ko": "무슨 일이 일어났나"
      },
      "text": {
-      "en": "He can't use the phone because he is hard of hearing, and it is a nightly check that he is safe.",
-      "ko": "아버지는 귀가 어두워 전화를 못 하고, 매일 밤 아버지가 무사한지 확인하는 것이다."
+      "en": "A ship could not see the light, hit the rocks, and sank.",
+      "ko": "배가 불빛을 보지 못해 암초에 부딪혀 가라앉았다."
      }
     }
    ],
    "hints": [
     {
-     "en": "The two houses are having a conversation.",
-     "ko": "두 집은 대화를 나누고 있습니다."
+     "en": "The lights he turned off were not only for himself.",
+     "ko": "그가 끈 불은 자기만을 위한 불이 아니었습니다."
     },
     {
-     "en": "The person across the valley is family, and this is about making sure someone is safe.",
-     "ko": "건너편 사람은 가족이고, 이것은 누군가가 무사한지 확인하는 일입니다."
+     "en": "He lived and worked by the sea, on a rocky coast.",
+     "ko": "그는 바위투성이 해안, 바닷가에서 살며 일했습니다."
     }
    ],
-   "facts": "- The house across the valley belongs to Grace's father. He is in his eighties and lives alone. Grace is his adult daughter.\n- He is very hard of hearing, so phone calls don't work for him. He never learned to text and does not use video calls.\n- Years ago, they agreed on the light signal.\n- Grace's blink at 9:00 means \"Good night. Are you okay?\" Her father's blink back means \"I'm fine. Good night.\"\n- If his lights ever fail to blink back, Grace will drive over right away (about ten minutes by car) to check on him. So far he has answered every night.\n- The two houses can see each other across the valley.\n- It is not a game, a prank, a power problem, a code for anyone else, a religious ritual, or a way to save electricity. No neighbors or strangers are involved.\n- Grace's mother, Grace's job, and Grace's exact age are not part of the story (IRRELEVANT).",
-   "factsKo": "- 골짜기 건너편 집은 그레이스의 아버지 집이다. 아버지는 80대이고 혼자 산다. 그레이스는 그의 성인 딸이다.\n- 아버지는 귀가 많이 어두워서 전화 통화가 안 된다. 문자 보내는 법은 배운 적이 없고, 영상 통화도 하지 않는다.\n- 오래전에 두 사람이 이 불빛 신호를 정했다.\n- 9시에 그레이스가 불을 깜빡이는 것은 \"안녕히 주무세요. 괜찮으세요?\"라는 뜻이다. 아버지가 깜빡여 답하는 것은 \"나는 괜찮다. 잘 자라.\"라는 뜻이다.\n- 아버지 집 불이 깜빡여 답하지 않는 날이 오면, 그레이스는 곧바로 차를 몰고 가서(차로 10분쯤) 아버지를 살펴볼 것이다. 지금까지 아버지는 매일 밤 답했다.\n- 두 집은 골짜기를 사이에 두고 서로 보인다.\n- 놀이도, 장난도, 전기 문제도, 다른 사람에게 보내는 암호도, 종교 의식도, 전기를 아끼려는 방법도 아니다. 이웃이나 낯선 사람은 관련이 없다.\n- 그레이스의 어머니, 그레이스의 직업, 그레이스의 정확한 나이는 이야기에 나오지 않는다(상관없음).",
+   "facts": "- The man was a lighthouse keeper living at the lighthouse.\n- That stormy night, tired and careless, he switched off the lighthouse lamp along with the lights in his room and went to bed.\n- A passenger ship approaching the coast in the storm could not see the warning light, struck the rocks, and sank. More than a hundred people died.\n- He did not mean to cause it (NO to murder). It was a deadly mistake.\n- He learned what had happened from the radio news the next morning.\n- His house lights did not matter; it was the lighthouse light (YES if asked whether the light warned ships).\n- Some people on the ship survived (YES). They said there had been no lighthouse light anywhere on the coast, and the radio news he heard the next morning reported it.\n- What happened to him afterward is not part of the story (IRRELEVANT). The ship's name and the country are IRRELEVANT.",
+   "factsKo": "- 남자는 등대에서 사는 등대지기였다.\n- 폭풍이 몰아치던 그날 밤, 피곤하고 부주의했던 그는 자기 방 불과 함께 등대의 불까지 끄고 잠자리에 들었다.\n- 폭풍 속에서 해안으로 다가오던 여객선이 경고 불빛을 보지 못해 암초에 부딪혀 가라앉았다. 백 명이 넘게 죽었다.\n- 일부러 그런 것이 아니다(살인이냐고 물으면 아니오). 끔찍한 실수였다.\n- 그는 다음 날 아침 라디오 뉴스로 무슨 일이 있었는지 알았다.\n- 집 안의 불은 상관이 없고, 등대의 불이 문제였다(그 불이 배에게 경고하는 불이었냐고 물으면 예).\n- 배에 탄 사람 가운데 살아남은 사람도 있었다(예). 그들은 해안 어디에도 등대 불빛이 없었다고 말했고, 그가 다음 날 아침 들은 라디오 뉴스에 그 말이 나왔다.\n- 그 뒤 그가 어떻게 되었는지는 이야기에 나오지 않는다(상관없음). 배의 이름과 나라도 상관없음.",
    "pictures": {
     "cover": {
-     "scene": "A night view across a wide, dark valley: two small houses on opposite hillsides, far apart, each with warm lit windows; a sky full of stars; calm and quiet.",
-     "check": "사람이나 전화기가 보이면 안 됩니다."
+     "scene": "A man's hand pulling down a large old-fashioned brass lever switch in a dark stone room at night; rain streaking a small window behind it; ominous and still.",
+     "check": "어두운 방에서 큰 스위치를 내리는 손인지 봅니다. 등대가 보이면 안 됩니다. 글자·숫자가 없어야 합니다."
     },
     "hint1": {
-     "scene": "Two old-fashioned light switches on small wooden plates, one flipped up and one flipped down, beside a plain wristwatch whose hands point to nine o'clock.",
-     "check": "시계 숫자가 이상하게 그려졌으면 숫자 없는 시계로 다시 만듭니다."
+     "scene": "A heavy old-fashioned brass lever switch on a small wooden mounting board, pulled down to the off position, beside a coil of thick black cable and a large curved piece of ribbed glass lens from a huge lamp.",
+     "check": "내려진 큰 스위치, 굵은 전선, 큰 램프 유리 조각이 있는지 봅니다. 등대가 보이면 안 됩니다. 글자·숫자가 없어야 합니다."
     },
     "hint2": {
-     "scene": "A small hearing aid, a pair of reading glasses, and an old framed photo of an elderly father with his grown daughter, faces soft and out of focus; an old landline phone is pushed to the side.",
-     "check": "전화기나 액자에 글씨가 보이면 안 됩니다."
+     "scene": "A few wet, jagged black sea rocks, a tangle of seaweed, and a weathered red-and-white life ring.",
+     "check": "젖은 바위, 해초, 구명환이 있는지 봅니다. 사람은 없어야 합니다. 글자·숫자가 없어야 합니다."
     },
     "truth": {
-     "scene": "Night across a wide valley: in a small house on one hillside an elderly father at a lit window raising his hand, and on the opposite hillside his grown daughter at her lit window smiling; a sky full of stars; warm and peaceful.",
-     "check": "글자가 보이면 안 됩니다."
-    }
-   },
-   "adult": {
-    "level": 2,
-    "title": {
-     "en": "The Night the Lights Went Out",
-     "ko": "불을 끈 밤"
-    },
-    "setup": {
-     "en": "One stormy night, a man turned off all the lights and went to bed. The next morning, he heard the news on the radio and knew that more than a hundred people had died because of him.",
-     "ko": "폭풍이 몰아치던 밤, 한 남자가 불을 모두 끄고 잠자리에 들었습니다. 다음 날 아침 라디오 뉴스를 들은 그는, 자기 때문에 백 명이 넘는 사람이 죽었다는 것을 알았습니다."
-    },
-    "truth": {
-     "en": "For years the man had kept the lighthouse on a lonely, rocky stretch of coast. Every evening he switched on the great lamp, and all night its turning beam warned ships away from the rocks.\nThat night a storm hit the coast, and he was worn out after a long day. Half asleep on his feet, he went through the lighthouse turning off every light: the kitchen, the hallway, his own room, and finally the heavy brass switch on the stone wall that ran the great lamp.\n“Enough for one day,” he muttered, and he went to bed.\nOut at sea, a passenger ship was heading for the coast through the wind and rain. Its crew searched the darkness for the lighthouse beam, but the whole coast was black, and the ship struck the rocks and sank.\nIn the morning he switched on the radio over breakfast.\n“Last night, in the storm, a passenger ship struck the rocks off this coast and sank. Survivors say there was no lighthouse light anywhere. More than a hundred people have died,” the announcer said.\nHe looked at the brass switch, still pulled down. The light he had turned off had never been his alone: it was the light the ships trusted, and more than a hundred people had died because of his careless mistake.",
-     "ko": "남자는 여러 해 동안 외딴 바위 해안의 등대를 지켜 왔습니다. 저녁마다 그가 커다란 등대 불을 켜면, 밤새 돌아가는 불빛이 배들에게 암초를 피하라고 알려 주었습니다.\n그날 밤 해안에 폭풍이 몰아쳤고, 그는 긴 하루를 보내고 녹초가 되어 있었습니다. 반쯤 졸면서 그는 등대 안의 불을 하나씩 끄고 다녔습니다. 부엌과 복도, 자기 방의 불을 끄고, 마지막에는 돌벽에 달린 등대 불의 커다란 놋쇠 스위치까지 내렸습니다.\n“오늘은 이만하면 됐다.” 그는 중얼거리며 잠자리에 들었습니다.\n바다에서는 여객선 한 척이 비바람을 뚫고 해안으로 다가오고 있었습니다. 선원들은 어둠 속에서 등대 불빛을 찾았지만 해안은 온통 캄캄했고, 배는 암초에 부딪혀 가라앉았습니다.\n아침에 그는 식탁에서 라디오를 켰습니다.\n“어젯밤 폭풍 속에서 여객선 한 척이 이곳 앞바다 암초에 부딪혀 침몰했습니다. 생존자들은 등대 불빛을 전혀 보지 못했다고 말합니다. 사망자는 백 명이 넘습니다.” 아나운서가 말했습니다.\n그는 아직 내려가 있는 놋쇠 스위치를 바라보았습니다. 그가 끈 것은 자기만을 위한 불이 아니었습니다. 배들이 믿고 의지하던 불이었고, 그의 부주의한 실수 때문에 백 명이 넘는 사람이 죽었습니다."
-    },
-    "keys": [
-     {
-      "id": "keeper",
-      "label": {
-       "en": "Who he was",
-       "ko": "그의 정체"
-      },
-      "text": {
-       "en": "A lighthouse keeper.",
-       "ko": "등대지기였다."
-      }
-     },
-     {
-      "id": "lamp",
-      "label": {
-       "en": "Which light he turned off",
-       "ko": "끈 불"
-      },
-      "text": {
-       "en": "The lighthouse lamp.",
-       "ko": "등대의 불이었다."
-      }
-     },
-     {
-      "id": "ship",
-      "label": {
-       "en": "What happened",
-       "ko": "무슨 일이 일어났나"
-      },
-      "text": {
-       "en": "A ship could not see the light, hit the rocks, and sank.",
-       "ko": "배가 불빛을 보지 못해 암초에 부딪혀 가라앉았다."
-      }
-     }
-    ],
-    "hints": [
-     {
-      "en": "The lights he turned off were not only for himself.",
-      "ko": "그가 끈 불은 자기만을 위한 불이 아니었습니다."
-     },
-     {
-      "en": "He lived and worked by the sea, on a rocky coast.",
-      "ko": "그는 바위투성이 해안, 바닷가에서 살며 일했습니다."
-     }
-    ],
-    "facts": "- The man was a lighthouse keeper living at the lighthouse.\n- That stormy night, tired and careless, he switched off the lighthouse lamp along with the lights in his room and went to bed.\n- A passenger ship approaching the coast in the storm could not see the warning light, struck the rocks, and sank. More than a hundred people died.\n- He did not mean to cause it (NO to murder). It was a deadly mistake.\n- He learned what had happened from the radio news the next morning.\n- His house lights did not matter; it was the lighthouse light (YES if asked whether the light warned ships).\n- Some people on the ship survived (YES). They said there had been no lighthouse light anywhere on the coast, and the radio news he heard the next morning reported it.\n- What happened to him afterward is not part of the story (IRRELEVANT). The ship's name and the country are IRRELEVANT.",
-    "factsKo": "- 남자는 등대에서 사는 등대지기였다.\n- 폭풍이 몰아치던 그날 밤, 피곤하고 부주의했던 그는 자기 방 불과 함께 등대의 불까지 끄고 잠자리에 들었다.\n- 폭풍 속에서 해안으로 다가오던 여객선이 경고 불빛을 보지 못해 암초에 부딪혀 가라앉았다. 백 명이 넘게 죽었다.\n- 일부러 그런 것이 아니다(살인이냐고 물으면 아니오). 끔찍한 실수였다.\n- 그는 다음 날 아침 라디오 뉴스로 무슨 일이 있었는지 알았다.\n- 집 안의 불은 상관이 없고, 등대의 불이 문제였다(그 불이 배에게 경고하는 불이었냐고 물으면 예).\n- 배에 탄 사람 가운데 살아남은 사람도 있었다(예). 그들은 해안 어디에도 등대 불빛이 없었다고 말했고, 그가 다음 날 아침 들은 라디오 뉴스에 그 말이 나왔다.\n- 그 뒤 그가 어떻게 되었는지는 이야기에 나오지 않는다(상관없음). 배의 이름과 나라도 상관없음.",
-    "pictures": {
-     "cover": {
-      "scene": "A man's hand pulling down a large old-fashioned brass lever switch in a dark stone room at night; rain streaking a small window behind it; ominous and still.",
-      "check": "어두운 방에서 큰 스위치를 내리는 손인지 봅니다. 등대가 보이면 안 됩니다. 글자·숫자가 없어야 합니다."
-     },
-     "hint1": {
-      "scene": "A heavy old-fashioned brass lever switch on a small wooden mounting board, pulled down to the off position, beside a coil of thick black cable and a large curved piece of ribbed glass lens from a huge lamp.",
-      "check": "내려진 큰 스위치, 굵은 전선, 큰 램프 유리 조각이 있는지 봅니다. 등대가 보이면 안 됩니다. 글자·숫자가 없어야 합니다."
-     },
-     "hint2": {
-      "scene": "A few wet, jagged black sea rocks, a tangle of seaweed, and a weathered red-and-white life ring.",
-      "check": "젖은 바위, 해초, 구명환이 있는지 봅니다. 사람은 없어야 합니다. 글자·숫자가 없어야 합니다."
-     },
-     "truth": {
-      "scene": "A tall lighthouse on a rocky cliff at night in a raging storm, its lamp completely dark; out at sea, the lights of a passenger ship tilting dangerously near the rocks; dramatic and somber, no people visible.",
-      "check": "불이 꺼진 등대와 기울어진 배가 보이는지 봅니다. 글자·숫자가 없어야 합니다."
-     }
+     "scene": "A tall lighthouse on a rocky cliff at night in a raging storm, its lamp completely dark; out at sea, the lights of a passenger ship tilting dangerously near the rocks; dramatic and somber, no people visible.",
+     "check": "불이 꺼진 등대와 기울어진 배가 보이는지 봅니다. 글자·숫자가 없어야 합니다."
     }
    }
   },
@@ -1342,6 +1263,327 @@
    }
   },
   {
+   "id": "silent-call",
+   "kind": "mystery",
+   "level": 2,
+   "added": "2026-11-02",
+   "title": {
+    "en": "The Midnight Call",
+    "ko": "한밤의 전화"
+   },
+   "setup": {
+    "en": "A man on a business trip lay awake in his hotel room until past two in the morning. He picked up the phone beside his bed and called someone he had never once spoken to. When a sleepy voice answered, “Hello?”, he hung up without a word. Less than a minute later, he was fast asleep.",
+    "ko": "출장 중이던 한 남자가 호텔 방에서 새벽 두 시가 넘도록 잠들지 못하고 뒤척였습니다. 그는 침대 옆 전화기를 들어, 한 번도 말을 나눠 본 적 없는 사람에게 전화를 걸었습니다. 졸린 목소리가 “여보세요?” 하고 받자, 그는 아무 말 없이 전화를 끊었습니다. 그리고 1분도 지나지 않아 깊이 잠들었습니다."
+   },
+   "truth": {
+    "en": "A man on a business trip was staying at a small hotel. He had an important meeting early the next morning, so he turned off the light at eleven.\nThen, through the thin wall, came the loudest snoring he had ever heard. The guest in the next room snored like a motorcycle engine. The man pressed a pillow over his ears and even knocked on the wall, but the snoring went on and on.\nBy two in the morning, he couldn't take it anymore. Then he looked at the phone beside his bed and had an idea: in that hotel, you could call any room just by dialing its room number. He dialed the room next door, and after a few rings the snoring stopped.\n“Hello?” a sleepy voice answered.\nThe man hung up without a word. He hadn't called to talk. He only needed to wake the snorer, and it would take his neighbor a while to fall back asleep and start snoring again. In the quiet, the tired man was fast asleep in less than a minute.\nThe next morning, he rode the elevator down with a yawning man in a rumpled shirt.\n“Some joker called my room at two in the morning and hung up. I couldn't get back to sleep for an hour,” the yawning man grumbled.\n“That's terrible,” the businessman said, trying very hard not to laugh.",
+    "ko": "출장 중이던 한 남자가 작은 호텔에 묵게 되었습니다. 다음 날 아침 일찍 중요한 회의가 있어서, 그는 밤 열한 시에 불을 껐습니다.\n그런데 얇은 벽 너머에서 난생처음 듣는 엄청난 코골이 소리가 들려왔습니다. 옆방 손님은 오토바이 엔진처럼 코를 골았습니다. 베개로 귀를 막아 보고 벽을 두드려 보기까지 했지만, 코 고는 소리는 그칠 줄을 몰랐습니다.\n새벽 두 시가 넘자 그는 더는 참을 수가 없었습니다. 그러다 침대 옆 전화기를 보고 좋은 생각이 떠올랐습니다. 그 호텔에서는 방 번호만 누르면 어느 방에든 전화를 걸 수 있었습니다. 그가 옆방 번호를 누르자, 신호가 몇 번 울린 뒤 코 고는 소리가 뚝 그쳤습니다.\n“여보세요?” 졸린 목소리가 전화를 받았습니다.\n남자는 아무 말 없이 전화를 끊었습니다. 이야기를 하려고 건 전화가 아니었습니다. 코를 고는 사람을 깨우기만 하면 됐고, 옆방 손님이 다시 잠들어 코를 골기 시작하려면 시간이 좀 걸릴 터였습니다. 조용해진 방에서, 지친 남자는 1분도 지나지 않아 깊이 잠들었습니다.\n다음 날 아침, 그는 엘리베이터에서 셔츠가 구겨진 채 하품을 하는 남자와 마주쳤습니다.\n“어떤 사람이 새벽 두 시에 우리 방에 전화를 걸더니 그냥 끊지 뭡니까. 그 뒤로 한 시간을 못 잤어요.” 하품하던 남자가 투덜거렸습니다.\n“저런, 정말 안됐네요.” 출장 온 남자가 웃음을 꾹 참으며 말했습니다."
+   },
+   "keys": [
+    {
+     "id": "snore",
+     "label": {
+      "en": "What kept him awake",
+      "ko": "잠을 못 잔 이유"
+     },
+     "text": {
+      "en": "The guest in the next room was snoring loudly through the thin hotel wall.",
+      "ko": "얇은 벽 너머 옆방 손님이 크게 코를 골았다."
+     }
+    },
+    {
+     "id": "call",
+     "label": {
+      "en": "Who he called and why",
+      "ko": "전화한 상대와 이유"
+     },
+     "text": {
+      "en": "He called the room next door so the ringing would wake the snorer, then hung up without speaking.",
+      "ko": "옆방에 전화를 걸어 전화벨로 코 고는 사람을 깨우고, 받자마자 말없이 끊었다."
+     }
+    },
+    {
+     "id": "quiet",
+     "label": {
+      "en": "Why he fell asleep so fast",
+      "ko": "금방 잠든 이유"
+     },
+     "text": {
+      "en": "While his neighbor was awake and quiet, before the snoring started again, he fell asleep.",
+      "ko": "옆방 사람이 깨어 조용한 동안, 코골이가 다시 시작되기 전에 잠들었다."
+     }
+    }
+   ],
+   "hints": [
+    {
+     "en": "He wasn't kept awake by worry or by feeling sick. The reason was outside his room.",
+     "ko": "그가 잠들지 못한 것은 걱정 때문도, 몸이 아파서도 아니었습니다. 이유는 그의 방 밖에 있었습니다."
+    },
+    {
+     "en": "The hotel walls were very thin, and the person he called was in the very next room.",
+     "ko": "호텔 벽은 아주 얇았고, 그가 전화를 건 사람은 바로 옆방에 있었습니다."
+    }
+   ],
+   "facts": "- A man on a business trip was staying alone in a room at a small hotel. He had an important meeting early the next morning and turned off the light at 11 p.m.\n- The guest in the next room was snoring very loudly, and the wall between the rooms was thin. That snoring is what kept the man awake (YES if asked about noise or snoring).\n- He tried pressing a pillow over his ears and knocking on the wall, but the snoring didn't stop. He had no earplugs.\n- He was not worried, homesick, sick, scared or lonely (NO to all of these), and nothing he ate or drank kept him awake (NO). He did not need to hear anyone's voice.\n- After 2 a.m. he used the hotel room phone on his bedside table. In that hotel you could call another room just by dialing its room number, and he called the room next door. He did not use a cell phone, and he did not call his family, a friend, the front desk or anyone outside the hotel (NO).\n- He had never met or spoken to the guest next door, a man he didn't know. Who that guest was does not matter (IRRELEVANT).\n- The ringing woke the guest, so the snoring stopped. The guest answered sleepily, “Hello?” The man hung up without saying anything. He didn't want to talk or complain; waking the snorer was all he needed.\n- It took the guest a while to fall asleep again. In that quiet, the exhausted man fell asleep in less than a minute. Later the guest did start snoring again, but by then the man was sound asleep and didn't hear it.\n- He didn't do it to be mean or as a joke, even though it looked like a prank call to the guest (NO if asked whether it was a prank).\n- He knocked on the wall, but he never went to the neighbor's door, called the front desk or asked to change rooms (NO).\n- The next morning the two men rode the same elevator. The guest grumbled that someone had called his room at 2 a.m. and hung up, and that he couldn't get back to sleep for an hour. The man said, “That's terrible,” trying not to laugh, and never told him the truth.\n- Nobody was hurt, nothing was broken, and there is no crime and no animal in the story.\n- Names, the city, the hotel, the room numbers and what the meeting was about are not part of the story (IRRELEVANT).",
+   "factsKo": "- 출장 중인 한 남자가 작은 호텔 방에 혼자 묵고 있었다. 다음 날 아침 일찍 중요한 회의가 있어서 밤 11시에 불을 껐다.\n- 옆방 손님이 아주 크게 코를 골았고, 두 방 사이의 벽은 얇았다. 남자가 잠들지 못한 것은 그 코골이 때문이다(소음이나 코골이를 물으면 예).\n- 베개로 귀를 막아 보고 벽을 두드려 보았지만 코골이는 그치지 않았다. 귀마개는 없었다.\n- 걱정, 향수병, 아픔, 두려움, 외로움 때문이 아니다(모두 아니오). 먹거나 마신 것 때문도 아니다(아니오). 누구의 목소리를 들을 필요도 없었다.\n- 새벽 2시가 넘어, 그는 침대 옆 탁자의 호텔 객실 전화를 썼다. 그 호텔에서는 방 번호만 누르면 다른 방에 전화를 걸 수 있었고, 그는 옆방에 전화를 걸었다. 휴대폰을 쓰지 않았고, 가족, 친구, 프런트, 호텔 밖의 누구에게도 걸지 않았다(아니오).\n- 그는 옆방 손님을 만난 적도, 말을 나눠 본 적도 없었다. 모르는 남자였다. 그 손님이 누구인지는 상관없다(상관없음).\n- 전화벨에 옆방 손님이 깨면서 코골이가 멈췄다. 손님이 졸린 목소리로 “여보세요?” 하고 받자, 남자는 아무 말 없이 끊었다. 이야기를 하거나 항의할 생각은 없었다. 코 고는 사람을 깨우기만 하면 됐다.\n- 옆방 손님이 다시 잠들기까지는 시간이 걸렸다. 그 조용한 틈에 지친 남자는 1분도 안 되어 잠들었다. 나중에 손님은 다시 코를 골았지만, 그때 남자는 이미 푹 잠들어 듣지 못했다.\n- 골탕을 먹이거나 장난을 치려던 것이 아니다. 옆방 손님에게는 장난 전화처럼 보였을 뿐이다(장난이었냐고 물으면 아니오).\n- 벽은 두드렸지만, 옆방 문을 두드리러 가거나 프런트에 전화하거나 방을 바꿔 달라고 하지는 않았다(아니오).\n- 다음 날 아침 두 사람은 같은 엘리베이터를 탔다. 옆방 손님은 누가 새벽 두 시에 전화를 걸고 그냥 끊는 바람에 한 시간을 못 잤다고 투덜거렸다. 남자는 웃음을 참으며 “저런, 정말 안됐네요.”라고 했고, 끝까지 사실을 말하지 않았다.\n- 다친 사람도, 부서진 것도 없고, 범죄나 동물도 나오지 않는다.\n- 이름, 도시, 호텔, 방 번호, 회의 내용은 이야기에 나오지 않는다(상관없음).",
+   "pictures": {
+    "cover": {
+     "scene": "A dim hotel room in the middle of the night: a rumpled bed with a pillow pulled over where someone's head would be, a bedside table with an old-fashioned corded hotel telephone whose handset has just been set back on its cradle, a plain thin wall right beside the bed, faint city light through the curtains; quiet, puzzling mood.",
+     "check": "얼굴이나 옆방 사람이 보이면 안 됩니다. 시계, 방 번호 등 글자나 숫자가 없어야 합니다."
+    },
+    "hint1": {
+     "scene": "Evidence-photo composition on a hotel nightstand: a white hotel pillow squashed and folded in half as if someone had pressed it over his ears, and a tissue twisted into a makeshift earplug beside it; close-up, nothing else.",
+     "check": "사람, 글자, 숫자가 없어야 합니다."
+    },
+    "hint2": {
+     "scene": "Evidence-photo composition: two identical brass hotel room keys with blank oval key tags lying side by side, almost touching, next to the handset of an old corded telephone; close-up, nothing else.",
+     "check": "열쇠고리에 방 번호나 글자가 없어야 합니다. 사람이 보이면 안 됩니다."
+    },
+    "truth": {
+     "scene": "Morning in a small hotel elevator: a fresh, well-rested businessman in a neat suit pressing his lips together to hold back a laugh, standing beside a yawning, bleary-eyed man in a rumpled shirt with messy hair and dark circles under his eyes; warm, comic mood.",
+     "check": "층수 표시 같은 글자나 숫자가 없어야 합니다. 옆방 손님은 화난 얼굴이 아니라 졸리고 피곤한 얼굴이어야 합니다."
+    }
+   }
+  },
+  {
+   "id": "slowest-horse",
+   "kind": "mystery",
+   "level": 2,
+   "added": "2026-11-02",
+   "title": {
+    "en": "The Slowest Horse",
+    "ko": "가장 늦은 말"
+   },
+   "setup": {
+    "en": "The last event at the village fair was the Slow Horse Race, with one rule: the owner of the horse that crosses the finish line last wins. The two finalists stood beside their horses at the starting line and didn't move for over an hour. Then an old man walked up and whispered two words to them. At once, they leaped onto the horses and raced for the finish line as fast as they could.",
+    "ko": "마을 축제의 마지막 경기는 '느림보 말 경주'였고, 규칙은 하나였습니다. 결승선을 가장 늦게 넘은 말의 주인이 우승입니다. 결승에 오른 두 사람은 출발선에서 각자 말 옆에 선 채로 한 시간 넘게 꼼짝도 하지 않았습니다. 그런데 한 할아버지가 다가와 두 마디를 속삭이자, 두 사람은 곧장 말에 뛰어올라 결승선을 향해 있는 힘껏 달렸습니다."
+   },
+   "truth": {
+    "en": "Every year, the village fair ended with the Slow Horse Race. The rule was simple: the owner of the horse that crossed the finish line last won a big trophy and a whole year's worth of hay.\nThat year the two finalists were neighbors, Ray and Tom, who each owned a farm. When the starting signal sounded, both of them stood beside their own horses and didn't budge. Whoever moved first was sure to lose.\nThirty minutes passed, then an hour. The crowd yawned and grumbled that they would be there until sunset, and the horses calmly munched grass.\nThen the old man who had started the fair many years ago walked up to the two of them with his cane and whispered in their ears.\n“Swap horses,” the old man whispered.\nBoth men's eyes lit up at once. Ray leaped onto Tom's horse, Tom leaped onto Ray's, and they raced for the finish line as fast as they could. The sooner you got the other man's horse across the line, the later your own horse would come in.\nTom, on Ray's horse, crossed first by a nose. So Tom's own horse, carrying Ray, was the last to cross the line, and the trophy went to Tom.\n“Next year, let's change the rules,” Ray said, laughing.",
+    "ko": "해마다 마을 축제는 '느림보 말 경주'로 막을 내렸습니다. 규칙은 하나, 결승선을 가장 늦게 넘은 말의 주인이 커다란 우승컵과 1년 치 건초를 받았습니다.\n그해 결승에는 이웃에 사는 농장 주인 레이와 톰이 올랐습니다. 출발 신호가 울렸지만, 두 사람은 각자 자기 말 옆에 선 채 꼼짝도 하지 않았습니다. 먼저 움직이는 쪽이 질 게 뻔했으니까요.\n30분이 지나고 한 시간이 지났습니다. 구경꾼들은 하품을 하며 이러다 해가 지겠다고 투덜거렸고, 말들은 한가롭게 풀을 뜯었습니다.\n그때 오래전 이 축제를 처음 시작한 할아버지가 지팡이를 짚고 두 사람에게 다가가 귓속말을 했습니다.\n“말 바꿔.” 할아버지가 속삭였습니다.\n두 사람의 눈이 동시에 반짝였습니다. 레이는 톰의 말에, 톰은 레이의 말에 뛰어올라 결승선을 향해 있는 힘껏 달렸습니다. 상대의 말을 먼저 결승선에 들여보낼수록, 자기 말은 더 늦게 들어오게 되니까요.\n레이의 말을 탄 톰이 코 하나 차이로 먼저 들어왔습니다. 그러니 레이를 태운 톰의 말이 가장 늦게 들어온 셈이 되어, 우승컵은 톰에게 돌아갔습니다.\n“내년에는 규칙을 좀 바꿉시다.” 레이가 웃으며 말했습니다."
+   },
+   "keys": [
+    {
+     "id": "owner",
+     "label": {
+      "en": "Who wins",
+      "ko": "우승하는 사람"
+     },
+     "text": {
+      "en": "The prize goes to the horse's owner, not to whoever rides it.",
+      "ko": "상은 말을 탄 사람이 아니라 말의 주인이 받는다."
+     }
+    },
+    {
+     "id": "swap",
+     "label": {
+      "en": "The two words",
+      "ko": "두 마디"
+     },
+     "text": {
+      "en": "The old man said “Swap horses,” and each man rode the other's horse.",
+      "ko": "할아버지는 “말 바꿔”라고 했고, 두 사람은 서로의 말을 바꿔 탔다."
+     }
+    },
+    {
+     "id": "race",
+     "label": {
+      "en": "Why they raced",
+      "ko": "있는 힘껏 달린 이유"
+     },
+     "text": {
+      "en": "Getting the other man's horse across the line first makes your own horse come in last, so both raced as fast as they could.",
+      "ko": "상대의 말을 먼저 결승선에 넣으면 자기 말이 가장 늦게 들어오니, 둘 다 있는 힘껏 달렸다."
+     }
+    }
+   ],
+   "hints": [
+    {
+     "en": "Read the rule again carefully. The prize doesn't go to whoever is riding the last horse.",
+     "ko": "규칙을 다시 잘 읽어 보세요. 상은 가장 늦은 말을 '탄 사람'이 받는 것이 아닙니다."
+    },
+    {
+     "en": "After hearing the old man's two words, neither of them rode his own horse.",
+     "ko": "할아버지의 두 마디를 들은 뒤, 두 사람 모두 자기 말을 타지 않았습니다."
+    }
+   ],
+   "facts": "- A village fair ended every year with the Slow Horse Race. The rule: the OWNER of the horse that crosses the finish line last wins a big trophy and a year's worth of hay. Nothing in the rules said who had to ride which horse, and there was no time limit.\n- The two finalists were Ray and Tom, neighbors who each owned a farm and one horse. They were friends, not brothers (NO if asked whether they were brothers or family).\n- At the start, each stood beside his own horse. Neither moved for over an hour, because whoever started first would probably lose. The crowd got bored.\n- The old man was the person who had started the fair many years ago. He was not a judge, a rider or anyone's father (NO), and nobody paid him (NO).\n- He whispered two words to both men: “Swap horses.” (YES if asked whether he told them to switch or trade horses.)\n- Ray leaped onto Tom's horse and Tom leaped onto Ray's horse, and each raced as fast as he could, because getting the other man's horse across the line first makes your own horse arrive last. Each horse carried a rider all the way to the finish.\n- Tom, riding Ray's horse, crossed first by a nose. So Tom's own horse, ridden by Ray, crossed last, and Tom won the trophy.\n- It was not cheating: the judges and the crowd agreed it followed the rule (NO if asked whether it broke the rules). Ray laughed and suggested changing the rules next year.\n- Both horses were ordinary, healthy horses, about equally fast; which one was faster does not matter (IRRELEVANT). Nobody fell or got hurt, and neither horse was hurt.\n- The horses' names, the village's name, the length of the course and the old man's name are not part of the story (IRRELEVANT).",
+   "factsKo": "- 마을 축제는 해마다 '느림보 말 경주'로 끝났다. 규칙: 결승선을 가장 늦게 넘은 말의 '주인'이 커다란 우승컵과 1년 치 건초를 받는다. 누가 어느 말을 타야 한다는 규칙은 없었고, 시간제한도 없었다.\n- 결승에 오른 두 사람은 레이와 톰으로, 이웃에 사는 농장 주인이고 각자 말이 한 마리씩 있었다. 둘은 친구이고 형제가 아니다(형제나 가족이냐고 물으면 아니오).\n- 출발할 때 두 사람은 각자 자기 말 옆에 서 있었다. 먼저 출발하는 쪽이 질 것 같아서 둘 다 한 시간 넘게 꼼짝하지 않았다. 구경꾼들은 지루해했다.\n- 할아버지는 오래전 이 축제를 처음 시작한 사람이다. 심판도, 선수도, 누구의 아버지도 아니고(아니오), 누구에게 돈을 받은 것도 아니다(아니오).\n- 할아버지는 두 사람에게 두 마디를 속삭였다. “말 바꿔.” (말을 바꿔 타라고 했냐고 물으면 예)\n- 레이는 톰의 말에, 톰은 레이의 말에 뛰어올라 있는 힘껏 달렸다. 상대의 말을 먼저 결승선에 넣으면 자기 말이 가장 늦게 들어오기 때문이다. 두 말 모두 결승선까지 사람을 태우고 달렸다.\n- 레이의 말을 탄 톰이 코 하나 차이로 먼저 들어왔다. 그래서 레이를 태운 톰의 말이 가장 늦게 들어왔고, 우승컵은 톰이 받았다.\n- 반칙이 아니다. 심판과 구경꾼 모두 규칙대로라고 인정했다(규칙을 어겼냐고 물으면 아니오). 레이는 웃으며 내년에는 규칙을 바꾸자고 했다.\n- 두 말은 평범하고 건강한 말이고 빠르기도 비슷했다. 어느 말이 더 빨랐는지는 상관없다(상관없음). 떨어지거나 다친 사람도, 다친 말도 없다.\n- 말의 이름, 마을 이름, 경주 거리, 할아버지의 이름은 이야기에 나오지 않는다(상관없음).",
+   "pictures": {
+    "cover": {
+     "scene": "A sunny countryside fair field with colorful bunting: two saddled horses standing at a white chalk starting line, one wearing a red saddle blanket and one wearing a blue saddle blanket; beside the red-blanket horse stands a bored farmer in a red cap, and beside the blue-blanket horse a bored farmer in a blue cap, both with arms folded, not moving; spectators on hay bales in the background yawning; a finish-line ribbon far away across the grass; warm, comic, puzzling mood.",
+     "check": "아무도 말에 타고 있으면 안 됩니다. 빨간 모자는 빨간 담요의 말 옆에, 파란 모자는 파란 담요의 말 옆에 서 있는지 봅니다. 깃발이나 현수막에 글자·숫자가 없어야 합니다."
+    },
+    "hint1": {
+     "scene": "Evidence-photo composition: a shiny gold trophy cup beside a leather horse halter with a small blank brass owner's nameplate (no engraving), resting on straw; close-up, nothing else.",
+     "check": "명판과 우승컵에 글자나 숫자가 없어야 합니다. 사람이 보이면 안 됩니다."
+    },
+    "hint2": {
+     "scene": "Evidence-photo composition: two horseshoes, one painted red and one painted blue, laid crossed over each other in an X on a bed of straw; close-up, nothing else.",
+     "check": "사람, 글자, 숫자가 없어야 합니다."
+    },
+    "truth": {
+     "scene": "A countryside fair finish line: two horses galloping neck and neck toward the ribbon; a farmer in a red cap rides the horse with the blue saddle blanket, and a farmer in a blue cap rides the horse with the red saddle blanket, both grinning; an old man with a cane laughs at the side while the crowd cheers; bright, joyful, lively mood.",
+     "check": "빨간 모자는 파란 담요의 말을, 파란 모자는 빨간 담요의 말을 타고 있는지 봅니다. 번호표 등 글자나 숫자가 없어야 합니다."
+    }
+   }
+  },
+  {
+   "id": "torn-card",
+   "kind": "mystery",
+   "level": 2,
+   "added": "2026-11-02",
+   "title": {
+    "en": "The Torn Card",
+    "ko": "찢어 버린 카드"
+   },
+   "setup": {
+    "en": "A card that had been printed by mistake, one of only two left in the world, came up for auction. A man paid as much as a house to buy it. The moment it was handed to him, he tore it in half in front of everyone. Then he went home looking happier than anyone else at the auction.",
+    "ko": "인쇄 실수로 세상에 단 두 장만 남은 카드 한 장이 경매에 나왔습니다. 한 남자가 집 한 채 값을 내고 그 카드를 샀습니다. 그런데 카드를 건네받자마자, 그는 모두가 보는 앞에서 카드를 두 조각으로 찢어 버렸습니다. 그러고는 경매장에 있던 누구보다 행복한 얼굴로 집에 돌아갔습니다."
+   },
+   "truth": {
+    "en": "Many years ago, a card company printed a new card with its picture upside down by mistake. The company destroyed almost all of them, but two were missed and survived.\nOne of the two belonged to the man in this story, a card collector. For thirty years he had kept it in the safe at his home. Because there were only two in the whole world, it was worth a great deal.\nThen one day, the second card turned up in an old box in someone's attic and was put up for auction. Several collectors wanted it, and the price kept climbing until he finally won it for as much as a house.\n“Are you sure you want to pay that much?” the auctioneer asked.\n“Oh, it's a bargain,” the man said with a smile.\nThe moment the card was handed to him, he tore it in half in front of everyone. People gasped, but he looked happier than anyone else at the auction.\nNow the card in his safe was the only one left in the world. A one-of-a-kind card is worth far more than one of two, so his own card was suddenly worth several times what he had just paid.\nThat night he opened his safe, looked at his one-of-a-kind card, and smiled all over again.",
+    "ko": "오래전, 한 카드 회사가 새 카드를 찍다가 실수로 그림을 거꾸로 인쇄했습니다. 회사는 그 카드를 거의 다 없앴지만, 두 장이 미처 걸러지지 않고 남았습니다.\n그 두 장 가운데 한 장은 이 이야기의 남자, 한 카드 수집가의 것이었습니다. 그는 30년 동안 그 카드를 집 금고에 고이 간직해 왔습니다. 세상에 둘뿐인 카드라 값이 무척 비쌌습니다.\n그러던 어느 날, 나머지 한 장이 어느 집 다락방의 낡은 상자에서 나와 경매에 올랐습니다. 여러 수집가가 탐을 내 값이 계속 올랐고, 결국 남자가 집 한 채 값을 내고 그 카드를 손에 넣었습니다.\n“정말 그렇게 큰돈을 내셔도 괜찮으시겠어요?” 경매 진행자가 물었습니다.\n“그럼요. 아주 싸게 산 겁니다.” 남자가 웃으며 말했습니다.\n카드를 건네받자마자, 그는 모두가 보는 앞에서 카드를 두 조각으로 찢어 버렸습니다. 사람들은 깜짝 놀라 숨을 삼켰지만, 남자는 경매장에 있던 누구보다 행복한 얼굴이었습니다.\n이제 세상에 남은 그 카드는 남자의 금고 속 한 장뿐이었습니다. 세상에 하나뿐인 카드는 둘 중 하나일 때보다 훨씬 비싸기 때문에, 그의 카드값은 방금 낸 돈의 몇 배로 뛰었습니다.\n그날 밤 남자는 금고를 열어 세상에 하나뿐인 자기 카드를 들여다보며 또 한 번 웃었습니다."
+   },
+   "keys": [
+    {
+     "id": "other",
+     "label": {
+      "en": "What he already had",
+      "ko": "그가 이미 가진 것"
+     },
+     "text": {
+      "en": "He already owned the other one of the only two cards in the world.",
+      "ko": "세상에 두 장뿐인 그 카드의 나머지 한 장을 이미 가지고 있었다."
+     }
+    },
+    {
+     "id": "unique",
+     "label": {
+      "en": "Why he tore it",
+      "ko": "카드를 찢은 이유"
+     },
+     "text": {
+      "en": "By destroying the card he bought, he made his own card the only one left in the world.",
+      "ko": "산 카드를 없애서, 자기 카드를 세상에 하나뿐인 카드로 만들었다."
+     }
+    },
+    {
+     "id": "value",
+     "label": {
+      "en": "Why he was happy",
+      "ko": "행복했던 이유"
+     },
+     "text": {
+      "en": "A one-of-a-kind card is worth far more, so his card became worth much more than he had paid.",
+      "ko": "하나뿐인 카드가 되자 값이 훨씬 올라, 그가 낸 돈보다 몇 배 비싸졌다."
+     }
+    }
+   ],
+   "hints": [
+    {
+     "en": "The card was real, and he loved collecting cards. He didn't tear it because he was angry.",
+     "ko": "카드는 진짜였고, 그는 카드 모으기를 무척 좋아하는 사람이었습니다. 화가 나서 찢은 것이 아닙니다."
+    },
+    {
+     "en": "For thirty years, an identical card had been sitting in the safe at his home.",
+     "ko": "그의 집 금고에는 30년 전부터 똑같은 카드 한 장이 들어 있었습니다."
+    }
+   ],
+   "facts": "- Long ago, a card company printed a new card with its picture upside down by mistake. The company destroyed almost all of them, but exactly two survived. What kind of card it was (a sports card, a game card) and what the picture showed are not part of the story (IRRELEVANT).\n- The man is a card collector. He had owned one of the two surviving cards for thirty years and kept it in the safe at his home.\n- The second card turned up in an old box in someone's attic and was put up for auction. Before that, nobody knew it still existed.\n- Several collectors bid. The man won it for a huge price, about as much as a house. The card was genuine, not fake or damaged (NO if asked whether it was fake).\n- The auctioneer asked whether he was sure about paying so much. He smiled and said it was a bargain.\n- As soon as it was handed to him, he tore it in half on purpose, in front of everyone. It was not an accident (NO). He was not angry, and he did not hate the card, the seller or anyone at the auction (NO).\n- With that card gone, the card in his safe became the only one left in the world. A one-of-a-kind card is worth far more than one of two, so his card was suddenly worth several times what he had paid. That is why he was so happy (YES if asked whether he did it to make his own card more valuable).\n- He did not tell anyone at the auction that he owned the other card. People gasped when he tore it.\n- It was legal: the card was his once he had paid for it. There was no crime, no trick with the money and no insurance claim (NO).\n- He did not do it for a video, to become famous, or as a joke (NO).\n- That night he opened his safe, looked at his card and smiled again. Whether he ever sold it is not part of the story (IRRELEVANT).\n- Nobody was hurt. Names, the exact price, the year and the city are not part of the story (IRRELEVANT).",
+   "factsKo": "- 오래전 한 카드 회사가 새 카드를 찍다가 실수로 그림을 거꾸로 인쇄했다. 회사는 그 카드를 거의 다 없앴지만, 꼭 두 장이 남았다. 어떤 종류의 카드였는지(운동선수 카드, 게임 카드 등)와 무슨 그림이었는지는 이야기에 나오지 않는다(상관없음).\n- 남자는 카드 수집가다. 남은 두 장 가운데 한 장을 30년 동안 가지고 있었고, 집 금고에 넣어 두었다.\n- 나머지 한 장은 어느 집 다락방의 낡은 상자에서 나와 경매에 올랐다. 그전에는 그 카드가 아직 남아 있는 줄 아무도 몰랐다.\n- 여러 수집가가 값을 불렀고, 남자가 집 한 채 값쯤 되는 큰돈을 내고 낙찰받았다. 카드는 가짜도 아니고 상한 데도 없는 진짜였다(가짜였냐고 물으면 아니오).\n- 경매 진행자가 그렇게 큰돈을 내도 괜찮겠냐고 묻자, 그는 웃으며 아주 싸게 산 것이라고 했다.\n- 카드를 건네받자마자 그는 모두가 보는 앞에서 일부러 카드를 두 조각으로 찢었다. 실수가 아니다(아니오). 화가 난 것도, 카드나 판 사람이나 경매장의 누군가를 미워한 것도 아니다(아니오).\n- 그 카드가 없어지자, 그의 금고 속 카드가 세상에 하나뿐인 카드가 되었다. 하나뿐인 카드는 둘 중 하나일 때보다 훨씬 비싸서, 그의 카드값은 그가 낸 돈의 몇 배로 뛰었다. 그래서 그는 무척 행복했다(자기 카드의 값을 올리려고 그랬냐고 물으면 예).\n- 그는 경매장의 누구에게도 나머지 한 장이 자기에게 있다는 것을 말하지 않았다. 그가 카드를 찢자 사람들은 깜짝 놀랐다.\n- 돈을 낸 순간 카드는 그의 것이었으니 법에 어긋나는 일이 아니다. 범죄도, 돈을 둘러싼 속임수도, 보험금을 노린 것도 아니다(아니오).\n- 영상을 찍으려고, 유명해지려고, 또는 장난으로 한 일이 아니다(아니오).\n- 그날 밤 그는 금고를 열어 자기 카드를 들여다보며 또 웃었다. 나중에 그 카드를 팔았는지는 이야기에 나오지 않는다(상관없음).\n- 다친 사람은 없다. 이름, 정확한 가격, 연도, 도시는 이야기에 나오지 않는다(상관없음).",
+   "pictures": {
+    "cover": {
+     "scene": "An elegant auction hall with rows of empty velvet chairs and a wooden podium with an auctioneer's gavel; on a small black velvet cloth under a spotlight lie the two torn halves of a single collectible trading card, whose front is a simple colorful illustration with no letters or numbers; hushed, puzzling mood.",
+     "check": "카드에 글자나 숫자가 없어야 합니다. 금고나 두 번째 카드, 사람이 보이면 안 됩니다."
+    },
+    "hint1": {
+     "scene": "Evidence-photo composition: a jeweler's magnifying loupe, a pair of white cotton collector's gloves, and a single collectible card sealed in a clear hard plastic case; the card's simple colorful picture is printed upside down and has no letters or numbers; close-up, nothing else.",
+     "check": "카드에 글자나 숫자가 없어야 합니다. 사람이 보이면 안 됩니다."
+    },
+    "hint2": {
+     "scene": "Evidence-photo composition: a small steel home safe with its heavy door swung open; inside, on a velvet pad, a single collectible card in a clear hard case, its simple colorful picture printed upside down, lit by a desk lamp; close-up, nothing else.",
+     "check": "금고 다이얼에 숫자가 보이면 안 됩니다. 카드에 글자나 숫자가 없어야 합니다."
+    },
+    "truth": {
+     "scene": "Night in a cozy study: a delighted gray-haired collector in a cardigan holds a card in a clear hard case up close to his face, grinning, in front of an open wall safe; on the desk beside him lie the two torn halves of an identical card; warm lamplight, comic and satisfied mood.",
+     "check": "카드와 금고에 글자나 숫자가 없어야 합니다. 책상 위의 찢어진 카드와 손에 든 카드가 같은 그림인지 봅니다."
+    }
+   }
+  },
+  {
+   "id": "bridge-keeper",
+   "kind": "mystery",
+   "level": 3,
+   "added": "2026-11-02",
+   "title": {
+    "en": "The Bridge Keeper",
+    "ko": "흔들다리 문지기"
+   },
+   "setup": {
+    "en": "A long rope bridge over a deep gorge took exactly ten minutes to cross. Every five minutes, the keeper came out of his hut at this end and sent anyone without a pass back to where they had come from. One day, a girl with no pass crossed the bridge and safely reached the village on the other side. The keeper saw her clearly, and she never ran or hid.",
+    "ko": "깊은 골짜기에 걸린 긴 흔들다리는 끝에서 끝까지 건너는 데 꼭 10분이 걸렸습니다. 다리 이쪽 끝 오두막의 문지기는 5분마다 밖으로 나와, 통행패가 없는 사람은 누구든 왔던 곳으로 돌려보냈습니다. 어느 날, 통행패가 없는 한 소녀가 이 다리를 건너 건너편 마을에 무사히 닿았습니다. 문지기는 소녀를 똑똑히 보았고, 소녀는 달리지도 숨지도 않았습니다."
+   },
+   "truth": {
+    "en": "Long ago, two villages sat on either side of a deep gorge, joined by one long rope bridge. It swayed so much that nobody could run on it, and walking carefully from end to end took exactly ten minutes.\nThe greedy lord on this side made everyone buy a pass to cross, and his keeper sat in a hut at this end of the bridge. Every five minutes the keeper came out, looked over the whole bridge, and sent anyone without a pass back to where they had come from. Then he went back inside for another five minutes.\nA girl on this side needed to take medicine to her grandmother in the village across the gorge, but she had no money for a pass. From a distance, she watched the keeper come and go.\nThe moment he went inside, she stepped onto the bridge and walked toward the far side. After a little over four minutes, near the middle, she turned around and began walking slowly back toward the hut.\nWhen the five minutes were up, the keeper came out. All he saw was a girl walking toward him, as if she had come from the village across the gorge. When he asked for her pass, she shook her head.\n“Then you can't come over here. Go back where you came from!” the keeper said, pointing across the gorge.\nThe girl lowered her head and did exactly as she was told. When the keeper came out five minutes later, she was just stepping off the far end of the bridge.\n“The keeper himself sent me over,” the girl told her grandmother with a grin.",
+    "ko": "옛날, 깊은 골짜기를 사이에 두고 두 마을이 긴 흔들다리 하나로 이어져 있었습니다. 다리가 심하게 흔들려서 아무도 뛸 수 없었고, 조심조심 걸어서 끝에서 끝까지 꼭 10분이 걸렸습니다.\n이쪽 마을의 욕심 많은 영주는 통행패를 사야만 다리를 건널 수 있게 했고, 다리 이쪽 끝 오두막에는 문지기를 두었습니다. 문지기는 5분마다 밖으로 나와 다리 전체를 살폈고, 통행패가 없는 사람은 누구든 왔던 곳으로 돌려보냈습니다. 그러고는 다시 들어가 5분을 쉬었습니다.\n이쪽 마을에 사는 한 소녀는 골짜기 건너 마을의 할머니께 약을 갖다 드려야 했지만, 통행패를 살 돈이 없었습니다. 소녀는 멀찍이 떨어져서 문지기가 드나드는 것을 지켜보았습니다.\n문지기가 오두막으로 들어가자마자, 소녀는 다리에 올라 건너편을 향해 걸었습니다. 4분 남짓 걸어 다리 한가운데쯤에 이르자, 소녀는 뒤로 돌아서서 오두막 쪽으로 천천히 걷기 시작했습니다.\n5분이 되자 문지기가 밖으로 나왔습니다. 문지기 눈에는 골짜기 건너 마을에서 이쪽으로 걸어오는 소녀만 보였습니다. 통행패를 내놓으라는 말에 소녀는 고개를 저었습니다.\n“그럼 이리 올 수 없다. 왔던 곳으로 돌아가거라!” 문지기가 건너편을 가리키며 말했습니다.\n소녀는 고개를 숙이고 시키는 대로 했습니다. 5분 뒤 문지기가 다시 나왔을 때, 소녀는 막 건너편 땅을 밟고 있었습니다.\n“문지기 아저씨가 직접 여기로 보내 주셨어요.” 소녀가 할머니께 싱긋 웃으며 말했습니다."
+   },
+   "keys": [
+    {
+     "id": "turn",
+     "label": {
+      "en": "What she did on the bridge",
+      "ko": "소녀가 다리 위에서 한 일"
+     },
+     "text": {
+      "en": "Right after the keeper went inside, she walked out to about the middle, then turned around just before five minutes and walked back toward the hut.",
+      "ko": "문지기가 들어가자마자 다리 한가운데쯤까지 걸어간 뒤, 5분이 되기 직전에 돌아서서 오두막 쪽으로 걸었다."
+     }
+    },
+    {
+     "id": "sent",
+     "label": {
+      "en": "Why the keeper let her cross",
+      "ko": "문지기가 건너게 해 준 이유"
+     },
+     "text": {
+      "en": "The keeper thought she was coming from the far village, so he sent her “back” there, which was where she wanted to go.",
+      "ko": "문지기는 소녀가 건너편 마을에서 오는 줄 알고 '왔던 곳', 곧 건너편으로 돌려보냈다. 소녀가 가려던 곳이었다."
+     }
+    }
+   ],
+   "hints": [
+    {
+     "en": "The keeper did stop her, and she did exactly what he told her to do.",
+     "ko": "문지기는 소녀를 멈춰 세웠고, 소녀는 문지기가 시킨 그대로 했습니다."
+    },
+    {
+     "en": "When the keeper came out, the girl was walking toward his hut.",
+     "ko": "문지기가 밖으로 나왔을 때, 소녀는 오두막 쪽을 향해 걷고 있었습니다."
+    }
+   ],
+   "facts": "- A folk tale from long ago: two villages on either side of a deep gorge, joined by one long rope bridge. It swayed too much to run on (NO if asked whether she ran). Walking carefully from one end to the other took exactly ten minutes.\n- The greedy lord of this side required a pass to cross. The keeper's hut stood at this end of the bridge, the end where the girl started. The two villages are not separate countries, and there are no soldiers, weapons or war in the story (NO).\n- Every five minutes the keeper came out, looked over the whole bridge, and sent anyone without a pass back to where they had come from: people walking away from his hut were called back to this side, and people walking toward his hut were sent back to the far side. Then he went inside for five minutes. It was daytime, and he could see the whole bridge clearly.\n- The girl lived on this side. She needed to take medicine to her grandmother in the far village and had no money for a pass. What the medicine was for is not part of the story (IRRELEVANT).\n- She watched the keeper's routine from a distance. Right after he went inside, she stepped onto the bridge and walked toward the far side.\n- After a little over four minutes, near the middle, she turned around and walked slowly back toward the hut (YES if asked whether she turned around or pretended to be coming from the other side).\n- When the keeper came out at five minutes, he saw her walking toward his hut and thought she had come from the far village. He asked for her pass, and she shook her head. He told her to go back where she came from and pointed across the gorge.\n- She did as she was told and walked to the far side, which took about five more minutes. When the keeper came out again, she was just stepping off the far end. She gave her grandmother the medicine.\n- She did not hide, crawl under the bridge, climb, swim, wear a disguise, use a fake pass, pay the keeper or slip past while he wasn't looking (NO). She never said where she had come from, so she did not lie (NO if asked whether she lied); she let the keeper believe what he saw (YES if asked whether she tricked or fooled him).\n- The keeper never realized he had helped her. Nobody punished her, and nobody fell or got hurt (NO).\n- Names, the lord, the villages' names, the price of a pass and the exact time of day are not part of the story (IRRELEVANT).",
+   "factsKo": "- 옛날이야기다. 깊은 골짜기 양쪽의 두 마을이 긴 흔들다리 하나로 이어져 있었다. 다리가 너무 흔들려 뛸 수 없었다(뛰었냐고 물으면 아니오). 조심해서 걸으면 끝에서 끝까지 꼭 10분이 걸렸다.\n- 이쪽 마을의 욕심 많은 영주가 통행패가 있어야 다리를 건널 수 있게 했다. 문지기의 오두막은 소녀가 출발한 이쪽 끝에 있었다. 두 마을은 서로 다른 나라가 아니고, 군인이나 무기, 전쟁은 나오지 않는다(아니오).\n- 문지기는 5분마다 밖으로 나와 다리 전체를 살피고, 통행패가 없는 사람은 누구든 왔던 곳으로 돌려보냈다. 오두막에서 멀어지는 사람은 이쪽으로 불러들이고, 오두막 쪽으로 오는 사람은 건너편으로 돌려보냈다. 그러고는 5분 동안 안에 들어가 있었다. 낮이라 다리 전체가 잘 보였다.\n- 소녀는 이쪽 마을에 살았다. 건너편 마을의 할머니께 약을 갖다 드려야 했는데, 통행패를 살 돈이 없었다. 무슨 약이었는지는 이야기에 나오지 않는다(상관없음).\n- 소녀는 멀찍이서 문지기가 드나드는 것을 지켜보았다. 문지기가 들어가자마자 다리에 올라 건너편으로 걸었다.\n- 4분 남짓 걸어 다리 한가운데쯤에 이르자, 뒤로 돌아서서 오두막 쪽으로 천천히 걸었다(돌아섰냐고, 또는 건너편에서 오는 척했냐고 물으면 예).\n- 5분이 되어 나온 문지기는 오두막 쪽으로 걸어오는 소녀를 보고, 건너편 마을에서 온 줄 알았다. 통행패를 달라고 하자 소녀는 고개를 저었다. 문지기는 왔던 곳으로 돌아가라며 건너편을 가리켰다.\n- 소녀는 시키는 대로 건너편으로 걸어갔고, 5분쯤 더 걸렸다. 문지기가 다시 나왔을 때 소녀는 막 건너편 끝에서 내려서고 있었다. 소녀는 할머니께 약을 갖다 드렸다.\n- 숨거나, 다리 밑으로 기어가거나, 기어오르거나, 헤엄치거나, 변장하거나, 가짜 통행패를 쓰거나, 문지기에게 돈을 주거나, 문지기가 안 보는 틈에 몰래 빠져나간 것이 아니다(아니오). 어디서 왔다고 말한 적이 없으니 거짓말을 하지는 않았다(거짓말했냐고 물으면 아니오). 문지기가 본 대로 믿게 두었을 뿐이다(문지기를 속였냐고 물으면 예).\n- 문지기는 자기가 소녀를 도와준 줄 끝내 몰랐다. 소녀는 벌을 받지 않았고, 떨어지거나 다친 사람도 없다(아니오).\n- 이름, 영주, 마을 이름, 통행패 값, 정확한 시각은 이야기에 나오지 않는다(상관없음).",
+   "pictures": {
+    "cover": {
+     "scene": "A long swaying rope-and-plank bridge stretching across a deep misty gorge between two rocky cliffs; at the near end, a small wooden keeper's hut with its door shut; on the far cliff, a tiny village with smoke curling from the chimneys; storybook fairy-tale mood, clear daylight.",
+     "check": "사람이 보이면 안 됩니다. 글자가 없어야 합니다."
+    },
+    "hint1": {
+     "scene": "Evidence-photo composition on rough wood: an hourglass with its sand exactly half run through, and a small plain wooden pass token on a leather cord, with no carving and no letters; close-up, nothing else.",
+     "check": "통행패에 글자, 숫자, 문양이 없어야 합니다. 사람이 보이면 안 됩니다."
+    },
+    "hint2": {
+     "scene": "Evidence-photo composition: close-up of weathered wooden bridge planks dusted with fine sand, showing a trail of small shoe prints that walk forward and then turn around, the last few prints pointing back the way they came; nothing else.",
+     "check": "발자국이 중간에서 방향을 바꾸는지 봅니다. 사람, 글자, 숫자가 없어야 합니다."
+    },
+    "truth": {
+     "scene": "Storybook scene: at the far end of a long rope bridge over a misty gorge, a girl with a small basket of medicine bottles steps onto the far cliff and looks back with a sly grin; small in the distance at the near end, a stern keeper standing in front of his hut points firmly toward her side of the gorge; a grandmother waves from a cottage doorway nearby; warm, clever, cheerful mood.",
+     "check": "문지기가 소녀가 간 쪽을 가리키고 있는지 봅니다. 글자가 없어야 합니다."
+    }
+   }
+  },
+  {
    "id": "midnight-cooler",
    "kind": "mystery",
    "level": 2,
@@ -1351,8 +1593,8 @@
     "ko": "한밤의 아이스박스"
    },
    "setup": {
-    "en": "At a winter retreat, the snack cooler was locked with a 4-digit code that only one adult knew. Every morning for three days, the lock was still closed, but more snacks were gone. Nobody confessed. On the third morning, one video solved the case.",
-    "ko": "겨울 수련회에서 간식 아이스박스는 어른 한 사람만 아는 네 자리 비밀번호 자물쇠로 잠겨 있었습니다. 사흘 동안 아침마다 자물쇠는 그대로 잠겨 있었는데, 간식은 계속 줄어들었습니다. 아무도 자백하지 않았습니다. 사흘째 아침, 영상 하나가 사건을 해결했습니다."
+    "en": "At a winter retreat, the snack cooler was locked with a 4-digit combination lock. Every morning for three days, the lock was still closed, but more snacks were gone. On the third morning, a video the students had secretly recorded overnight showed who had done it. Everyone burst out laughing, and the one who laughed the loudest was the culprit.",
+    "ko": "겨울 수련회에서 간식 아이스박스는 네 자리 비밀번호 자물쇠로 잠겨 있었습니다. 사흘 동안 아침마다 자물쇠는 그대로 잠겨 있었는데, 간식은 계속 줄어들었습니다. 사흘째 아침, 학생들이 밤새 몰래 찍어 둔 영상에 범인이 나왔습니다. 영상을 보고 모두가 웃음을 터뜨렸는데, 가장 크게 웃은 사람은 바로 범인이었습니다."
    },
    "truth": {
     "en": "At the youth group's winter retreat, Pastor Dan locked the snack cooler with a 4-digit combination lock. He set the code himself and told no one.\n“Snacks are for snack time. Nobody opens this cooler but me,” he announced on the first night.\nThe next morning, the lock was still closed, but a pile of chips and cookies was gone. The morning after that, it happened again. Pastor Dan asked everyone, and nobody confessed.\n“Pastor Dan, you're the only one who knows the code!” a student joked.\n“It wasn't me, I promise. I slept like a rock all night,” he said with a laugh.\nThat night, a few students hid a phone near the cooler and left it recording until morning.\nOn the third morning, more snacks were missing, so they played the video. There was Pastor Dan in his pajamas, eyes half closed, sitting by the open cooler and munching chips. When he was done, he locked the cooler again out of habit and shuffled back to bed.\nPastor Dan sometimes sleepwalks, and has since he was a kid, but he thought he had outgrown it. He hadn't remembered a thing, so his “It wasn't me” had been completely honest. Everyone laughed, Pastor Dan loudest of all, and he bought new snacks for everyone.",
@@ -1505,154 +1747,86 @@
    }
   },
   {
-   "id": "july-snowman",
+   "id": "summer-punch",
    "kind": "mystery",
-   "level": 1,
+   "only": "adult",
+   "level": 2,
    "added": "2026-10-29",
    "title": {
-    "en": "A Snowman in July",
-    "ko": "7월의 눈사람"
+    "en": "The Summer Punch",
+    "ko": "여름밤의 펀치"
    },
    "setup": {
-    "en": "On a 100-degree day in July in Texas, a family built a real snowman in their front yard. Neighbors came out to cheer, and a six-year-old girl cried happy tears.",
-    "ko": "기온이 섭씨 38도까지 오른 텍사스의 7월, 한 가족이 앞마당에 진짜 눈으로 눈사람을 만들었습니다. 이웃들이 나와서 환호했고, 여섯 살 여자아이는 기뻐서 울었습니다."
+    "en": "At a summer party, two friends drank the same iced punch from the same bowl. One gulped her glass down and went off to dance. The other sipped hers slowly while she talked. The one who gulped was fine; the one who sipped died that night.",
+    "ko": "여름 파티에서 두 친구가 같은 그릇에 담긴 같은 아이스 펀치를 마셨습니다. 한 사람은 단숨에 들이켜고 춤을 추러 갔고, 다른 사람은 이야기를 나누며 천천히 마셨습니다. 단숨에 마신 사람은 멀쩡했지만, 천천히 마신 사람은 그날 밤 숨졌습니다."
    },
    "truth": {
-    "en": "Lily was about to turn six, and she had never once seen snow. In her part of Texas, it almost never snows.\n“I just want to see real snow,” Lily said when her parents asked what she wanted for her birthday.\nBut her birthday was in July, when it was close to 100 degrees outside. Then her dad remembered the town's ice rink. Every day, a machine called a Zamboni smooths the ice and scrapes off piles of shavings that look and feel just like snow, and the rink usually throws them away.\n“Could I take some of the ice you scrape off? It's for my daughter's birthday,” Dad asked at the rink.\nThe rink filled his whole pickup truck with shavings for free. Dad drove home fast, and the family and the neighbors hurried to build a snowman in the front yard before the heat could melt it.\nThen they brought Lily outside. She stared at the snowman, touched it with both hands, and burst into happy tears while the neighbors cheered.\n“It's cold! It's so cold!” Lily laughed through her tears.\nOn a 100-degree day in July, her one birthday wish had come true.",
-    "ko": "릴리는 곧 여섯 살이 되는데, 한 번도 눈을 본 적이 없었습니다. 릴리가 사는 텍사스의 그 동네에는 눈이 거의 내리지 않습니다.\n“나는 진짜 눈을 한 번만 보고 싶어요.” 생일 선물로 뭘 갖고 싶은지 엄마 아빠가 묻자 릴리가 대답했습니다.\n하지만 릴리의 생일은 바깥 기온이 38도 가까이 오르는 7월이었습니다. 그때 아빠가 동네 아이스링크를 떠올렸습니다. 링크에서는 날마다 정빙기(잠보니)가 얼음판을 다듬으면서 진짜 눈처럼 보이고 만져지는 얼음 가루를 잔뜩 깎아 내는데, 보통은 그냥 버립니다.\n“깎아 내신 얼음 가루를 좀 얻어 갈 수 있을까요? 딸아이 생일이라서요.” 아빠가 아이스링크에 가서 부탁했습니다.\n링크에서는 아빠의 픽업트럭을 얼음 가루로 한가득 채워 주었고, 돈은 받지 않았습니다. 아빠는 서둘러 집으로 돌아왔고, 가족과 이웃들은 더위에 녹기 전에 앞마당에 부지런히 눈사람을 만들었습니다.\n그런 다음 릴리를 밖으로 데리고 나왔습니다. 눈사람을 한참 바라보던 릴리는 두 손으로 눈사람을 만져 보더니 기뻐서 울음을 터뜨렸고, 이웃들은 환호했습니다.\n“차가워! 진짜 차가워!” 릴리가 울다가 웃으며 외쳤습니다.\n기온이 38도까지 오른 7월의 어느 날, 릴리의 단 하나뿐인 생일 소원이 이루어졌습니다."
+    "en": "The night before the summer party, someone stood alone in a dark kitchen, wearing gloves, and let a few drops from a small unlabeled vial fall into the water of an ice-cube tray before sliding it into the freezer.\nThe next evening was hot and sticky. The killer tipped those cubes into the big bowl of red punch, and because the poison was still locked inside the ice, the punch was harmless when it was poured.\nMoments later, two friends filled their glasses from the same bowl, and the killer quietly took the bowl away and poured out the rest, so that no one else would drink from it. One of the friends drained her glass in a few big gulps.\n“It's way too hot to stand still. I'm going to dance!” she laughed.\n“Go ahead. I'll be right here,” her friend called after her.\nThe friend who stayed behind kept talking by the table and took tiny sips, the way she always did. Everyone who knew her knew she made one drink last the whole evening, and so did the killer.\nIn the heat, the ice in her glass melted little by little, and the poison melted out with it into every sip. Her friend had swallowed her punch before the cubes had time to melt and took in almost none.\nThat night the friend who sipped slowly died, while the one who gulped was perfectly fine. The punch had never been poisoned; the poison had been frozen inside the ice, waiting for someone who would drink slowly.",
+    "ko": "여름 파티 전날 밤, 누군가 장갑을 낀 채 어두운 부엌에 홀로 서서, 아무 표시도 없는 작은 병에서 독을 몇 방울 얼음 틀의 물에 떨어뜨리고 냉동실에 넣었습니다.\n다음 날 저녁은 덥고 후텁지근했습니다. 범인은 그 얼음을 빨간 펀치가 담긴 큰 그릇에 쏟아 넣었는데, 독은 아직 얼음 속에 갇혀 있었기 때문에 따를 때만 해도 펀치는 아무 해가 없었습니다.\n곧이어 두 친구가 같은 그릇에서 펀치를 떠 담았고, 범인은 다른 사람이 마시지 못하도록 그 그릇을 슬그머니 치우고 남은 펀치를 쏟아 버렸습니다. 두 친구 가운데 한 사람은 몇 모금 만에 잔을 비웠습니다.\n“더워서 가만히 못 있겠어. 나 춤추러 갈래!” 그녀가 웃으며 말했습니다.\n“다녀와. 난 여기 있을게.” 친구가 뒤에서 말했습니다.\n남은 친구는 탁자 곁에서 이야기를 나누며 늘 그렇듯 조금씩 홀짝였습니다. 그녀가 한 잔으로 저녁 내내 버틴다는 것은 그녀를 아는 사람이면 누구나 알았고, 범인도 알고 있었습니다.\n더위 속에서 그녀의 잔 속 얼음은 조금씩 녹았고, 독도 함께 녹아 나와 한 모금 한 모금에 섞였습니다. 단숨에 마신 친구는 얼음이 녹을 틈도 없이 잔을 비웠기 때문에 독을 거의 삼키지 않았습니다.\n그날 밤 천천히 마신 친구는 숨졌고, 단숨에 마신 친구는 멀쩡했습니다. 펀치에는 처음부터 독이 없었습니다. 독은 얼음 속에 얼려진 채, 천천히 마실 사람을 기다리고 있었던 것입니다."
    },
    "keys": [
     {
-     "id": "rink",
+     "id": "ice",
      "label": {
-      "en": "Where the snow came from",
-      "ko": "눈의 출처"
+      "en": "Where the poison was",
+      "ko": "독이 있던 곳"
      },
      "text": {
-      "en": "Ice shavings from an ice rink, scraped off by a Zamboni.",
-      "ko": "아이스링크에서 정빙기가 깎아 낸 얼음 가루."
+      "en": "Frozen inside the ice cubes.",
+      "ko": "얼음 속에 얼려 넣었다."
      }
     },
     {
-     "id": "gift",
+     "id": "fast",
      "label": {
-      "en": "Why they built it",
-      "ko": "눈사람을 만든 이유"
+      "en": "Why the fast drinker lived",
+      "ko": "빨리 마신 사람이 산 이유"
      },
      "text": {
-      "en": "A birthday surprise for a girl who had never seen snow and wished to see it.",
-      "ko": "눈을 한 번도 본 적 없는 아이의 생일 소원을 이뤄 주려는 깜짝 선물."
+      "en": "She finished before the ice melted.",
+      "ko": "얼음이 녹기 전에 다 마셨다."
+     }
+    },
+    {
+     "id": "slow",
+     "label": {
+      "en": "Why the slow drinker died",
+      "ko": "천천히 마신 사람이 죽은 이유"
+     },
+     "text": {
+      "en": "Her ice melted in the heat and released the poison.",
+      "ko": "더위에 얼음이 녹으며 독이 나왔다."
      }
     }
    ],
    "hints": [
     {
-     "en": "The snow did not fall from the sky, and nobody made it at home.",
-     "ko": "눈은 하늘에서 내린 것도, 집에서 만든 것도 아닙니다."
+     "en": "The punch itself was safe when it was poured.",
+     "ko": "펀치 자체는 따를 때만 해도 안전했습니다."
     },
     {
-     "en": "Think of a place in town that stays frozen all year, and what gets scraped off there every day.",
-     "ko": "동네에서 1년 내내 얼어 있는 곳, 그리고 그곳에서 날마다 깎여 나오는 것을 떠올려 보세요."
+     "en": "It was a very hot evening, and something in the glass changed the longer you waited.",
+     "ko": "아주 더운 저녁이었고, 기다릴수록 잔 속의 무언가가 달라졌습니다."
     }
    ],
-   "facts": "- A hot July day in Texas, about 100°F (38°C).\n- The snow was ice shavings from the town's ice rink. An ice resurfacing machine (a Zamboni) scrapes them off the rink; they look and feel like real snow. So a machine scraped it off, but it was not a snow machine or artificial snow.\n- Rinks normally throw the shavings away. The rink gave a whole pickup truck of shavings for free when the dad asked.\n- The girl is Lily. That day was her sixth birthday. She had never seen snow, and her only birthday wish was to see snow.\n- Lily's dad brought the shavings home in his pickup truck. The family and neighbors built the snowman quickly before it melted, as a birthday surprise.\n- The girl who cried happy tears is Lily.\n- The snow did not come from a store, a freezer, a movie set, the mountains, or the sky. Nobody was sick; there is no sad backstory.\n- In this story the rink shavings count as real snow: they are real ice that looks, feels, and packs like snow, not fake snow, foam, or cotton. If asked \"Was it real snow?\", answer YES; if asked whether it fell from the sky or came from a snow machine, answer NO.\n- Lily did not help build the snowman. It was a surprise: she was brought outside only after it was finished. Snow almost never falls where she lives in Texas.\n- Neighbors' names and the rink's name are not part of the story (IRRELEVANT).",
-   "factsKo": "- 텍사스의 무더운 7월 어느 날이었다. 기온은 화씨 약 100도(섭씨 38도)였다.\n- 눈은 동네 아이스링크에서 나온 얼음 가루였다. 정빙기(잠보니)가 링크 얼음판에서 깎아 내는 것으로, 보기에도 만져 보기에도 진짜 눈 같다. 그러니 기계가 깎아 낸 것은 맞지만, 눈 만드는 기계로 만든 눈이나 인공 눈은 아니었다.\n- 아이스링크에서는 보통 얼음 가루를 버린다. 아빠가 부탁하자 링크에서 얼음 가루를 픽업트럭 한가득 공짜로 내주었다.\n- 여자아이는 릴리다. 그날은 릴리의 여섯 번째 생일이었다. 릴리는 눈을 한 번도 본 적이 없었고, 생일 소원은 오직 눈을 보는 것이었다.\n- 릴리의 아빠가 자기 픽업트럭에 얼음 가루를 싣고 집으로 왔다. 가족과 이웃들은 녹기 전에 서둘러 눈사람을 만들었다. 깜짝 생일 선물이었다.\n- 기뻐서 운 여자아이가 바로 릴리다.\n- 눈은 가게, 냉동고, 영화 촬영장, 산, 하늘에서 온 것이 아니다. 아픈 사람은 없고, 슬픈 사연도 없다.\n- 이 이야기에서는 링크의 얼음 가루를 진짜 눈으로 친다. 가짜 눈이나 솜, 스티로폼이 아니라, 보기에도 만져 보기에도 눈 같고 눈처럼 뭉쳐지는 진짜 얼음이다. \"진짜 눈이었나요?\"라고 물으면 예라고 답한다. 하늘에서 내린 눈인지, 눈 만드는 기계로 만든 눈인지 물으면 아니오라고 답한다.\n- 릴리는 눈사람 만드는 일을 돕지 않았다. 깜짝 선물이라서, 눈사람이 다 만들어진 뒤에야 릴리를 밖으로 데리고 나왔다. 릴리가 사는 텍사스의 그 동네에는 눈이 거의 내리지 않는다.\n- 이웃들의 이름과 아이스링크 이름은 이야기에 나오지 않는다(상관없음).",
+   "facts": "- It was murder. The killer froze poison inside ice cubes and put them in the punch bowl.\n- The punch itself was not poisoned when it was poured (NO to 'Was the punch poisoned?'). Both friends drank the same punch from the same bowl.\n- The friend who gulped finished her drink before the ice melted, so she swallowed almost no poison. She was fine.\n- The friend who sipped slowly let the ice melt on the hot evening, and the poison melted into her drink. She died that night.\n- The killer knew the victim always nursed one drink all evening. The victim was the target (YES).\n- The two friends were not the killer (NO). The friend who lived was not involved and did not know.\n- The glasses were the same kind; it was not about the glass or a straw (NO). It was not an allergy (NO).\n- The killer froze the poisoned ice the night before the party, alone in a dark kitchen, and later tipped the cubes into the punch bowl. Who did it and whose kitchen it was are not part of the story (IRRELEVANT).\n- The two friends filled their glasses moments after the killer tipped the ice into the bowl; right after that, the killer quietly took the bowl away and poured out the rest. Nobody else drank from it, and nobody else was poisoned or died (NO).\n- Who the killer was, the motive, and the poison's name are not part of the story (IRRELEVANT).",
+   "factsKo": "- 살인이었다. 범인은 얼음을 얼릴 때 독을 넣고, 그 얼음을 펀치 그릇에 넣었다.\n- 펀치 자체는 따를 때 독이 없었다('펀치에 독이 있었나?'에는 아니오). 두 친구는 같은 그릇의 같은 펀치를 마셨다.\n- 단숨에 마신 친구는 얼음이 녹기 전에 다 마셔서 독을 거의 삼키지 않았다. 그녀는 멀쩡했다.\n- 천천히 마신 친구는 더운 저녁에 얼음이 녹도록 두었고, 독이 음료에 녹아 나왔다. 그녀는 그날 밤 숨졌다.\n- 범인은 그녀가 저녁 내내 한 잔을 천천히 마신다는 것을 알았다. 그녀를 노린 것이다(예).\n- 두 친구는 범인이 아니다(아니오). 살아남은 친구는 관련이 없고 몰랐다.\n- 잔은 같은 종류였고, 잔이나 빨대 때문이 아니다(아니오). 알레르기도 아니다(아니오).\n- 범인은 파티 전날 밤 어두운 부엌에서 혼자 독이 든 얼음을 얼려 두었다가, 나중에 그 얼음을 펀치 그릇에 쏟아 넣었다. 누가 했는지, 누구의 부엌이었는지는 이야기에 나오지 않는다(상관없음).\n- 범인이 얼음을 그릇에 넣은 직후 두 친구가 펀치를 떠 담았고, 범인은 곧바로 그 그릇을 슬그머니 치우고 남은 펀치를 쏟아 버렸다. 그 그릇의 펀치를 마신 사람은 두 친구뿐이고, 다른 사람은 아무도 중독되거나 죽지 않았다(아니오).\n- 범인이 누구인지, 동기, 독의 이름은 이야기에 나오지 않는다(상관없음).",
    "pictures": {
     "cover": {
-     "scene": "A suburban Texas front yard on a blazing-hot July afternoon: a real snowman stands on dry, sun-baked grass, slightly melting, with heat shimmer in the air; neighbors in summer clothes watch from the sidewalk; a small girl stands in front of the snowman with her hands over her mouth in delight.",
-     "check": "생일 고깔모자, 아이스링크, 트럭에 실린 얼음이 보이면 안 됩니다."
+     "scene": "A summer garden party at dusk under string lights: a glass punch bowl full of red punch and ice cubes on a table, two glasses beside it, one empty and one half-full with melting ice; guests blurred in the background.",
+     "check": "펀치 그릇과 빈 잔, 반쯤 남은 잔이 보이는지 봅니다. 글자·숫자가 없어야 합니다."
     },
     "hint1": {
-     "scene": "A clear glass evidence jar half full of white, snow-like ice shavings that are starting to melt, next to a pickup-truck key on a leather key ring and a few drops of water on the desk.",
-     "check": "아이스링크나 정빙기가 보이면 안 됩니다."
+     "scene": "A ladle resting in a glass punch bowl of red punch beside a stack of clean glasses; everything looks normal and festive.",
+     "check": "평범해 보이는 펀치 그릇인지 봅니다. 글자·숫자가 없어야 합니다."
     },
     "hint2": {
-     "scene": "A pair of rental ice skates, a plain paper wristband from a skating rink, and a small metal tray holding a pile of white ice shavings.",
-     "check": "팔찌나 스케이트에 상표나 글씨가 없어야 합니다."
+     "scene": "Close-up of a glass of red punch with half-melted ice cubes, beads of condensation running down the glass on a hot evening.",
+     "check": "얼음이 반쯤 녹은 잔인지 봅니다. 글자·숫자가 없어야 합니다."
     },
     "truth": {
-     "scene": "A sunny Texas front yard in July: a little girl in a summer dress hugging a slightly melting snowman while family and neighbors cheer around her; a pickup truck in the driveway with white ice shavings piled in its bed; joyful.",
-     "check": "글자나 간판이 보이면 안 됩니다."
-    }
-   },
-   "adult": {
-    "level": 2,
-    "title": {
-     "en": "The Summer Punch",
-     "ko": "여름밤의 펀치"
-    },
-    "setup": {
-     "en": "At a summer party, two friends drank the same iced punch from the same bowl. One gulped her glass down and went off to dance. The other sipped hers slowly while she talked. The one who gulped was fine; the one who sipped died that night.",
-     "ko": "여름 파티에서 두 친구가 같은 그릇에 담긴 같은 아이스 펀치를 마셨습니다. 한 사람은 단숨에 들이켜고 춤을 추러 갔고, 다른 사람은 이야기를 나누며 천천히 마셨습니다. 단숨에 마신 사람은 멀쩡했지만, 천천히 마신 사람은 그날 밤 숨졌습니다."
-    },
-    "truth": {
-     "en": "The night before the summer party, someone stood alone in a dark kitchen, wearing gloves, and let a few drops from a small unlabeled vial fall into the water of an ice-cube tray before sliding it into the freezer.\nThe next evening was hot and sticky. The killer tipped those cubes into the big bowl of red punch, and because the poison was still locked inside the ice, the punch was harmless when it was poured.\nMoments later, two friends filled their glasses from the same bowl, and the killer quietly took the bowl away and poured out the rest, so that no one else would drink from it. One of the friends drained her glass in a few big gulps.\n“It's way too hot to stand still. I'm going to dance!” she laughed.\n“Go ahead. I'll be right here,” her friend called after her.\nThe friend who stayed behind kept talking by the table and took tiny sips, the way she always did. Everyone who knew her knew she made one drink last the whole evening, and so did the killer.\nIn the heat, the ice in her glass melted little by little, and the poison melted out with it into every sip. Her friend had swallowed her punch before the cubes had time to melt and took in almost none.\nThat night the friend who sipped slowly died, while the one who gulped was perfectly fine. The punch had never been poisoned; the poison had been frozen inside the ice, waiting for someone who would drink slowly.",
-     "ko": "여름 파티 전날 밤, 누군가 장갑을 낀 채 어두운 부엌에 홀로 서서, 아무 표시도 없는 작은 병에서 독을 몇 방울 얼음 틀의 물에 떨어뜨리고 냉동실에 넣었습니다.\n다음 날 저녁은 덥고 후텁지근했습니다. 범인은 그 얼음을 빨간 펀치가 담긴 큰 그릇에 쏟아 넣었는데, 독은 아직 얼음 속에 갇혀 있었기 때문에 따를 때만 해도 펀치는 아무 해가 없었습니다.\n곧이어 두 친구가 같은 그릇에서 펀치를 떠 담았고, 범인은 다른 사람이 마시지 못하도록 그 그릇을 슬그머니 치우고 남은 펀치를 쏟아 버렸습니다. 두 친구 가운데 한 사람은 몇 모금 만에 잔을 비웠습니다.\n“더워서 가만히 못 있겠어. 나 춤추러 갈래!” 그녀가 웃으며 말했습니다.\n“다녀와. 난 여기 있을게.” 친구가 뒤에서 말했습니다.\n남은 친구는 탁자 곁에서 이야기를 나누며 늘 그렇듯 조금씩 홀짝였습니다. 그녀가 한 잔으로 저녁 내내 버틴다는 것은 그녀를 아는 사람이면 누구나 알았고, 범인도 알고 있었습니다.\n더위 속에서 그녀의 잔 속 얼음은 조금씩 녹았고, 독도 함께 녹아 나와 한 모금 한 모금에 섞였습니다. 단숨에 마신 친구는 얼음이 녹을 틈도 없이 잔을 비웠기 때문에 독을 거의 삼키지 않았습니다.\n그날 밤 천천히 마신 친구는 숨졌고, 단숨에 마신 친구는 멀쩡했습니다. 펀치에는 처음부터 독이 없었습니다. 독은 얼음 속에 얼려진 채, 천천히 마실 사람을 기다리고 있었던 것입니다."
-    },
-    "keys": [
-     {
-      "id": "ice",
-      "label": {
-       "en": "Where the poison was",
-       "ko": "독이 있던 곳"
-      },
-      "text": {
-       "en": "Frozen inside the ice cubes.",
-       "ko": "얼음 속에 얼려 넣었다."
-      }
-     },
-     {
-      "id": "fast",
-      "label": {
-       "en": "Why the fast drinker lived",
-       "ko": "빨리 마신 사람이 산 이유"
-      },
-      "text": {
-       "en": "She finished before the ice melted.",
-       "ko": "얼음이 녹기 전에 다 마셨다."
-      }
-     },
-     {
-      "id": "slow",
-      "label": {
-       "en": "Why the slow drinker died",
-       "ko": "천천히 마신 사람이 죽은 이유"
-      },
-      "text": {
-       "en": "Her ice melted in the heat and released the poison.",
-       "ko": "더위에 얼음이 녹으며 독이 나왔다."
-      }
-     }
-    ],
-    "hints": [
-     {
-      "en": "The punch itself was safe when it was poured.",
-      "ko": "펀치 자체는 따를 때만 해도 안전했습니다."
-     },
-     {
-      "en": "It was a very hot evening, and something in the glass changed the longer you waited.",
-      "ko": "아주 더운 저녁이었고, 기다릴수록 잔 속의 무언가가 달라졌습니다."
-     }
-    ],
-    "facts": "- It was murder. The killer froze poison inside ice cubes and put them in the punch bowl.\n- The punch itself was not poisoned when it was poured (NO to 'Was the punch poisoned?'). Both friends drank the same punch from the same bowl.\n- The friend who gulped finished her drink before the ice melted, so she swallowed almost no poison. She was fine.\n- The friend who sipped slowly let the ice melt on the hot evening, and the poison melted into her drink. She died that night.\n- The killer knew the victim always nursed one drink all evening. The victim was the target (YES).\n- The two friends were not the killer (NO). The friend who lived was not involved and did not know.\n- The glasses were the same kind; it was not about the glass or a straw (NO). It was not an allergy (NO).\n- The killer froze the poisoned ice the night before the party, alone in a dark kitchen, and later tipped the cubes into the punch bowl. Who did it and whose kitchen it was are not part of the story (IRRELEVANT).\n- The two friends filled their glasses moments after the killer tipped the ice into the bowl; right after that, the killer quietly took the bowl away and poured out the rest. Nobody else drank from it, and nobody else was poisoned or died (NO).\n- Who the killer was, the motive, and the poison's name are not part of the story (IRRELEVANT).",
-    "factsKo": "- 살인이었다. 범인은 얼음을 얼릴 때 독을 넣고, 그 얼음을 펀치 그릇에 넣었다.\n- 펀치 자체는 따를 때 독이 없었다('펀치에 독이 있었나?'에는 아니오). 두 친구는 같은 그릇의 같은 펀치를 마셨다.\n- 단숨에 마신 친구는 얼음이 녹기 전에 다 마셔서 독을 거의 삼키지 않았다. 그녀는 멀쩡했다.\n- 천천히 마신 친구는 더운 저녁에 얼음이 녹도록 두었고, 독이 음료에 녹아 나왔다. 그녀는 그날 밤 숨졌다.\n- 범인은 그녀가 저녁 내내 한 잔을 천천히 마신다는 것을 알았다. 그녀를 노린 것이다(예).\n- 두 친구는 범인이 아니다(아니오). 살아남은 친구는 관련이 없고 몰랐다.\n- 잔은 같은 종류였고, 잔이나 빨대 때문이 아니다(아니오). 알레르기도 아니다(아니오).\n- 범인은 파티 전날 밤 어두운 부엌에서 혼자 독이 든 얼음을 얼려 두었다가, 나중에 그 얼음을 펀치 그릇에 쏟아 넣었다. 누가 했는지, 누구의 부엌이었는지는 이야기에 나오지 않는다(상관없음).\n- 범인이 얼음을 그릇에 넣은 직후 두 친구가 펀치를 떠 담았고, 범인은 곧바로 그 그릇을 슬그머니 치우고 남은 펀치를 쏟아 버렸다. 그 그릇의 펀치를 마신 사람은 두 친구뿐이고, 다른 사람은 아무도 중독되거나 죽지 않았다(아니오).\n- 범인이 누구인지, 동기, 독의 이름은 이야기에 나오지 않는다(상관없음).",
-    "pictures": {
-     "cover": {
-      "scene": "A summer garden party at dusk under string lights: a glass punch bowl full of red punch and ice cubes on a table, two glasses beside it, one empty and one half-full with melting ice; guests blurred in the background.",
-      "check": "펀치 그릇과 빈 잔, 반쯤 남은 잔이 보이는지 봅니다. 글자·숫자가 없어야 합니다."
-     },
-     "hint1": {
-      "scene": "A ladle resting in a glass punch bowl of red punch beside a stack of clean glasses; everything looks normal and festive.",
-      "check": "평범해 보이는 펀치 그릇인지 봅니다. 글자·숫자가 없어야 합니다."
-     },
-     "hint2": {
-      "scene": "Close-up of a glass of red punch with half-melted ice cubes, beads of condensation running down the glass on a hot evening.",
-      "check": "얼음이 반쯤 녹은 잔인지 봅니다. 글자·숫자가 없어야 합니다."
-     },
-     "truth": {
-      "scene": "A dark kitchen at night: an open freezer glowing, an ice-cube tray whose cubes have a faint cloudy tint inside, a small unlabeled vial beside it, and a gloved hand closing the freezer door; ominous, nothing gruesome.",
-      "check": "얼음 틀과 작은 병, 장갑 낀 손이 보이는지 봅니다. 병에 글자가 없어야 합니다."
-     }
+     "scene": "A dark kitchen at night: an open freezer glowing, an ice-cube tray whose cubes have a faint cloudy tint inside, a small unlabeled vial beside it, and a gloved hand closing the freezer door; ominous, nothing gruesome.",
+     "check": "얼음 틀과 작은 병, 장갑 낀 손이 보이는지 봅니다. 병에 글자가 없어야 합니다."
     }
    }
   },
@@ -2159,161 +2333,94 @@
    }
   },
   {
-   "id": "blank-homework",
+   "id": "blank-exam",
    "kind": "mystery",
-   "level": 1,
+   "only": "adult",
+   "level": 2,
    "added": "2026-10-29",
    "title": {
-    "en": "The Blank Homework",
-    "ko": "백지 숙제"
+    "en": "The Blank Exam",
+    "ko": "백지 시험지"
    },
    "setup": {
-    "en": "Maya turned in her homework: a completely blank sheet of paper. Her teacher took the page to her desk, and a moment later she smiled and gave Maya an A+.",
-    "ko": "마야는 아무것도 쓰여 있지 않은 백지 한 장을 숙제로 냈습니다. 선생님은 그 종이를 자기 책상으로 가져가더니, 잠시 뒤 미소를 지으며 마야에게 A+를 주었습니다."
+    "en": "A college student turned in a completely blank exam paper and got a perfect score. A week later, the professor was fired, and the student's name was on the front page of the campus newspaper.",
+    "ko": "한 대학생이 아무것도 쓰지 않은 백지 시험지를 냈는데 만점을 받았습니다. 일주일 뒤 교수는 해고되었고, 그 학생의 이름이 학교 신문 1면에 실렸습니다."
    },
    "truth": {
-    "en": "Maya's science class had spent the whole week learning about chemical reactions. On Friday, their teacher gave them an unusual assignment.\n“For homework, write me a secret message in invisible ink. Surprise me,” the teacher said.\nThat night, Maya squeezed half a lemon into a cup, dipped a cotton swab into the juice, and carefully wrote her message on a clean sheet of paper. As the lemon juice dried, it turned clear, until the page looked completely blank.\nOn Monday, Maya turned in the blank-looking sheet. The teacher looked at the page, then at Maya, and carried it to her desk.\nShe switched on her desk lamp and held the paper close to the warm bulb. Little by little, the heat turned the dried lemon juice brown, and words began to appear.\n“Science is magic you can explain,” the teacher read out loud.\nShe smiled and wrote a big A+ at the top of the page, and Maya grinned from her seat. The paper had never been blank at all: Maya had done exactly what the assignment asked.",
-    "ko": "마야네 반은 과학 시간에 일주일 내내 화학 반응을 배웠습니다. 금요일, 선생님은 조금 특별한 숙제를 냈습니다.\n“이번 숙제는 보이지 않는 잉크로 비밀 메시지를 써 오는 거예요. 선생님을 깜짝 놀라게 해 보세요.” 선생님이 말했습니다.\n그날 밤 마야는 레몬 반 개를 컵에 짜고, 면봉에 레몬즙을 묻혀 깨끗한 종이에 정성껏 메시지를 썼습니다. 레몬즙이 마르면서 글씨가 투명해졌고, 종이는 완전히 백지처럼 보였습니다.\n월요일, 마야는 백지처럼 보이는 그 종이를 숙제로 냈습니다. 선생님은 종이를 한 번, 마야를 한 번 보더니 종이를 자기 책상으로 가져갔습니다.\n선생님은 책상 스탠드를 켜고 따뜻한 전구 가까이에 종이를 댔습니다. 열을 받은 레몬즙이 조금씩 갈색으로 변하더니, 글씨가 떠오르기 시작했습니다.\n“과학은 설명할 수 있는 마법이다.” 선생님이 소리 내어 읽었습니다.\n선생님은 미소를 지으며 종이 맨 위에 큼직하게 A+를 썼고, 마야는 자리에서 싱긋 웃었습니다. 종이는 처음부터 비어 있지 않았습니다. 마야는 숙제를 정확히 해낸 것입니다."
+    "en": "All semester, a rumor went around campus about one professor's class.\n“If you want a perfect score in that class, you don't study. You pay,” a classmate whispered to her.\nShe was taking that class, but she was also a reporter for the campus newspaper. To find out whether the rumor was true, she went to his office pretending to be desperate for a good grade.\n“Pay before the exam, then hand in a blank paper. I'll write in the score myself,” the professor said quietly.\nA small voice recorder in her bag caught every word. She sent him the money by bank transfer and kept the record, and on exam day she photographed her blank paper before handing it in. When the grades came out, the empty page had a perfect score, and her proof was complete.\n“Are you sure you want your name on this?” her editor asked.\n“I'm sure. People need to know what he has been doing,” she said.\nHer story ran on the front page of the campus newspaper under her own name. The university investigated at once, and within a week of that perfect score, the professor was fired.",
+    "ko": "한 학기 내내, 어느 교수의 수업을 두고 학교에 이상한 소문이 돌았습니다.\n“그 수업은 공부할 필요가 없대. 돈만 내면 만점이래.” 같은 수업을 듣는 학생이 그녀에게 귀띔했습니다.\n그녀도 그 수업을 듣고 있었지만, 학교 신문 기자이기도 했습니다. 소문이 사실인지 확인하려고 그녀는 성적이 급한 학생인 척 교수 연구실을 찾아갔습니다.\n“시험 전에 돈을 보내고, 시험지는 백지로 내. 점수는 내가 직접 적어 줄 테니까.” 교수가 낮은 목소리로 말했습니다.\n가방 속 작은 녹음기가 그 말을 모두 담았습니다. 그녀는 돈을 보내고 송금 기록을 남겼으며, 시험 날에는 백지 시험지를 내기 전에 사진을 찍어 두었습니다. 성적이 나오자 아무것도 쓰지 않은 시험지는 만점이었고, 증거가 다 갖추어졌습니다.\n“정말 네 이름으로 기사 낼 거야?” 편집장이 물었습니다.\n“네. 그 교수가 무슨 짓을 해 왔는지 다들 알아야 해요.” 그녀가 답했습니다.\n기사는 그녀의 이름을 달고 학교 신문 1면에 실렸습니다. 학교는 곧바로 조사에 나섰고, 그 만점이 나온 지 일주일 만에 교수는 해고되었습니다."
    },
    "keys": [
     {
-     "id": "ink",
+     "id": "sold",
      "label": {
-      "en": "What was on the page",
-      "ko": "종이에 있던 것"
+      "en": "Why a blank paper got a perfect score",
+      "ko": "백지가 만점을 받은 이유"
      },
      "text": {
-      "en": "A hidden message written in invisible ink (lemon juice).",
-      "ko": "보이지 않는 잉크(레몬즙)로 쓴 숨은 메시지."
+      "en": "The professor sold grades; paying students turned in blank papers and he filled in perfect scores.",
+      "ko": "교수가 성적을 팔았고, 돈을 낸 학생이 백지를 내면 교수가 만점을 적었다."
      }
     },
     {
-     "id": "task",
+     "id": "reporter",
      "label": {
-      "en": "Why it earned an A+",
-      "ko": "A+를 받은 이유"
+      "en": "Who the student was",
+      "ko": "학생의 정체"
      },
      "text": {
-      "en": "Writing in invisible ink was the assignment itself, and the teacher revealed the message with heat.",
-      "ko": "보이지 않는 잉크로 쓰는 것이 바로 숙제였고, 선생님은 열을 가해 글씨를 드러냈다."
+      "en": "A campus newspaper reporter investigating the rumors.",
+      "ko": "소문을 취재하던 학교 신문 기자였다."
+     }
+    },
+    {
+     "id": "proof",
+     "label": {
+      "en": "Why the professor was fired",
+      "ko": "교수가 해고된 이유"
+     },
+     "text": {
+      "en": "She paid as evidence and exposed him in a front-page story.",
+      "ko": "증거를 남기려고 돈을 냈고, 1면 기사로 고발했다."
      }
     }
    ],
    "hints": [
     {
-     "en": "The page was not really blank.",
-     "ko": "종이는 사실 비어 있지 않았습니다."
+     "en": "The blank paper was a signal agreed on in advance.",
+     "ko": "백지는 미리 정해 둔 신호였습니다."
     },
     {
-     "en": "It was science class. What happens to some liquids when they dry, and then get warm?",
-     "ko": "과학 시간이었습니다. 어떤 액체는 마른 뒤에 열을 받으면 어떻게 될까요?"
+     "en": "Money changed hands before the exam, and the student had a second job on campus.",
+     "ko": "시험 전에 돈이 오갔고, 그 학생은 학교에서 하는 일이 하나 더 있었습니다."
     }
    ],
-   "facts": "- Maya is a student. The teacher is her science teacher.\n- The class was studying chemical reactions.\n- The assignment was to write a secret message in invisible ink.\n- Maya wrote her message with lemon juice, using a cotton swab. Dried lemon juice is clear, so the page looked blank.\n- At her desk, the teacher held the page close to a warm desk lamp (a light bulb). The heat turned the dried lemon juice brown and the message appeared.\n- Maya's message said: \"Science is magic you can explain.\"\n- The teacher understood right away. She was not tricked, and nobody cheated. The A+ was for doing the assignment well.\n- It was not a code, a joke, an art project, white ink, or pencil.\n- Maya's age, grade, school, and the teacher's name are not part of the story (IRRELEVANT).",
-   "factsKo": "- 마야는 학생이다. 선생님은 마야의 과학 선생님이다.\n- 과학 시간에는 화학 반응을 배우는 중이었다.\n- 숙제는 보이지 않는 잉크로 비밀 메시지를 쓰는 것이었다.\n- 마야는 면봉에 레몬즙을 묻혀 메시지를 썼다. 마른 레몬즙은 투명해서 종이가 백지처럼 보였다.\n- 선생님은 자기 책상에서 종이를 따뜻한 책상 스탠드(전구) 가까이에 댔다. 열 때문에 마른 레몬즙이 갈색으로 변하면서 메시지가 나타났다.\n- 마야가 쓴 메시지는 \"과학은 설명할 수 있는 마법이다.\"였다.\n- 선생님은 바로 알아보았다. 선생님이 속은 것이 아니고, 부정행위를 한 사람도 없었다. A+는 숙제를 잘해서 받은 점수였다.\n- 암호도, 장난도, 미술 과제도 아니었고, 흰색 잉크나 연필로 쓴 것도 아니었다.\n- 마야의 나이, 학년, 학교, 선생님의 이름은 이야기에 나오지 않는다(상관없음).",
+   "facts": "- The professor secretly sold grades. Students who paid him turned in blank exams, and he wrote in perfect scores himself.\n- The blank paper was the agreed signal of who had paid.\n- The student was a reporter for the campus newspaper who had heard rumors and was investigating.\n- She paid the professor on purpose, to get proof. She did not want the grade for herself.\n- She recorded the conversation where he explained the deal, kept the record of her bank transfer to him, and photographed her blank paper before turning it in.\n- Her perfect score proved the deal. Her front-page story led the university to investigate, and the professor was fired.\n- She was not punished for paying (NO); the university knew she did it as a reporter. (If asked whether she got to keep the grade: IRRELEVANT.)\n- Nobody died or was hurt. It was not invisible ink, a trick of the paper, or a mistake (NO).\n- She was really taking the professor's class, which is how she could sit the exam (YES). She went to his office pretending to be desperate for a good grade, and he explained the deal there while a small voice recorder in her bag was running.\n- She first heard the rumor from a classmate. The campus newspaper's editor knew about her investigation and ran her story on the front page under her own name (YES).\n- How the professor told which blank paper came from which paying student (a name, a seat, the class list) is not part of the story (IRRELEVANT).\n- The amount of money, the subject, and names are not part of the story (IRRELEVANT).",
+   "factsKo": "- 교수는 몰래 성적을 팔았다. 돈을 낸 학생이 백지 시험지를 내면 교수가 직접 만점을 적어 넣었다.\n- 백지는 누가 돈을 냈는지 알려 주는, 미리 정해 둔 신호였다.\n- 그 학생은 소문을 듣고 취재하던 학교 신문 기자였다.\n- 그녀는 증거를 얻으려고 일부러 돈을 냈다. 자기 성적을 위해서가 아니었다.\n- 거래를 설명하는 교수와의 대화를 녹음했고, 송금 기록을 남겼으며, 백지 시험지를 내기 전에 사진을 찍었다.\n- 그녀의 만점이 거래의 증거가 되었다. 1면 기사가 나가자 학교가 조사했고, 교수는 해고되었다.\n- 그녀는 돈을 낸 일로 처벌받지 않았다(아니오). 학교는 기자로서 한 일임을 알았다. (그 성적을 그대로 받았는지는 상관없음.)\n- 죽거나 다친 사람은 없다. 보이지 않는 잉크나 종이의 속임수, 실수가 아니다(아니오).\n- 그녀는 실제로 그 교수의 수업을 듣고 있었기 때문에 시험을 볼 수 있었다(예). 성적이 급한 학생인 척 교수 연구실을 찾아갔고, 교수는 거기서 거래를 설명했다. 그때 가방 속 작은 녹음기가 돌아가고 있었다.\n- 그녀는 소문을 같은 수업을 듣는 학생에게서 처음 들었다. 학교 신문 편집장은 그녀의 취재를 알고 있었고, 그녀의 이름을 달아 기사를 1면에 실었다(예).\n- 교수가 백지 시험지를 낸 학생이 누구인지 어떻게 알아보았는지(이름, 자리, 수강생 명단 등)는 이야기에 나오지 않는다(상관없음).\n- 돈의 액수, 과목, 이름은 이야기에 나오지 않는다(상관없음).",
    "pictures": {
     "cover": {
-     "scene": "A teacher's desk in an empty classroom after school: a single sheet of paper that looks completely blank lies in the center next to a red pen and a gradebook; a small desk lamp beside it is switched off; late-afternoon sunlight through the windows.",
-     "check": "레몬, 종이 위의 글씨, 켜진 램프가 보이면 안 됩니다. 정답이 드러납니다."
+     "scene": "A university exam paper lying on a wooden desk in an empty lecture hall, completely blank except for a large red circle and a red star drawn at the top; beside it, a folded campus newspaper with blurred, unreadable columns; afternoon light.",
+     "check": "빈 시험지에 빨간 동그라미와 별만 있는지 봅니다. 신문의 글자는 읽히지 않아야 합니다."
     },
     "hint1": {
-     "scene": "A sheet of paper that looks blank, laid next to a small evidence ruler; tilted toward the lamp, faint glossy streaks shine on its surface as if something clear was brushed on and dried. Nothing on it is readable.",
-     "check": "읽을 수 있는 글자나 레몬이 보이면 안 됩니다."
+     "scene": "Two blank exam papers on a professor's desk, each paper-clipped to a plain white envelope, under a desk lamp; a nameplate turned away.",
+     "check": "봉투가 클립으로 붙은 빈 시험지 두 장인지 봅니다. 글자·숫자가 없어야 합니다."
     },
     "hint2": {
-     "scene": "Half a squeezed lemon, a used cotton swab, and a small glass dish with a few drops of clear juice, laid out as evidence; the warm glowing bulb of a desk lamp shows at the edge of the frame.",
-     "check": "종이에 글씨가 나타난 모습이 보이면 안 됩니다."
+     "scene": "A student reporter's desk at night: a small plain black voice recorder, an open notebook with scribbles too blurred to read, a plain camera with no brand name, logo or lettering anywhere on it, and a blank lanyard badge, under a lamp.",
+     "check": "녹음기, 수첩, 카메라가 있는 기자 책상인지 봅니다. 카메라와 녹음기에 상표 글자가 없어야 합니다. 글자·숫자가 없어야 합니다."
     },
     "truth": {
-     "scene": "A smiling teacher at her desk holding a sheet of paper close to a glowing desk lamp, faint brown squiggles appearing on the warmed paper (not readable), with half a lemon and a cotton swab on the desk; warm, cheerful classroom light.",
-     "check": "읽을 수 있는 글자가 보이면 안 됩니다."
-    }
-   },
-   "adult": {
-    "level": 2,
-    "title": {
-     "en": "The Blank Exam",
-     "ko": "백지 시험지"
-    },
-    "setup": {
-     "en": "A college student turned in a completely blank exam paper and got a perfect score. A week later, the professor was fired, and the student's name was on the front page of the campus newspaper.",
-     "ko": "한 대학생이 아무것도 쓰지 않은 백지 시험지를 냈는데 만점을 받았습니다. 일주일 뒤 교수는 해고되었고, 그 학생의 이름이 학교 신문 1면에 실렸습니다."
-    },
-    "truth": {
-     "en": "All semester, a rumor went around campus about one professor's class.\n“If you want a perfect score in that class, you don't study. You pay,” a classmate whispered to her.\nShe was taking that class, but she was also a reporter for the campus newspaper. To find out whether the rumor was true, she went to his office pretending to be desperate for a good grade.\n“Pay before the exam, then hand in a blank paper. I'll write in the score myself,” the professor said quietly.\nA small voice recorder in her bag caught every word. She sent him the money by bank transfer and kept the record, and on exam day she photographed her blank paper before handing it in. When the grades came out, the empty page had a perfect score, and her proof was complete.\n“Are you sure you want your name on this?” her editor asked.\n“I'm sure. People need to know what he has been doing,” she said.\nHer story ran on the front page of the campus newspaper under her own name. The university investigated at once, and within a week of that perfect score, the professor was fired.",
-     "ko": "한 학기 내내, 어느 교수의 수업을 두고 학교에 이상한 소문이 돌았습니다.\n“그 수업은 공부할 필요가 없대. 돈만 내면 만점이래.” 같은 수업을 듣는 학생이 그녀에게 귀띔했습니다.\n그녀도 그 수업을 듣고 있었지만, 학교 신문 기자이기도 했습니다. 소문이 사실인지 확인하려고 그녀는 성적이 급한 학생인 척 교수 연구실을 찾아갔습니다.\n“시험 전에 돈을 보내고, 시험지는 백지로 내. 점수는 내가 직접 적어 줄 테니까.” 교수가 낮은 목소리로 말했습니다.\n가방 속 작은 녹음기가 그 말을 모두 담았습니다. 그녀는 돈을 보내고 송금 기록을 남겼으며, 시험 날에는 백지 시험지를 내기 전에 사진을 찍어 두었습니다. 성적이 나오자 아무것도 쓰지 않은 시험지는 만점이었고, 증거가 다 갖추어졌습니다.\n“정말 네 이름으로 기사 낼 거야?” 편집장이 물었습니다.\n“네. 그 교수가 무슨 짓을 해 왔는지 다들 알아야 해요.” 그녀가 답했습니다.\n기사는 그녀의 이름을 달고 학교 신문 1면에 실렸습니다. 학교는 곧바로 조사에 나섰고, 그 만점이 나온 지 일주일 만에 교수는 해고되었습니다."
-    },
-    "keys": [
-     {
-      "id": "sold",
-      "label": {
-       "en": "Why a blank paper got a perfect score",
-       "ko": "백지가 만점을 받은 이유"
-      },
-      "text": {
-       "en": "The professor sold grades; paying students turned in blank papers and he filled in perfect scores.",
-       "ko": "교수가 성적을 팔았고, 돈을 낸 학생이 백지를 내면 교수가 만점을 적었다."
-      }
-     },
-     {
-      "id": "reporter",
-      "label": {
-       "en": "Who the student was",
-       "ko": "학생의 정체"
-      },
-      "text": {
-       "en": "A campus newspaper reporter investigating the rumors.",
-       "ko": "소문을 취재하던 학교 신문 기자였다."
-      }
-     },
-     {
-      "id": "proof",
-      "label": {
-       "en": "Why the professor was fired",
-       "ko": "교수가 해고된 이유"
-      },
-      "text": {
-       "en": "She paid as evidence and exposed him in a front-page story.",
-       "ko": "증거를 남기려고 돈을 냈고, 1면 기사로 고발했다."
-      }
-     }
-    ],
-    "hints": [
-     {
-      "en": "The blank paper was a signal agreed on in advance.",
-      "ko": "백지는 미리 정해 둔 신호였습니다."
-     },
-     {
-      "en": "Money changed hands before the exam, and the student had a second job on campus.",
-      "ko": "시험 전에 돈이 오갔고, 그 학생은 학교에서 하는 일이 하나 더 있었습니다."
-     }
-    ],
-    "facts": "- The professor secretly sold grades. Students who paid him turned in blank exams, and he wrote in perfect scores himself.\n- The blank paper was the agreed signal of who had paid.\n- The student was a reporter for the campus newspaper who had heard rumors and was investigating.\n- She paid the professor on purpose, to get proof. She did not want the grade for herself.\n- She recorded the conversation where he explained the deal, kept the record of her bank transfer to him, and photographed her blank paper before turning it in.\n- Her perfect score proved the deal. Her front-page story led the university to investigate, and the professor was fired.\n- She was not punished for paying (NO); the university knew she did it as a reporter. (If asked whether she got to keep the grade: IRRELEVANT.)\n- Nobody died or was hurt. It was not invisible ink, a trick of the paper, or a mistake (NO).\n- She was really taking the professor's class, which is how she could sit the exam (YES). She went to his office pretending to be desperate for a good grade, and he explained the deal there while a small voice recorder in her bag was running.\n- She first heard the rumor from a classmate. The campus newspaper's editor knew about her investigation and ran her story on the front page under her own name (YES).\n- How the professor told which blank paper came from which paying student (a name, a seat, the class list) is not part of the story (IRRELEVANT).\n- The amount of money, the subject, and names are not part of the story (IRRELEVANT).",
-    "factsKo": "- 교수는 몰래 성적을 팔았다. 돈을 낸 학생이 백지 시험지를 내면 교수가 직접 만점을 적어 넣었다.\n- 백지는 누가 돈을 냈는지 알려 주는, 미리 정해 둔 신호였다.\n- 그 학생은 소문을 듣고 취재하던 학교 신문 기자였다.\n- 그녀는 증거를 얻으려고 일부러 돈을 냈다. 자기 성적을 위해서가 아니었다.\n- 거래를 설명하는 교수와의 대화를 녹음했고, 송금 기록을 남겼으며, 백지 시험지를 내기 전에 사진을 찍었다.\n- 그녀의 만점이 거래의 증거가 되었다. 1면 기사가 나가자 학교가 조사했고, 교수는 해고되었다.\n- 그녀는 돈을 낸 일로 처벌받지 않았다(아니오). 학교는 기자로서 한 일임을 알았다. (그 성적을 그대로 받았는지는 상관없음.)\n- 죽거나 다친 사람은 없다. 보이지 않는 잉크나 종이의 속임수, 실수가 아니다(아니오).\n- 그녀는 실제로 그 교수의 수업을 듣고 있었기 때문에 시험을 볼 수 있었다(예). 성적이 급한 학생인 척 교수 연구실을 찾아갔고, 교수는 거기서 거래를 설명했다. 그때 가방 속 작은 녹음기가 돌아가고 있었다.\n- 그녀는 소문을 같은 수업을 듣는 학생에게서 처음 들었다. 학교 신문 편집장은 그녀의 취재를 알고 있었고, 그녀의 이름을 달아 기사를 1면에 실었다(예).\n- 교수가 백지 시험지를 낸 학생이 누구인지 어떻게 알아보았는지(이름, 자리, 수강생 명단 등)는 이야기에 나오지 않는다(상관없음).\n- 돈의 액수, 과목, 이름은 이야기에 나오지 않는다(상관없음).",
-    "pictures": {
-     "cover": {
-      "scene": "A university exam paper lying on a wooden desk in an empty lecture hall, completely blank except for a large red circle and a red star drawn at the top; beside it, a folded campus newspaper with blurred, unreadable columns; afternoon light.",
-      "check": "빈 시험지에 빨간 동그라미와 별만 있는지 봅니다. 신문의 글자는 읽히지 않아야 합니다."
-     },
-     "hint1": {
-      "scene": "Two blank exam papers on a professor's desk, each paper-clipped to a plain white envelope, under a desk lamp; a nameplate turned away.",
-      "check": "봉투가 클립으로 붙은 빈 시험지 두 장인지 봅니다. 글자·숫자가 없어야 합니다."
-     },
-     "hint2": {
-      "scene": "A student reporter's desk at night: a small plain black voice recorder, an open notebook with scribbles too blurred to read, a plain camera with no brand name, logo or lettering anywhere on it, and a blank lanyard badge, under a lamp.",
-      "check": "녹음기, 수첩, 카메라가 있는 기자 책상인지 봅니다. 카메라와 녹음기에 상표 글자가 없어야 합니다. 글자·숫자가 없어야 합니다."
-     },
-     "truth": {
-      "scene": "A university campus in the morning: students gathered around a newspaper rack, holding up copies of the campus paper with a blurred headline, while in the background a professor carries a cardboard box of belongings out of a stone building.",
-      "check": "신문을 든 학생들과 상자를 들고 나가는 교수가 보이는지 봅니다. 신문 글자는 읽히지 않아야 합니다."
-     }
+     "scene": "A university campus in the morning: students gathered around a newspaper rack, holding up copies of the campus paper with a blurred headline, while in the background a professor carries a cardboard box of belongings out of a stone building.",
+     "check": "신문을 든 학생들과 상자를 들고 나가는 교수가 보이는지 봅니다. 신문 글자는 읽히지 않아야 합니다."
     }
    }
   },
   {
    "id": "wrong-door-feast",
    "kind": "mystery",
-   "level": 2,
+   "only": "adult",
+   "level": 3,
    "added": "2026-10-30",
    "title": {
     "en": "The Wrong Door",
@@ -2324,8 +2431,8 @@
     "ko": "한 노부부가 치킨과 피자, 케이크까지 생일상을 주문했습니다. 그런데 그 음식은 바로 아랫집으로 배달되었습니다. 부부는 그 사실을 알고 있었지만, 가게에 전화하지도, 아랫집 문을 두드리지도 않았습니다. 대신 자기들 먹을 짜장면 두 그릇을 시키고, 저녁 내내 싱글벙글 웃었습니다."
    },
    "truth": {
-    "en": "A few days before the twins' birthday, the older couple rode the elevator with the mom and twin boys who lived right below them. The two families only knew each other as neighbors who said hello. The boys were chattering about their birthday, which was coming up on Saturday.\n“Mom says we can't have a party this year,” one of the twins whispered to his brother.\nMoney had been tight for that family all year. The couple pretended not to hear, but that night they couldn't stop thinking about it.\nThey wanted to give the boys a real birthday feast. But if they just knocked on the door with gifts, the boys' mom might feel embarrassed, pitied, or in debt to them.\nSo on the twins' birthday, they ordered fried chicken, pizza, and a birthday cake on a delivery app, paid in advance, and typed in the downstairs address on purpose. In the app's note to the restaurant, they added one request.\n“If anyone calls about this order, please just say, ‘It's already paid for. Please enjoy it,’” the wife typed.\nThe driver delivered the food exactly where the order said. The boys' mom called the restaurant and heard just those words, and soon the twins were cheering around the table, sure it was the luckiest mistake ever.\nUpstairs, the couple ordered two bowls of black-bean noodles for themselves and smiled all through dinner. They never told anyone.",
-    "ko": "쌍둥이의 생일을 며칠 앞둔 어느 날, 노부부는 바로 아랫집에 사는 엄마와 쌍둥이 형제와 함께 엘리베이터를 탔습니다. 두 집은 엘리베이터에서 인사만 나누는 이웃 사이였습니다. 쌍둥이는 이번 토요일이 자기들 생일이라며 재잘거렸습니다.\n“엄마가 올해는 생일 파티 못 한대.” 쌍둥이 중 하나가 다른 하나에게 속삭였습니다.\n그해 아랫집은 살림이 넉넉하지 않았습니다. 부부는 못 들은 척했지만, 그날 밤 집에 와서도 그 말이 자꾸 마음에 걸렸습니다.\n부부는 아이들에게 제대로 된 생일상을 차려 주고 싶었습니다. 하지만 선물을 들고 그냥 찾아가면, 아이들 엄마가 민망해하거나 동정받는다고 느끼거나 신세를 졌다고 느낄 수도 있었습니다.\n그래서 쌍둥이의 생일날, 부부는 배달 앱으로 치킨과 피자와 생일 케이크를 주문하면서 값을 미리 치르고, 일부러 아랫집 주소를 적어 넣었습니다. 그리고 가게 요청사항 칸에 한 가지 부탁을 남겼습니다.\n“누가 이 주문 때문에 전화하면, ‘이미 계산된 음식이니 맛있게 드세요’라고만 해 주세요.” 아내가 적었습니다.\n배달 기사는 주문서에 적힌 주소로 정확히 배달했습니다. 아이들 엄마는 가게에 전화했다가 바로 그 말을 들었고, 곧 쌍둥이는 세상에서 제일 운 좋은 실수라며 식탁에 둘러앉아 환호했습니다.\n윗집에서는 부부가 자기들 먹을 짜장면 두 그릇을 시켜 놓고 저녁 내내 싱글벙글 웃었습니다. 부부는 그 일을 아무에게도 말하지 않았습니다."
+    "en": "The delivery was not a mistake. That evening the couple had ordered fried chicken, pizza and a cake, the birthday dinner their son had always loved, and on purpose they typed in the address of the apartment right below theirs and paid in advance.\nThree years earlier, their only son had died in a car accident. At the hospital, heartbroken, they agreed to donate his organs.\n“Your son's heart can save a young man who has only weeks left,” the transplant doctor told them.\n“I will take care of this heart every single day, for him and for you,” the young man wrote in his very first letter.\nThrough letters passed along by the donor network, the couple came to know him, and at last they met. He moved into the apartment directly below theirs to stay close to the family that had saved his life, and before long they were like family.\nThat day was their son's birthday, and every year on it they send his favorite birthday feast downstairs to the young man who carries his heart. When they heard the doorbell ring below them, the couple smiled at each other.\n“Listen. His heart is having a birthday party,” the wife whispered.\nThen they ordered two bowls of black-bean noodles for themselves and smiled all through dinner, because their son's heart was still beating just below their floor.",
+    "ko": "배달 실수가 아니었습니다. 그날 저녁 부부는 아들이 생일마다 좋아하던 치킨과 피자, 케이크를 주문하면서, 일부러 바로 아랫집 주소를 적어 넣고 값도 미리 치렀습니다.\n3년 전, 부부의 외아들은 교통사고로 세상을 떠났습니다. 무너지는 마음으로 병원에 앉아 있던 부부는 아들의 장기를 기증하기로 했습니다.\n“아드님의 심장이면, 살날이 몇 주밖에 남지 않은 한 청년을 살릴 수 있습니다.” 이식 담당 의사가 말했습니다.\n“이 심장, 날마다 소중히 지킬게요. 아드님을 위해서, 그리고 두 분을 위해서요.” 청년은 첫 편지에 이렇게 썼습니다.\n기증 기관을 통해 편지를 주고받던 부부는 마침내 그 청년을 만났습니다. 청년은 자기 목숨을 살려 준 가족 곁에 있고 싶어 부부의 바로 아랫집으로 이사를 왔고, 그들은 곧 가족처럼 가까워졌습니다.\n그날은 아들의 생일이었습니다. 해마다 그날이면 부부는 아들이 좋아하던 생일상을, 아들의 심장을 품고 사는 아랫집 청년에게 보냅니다. 아래층에서 초인종 소리가 들리자 부부는 서로를 보며 웃었습니다.\n“들어 봐요. 우리 아들 심장이 생일잔치를 하네요.” 아내가 속삭였습니다.\n그리고 부부는 자기들 먹을 짜장면 두 그릇을 시켜, 저녁 내내 싱글벙글 웃었습니다. 아들의 심장이 바로 발밑에서 여전히 뛰고 있었기 때문입니다."
    },
    "keys": [
     {
@@ -2335,30 +2442,30 @@
       "ko": "실수였나"
      },
      "text": {
-      "en": "No. The couple typed the downstairs address on purpose and paid in advance.",
-      "ko": "아니다. 부부가 일부러 아랫집 주소를 적고 값을 미리 치렀다."
+      "en": "No. The couple sent it downstairs on purpose.",
+      "ko": "아니다. 부부가 일부러 아랫집으로 보냈다."
      }
     },
     {
-     "id": "twins",
+     "id": "son",
      "label": {
       "en": "Whose birthday it was",
       "ko": "누구의 생일이었나"
      },
      "text": {
-      "en": "The twin boys downstairs, whose family couldn't afford a party that year.",
-      "ko": "그해 형편이 어려워 파티를 못 하게 된 아랫집 쌍둥이 형제의 생일."
+      "en": "Their late son's birthday; he died three years earlier.",
+      "ko": "3년 전 세상을 떠난 아들의 생일이었다."
      }
     },
     {
-     "id": "secret",
+     "id": "heart",
      "label": {
-      "en": "Why they kept it secret",
-      "ko": "숨긴 이유"
+      "en": "Who lives downstairs",
+      "ko": "아랫집에 사는 사람"
      },
      "text": {
-      "en": "So the boys' mom wouldn't feel embarrassed or in debt; the restaurant only said it was already paid for.",
-      "ko": "아이들 엄마가 미안해하거나 신세 진 기분이 들지 않게. 가게는 이미 계산된 음식이라고만 했다."
+      "en": "The young man who received their son's heart.",
+      "ko": "아들의 심장을 이식받은 청년이다."
      }
     }
    ],
@@ -2368,12 +2475,12 @@
      "ko": "배달 기사는 실수하지 않았습니다."
     },
     {
-     "en": "It was somebody's birthday, but not the couple's.",
-     "ko": "누군가의 생일이었지만, 부부의 생일은 아니었습니다."
+     "en": "It was the couple's son's birthday, but their son had died three years earlier.",
+     "ko": "그날은 부부의 아들의 생일이었지만, 아들은 3년 전에 세상을 떠났습니다."
     }
    ],
-   "facts": "- An older married couple, both retired, live in an apartment building.\n- The couple and the family downstairs know each other only as neighbors who say hello in the elevator.\n- They ordered a birthday feast (fried chicken, pizza, and a birthday cake) on a delivery app, and on purpose they typed in the address of the apartment directly below theirs. They paid in advance.\n- In the app's note to the restaurant, they asked: if anyone calls about this order, just say, \"It's already paid for. Please enjoy it.\" They never phoned the restaurant.\n- A mother and her twin boys live downstairs. Money was tight for them that year. Why money was tight is not part of the story (IRRELEVANT).\n- A few days earlier, in the elevator, the couple overheard one twin whisper, \"Mom says we can't have a party this year.\" The twins' birthday was that day.\n- The couple wanted the boys to have a birthday feast without their mother feeling embarrassed, pitied, or in debt. So they made it look like a delivery mistake.\n- The delivery driver delivered exactly to the address on the order; the driver made no mistake.\n- The mother downstairs called the restaurant, heard \"It's already paid for. Please enjoy it,\" and the family celebrated. They believe it was a lucky mistake and do not know the couple sent it.\n- The couple ordered two bowls of black-bean noodles (jajangmyeon) for themselves and were happy all evening.\n- It was not the couple's birthday or anniversary. Nothing was stolen, nobody was tricked in a hurtful way, and nobody was angry. Nobody was hurt.\n- The couple never told anyone.\n- The couple knew the date because the twins were chattering in the elevator about their birthday, which was coming up on Saturday.\n- The restaurant's name, the floor numbers, and the twins' names and age are not part of the story (IRRELEVANT).",
-   "factsKo": "- 둘 다 은퇴한 노부부가 아파트에 산다.\n- 부부와 아랫집 가족은 엘리베이터에서 인사만 나누는 이웃 사이다.\n- 부부는 배달 앱으로 생일상(치킨, 피자, 생일 케이크)을 주문하면서, 일부러 바로 아랫집 주소를 적어 넣었다. 값은 미리 치렀다.\n- 부부는 배달 앱의 가게 요청사항에, 누가 이 주문에 대해 전화하면 \"이미 계산된 음식이니 맛있게 드세요\"라고만 말해 달라고 적었다. 가게에 전화를 걸지는 않았다.\n- 아랫집에는 엄마와 쌍둥이 형제가 산다. 그해 그 집은 살림이 넉넉하지 않았다. 왜 형편이 어려웠는지는 이야기에 나오지 않는다(상관없음).\n- 며칠 전 엘리베이터에서, 부부는 쌍둥이 중 하나가 \"엄마가 올해는 생일 파티 못 한대\" 하고 속삭이는 것을 들었다. 쌍둥이의 생일이 바로 그날이었다.\n- 부부는 아이들 엄마가 민망해하거나, 동정받는다고 느끼거나, 신세를 졌다고 느끼지 않게 하면서 아이들에게 생일상을 차려 주고 싶었다. 그래서 배달 실수처럼 꾸몄다.\n- 배달 기사는 주문서에 적힌 주소로 정확히 배달했다. 배달 기사는 실수하지 않았다.\n- 아랫집 엄마는 가게에 전화했다가 \"이미 계산된 음식이니 맛있게 드세요\"라는 말을 들었고, 가족은 생일을 축하했다. 아랫집 가족은 운 좋은 실수라고 믿고 있으며, 부부가 보낸 줄은 모른다.\n- 부부는 자기들 먹을 짜장면 두 그릇을 시켰고, 저녁 내내 즐거워했다.\n- 부부의 생일이나 기념일이 아니었다. 도둑맞은 것은 없고, 마음을 다치게 하는 속임을 당한 사람도, 화난 사람도 없다. 다친 사람은 없다.\n- 부부는 아무에게도 말하지 않았다.\n- 부부는 엘리베이터에서 쌍둥이가 이번 토요일이 자기들 생일이라며 재잘거리는 것을 듣고 생일 날짜를 알았다.\n- 가게 이름, 몇 층인지, 쌍둥이의 이름과 나이는 이야기에 나오지 않는다(상관없음).",
+   "facts": "- An older couple ordered a birthday feast (fried chicken, pizza, and a cake) and, on purpose, typed in the address of the apartment directly below theirs. They paid in advance.\n- The delivery driver made no mistake.\n- Three years earlier, their only son died in a car accident. They agreed to donate his organs.\n- His heart was transplanted into a young man who was close to death.\n- Through letters passed along by the organ donor network, the couple later met the young man.\n- The young man moved into the apartment right below the couple's to be near them. They are close, like family.\n- That day was the son's birthday. Every year on it, the couple sends a birthday feast downstairs to the young man.\n- The couple ordered two bowls of black-bean noodles (jajangmyeon) for themselves and smiled, because their son's heart is still beating downstairs.\n- It was not the couple's own birthday and not the young man's birth date (NO), though the young man celebrates the day downstairs with the feast they send. The couple eat upstairs, not with him (NO if asked whether they ate together).\n- Nobody was tricked or harmed. Nothing was stolen. The young man knows who sends the feast (YES).\n- The feast was the birthday dinner their son had always loved. The couple knew it had arrived because they heard the doorbell ring in the apartment below.\n- Names, ages, the restaurant, and the city are not part of the story (IRRELEVANT).",
+   "factsKo": "- 노부부는 생일상(치킨, 피자, 케이크)을 주문하면서 일부러 바로 아랫집 주소를 적어 넣었다. 값은 미리 치렀다.\n- 배달 기사는 실수하지 않았다.\n- 3년 전 부부의 외아들이 교통사고로 세상을 떠났다. 부부는 아들의 장기를 기증하기로 했다.\n- 아들의 심장은 죽음을 눈앞에 둔 한 청년에게 이식되었다.\n- 장기 기증 기관을 통해 편지를 주고받다가 부부는 그 청년을 만나게 되었다.\n- 청년은 부부 곁에 있고 싶어 바로 아랫집으로 이사를 왔다. 서로 가족처럼 가깝다.\n- 그날은 아들의 생일이었다. 해마다 그날이면 부부는 아랫집 청년에게 생일상을 보낸다.\n- 부부는 자기들 먹을 짜장면 두 그릇을 시키고 웃었다. 아들의 심장이 아랫집에서 여전히 뛰고 있기 때문이다.\n- 부부 자신의 생일도, 청년이 태어난 날도 아니다(아니오). 다만 청년은 부부가 보낸 생일상으로 아랫집에서 그날을 기념한다. 부부는 위층에서 따로 먹는다(함께 먹었냐고 물으면 아니오).\n- 속은 사람도, 다친 사람도 없다. 도둑맞은 것도 없다. 청년은 누가 생일상을 보내는지 안다(예).\n- 그 생일상은 아들이 늘 좋아하던 생일 음식이었다. 부부는 아랫집 초인종 소리를 듣고 음식이 도착한 것을 알았다.\n- 이름, 나이, 가게, 도시는 이야기에 나오지 않는다(상관없음).",
    "pictures": {
     "cover": {
      "scene": "A quiet apartment-building stairwell at night: on the landing below, a delivery bag with a pizza box and a cake box sits in front of a closed apartment door; one floor up, warm light spills from a half-open door; cozy and mysterious; no people.",
@@ -2388,79 +2495,8 @@
      "check": "사람이나 글자가 보이면 안 됩니다."
     },
     "truth": {
-     "scene": "A modest apartment kitchen at night: twin boys in pajamas cheering at a table piled with fried chicken, pizza, and a birthday cake with lit candles, their mother laughing beside them; warm and joyful.",
-     "check": "글자가 보이면 안 됩니다."
-    }
-   },
-   "adult": {
-    "level": 3,
-    "title": {
-     "en": "The Wrong Door",
-     "ko": "잘못 배달된 생일상"
-    },
-    "setup": {
-     "en": "An older couple ordered a birthday feast: fried chicken, pizza, and a cake. It was delivered to the apartment right below theirs. They knew it, but they didn't call the restaurant or knock on their neighbors' door. Instead, they ordered two bowls of black-bean noodles for themselves and smiled all through dinner.",
-     "ko": "한 노부부가 치킨과 피자, 케이크까지 생일상을 주문했습니다. 그런데 그 음식은 바로 아랫집으로 배달되었습니다. 부부는 그 사실을 알고 있었지만, 가게에 전화하지도, 아랫집 문을 두드리지도 않았습니다. 대신 자기들 먹을 짜장면 두 그릇을 시키고, 저녁 내내 싱글벙글 웃었습니다."
-    },
-    "truth": {
-     "en": "The delivery was not a mistake. That evening the couple had ordered fried chicken, pizza and a cake, the birthday dinner their son had always loved, and on purpose they typed in the address of the apartment right below theirs and paid in advance.\nThree years earlier, their only son had died in a car accident. At the hospital, heartbroken, they agreed to donate his organs.\n“Your son's heart can save a young man who has only weeks left,” the transplant doctor told them.\n“I will take care of this heart every single day, for him and for you,” the young man wrote in his very first letter.\nThrough letters passed along by the donor network, the couple came to know him, and at last they met. He moved into the apartment directly below theirs to stay close to the family that had saved his life, and before long they were like family.\nThat day was their son's birthday, and every year on it they send his favorite birthday feast downstairs to the young man who carries his heart. When they heard the doorbell ring below them, the couple smiled at each other.\n“Listen. His heart is having a birthday party,” the wife whispered.\nThen they ordered two bowls of black-bean noodles for themselves and smiled all through dinner, because their son's heart was still beating just below their floor.",
-     "ko": "배달 실수가 아니었습니다. 그날 저녁 부부는 아들이 생일마다 좋아하던 치킨과 피자, 케이크를 주문하면서, 일부러 바로 아랫집 주소를 적어 넣고 값도 미리 치렀습니다.\n3년 전, 부부의 외아들은 교통사고로 세상을 떠났습니다. 무너지는 마음으로 병원에 앉아 있던 부부는 아들의 장기를 기증하기로 했습니다.\n“아드님의 심장이면, 살날이 몇 주밖에 남지 않은 한 청년을 살릴 수 있습니다.” 이식 담당 의사가 말했습니다.\n“이 심장, 날마다 소중히 지킬게요. 아드님을 위해서, 그리고 두 분을 위해서요.” 청년은 첫 편지에 이렇게 썼습니다.\n기증 기관을 통해 편지를 주고받던 부부는 마침내 그 청년을 만났습니다. 청년은 자기 목숨을 살려 준 가족 곁에 있고 싶어 부부의 바로 아랫집으로 이사를 왔고, 그들은 곧 가족처럼 가까워졌습니다.\n그날은 아들의 생일이었습니다. 해마다 그날이면 부부는 아들이 좋아하던 생일상을, 아들의 심장을 품고 사는 아랫집 청년에게 보냅니다. 아래층에서 초인종 소리가 들리자 부부는 서로를 보며 웃었습니다.\n“들어 봐요. 우리 아들 심장이 생일잔치를 하네요.” 아내가 속삭였습니다.\n그리고 부부는 자기들 먹을 짜장면 두 그릇을 시켜, 저녁 내내 싱글벙글 웃었습니다. 아들의 심장이 바로 발밑에서 여전히 뛰고 있었기 때문입니다."
-    },
-    "keys": [
-     {
-      "id": "purpose",
-      "label": {
-       "en": "Was it a mistake?",
-       "ko": "실수였나"
-      },
-      "text": {
-       "en": "No. The couple sent it downstairs on purpose.",
-       "ko": "아니다. 부부가 일부러 아랫집으로 보냈다."
-      }
-     },
-     {
-      "id": "son",
-      "label": {
-       "en": "Whose birthday it was",
-       "ko": "누구의 생일이었나"
-      },
-      "text": {
-       "en": "Their late son's birthday; he died three years earlier.",
-       "ko": "3년 전 세상을 떠난 아들의 생일이었다."
-      }
-     },
-     {
-      "id": "heart",
-      "label": {
-       "en": "Who lives downstairs",
-       "ko": "아랫집에 사는 사람"
-      },
-      "text": {
-       "en": "The young man who received their son's heart.",
-       "ko": "아들의 심장을 이식받은 청년이다."
-      }
-     }
-    ],
-    "hints": [
-     {
-      "en": "The delivery driver didn't make a mistake.",
-      "ko": "배달 기사는 실수하지 않았습니다."
-     },
-     {
-      "en": "It was the couple's son's birthday, but their son had died three years earlier.",
-      "ko": "그날은 부부의 아들의 생일이었지만, 아들은 3년 전에 세상을 떠났습니다."
-     }
-    ],
-    "facts": "- An older couple ordered a birthday feast (fried chicken, pizza, and a cake) and, on purpose, typed in the address of the apartment directly below theirs. They paid in advance.\n- The delivery driver made no mistake.\n- Three years earlier, their only son died in a car accident. They agreed to donate his organs.\n- His heart was transplanted into a young man who was close to death.\n- Through letters passed along by the organ donor network, the couple later met the young man.\n- The young man moved into the apartment right below the couple's to be near them. They are close, like family.\n- That day was the son's birthday. Every year on it, the couple sends a birthday feast downstairs to the young man.\n- The couple ordered two bowls of black-bean noodles (jajangmyeon) for themselves and smiled, because their son's heart is still beating downstairs.\n- It was not the couple's own birthday and not the young man's birth date (NO), though the young man celebrates the day downstairs with the feast they send. The couple eat upstairs, not with him (NO if asked whether they ate together).\n- Nobody was tricked or harmed. Nothing was stolen. The young man knows who sends the feast (YES).\n- The feast was the birthday dinner their son had always loved. The couple knew it had arrived because they heard the doorbell ring in the apartment below.\n- Names, ages, the restaurant, and the city are not part of the story (IRRELEVANT).",
-    "factsKo": "- 노부부는 생일상(치킨, 피자, 케이크)을 주문하면서 일부러 바로 아랫집 주소를 적어 넣었다. 값은 미리 치렀다.\n- 배달 기사는 실수하지 않았다.\n- 3년 전 부부의 외아들이 교통사고로 세상을 떠났다. 부부는 아들의 장기를 기증하기로 했다.\n- 아들의 심장은 죽음을 눈앞에 둔 한 청년에게 이식되었다.\n- 장기 기증 기관을 통해 편지를 주고받다가 부부는 그 청년을 만나게 되었다.\n- 청년은 부부 곁에 있고 싶어 바로 아랫집으로 이사를 왔다. 서로 가족처럼 가깝다.\n- 그날은 아들의 생일이었다. 해마다 그날이면 부부는 아랫집 청년에게 생일상을 보낸다.\n- 부부는 자기들 먹을 짜장면 두 그릇을 시키고 웃었다. 아들의 심장이 아랫집에서 여전히 뛰고 있기 때문이다.\n- 부부 자신의 생일도, 청년이 태어난 날도 아니다(아니오). 다만 청년은 부부가 보낸 생일상으로 아랫집에서 그날을 기념한다. 부부는 위층에서 따로 먹는다(함께 먹었냐고 물으면 아니오).\n- 속은 사람도, 다친 사람도 없다. 도둑맞은 것도 없다. 청년은 누가 생일상을 보내는지 안다(예).\n- 그 생일상은 아들이 늘 좋아하던 생일 음식이었다. 부부는 아랫집 초인종 소리를 듣고 음식이 도착한 것을 알았다.\n- 이름, 나이, 가게, 도시는 이야기에 나오지 않는다(상관없음).",
-    "pictures": {
-     "cover": "cover",
-     "hint1": "hint1",
-     "hint2": "hint2",
-     "truth": {
-      "scene": "An apartment building at night shown in cross-section with two floors: upstairs, an older couple smiling at a simple table with two bowls of black-bean noodles and a framed photo of a young man; downstairs, a young man in a sweater at a table with fried chicken, pizza, and a birthday cake with lit candles, one hand resting over his heart; warm lamplight, gentle and hopeful.",
-      "check": "위층 노부부와 아래층 청년이 함께 보이는지 봅니다. 액자 사진에도 글자·숫자가 없어야 합니다."
-     }
+     "scene": "An apartment building at night shown in cross-section with two floors: upstairs, an older couple smiling at a simple table with two bowls of black-bean noodles and a framed photo of a young man; downstairs, a young man in a sweater at a table with fried chicken, pizza, and a birthday cake with lit candles, one hand resting over his heart; warm lamplight, gentle and hopeful.",
+     "check": "위층 노부부와 아래층 청년이 함께 보이는지 봅니다. 액자 사진에도 글자·숫자가 없어야 합니다."
     }
    }
   },

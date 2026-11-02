@@ -697,8 +697,8 @@
    "factsKo": "- 한 남자아이가 학교 오후 음악회에서 첫 순서로 독창을 하기로 되어 있었다. 아이는 30분쯤 딸꾹질을 멈추지 못하고 있었고, 음악회는 20분 뒤에 시작될 예정이었다.\n- 아이는 이미 숨 참기, 종이봉투에 대고 숨쉬기, 설탕 한 숟가락 삼키기를 해 보았다. 하나도 효과가 없었다.\n- 할머니가 알려 준 방법은 물 한 잔을 아주 천천히 조금씩 마시는 것이었다. 아이가 학교 건너편 카페에 뛰어 들어가 물을 달라고 한 이유는 그것뿐이다. 목이 마르지는 않았다.\n- 직원은 아이의 말 사이사이에 끼어드는 딸꾹질 소리를 듣고, 음악회용 나비넥타이도 보았다. 갑자기 깜짝 놀라면 딸꾹질이 멈출 때가 많고, 그게 물보다 빠르다는 것을 알고 있었다.\n- 직원은 예고 없이 무서운 얼굴을 하고 계산대를 쾅 내리치며 “너 어제 우리 가게 유리창 깨고 도망간 애지!” 하고 소리쳤다. 사실이 아니라는 것을 직원도 알았다. 깨진 유리창은 없었고, 아이는 그 카페에 처음 와 본 것이었다. 진짜로 놀라게 하려고 미리 설명하지 않았다. 풍선을 터뜨리거나, 물을 끼얹거나, 손뼉을 치거나, 아이 몸에 손대지 않았다. 계산대를 친 소리와 고함이 놀라게 한 전부다(다른 방법으로 놀라게 했냐고 물으면 아니오). 물은 끝내 따라 주지 않았다(물을 줬냐고 물으면 아니오).\n- 아이는 펄쩍 뛰었고, 그 충격에 딸꾹질이 멈췄다. 직원은 웃음을 터뜨리며 놀라게 하려고 한 말이라고 알려 주었다. 그래서 아이는 “정말 고맙습니다!”라고 말하고 물을 마시지 않은 채 나갔다. 물이 더는 필요 없었고, 서둘러 돌아가야 했기 때문이다.\n- 아이는 제때 돌아가 딸꾹질 한 번 없이 독창을 마쳤다.\n- 아무도 다치지 않았다. 계산대를 내리쳤지만 부서진 것은 없고, 직원은 아이 몸에 손대지 않았다.\n- 직원은 정말 화가 난 것도, 아이를 다른 사람으로 착각한 것도 아니다(아니오). 장난을 친 것도 아니다. 아이를 도와준 것이다. 둘은 처음 보는 사이였다.\n- 딸꾹질 말고는 아이는 건강했다. 약을 먹거나 화상을 식히거나 불을 끄려고 물이 필요했던 것이 아니고, 목에 무엇이 걸린 것도 아니었다. 누구에게 쫓기거나 곤란한 일이 있던 것도 아니다(아니오).\n- 깨진 유리창은 없고, 아이는 잘못한 것이 없다(유리창을 깼냐고 물으면 아니오). 이 이야기에는 범죄도 동물도 나오지 않는다.\n- 돈을 냈는지, 무엇을 샀는지는 이야기에 나오지 않는다(상관없음).\n- 아이, 직원, 카페, 학교의 이름과 아이가 부른 노래는 이야기에 나오지 않는다(상관없음).",
    "pictures": {
     "cover": {
-     "scene": "A cozy little café on a bright afternoon with a large, clean front window; on the counter, an empty clear glass beside a water pitcher; the front door still swinging open as if someone has just rushed in; cheerful, curious mood.",
-     "check": "사람이 보이면 안 됩니다. 풍선이 없어야 합니다. 간판, 메뉴판 등 글자나 숫자가 없어야 합니다."
+     "scene": "An empty little café on a bright afternoon, with no customers and no staff anywhere: a large clean front window, a wooden counter with an empty clear glass beside a full water pitcher, and the front door still swinging open as if someone has just rushed in; no menu boards, chalkboards, signs, posters or lettering anywhere; cheerful, curious mood.",
+     "check": "사람이 보이면 안 됩니다. 풍선, 칠판, 메뉴판, 간판 등 글자나 숫자가 없어야 합니다."
     },
     "hint1": {
      "scene": "Evidence-photo composition on a wooden counter: a full glass water pitcher beaded with condensation and, beside it, one clean, empty drinking glass standing upside down, never filled; a folded paper napkin; close-up, nothing else.",
@@ -1419,7 +1419,7 @@
      "check": "우승컵에 글자나 숫자가 없어야 합니다. 사람이 보이면 안 됩니다."
     },
     "hint2": {
-     "scene": "Evidence-photo composition: two horseshoes, one painted red and one painted blue, laid crossed over each other in an X on a bed of straw; close-up, nothing else.",
+     "scene": "Evidence-photo composition: exactly two horseshoes, one painted red and one painted blue, laid crossed over each other in an X on a bed of straw; no other horseshoes; close-up, nothing else.",
      "check": "사람, 글자, 숫자가 없어야 합니다."
     },
     "truth": {
@@ -1506,7 +1506,7 @@
      "check": "금고에 숫자 다이얼이 없어야 합니다. 카드에 글자, 숫자, 기호가 없어야 합니다."
     },
     "truth": {
-     "scene": "Night in a cozy study: a delighted gray-haired collector in a cardigan holds a card in a clear hard case up close to his face, grinning, in front of an open wall safe with a plain key lock and no dial; on the desk beside him lie the two torn halves of an identical card; both cards show a simple painting of a red sailboat on blue water inside a plain border, printed upside down, with no name bar, text box, symbols or numbers; warm lamplight, comic and satisfied mood.",
+     "scene": "Night in a cozy study: a delighted gray-haired collector in a cardigan holds a card in a clear hard case up close to his face, grinning, in front of an open wall safe with a plain key lock and no dial; on the desk beside him lie the two torn halves of an identical card. Every card in the picture shows the same simple painting of a red sailboat on blue water printed upside down (red hull at the top, white sail pointing down), including both torn halves, with no text, symbols or numbers; no other cards anywhere; warm lamplight, comic and satisfied mood.",
      "check": "카드와 금고에 글자, 숫자, 기호가 없어야 합니다(금고에 숫자 다이얼 없음). 책상 위의 찢어진 카드와 손에 든 카드가 같은 그림인지 봅니다."
     }
    }
@@ -1578,7 +1578,7 @@
      "check": "발자국이 가다가 되돌아오는지 봅니다. 사람, 글자, 숫자가 없어야 합니다."
     },
     "truth": {
-     "scene": "Storybook scene: near the far end of a long rope bridge over a misty gorge, a girl carrying a small cloth-covered basket walks toward the far cliff and glances back with a bright, clever smile; small in the distance at the near end, a stern keeper in front of his hut nods, one arm still pointing toward the far side; a grandmother waves from a cottage doorway on the far cliff; warm, clever, cheerful mood.",
+     "scene": "Storybook scene in bright, clear daylight, the same daytime as the cover, with no lanterns lit: near the far end of a long rope bridge over a misty gorge, a girl carrying a small cloth-covered basket walks toward the far cliff and glances back with a bright, clever smile; small in the distance at the near end, a stern keeper in front of his hut nods, one arm still pointing toward the far side; a grandmother waves from a cottage doorway on the far cliff; warm, clever, cheerful mood.",
      "check": "문지기가 소녀가 가는 쪽을 가리키거나 고개를 끄덕이는지 봅니다. 글자가 없어야 합니다."
     }
    }
@@ -1661,8 +1661,8 @@
      "check": "휴대폰 화면에 REC나 시간 같은 글자가 들어가거나 얼굴이 보이면 안 됩니다. 자물쇠 다이얼에 숫자가 보이면 안 됩니다."
     },
     "truth": {
-     "scene": "A grainy black-and-white night-vision camera view of a cabin kitchen: a man in pajamas, eyes half closed, sits on the floor beside the same large snack cooler, its lid open and its combination padlock hanging open with the dials turned away; he munches chips from plain snack bags with no logos or writing, in his sleep; funny and harmless.",
-     "check": "글자, 상표, 시간 표시가 보이면 안 됩니다. 뚜껑이 열린 아이스박스와 열린 자물쇠가 보이는지 봅니다."
+     "scene": "A grainy black-and-white night-vision camera view of a cabin kitchen: a man in pajamas, eyes half closed, sits on the floor beside a large hard-shell cooler chest whose hinged lid is propped open, with a small padlock hanging open from its front hasp, turned so its dials face away; he munches chips from plain unmarked snack bags, in his sleep; funny and harmless.",
+     "check": "글자, 상표, 숫자, 시간 표시가 보이면 안 됩니다. 표지와 같은 단단한 아이스박스(뚜껑이 열림)와 열린 자물쇠인지 봅니다."
     }
    },
    "adult": {

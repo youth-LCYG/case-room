@@ -1574,7 +1574,7 @@
      "check": "통행패에 글자, 숫자, 문양이 없어야 합니다. 사람이 보이면 안 됩니다."
     },
     "hint2": {
-     "scene": "Evidence-photo composition: a small handmade model of a rope bridge laid across the gap between two stacks of books on the desk, with a tiny wooden hut at the left end of the bridge; in the very middle of the bridge stands one small wooden peg doll of a girl holding a tiny basket, clearly turned to face the hut at the left end, her back to the empty right end; close-up, nothing else.",
+     "scene": "Evidence-photo composition on a dark wooden desk, seen from the side: a small handmade model rope bridge stretched across the empty gap between two stacks of books, with clear air under its middle; a tiny wooden hut stands on top of the left stack at the left end of the bridge; exactly in the middle of the bridge stands one small wooden peg doll of a girl holding a tiny basket, shown in side view, her face and her basket turned to the left toward the hut, her back toward the empty right end of the bridge.",
      "check": "인형이 다리 한가운데에서 왼쪽 오두막 쪽을 보고 서 있는지 봅니다. 사람, 글자, 숫자가 없어야 합니다."
     },
     "truth": {
@@ -2750,7 +2750,7 @@
    "notStatedKo": "- 바후림의 그 사람과 여인이 누구였는지, 다윗 편이었는지.\n- 우물에 물이 있었는지.\n- 압살롬의 종들이 어떻게 그 집을 알고 왔는지.\n- 종들이 정확히 어디를 찾았는지.\n- 두 사람이 우물 속에 얼마나 있었는지.\n- 여인이 왜 곡식을 널었는지.",
    "pictures": {
     "cover": {
-     "scene": "A stone house in an ancient hill village: a group of men in plain cloaks, seen from behind, walk out through the courtyard gate; inside the walled courtyard a woman stands calmly near the doorway; a plain packed-earth courtyard; no faces visible.",
+     "scene": "A stone house in an ancient hill village: a group of men in plain cloaks walk away out through the courtyard gate toward the road, all seen from behind with their backs to the viewer; in the dim doorway of the house stands a woman in deep shadow, only a dark silhouette; a plain packed-earth courtyard; nobody's face can be seen.",
      "check": "얼굴이나 글자, 무기가 보이면 안 됩니다. 우물이 드러나 보이면 안 됩니다."
     },
     "hint1": {
@@ -2861,7 +2861,7 @@
      "check": "얼굴이나 글자가 보이면 안 됩니다. 노새의 자루가 비어 있는지 봅니다."
     },
     "hint1": {
-     "scene": "Seven smooth wet river stones laid in a row on linen beside a folded wet cloth.",
+     "scene": "Exactly seven smooth wet river stones laid in one straight row on rough linen, all seven clearly separate and easy to count, with a folded wet cloth beside the row.",
      "check": "사람이나 글자, 숫자가 보이면 안 됩니다. 돌이 일곱 개인지 봅니다."
     },
     "hint2": {
@@ -3079,15 +3079,15 @@
      "check": "얼굴이나 글자가 보이면 안 됩니다. 작은 배에 사람이 타고 있으면 안 됩니다."
     },
     "hint1": {
-     "scene": "A heavy iron anchor and a coil of wet rope on the wet wooden planks at the very front of an ancient ship, rain drops on them.",
-     "check": "사람이나 글자, 숫자가 보이면 안 됩니다."
-    },
-    "hint2": {
      "scene": "The handle of an ancient ship's great steering oar, with neatly coiled ropes and a sailor's wool cap hanging from a wooden peg beside it, all wet with spray.",
      "check": "사람이나 글자가 보이면 안 됩니다."
     },
+    "hint2": {
+     "scene": "A heavy iron anchor and a coil of wet rope on the wet wooden planks at the very front of an ancient ship, rain drops on them.",
+     "check": "사람이나 글자, 숫자가 보이면 안 됩니다."
+    },
     "truth": {
-     "scene": "A grey, cold, rainy morning after a storm: on the beach of a rocky island, many people in ancient clothes, seen from behind and from a distance, wade and swim ashore, some holding on to planks and broken pieces of a wooden ship that lies stuck on a reef behind them; a relieved, hopeful mood.",
+     "scene": "A wide view from far away on a headland, on a grey, cold, rainy morning after a storm: a broken wooden ship lies stuck on a reef off a rocky beach, and many tiny distant figures wade and swim toward the shore, some holding on to planks and pieces of the ship; the figures are too small and far away for any faces to be seen; a relieved, hopeful mood.",
      "check": "얼굴이나 글자가 보이면 안 됩니다. 다친 사람이 보이면 안 됩니다."
     }
    }
@@ -3182,8 +3182,8 @@
    "notStatedKo": "- 왕이 왜 잠을 이루지 못했는지.\n- 행렬 동안 모르드개가 어떤 마음이었는지, 무슨 말을 했는지.\n- 모르드개가 왜 그전에 상을 받지 못했는지.\n- 행렬 때 거리의 사람들이 어떻게 했는지.\n- 행렬이 하루 중 언제였는지.\n- 왕이 하만이 모르드개를 미워한다는 것을 알았는지.",
    "pictures": {
     "cover": {
-     "scene": "A grand Persian city square: a magnificent horse wearing a small royal crown ornament carries a rider in a royal robe, seen from behind; a man in fine official robes walks ahead holding the bridle, one arm raised as if calling out; crowds at a distance; no faces visible.",
-     "check": "얼굴이나 글자가 보이면 안 됩니다."
+     "scene": "A grand Persian city square seen from behind a parade: a magnificent horse with a small golden crown fixed on the horse's own head carries a rider in a royal purple robe, horse and rider both seen from behind; a man in fine official robes walks ahead holding the bridle, also seen from behind, one arm raised as if calling out; the crowd is far away and tiny; nobody's face can be seen.",
+     "check": "얼굴이나 글자가 보이면 안 됩니다. 왕관은 말 머리에 있어야 합니다."
     },
     "hint1": {
      "scene": "A rolled royal scroll tied with a cord, beside an oil lamp burning low on a bedside table, with rumpled royal bed covers behind it, late at night; no writing visible anywhere.",
@@ -3293,20 +3293,20 @@
    "notStatedKo": "- 소들이 왜 울었는지(본문은 가면서 울었다고만 한다).\n- 그 소들이 누구의 소였는지.\n- 독종(혹)이 정확히 어떤 병이었는지.\n- 궤 안에 무엇이 들어 있었는지(이 본문은 말하지 않는다).\n- 그 뒤 블레셋 사람들이 여호와를 섬기게 되었는지.\n- 금 형상을 누가 만들었는지, 크기가 얼마였는지.\n- 하나님이 소들을 이끄셨는지(본문은 소들이 한 일만 말한다).",
    "pictures": {
     "cover": {
-     "scene": "A dusty country road between ripe wheat fields: two cows with no driver pull a new wooden cart carrying a large cloth-covered chest and a small wooden box; far behind them, five robed figures follow on foot, seen from a distance with no faces visible.",
-     "check": "얼굴이나 글자가 보이면 안 됩니다. 소를 모는 사람이 없어야 합니다."
+     "scene": "A dusty country road between ripe wheat fields: two cows side by side under one wooden yoke, with no driver, pull a new wooden cart carrying a large cloth-covered chest and a small wooden box; far behind the cart, five robed figures follow on foot, tiny in the distance, seen from behind.",
+     "check": "소가 두 마리인지, 소를 모는 사람이 없는지 봅니다. 얼굴이나 글자가 보이면 안 됩니다."
     },
     "hint1": {
-     "scene": "Five small golden lumps in a row on dark linen, and beside them a cluster of small golden mice.",
-     "check": "사람이나 글자, 숫자가 보이면 안 됩니다."
+     "scene": "Two neat rows on dark linen: five small golden lumps in the front row and five small golden mice in the back row, all ten clearly separate and easy to count.",
+     "check": "사람이나 글자, 숫자가 보이면 안 됩니다. 금 혹과 금 쥐가 다섯씩인지 봅니다."
     },
     "hint2": {
-     "scene": "A wooden pen gate tied shut with rope, small calf hoofprints in the straw behind it and an empty milk pail beside it.",
-     "check": "사람이나 글자가 보이면 안 됩니다."
+     "scene": "A wooden pen gate tied shut with rope, loose straw behind it, and an empty wooden milk pail standing beside the gate.",
+     "check": "사람이나 글자가 보이면 안 됩니다. 발자국이 보이면 안 됩니다."
     },
     "truth": {
-     "scene": "Harvest time in a valley: two cows pulling a cart with a cloth-covered chest come straight up the road toward reapers in a golden wheat field, the reapers seen from behind holding bundles of wheat and looking up; far behind the cart, five robed figures stand still at a boundary stone.",
-     "check": "얼굴이나 글자가 보이면 안 됩니다."
+     "scene": "Harvest time in a valley, seen from far behind a line of reapers: reapers in a golden wheat field, all seen from behind and holding bundles of wheat, look up at two cows pulling a cart with a cloth-covered chest that come straight up the road toward them; far back on the road, five tiny robed figures stand still beside a boundary stone.",
+     "check": "얼굴이나 글자가 보이면 안 됩니다. 소가 두 마리인지 봅니다."
     }
    }
   },
@@ -3622,8 +3622,8 @@
      "check": "사람이나 글자, 불이 보이면 안 됩니다."
     },
     "truth": {
-     "scene": "Beside a huge stone altar near a river, two groups of men in ancient robes, seen from behind or from a distance, clasp hands and embrace; no weapons anywhere; a joyful mood.",
-     "check": "얼굴이나 글자, 무기가 보이면 안 됩니다."
+     "scene": "Daylight beside a river: a huge altar of plain rough uncut stones stands empty, with no fire, no candles, no smoke and nothing on it, and no carvings or marks on the stones; in front of it, two groups of men in ancient robes clasp hands and embrace, all seen from behind with their backs to the viewer; no weapons anywhere; a joyful mood.",
+     "check": "얼굴이나 글자, 무기, 불이 보이면 안 됩니다."
     }
    }
   }

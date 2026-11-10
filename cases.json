@@ -1574,8 +1574,8 @@
      "check": "통행패에 글자, 숫자, 문양이 없어야 합니다. 사람이 보이면 안 됩니다."
     },
     "hint2": {
-     "scene": "Evidence-photo composition on a dark wooden desk: a small handmade model rope bridge runs straight away from the camera across a gap between two stacks of books, to a tiny wooden hut standing on the far stack at the far end of the bridge; in the middle of the bridge a small wooden peg doll of a girl with a tiny basket is seen from behind, walking toward the hut.",
-     "check": "인형이 다리 가운데에서 오두막 쪽으로 걸어가는 뒷모습인지 봅니다. 사람, 글자, 숫자가 없어야 합니다."
+     "scene": "Evidence-photo composition on a dark wooden desk: a small handmade model rope bridge runs straight away from the camera across a gap between two plain wooden blocks, to a tiny wooden hut standing on the far block at the far end of the bridge; in the middle of the bridge a small wooden peg doll of a girl with a tiny basket is seen from behind, walking toward the hut. No books, no paper and no markings anywhere.",
+     "check": "인형이 다리 가운데에서 오두막 쪽으로 걸어가는 뒷모습인지 봅니다. 사람, 글자, 숫자가 없어야 합니다(책등의 글씨도)."
     },
     "truth": {
      "scene": "Storybook scene in bright, clear daylight, seen from the side and from far away so the whole bridge fits in the picture: one single long rope-and-plank bridge spans a deep misty gorge from the left cliff to the right cliff, and there is only this one bridge in the whole picture. At the left end, a stern keeper stands in front of his small wooden hut with one arm stretched out, pointing firmly across to the right cliff. Past the middle of the bridge, a girl carrying a small cloth-covered basket walks toward the right cliff, the way he is pointing, and glances back over her shoulder with a small secret grin. On the right cliff, a grandmother waits at the door of a stone cottage. Warm, clever, cheerful mood.",
